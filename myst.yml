@@ -1,0 +1,25 @@
+version: 1
+
+project:
+  title: "JupyterCon Workshop: Extension Development for Everyone!"
+  # description:
+  # keywords: []
+  # authors: []
+  license: "MIT"
+  github: "https://github.com/jupytercon/jupytercon2025-developingextensions"
+  exclude:
+    - "_*"
+    - "README.md"
+
+
+site:
+  template: "book-theme"
+  actions:
+    - title: "View source"
+      url: "https://github.com/jupytercon/jupytercon2025-developingextensions"
+  options:
+    folders: true
+    style: "assets/styles/style.css"
+    # favicon: favicon.ico
+    # logo: site_logo.png
+    logo_text: "JupyterLab Extension Development for Everyone!"
