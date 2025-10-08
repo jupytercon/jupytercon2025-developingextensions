@@ -16,7 +16,7 @@
 | 12:10 PM  | 20 minutes  | Q&A, discussion                             | ?                 |
 
 
-## 12:30 - 1:30: Lunch!
+## 🍽️ Lunch! (12:30PM - 1:30PM)
 
 
 ## Afternoon
