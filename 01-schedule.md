@@ -1,5 +1,7 @@
 # Schedule
 
+[Official JupyterCon program](https://events.linuxfoundation.org/jupytercon/program/schedule/)
+
 ## Morning
 
 | Time      | Duration    | Topic                                       | Presenter(s)      |
@@ -8,7 +10,7 @@
 | 9:05 AM   | 15 minutes  | Exploring extension (high-level overview)   | Jason             |
 | 9:20 AM   | 50 minutes  | Anatomy of an extension                     | Jason, Matt       |
 | 10:10 AM  | 20 minutes  | Show & tell                                 | Konstantin, Matt  |
-| 10:30 AM  | 15 minutes  | ☕️ **Coffee break!**                           |                   |
+| 10:30 AM  | 15 minutes  | ☕️ **Coffee break!**                        |                   |
 | 10:45 AM  | 40 minutes  | Debugging: What to do when things go wrong? | Konstantin, Rosio |
 | 11:25 AM  | 45 minutes  | Working on your own extension (semi-guided) | Rosio             |
 | 12:10 PM  | 20 minutes  | Q&A, discussion                             | ?                 |
@@ -21,6 +23,10 @@
 
 | Time      | Duration    | Topic                                       | Presenter(s)      |
 |-----------|-------------|---------------------------------------------|-------------------|
-| 1:30 PM   | ?? minutes  | ???                                         | ???               |
-| 3:00 PM   | 15 minutes  | ☕️ **Coffee break!**                            | ???               |
-| 3:15 PM   | ?? minutes  | ???                                         | ???               |
+| 1:30 PM   | 45 minutes  | Developing extensions with AI assistance    | Konstantin, Matt  |
+| 2:15 PM   | 45 minutes  | Q&A session                                 | All               |
+| 3:00 PM   | 30 minutes  | ☕️ **Coffee break!**                        |                   |
+
+:::{attention}
+TBD: Will we go all the way to end of day at 5PM?
+:::
