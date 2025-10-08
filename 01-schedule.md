@@ -2,6 +2,11 @@
 
 [Official JupyterCon program](https://events.linuxfoundation.org/jupytercon/program/schedule/)
 
+:::{attention}
+🏗️ This schedule is under development.
+:::
+
+
 ## Morning
 
 | Time      | Duration    | Topic                                       | Presenter(s)      |
