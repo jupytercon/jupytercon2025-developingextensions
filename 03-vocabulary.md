@@ -10,7 +10,7 @@ Menu bar
 above.
 
 Main area
-:
+: TODO
 
 Status bar
 : Displays various information about the current session, like the number of running
