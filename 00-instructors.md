@@ -2,7 +2,9 @@
 
 ## Rosio Reyes
 
-TODO: Bio
+Software Engineer, OSS at Anaconda
+
+I'm a contributor to the Jupyter ecosystem. I am currently working on extension development and testing for Gator (which provides environment and package management interface) and jupyter-fsspec (providing an interface for interacting with fsspec filesystems). I'm especially interested in building tools that are maintainable, well tested and contributor friendly. I enjoy working with others to improve the experience of developing in the Jupyter community.
 
 
 ## Konstantin Taletsky
