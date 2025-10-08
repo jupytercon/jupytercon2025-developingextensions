@@ -22,5 +22,5 @@
 | Time      | Duration    | Topic                                       | Presenter(s)      |
 |-----------|-------------|---------------------------------------------|-------------------|
 | 1:30 PM   | ?? minutes  | ???                                         | ???               |
-| 3:00 PM   | 15 minutes  | **Coffe break!**                            | ???               |
+| 3:00 PM   | 15 minutes  | ☕️ **Coffee break!**                            | ???               |
 | 3:15 PM   | ?? minutes  | ???                                         | ???               |
