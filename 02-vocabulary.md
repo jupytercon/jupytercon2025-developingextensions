@@ -27,6 +27,15 @@ Contain extra utilities, like the file browser and debugger.
 ## Other terms
 
 :::{glossary}
+Extension
+: TODO
+
+Plugin
+: TODO
+
+Widget
+: TODO
+
 [Command](https://jupyterlab.readthedocs.io/en/latest/user/commands.html)
 : A behavior that can be triggered from the JupyterLab interface.
 For example, from the {term}`menu bar`.
