@@ -9,16 +9,16 @@
 
 ## Morning
 
-| Time      | Duration    | Topic                                       | Presenter(s)      |
-|-----------|-------------|---------------------------------------------|-------------------|
-| 9:00 AM   | 5 minutes   | Meet the instructors                        | Matt              |
-| 9:05 AM   | 15 minutes  | Exploring extensions (high-level overview)  | Jason             |
-| 9:20 AM   | 50 minutes  | Anatomy of an extension                     | Jason, Matt       |
-| 10:10 AM  | 20 minutes  | Show & tell                                 | Konstantin, Matt  |
-| 10:30 AM  | 15 minutes  | ☕️ **Coffee break!**                        |                   |
-| 10:45 AM  | 40 minutes  | Debugging: What to do when things go wrong? | Konstantin, Rosio |
-| 11:25 AM  | 45 minutes  | Working on your own extension (semi-guided) | Rosio             |
-| 12:10 PM  | 20 minutes  | Q&A, discussion                             | All               |
+| Time      | Duration    | Topic                                                                  | Presenter(s)      |
+|-----------|-------------|------------------------------------------------------------------------|-------------------|
+| 9:00 AM   | 5 minutes   | Meet the instructors                                                   | Matt              |
+| 9:05 AM   | 15 minutes  | [Exploring extensions](./03-materials/01-exploring-extensions.md)       | Jason             |
+| 9:20 AM   | 50 minutes  | [Anatomy of an extension](./03-materials/02-anatomy-of-extensions.md)  | Jason, Matt       |
+| 10:10 AM  | 20 minutes  | Show & tell                                                            | Konstantin, Matt  |
+| 10:30 AM  | 15 minutes  | ☕️ **Coffee break!**                                                   |                   |
+| 10:45 AM  | 40 minutes  | Debugging: What to do when things go wrong?                            | Konstantin, Rosio |
+| 11:25 AM  | 45 minutes  | Working on your own extension (semi-guided)                            | Rosio             |
+| 12:10 PM  | 20 minutes  | Q&A, discussion                                                        | All               |
 
 
 ## 🍽️ Lunch! (12:30PM - 1:30PM)
