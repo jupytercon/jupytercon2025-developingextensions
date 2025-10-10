@@ -7,7 +7,7 @@
 :::
 
 :::{tip} Terms
-{term}`menu bar`, {term}`main area`, {term}`status bar`,{term}`side panel`
+{term}`menu bar`, {term}`main area`, {term}`status bar`, {term}`side panel`
 :::
 
 
