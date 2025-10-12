@@ -1,4 +1,4 @@
-# Developing extensions with AI assistance
+# 🤖 Developing extensions with AI assistance
 
 :::{hint} Learning objectives
 
