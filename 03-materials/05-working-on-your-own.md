@@ -1,4 +1,4 @@
-# Working on your own extension (semi-guided)
+# 🧩 Working on your own extension (semi-guided)
 
 :::{hint} Learning objectives
 
