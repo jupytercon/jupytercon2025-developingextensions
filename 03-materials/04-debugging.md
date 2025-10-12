@@ -1,4 +1,4 @@
-# Debugging: What to do when things go wrong?
+# 🐞 Debugging: What to do when things go wrong?
 
 :::{hint} Learning objectives
 
