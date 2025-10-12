@@ -1,4 +1,4 @@
-# Show & tell
+# 🪩 Show & tell
 
 :::{hint} Learning objectives
 
