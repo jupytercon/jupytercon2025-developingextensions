@@ -7,6 +7,11 @@ Linux pre-configured.**
 This workshop will use `bash` as its primary command language!
 
 
+## [Git](https://git-scm.com/downloads)!
+
+Git will enable you to version-control and share the extension you build on GitHub.
+
+
 ## A code editor / IDE
 
 **And know how to use it!**
