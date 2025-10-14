@@ -18,6 +18,7 @@ favorite.
 ## Something to manage Python dependencies
 
 **And know how to use it!**
+
 We will provide commands, but you should be comfortable with the basics like creating
 and activating virtual environments.
 
