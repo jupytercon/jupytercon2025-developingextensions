@@ -4,6 +4,7 @@
 Extension
 : The end-user-installable delivery mechanism or container for {term}`plugins <plugin>`.
 An extension is a collection of 1 or more {term}`plugins <plugin>`.
+[See the official docs for more!](https://jupyterlab.readthedocs.io/en/stable/extension/extension_dev.html#overview-of-extensions)
 
 Core extension
 : JupyterLab is composed of modular {term}`extensions <extension>`.
