@@ -99,3 +99,9 @@ graph TB
     ```bash
     jupyter lab
     ```
+
+5. Confirm the extension was loaded. Open your browser's dev console (F12 or
+   `CTRL+SHIFT+I`) and look for log messages reading:
+
+   * `JupyterLab extension myextension is activated`
+   * `This is /myextension/get-example endpoint!`
