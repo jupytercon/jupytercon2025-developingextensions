@@ -4,7 +4,7 @@
 - Apply knowledge from previous sections to build a functional extension
 - Understand how to configure a local JupyterLab extension development environment
 - Learn to implement custom functionality and UI elements in extensions
-- Undestand the basics of frontend-backend architecture in Jupyter extensions
+- Understand the basics of frontend-backend architecture in Jupyter extensions
 - Practice reading JupyterLab API documentation
 - Learn debugging strategies for common extension development issues
 :::
