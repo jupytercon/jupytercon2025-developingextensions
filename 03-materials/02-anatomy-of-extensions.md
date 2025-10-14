@@ -21,7 +21,8 @@ After completing this module, you will have created a new extension from the
 An {term}`extension` and a {term}`plugin` sound like the same thing at first.
 The important thing to understand is that plugins are functionality, and extensions are
 the package around that functionality.
-Plugins are the fundamental building block of the JupyterLab architecture, and
+
+{term}`Plugins <plugin>` are the fundamental building block of the JupyterLab architecture, and
 extensions are the delivery mechanism or "container" for those building blocks.
 Extensions are the thing you `pip install`, and they often contain more than one plugin.
 
