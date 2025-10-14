@@ -12,20 +12,21 @@ After completing this module, you will have created a new extension from the
 :::
 
 :::{tip} Terms
-{term}`extension`, {term}`plugin`, {term}`widget`
+{term}`extension <extension>`, {term}`plugin <plugin>`, {term}`widget <widget>`
 :::
 
 
-## Extensions, plugins, widgets?
+## Extensions and plugins and widgets -- oh, my!
 
-An {term}`extension` and a {term}`plugin` sound like the same thing at first.
+An {term}`extension <extension>` and a {term}`plugin <plugin>` sound like the same thing at first.
 The important thing to understand is that plugins are functionality, and extensions are
 the package around that functionality.
-Plugins are the fundamental building block of the JupyterLab architecture, and
+
+{term}`Plugins <plugin>` are the fundamental building block of the JupyterLab architecture, and
 extensions are the delivery mechanism or "container" for those building blocks.
 Extensions are the thing you `pip install`, and they often contain more than one plugin.
 
-A {term}`widget` is a user interface component provided by a plugin, either for use by
+A {term}`widget <widget>` is a user interface component provided by a plugin, either for use by
 the end user to display (e.g. an interactive visualization of data) or for JupyterLab to
 display (e.g. a document viewer that opens when you double-click a particular file
 type).
