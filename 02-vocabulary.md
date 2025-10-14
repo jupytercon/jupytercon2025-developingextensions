@@ -12,6 +12,7 @@ Core extensions are included with JupyterLab.
 Plugin
 : The atomic building blocks of JupyterLab architecture and JupyterLab {term}`extensions <extension>`.
 Every extension includes >= 1 plugin.
+In a technical sense, a plugin is a JavaScript object with certain metadata fields.
 
 Widget
 : User interface elements that can be displayed by users or by JupyterLab internals.
