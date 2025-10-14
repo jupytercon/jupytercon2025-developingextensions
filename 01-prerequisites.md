@@ -1,4 +1,4 @@
-# Prerequisites
+# 🚦 Prerequisites
 
 ## A laptop!
 
