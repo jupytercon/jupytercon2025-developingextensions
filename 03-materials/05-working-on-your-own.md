@@ -2,11 +2,11 @@
 
 :::{hint} Learning objectives
 - Apply knowledge from previous sections to build a functional extension
-- Set up a local JupyterLab extension development environment
-- Add functionality and UI elements to an extension
-- Integrate simple backend logic with REST endpoints in a Jupyter Server extension
+- Understand how to configure a local JupyterLab extension development environment
+- Learn to implement custom functionality and UI elements in extensions
+- Undestand the basics of frontend-backend architecture in Jupyter extensions
 - Practice reading JupyterLab API documentation
-- Debug and troubleshoot common extension issues
+- Learn debugging strategies for common extension development issues
 :::
 
 :::{important} Outcome
