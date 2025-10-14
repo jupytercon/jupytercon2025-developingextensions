@@ -23,6 +23,12 @@ Kernel
 It runs on the server, maintains runtime state (variables, imports, etc.), and returns
 results back to the frontend.
 
+[Token](https://jupyterlab.readthedocs.io/en/stable/extension/extension_dev.html#tokens)
+: A JavaScript singleton provided by and uniquely identifying a plugin (using the
+`provides` metadata field on the {term}`plugin <plugin>` object), and can be depended on
+by other plugins (using the `requires` or `optional` metadata fields
+on the {term}`plugin <plugin>` object).
+
 Menu bar
 : Top-level menu which exposes context-specific commands.
 
