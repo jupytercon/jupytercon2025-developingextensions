@@ -16,6 +16,11 @@ Widget
 : User interface elements that can be displayed by users or by JupyterLab internals.
 Widgets are provided by {term}`plugins <plugin>`.
 
+Kernel
+: A computational engine that executes code in a specific programming language.
+It runs on the server, maintains runtime state (variables, imports, etc.), and returns
+results back to the frontend.
+
 Menu bar
 : Top-level menu which exposes context-specific commands.
 
