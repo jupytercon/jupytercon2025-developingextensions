@@ -1,4 +1,4 @@
-# Vocabulary
+# 🔍 Vocabulary
 
 :::{glossary}
 Extension
