@@ -1,4 +1,4 @@
-# Schedule
+# ⌚ Schedule
 
 [Official JupyterCon program](https://events.linuxfoundation.org/jupytercon/program/schedule/)
 
