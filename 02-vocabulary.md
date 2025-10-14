@@ -13,6 +13,7 @@ Plugin
 : The atomic building blocks of JupyterLab architecture and JupyterLab {term}`extensions <extension>`.
 Every extension includes >= 1 plugin.
 In a technical sense, a plugin is a JavaScript object with certain metadata fields.
+[See the official docs for more!](https://jupyterlab.readthedocs.io/en/stable/extension/extension_dev.html#plugins)
 
 Widget
 : User interface elements that can be displayed by users or by JupyterLab internals.
