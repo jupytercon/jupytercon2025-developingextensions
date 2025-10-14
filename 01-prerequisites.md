@@ -4,7 +4,8 @@
 
 **If you're using Windows, we highly recommend coming prepared with Windows Subsystem for
 Linux pre-configured.**
-This workshop will use `bash` as its primary command language!
+This workshop uses `bash` for commands, but everything will also with with `zsh` (the
+new default for MacOS)!
 
 
 ## [Git](https://git-scm.com/downloads)!
