@@ -28,7 +28,7 @@ Token
 `provides` metadata field on the {term}`plugin <plugin>` object), and can be depended on
 by other plugins (using the `requires` or `optional` metadata fields
 on the {term}`plugin <plugin>` object).
-[See the official docs for more!](https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#glossary)
+[See the official docs for more!](https://jupyterlab.readthedocs.io/en/stable/extension/extension_dev.html#tokens)
 
 Menu bar
 : Top-level menu which exposes context-specific commands.
@@ -47,7 +47,7 @@ The left and right side panels are just containers; objects can be moved between
 Command
 : A behavior that can be triggered from the JupyterLab interface.
 For example, from the {term}`menu bar`.
-[See the official docs for more!](https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#glossary)
+[See the official docs for more!](https://jupyterlab.readthedocs.io/en/latest/user/commands.html)
 
 Main area widget
 : A widget which opens as a tab or panel in the {term}`main area`.
