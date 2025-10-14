@@ -16,7 +16,7 @@ After completing this module, you will have created a new extension from the
 :::
 
 
-## Extensions, plugins, widgets?
+## Extensions and plugins and widgets -- oh, my!
 
 An {term}`extension` and a {term}`plugin` sound like the same thing at first.
 The important thing to understand is that plugins are functionality, and extensions are
