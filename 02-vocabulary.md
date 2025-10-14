@@ -3,6 +3,7 @@
 :::{glossary}
 Extension
 : The end-user-installable delivery mechanism or container for {term}`plugins <plugin>`.
+An extension is a collection of 1 or more {term}`plugins <plugin>`.
 
 Core extension
 : JupyterLab is composed of modular {term}`extensions <extension>`.
