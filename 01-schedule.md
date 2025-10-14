@@ -2,8 +2,9 @@
 
 [Official JupyterCon program](https://events.linuxfoundation.org/jupytercon/program/schedule/)
 
-:::{attention}
-🏗️ This schedule is under development.
+:::{attention} 🏗️  Under development
+These materials are under development and subject to change all the way until
+JupyterCon!
 :::
 
 
