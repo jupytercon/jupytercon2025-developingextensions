@@ -63,6 +63,7 @@ Now, let's build it from scratch.
         * `pip install "copier~=9.2" jinja2-time`
         * `conda install -c  conda-forge "copier~=9.2" jinja2-time`
     * Globally:
+        * `pipx install "copier~=9.2" --preinstall jinja2-time`
         * `uv tool install --with jinja2-time copier~=9.2`
         * `pixi global install "copier~=9.2" --with jinja2-time`
 :::
