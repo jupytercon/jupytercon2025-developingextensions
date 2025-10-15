@@ -112,3 +112,27 @@ graph TB
    browser (`http://localhost:8888/myextension/get-example`).
    You should see the same message as the last step:
    `This is /myextension/get-example endpoint!`
+
+
+## What just happened?
+
+We just dove head-first in to extension development by:
+
+* Instantiating the official extension template
+* Creating a virtual environment and installing the Python package in development mode
+* Installing the extension into JupyterLab
+* Building the extension
+* Running JupyterLab
+* Testing that it's working
+* Making a trivial change
+* Testing again
+
+
+## Beyond "Hello, world"
+
+Our working extension is a basic "hello world" application.
+All it does is log a string to the console, then make a request to the back-end
+for another string, which is also logged to the console.
+This all happens once, when the extension is activated when the user opens JupyterLab.
+
+We can do something more interesting than that!
