@@ -152,3 +152,49 @@ for another string, which is also logged to the console.
 This all happens once, when the extension is activated when the user opens JupyterLab.
 
 We can do something more interesting than that!
+
+* Display some content in a {term}`main area widget`
+* Add a launcher button to open that widget
+* Add an interactive behavior to our widget
+
+
+### Widget time!
+
+Let's create our widget in `src/widget.ts`:
+
+```typescript
+import { Widget } from '@lumino/widgets';
+import { requestAPI } from './handler';
+
+export class TutorialWidget extends Widget {
+  // Initialization
+  constructor() {
+    super();
+
+	// Create and append the HTML <img> tag to our widget's node in the HTML
+	// document
+    this.img = document.createElement('img');
+    this.node.appendChild(this.img);
+
+	// Initialize the image from the server extension
+    this.load_image()
+  }
+
+  // Fetching data from the server extension
+  load_image(): void {
+    requestAPI<any>('image')
+      .then(data => {
+        console.log(data);
+        this.img.src = data.image_url;
+      })
+      .catch(reason => {
+        console.error(
+          `The tutorial_extension server extension appears to be missing.\n${reason}`
+        );
+      });
+  }
+
+  // Information for the type checker
+  img: HTMLImageElement;
+}
+```
