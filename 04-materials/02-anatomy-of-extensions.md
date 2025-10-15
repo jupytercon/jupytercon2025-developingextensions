@@ -139,6 +139,10 @@ We just dove head-first in to extension development by:
 * Making a trivial change
 * Testing again
 
+💾 **Make a Git commit and push to GitHub now!**
+
+<TODO: When should they have created a repo on GitHub?>
+
 
 ## Beyond "Hello, world"
 
