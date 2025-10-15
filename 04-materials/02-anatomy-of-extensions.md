@@ -44,7 +44,18 @@ graph TB
 ```
 
 
-## Exercise A: Create an extension from the [official template](https://github.com/jupyterlab/extension-template)
+## Now we're ready to build an extension!
+
+First, let's look at the extension we're going to build today.
+The README in this repository describes the functionality we will build out,
+and we can instantly try it out with a browser-only deployment of JupyterLite.
+
+<TODO: Link to demo extension in another repo, deployed with JupyterLite on GH Pages>
+
+Now, let's build it from scratch.
+
+
+## Exercise A (10 minutes): Create an extension from the [official template](https://github.com/jupyterlab/extension-template)
 
 :::{important} Prerequisites
 * `copier`. Install with any of the following options:
