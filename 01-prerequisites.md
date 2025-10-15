@@ -40,3 +40,13 @@ If you're using conda, please
 [configure `conda-forge` as your primary channel](https://conda-forge.org/docs/user/transitioning_from_defaults/).
 We recommend [replacing Anaconda/miniconda with Miniforge](https://conda-forge.org/docs/user/transitioning_from_defaults/#uninstalling-anaconda-and-installing-miniforge)
 to avoid complications.
+
+
+## Programming experience
+
+There is a lot of JavaScript & TypeScript involved in extension development.
+If you are comfortable with Python, you will likely be comfortable with the level of
+TypeScript we'll be using.
+
+Experience writing JavaScript, TypeScript, or programming for the browser is a bonus,
+but not required.
