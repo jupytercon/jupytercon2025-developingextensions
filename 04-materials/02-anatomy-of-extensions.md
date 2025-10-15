@@ -107,3 +107,8 @@ graph TB
 
    * `JupyterLab extension myextension is activated`
    * `This is /myextension/get-example endpoint!`
+
+6. Directly test the server portion of the extension by visiting the endpoint in your
+   browser (`http://localhost:8888/myextension/get-example`).
+   You should see the same message as the last step:
+   `This is /myextension/get-example endpoint!`
