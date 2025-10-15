@@ -17,7 +17,7 @@ Its unique strengths are:
 * It's designed from the ground up to be real-time collaborative using
   [jupyter-collaboration](https://github.com/jupyterlab/jupyter-collaboration/).
 * It supports [JupyterLite](https://jupyterlite.readthedocs.io/), so you can
-  [use it in your browser without installing it](https://jupytergis.readthedocs.io/en/latest/lite/)! 
+  [use it in your browser without installing it](https://jupytergis.readthedocs.io/en/latest/lite/)!
 
 
 ## 🔭 [ipyaladin](https://cds-astro.github.io/ipyaladin/) & [Jdaviz](https://jdaviz.readthedocs.io/en/stable/)
