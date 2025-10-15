@@ -86,12 +86,13 @@ graph TB
 
     # Install package in development mode
     uv pip install -e ".[test,dev]"
-    # Link your development version of the extension with JupyterLab
-    # TODO: This errors unless the user has a global JupyterLab install
+
+    # Install the frontend and backend components of the extension in development mode:
     jupyter labextension develop . --overwrite
-    # Server extension must be manually installed in develop mode
     jupyter server extension enable myextension
+
     # Rebuild extension Typescript source after making changes
+    # IMPORTANT: You must do this every time you make a change!
     jlpm build
     ```
 
