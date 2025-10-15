@@ -17,8 +17,12 @@ Git will enable you to version-control and share the extension you build on GitH
 
 **And know how to use it!**
 
-[VSCode](https://code.visualstudio.com/) is a safe choice, but feel free to use your
-favorite.
+Feel free to use your favorite.
+Any command-line or graphical editor is fine!
+
+[VSCode](https://code.visualstudio.com/) is a safe choice.
+For the AI-enabled development portion, [Cursor](https://cursor.com/) is another good
+choice!
 
 
 ## Something to manage Python dependencies
