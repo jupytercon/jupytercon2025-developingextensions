@@ -126,9 +126,26 @@ Now, let's build it from scratch.
    `This is /myextension/get-example endpoint!`
 
 
-## What just happened?
+💾 **Make a Git commit and push to GitHub now!**
 
-We just dove head-first in to extension development by:
+
+### Now let's do one complete development loop!
+
+0. Close the JupyterLab server with `CTRL+C`.
+
+1. Make any change to the codebase.
+   For example, alter the text in a `console.log()` message.
+   I suggest changing the server's message to `Hello world` instead of `This is ...
+   endpoint!`.
+   While you're making that change,
+
+2. Rebuild the extension with `jlpm build`.
+
+3. Start JupyterLab again with `jupyter lab`.
+
+4. Test again following steps 5 & 6 above.
+   Do you see the change in the console messages?
+   Do you see the change when directly accessing the server with the browser?
 
 * Instantiating the official extension template
 * Creating a virtual environment and installing the Python package in development mode
