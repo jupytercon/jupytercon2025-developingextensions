@@ -149,18 +149,25 @@ Now, let's build it from scratch.
    Do you see the change in the console messages?
    Do you see the change when directly accessing the server with the browser?
 
-* Instantiating the official extension template
-* Creating a virtual environment and installing the Python package in development mode
-* Installing the extension into JupyterLab
-* Building the extension
-* Running JupyterLab
-* Testing that it's working
-* Making a trivial change
-* Testing again
 
 💾 **Make a Git commit and push to GitHub now!**
 
 <TODO: When should they have created a repo on GitHub?>
+
+
+## What just happened?
+
+We know how to get started: we learned how to instantiate a new extension from the
+official template and set it up for development.
+
+We know how to iterate: we learned that the JupyterLab extension development loop is...
+
+* Make a change to the code.
+* Shut down JupyterLab (`CTRL+C`) and rebuild the extension with `jlpm build`.
+* Start JupyterLab with `jupyter lab`.
+
+Now we have all the knowledge we need to keep iterating on our extension!
+🎓 Well done!
 
 
 ## Beyond "Hello, world"
