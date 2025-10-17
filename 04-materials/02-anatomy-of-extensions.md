@@ -155,7 +155,7 @@ Now, let's build it from scratch.
 <TODO: When should they have created a repo on GitHub?>
 
 
-## What just happened?
+### What just happened?
 
 We know how to get started: we learned how to instantiate a new extension from the
 official template and set it up for development.
