@@ -163,7 +163,8 @@ official template and set it up for development.
 We know how to iterate: we learned that the JupyterLab extension development loop is...
 
 * Make a change to the code.
-* Shut down JupyterLab (`CTRL+C`) and rebuild the extension with `jlpm build`.
+* Shut down JupyterLab (`CTRL+C`).
+* Rebuild the extension with `jlpm build` [^rebuild-not-always-required].
 * Start JupyterLab with `jupyter lab`.
 
 Now we have all the knowledge we need to keep iterating on our extension!
@@ -224,3 +225,7 @@ export class TutorialWidget extends Widget {
   img: HTMLImageElement;
 }
 ```
+
+[^rebuild-not-always-required]: You don't actually _always_ need to rebuild -- only when
+you change the JavaScript. If you only changed Python, you just need to restart
+JupyterLab.
