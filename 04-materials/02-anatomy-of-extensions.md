@@ -55,7 +55,9 @@ and we can instantly try it out with a browser-only deployment of JupyterLite.
 Now, let's build it from scratch.
 
 
-## Exercise A (10 minutes): Create an extension from the [official template](https://github.com/jupyterlab/extension-template)
+## Exercise A (10 minutes): Extension creation and development loop
+
+### First, create a new extension from the [official template](https://github.com/jupyterlab/extension-template)
 
 :::{important} Prerequisites
 * `copier`. Install with any of the following options:
