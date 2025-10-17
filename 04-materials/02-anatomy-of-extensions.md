@@ -177,7 +177,7 @@ All it does is log a string to the console, then make a request to the back-end
 for another string, which is also logged to the console.
 This all happens once, when the extension is activated when the user opens JupyterLab.
 
-We can do something more interesting than that!
+We can do something more interesting than that! Let's:
 
 * Display some content in a {term}`main area widget`
 * Add a launcher button to open that widget
@@ -197,12 +197,12 @@ export class TutorialWidget extends Widget {
   constructor() {
     super();
 
-	// Create and append the HTML <img> tag to our widget's node in the HTML
-	// document
+    // Create and append the HTML <img> tag to our widget's node in the HTML
+    // document
     this.img = document.createElement('img');
     this.node.appendChild(this.img);
 
-	// Initialize the image from the server extension
+    // Initialize the image from the server extension
     this.load_image()
   }
 
