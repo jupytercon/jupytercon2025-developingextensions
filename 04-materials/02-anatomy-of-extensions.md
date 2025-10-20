@@ -121,7 +121,7 @@ Now, let's build it from scratch.
     source .venv/bin/activate
 
     # Install package in development mode
-    uv pip install -e ".[test,dev]"
+    uv pip install --editable ".[dev,test]"
 
     # Install the frontend and backend components of the extension in development mode:
     jupyter labextension develop . --overwrite
