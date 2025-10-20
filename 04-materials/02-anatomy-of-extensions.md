@@ -159,6 +159,8 @@ git commit -m "Initialize from extension template"
 ```
 :::
 
+<TODO: When should they have created a repo on GitHub?>
+
 
 ### Now let's do one complete development loop!
 
@@ -183,9 +185,14 @@ git commit -m "Initialize from extension template"
    Do you see the change when directly accessing the server with the browser?
 
 
-💾 **Make a Git commit and push to GitHub now!**
+:::{important} 💾 **Make a Git commit and push to GitHub now!**
+:icon: false
 
-<TODO: When should they have created a repo on GitHub?>
+```bash
+git add .
+git commit -m "Test development loop with a simple change"
+```
+:::
 
 
 ### What just happened?
