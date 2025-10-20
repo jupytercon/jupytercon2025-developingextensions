@@ -22,6 +22,7 @@ This tutorial is inspired by the official
 [Astronomy picture of the day](https://jupyterlab.readthedocs.io/en/1.2.x/developer/extension_tutorial.html#publish-your-extension-to-npmjs-org)
 tutorial with a few changes (some of which we plan to merge back):
 
+* Include a server extension
 * Add an interactive element (toolbar button) to refresh the image
 * Use a set of public domain images from the Library of Congress (the NASA astronomy
   photo API is not reliable during the current government shutdown 😭)
