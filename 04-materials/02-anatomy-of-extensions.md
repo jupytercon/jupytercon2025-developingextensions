@@ -15,6 +15,19 @@ After completing this module, you will have created a new extension from the
 {term}`extension <extension>`, {term}`plugin <plugin>`, {term}`widget <widget>`
 :::
 
+:::{note} Inspired by...
+:class: dropdown
+
+This tutorial is inspired by the official
+[Astronomy picture of the day](https://jupyterlab.readthedocs.io/en/1.2.x/developer/extension_tutorial.html#publish-your-extension-to-npmjs-org)
+tutorial with a few changes (some of which we plan to merge back):
+
+* Add an interactive element (toolbar button) to refresh the image
+* Use a set of public domain images from the Library of Congress (the NASA astronomy
+  photo API is not reliable during the current government shutdown 😭)
+* Structure the activities around in person teaching and exercises
+:::
+
 
 ## Extensions and plugins and widgets -- oh, my!
 
