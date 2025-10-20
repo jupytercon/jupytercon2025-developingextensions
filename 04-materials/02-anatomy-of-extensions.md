@@ -25,6 +25,7 @@ tutorial with a few changes (some of which we plan to merge back):
 * Add an interactive element (toolbar button) to refresh the image
 * Use a set of public domain images from the Library of Congress (the NASA astronomy
   photo API is not reliable during the current government shutdown 😭)
+* Remove unnecessary use of `conda` in favor of more standard tooling
 * Structure the activities around in person teaching and exercises
 :::
 
