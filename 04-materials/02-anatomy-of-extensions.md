@@ -69,8 +69,9 @@ First we'll look at the final extension together. It:
 
 * Adds a new button to the launcher
 * Adds a new command to the command palette
-* When either of those is triggered, it opens a new tab/window which displays a random
-  image and caption from a small curated collection of public domain images.
+* When either of those is triggered, it opens a new tab/window with a viewer showing a
+  random image and caption from a small curated collection of public domain images.
+* The viewer also has a "refresh" button to trigger fetching a new image and caption.
 
 Now, let's build it together from scratch.
 
