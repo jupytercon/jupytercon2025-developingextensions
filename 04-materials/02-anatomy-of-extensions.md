@@ -150,7 +150,14 @@ Now, let's build it from scratch.
    `This is /myextension/get-example endpoint!`
 
 
-💾 **Make a Git commit and push to GitHub now!**
+:::{important} 💾 **Make a Git commit and push to GitHub now!**
+:icon: false
+
+```bash
+git add .
+git commit -m "Initialize from extension template"
+```
+:::
 
 
 ### Now let's do one complete development loop!
