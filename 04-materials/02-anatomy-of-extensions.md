@@ -153,7 +153,11 @@ Now, let's build it from scratch.
    For example, alter the text in a `console.log()` message.
    I suggest changing the server's message to `Hello world` instead of `This is ...
    endpoint!`.
-   While you're making that change,
+   While you're making that change, consider renaming some objects and see what code
+   needs to be updated.
+   Perhaps `RouteHandler` could be renamed to `HelloRouteHandler`?
+   Perhaps `route_pattern` could be renamed to `hello_route_pattern` (Spoiler! We may
+   have more routes later).
 
 2. Rebuild the extension with `jlpm build`.
 
