@@ -19,7 +19,7 @@ After completing this module, you will have created a new extension from the
 :class: dropdown
 
 This tutorial is inspired by the official
-[Astronomy picture of the day](https://jupyterlab.readthedocs.io/en/1.2.x/developer/extension_tutorial.html#publish-your-extension-to-npmjs-org)
+[Astronomy picture of the day](https://jupyterlab.readthedocs.io/en/latest/extension/extension_tutorial.html)
 tutorial with a few changes (some of which we plan to merge back):
 
 * Include a server extension
