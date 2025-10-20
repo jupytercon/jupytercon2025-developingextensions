@@ -132,7 +132,10 @@ Now, let's build it from scratch.
     jlpm build
     ```
 
-5. 🧪 Test it out!
+5. 🧪 Test it out! Run this command in a **separate terminal**.
+   Remember to activate the virtual environment again with `source .venv/bin/activate`
+   any time you create a new terminal.
+   You can keep this terminal open and running JupyterLab in the background!
 
     ```bash
     jupyter lab
@@ -143,6 +146,8 @@ Now, let's build it from scratch.
 
    * `JupyterLab extension myextension is activated`
    * `This is /myextension/get-example endpoint!`
+
+   **If you do not see these messages, let us know you need help!**
 
 7. Directly test the server portion of the extension by visiting the endpoint in your
    browser (`http://localhost:8888/myextension/get-example`).
