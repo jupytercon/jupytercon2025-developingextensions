@@ -8,9 +8,20 @@ This workshop uses `bash` for commands, but everything will also work with `zsh`
 new default for MacOS)!
 
 
-## [Git](https://git-scm.com/downloads)!
+## [Git](https://git-scm.com/downloads) & a GitHub account!
 
-Git will enable you to version-control and share the extension you build on GitHub.
+Git will enable you to version-control your extension.
+
+A GitHub account will enable you to share the extension you build.
+
+
+### Authentication with GitHub
+
+You'll need to be able to login to GitHub from your working environment to push your
+changes.
+
+An easy way to get started is the [gh CLI](https://github.com/cli/cli#installation) and
+the `gh auth login` command.
 
 
 ## A code editor / IDE
