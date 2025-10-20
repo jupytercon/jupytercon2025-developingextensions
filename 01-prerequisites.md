@@ -15,6 +15,15 @@ Git will enable you to version-control your extension.
 A GitHub account will enable you to share the extension you build.
 
 
+### Authentication with GitHub
+
+You'll need to be able to login to GitHub from your working environment to push your
+changes.
+
+An easy way to get started is the [gh CLI](https://github.com/cli/cli#installation) and
+the `gh auth login` command.
+
+
 ## A code editor / IDE
 
 **And know how to use it!**
