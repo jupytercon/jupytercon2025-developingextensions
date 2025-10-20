@@ -111,7 +111,9 @@ Now, let's build it from scratch.
 
     ![A demo of instantiating an extension project from the official template](../assets/images/init-from-template.gif)
 
-3. Install it in development mode
+3. List out the files that were created (`ls -la` or `tree -a` are good options)
+
+4. Install the extension in development mode
 
     ```bash
     # Create and activate a virtualenv
@@ -130,19 +132,19 @@ Now, let's build it from scratch.
     jlpm build
     ```
 
-4. 🧪 Test it out!
+5. 🧪 Test it out!
 
     ```bash
     jupyter lab
     ```
 
-5. Confirm the extension was loaded. Open your browser's dev console (F12 or
+6. Confirm the extension was loaded. Open your browser's dev console (F12 or
    `CTRL+SHIFT+I`) and look for log messages reading:
 
    * `JupyterLab extension myextension is activated`
    * `This is /myextension/get-example endpoint!`
 
-6. Directly test the server portion of the extension by visiting the endpoint in your
+7. Directly test the server portion of the extension by visiting the endpoint in your
    browser (`http://localhost:8888/myextension/get-example`).
    You should see the same message as the last step:
    `This is /myextension/get-example endpoint!`
