@@ -61,13 +61,18 @@ graph TB
 
 ## Now we're ready to build an extension!
 
-First, let's look at the extension we're going to build today.
-The README in this repository describes the functionality we will build out,
-and we can instantly try it out with a browser-only deployment of JupyterLite.
+First, let's look at
+[the extension we're going to build today](https://github.com/jupytercon/jupytercon2025-developingextensions-demo).
+The README in this repository describes the functionality we will build out.
 
-<TODO: Link to demo extension in another repo, deployed with JupyterLite on GH Pages>
+First we'll look at the final extension together. It:
 
-Now, let's build it from scratch.
+* Adds a new button to the launcher
+* Adds a new command to the command palette
+* When either of those is triggered, it opens a new tab/window which displays a random
+  image and caption from a small curated collection of public domain images.
+
+Now, let's build it together from scratch.
 
 
 ## Exercise A (10 minutes): Extension creation and development loop
