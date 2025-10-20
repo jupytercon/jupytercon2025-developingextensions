@@ -1,4 +1,4 @@
-# 🧩 Working on your own extension (semi-guided)
+# 🧩 5 - Working on your own extension (semi-guided)
 
 :::{hint} Learning objectives
 - Apply knowledge from previous sections to build a functional extension

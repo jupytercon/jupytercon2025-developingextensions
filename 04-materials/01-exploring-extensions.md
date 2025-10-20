@@ -1,4 +1,4 @@
-# 🔭 Exploring extensions
+# 🔭 1 - Exploring extensions
 
 :::{hint} Learning objectives
 * Understand the canonical names for components of the JupyterLab interface

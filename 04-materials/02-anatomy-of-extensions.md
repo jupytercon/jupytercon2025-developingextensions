@@ -1,4 +1,4 @@
-# 🧬 Anatomy of an extension
+# 🧬 2 - Anatomy of an extension
 
 :::{hint} Learning objectives
 * Understand the difference between extensions, plugins, and widgets
