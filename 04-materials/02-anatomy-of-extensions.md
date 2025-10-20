@@ -168,7 +168,7 @@ git commit -m "Initialize from extension template"
 
 1. Make any change to the codebase.
    For example, alter the text in a `console.log()` message.
-   I suggest changing the server's message to `Hello world` instead of `This is ...
+   We suggest changing the server's message to `Hello world` instead of `This is ...
    endpoint!`.
    While you're making that change, consider renaming some objects and see what code
    needs to be updated.
