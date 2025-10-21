@@ -256,6 +256,9 @@ Create a new file `src/widget.ts` and add the widget code:
 ```{code} typescript
 :linenos:
 
+import { Widget } from '@lumino/widgets';
+import { MainAreaWidget } from '@jupyterlab/apputils';
+
 class ImageCaptionWidget extends Widget {
   // Initialization
   constructor() {
