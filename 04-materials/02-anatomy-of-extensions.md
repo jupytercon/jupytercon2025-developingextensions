@@ -448,7 +448,7 @@ We've graduated from "Hello, world" in the console to "Hello, world" in a
 That's a big step, but remember our end goal: A viewer for random images and
 captions.
 
-We have all the building blocks now, a server to serve the image data from disk
+We have all the building blocks now: a server to serve the image data from disk
 with a caption, and a widget to display them.
 Now we need to implement the logic and glue the pieces together.
 
