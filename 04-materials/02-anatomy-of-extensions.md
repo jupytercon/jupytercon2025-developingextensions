@@ -402,7 +402,7 @@ the {term}`command palette <command palette>`.
       label: 'View a random image & caption'
     });
 
-    palette.addItem({ command, category: 'Tutorial' });
+    palette.addItem({ command: command_id, category: 'Tutorial' });
 ```
 
 
@@ -421,7 +421,7 @@ import { ILauncher } from '@jupyterlab/launcher'
 ...and register your {term}`command` with the {term}`launcher`:
 
 ```typescript
-launcher.add({ command });
+launcher.add({ command: command_id });
 ```
 
 We will leave the rest of the implementation up to you!
