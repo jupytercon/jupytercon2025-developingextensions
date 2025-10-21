@@ -290,6 +290,7 @@ In `src/index.ts`, we need to update our plugin to define a command in our
 {term}`plugin's <plugin` `activate` method:
 
 ```{code} typescript
+:linenos:
 :emphasize-lines: 2,24-33
 
 import { requestAPI } from './handler';
@@ -344,6 +345,7 @@ Next, we'll add it to the {term}`command palette <command palette>`.
 First, import the command palette interface at the top of `src/index.ts`:
 
 ```{code} typescript
+:linenos:
 :emphasize-lines: 5
 
 import {
@@ -356,6 +358,7 @@ import { ICommandPalette } from '@jupyterlab/apputils';
 Then, add the command palette as a dependency of our plugin:
 
 ```{code} typescript
+:linenos:
 :emphasize-lines: 5,8-9
 
 const plugin: JupyterFrontEndPlugin<void> = {
@@ -375,6 +378,7 @@ Finally, we can use our `palette` object to register our {term}`command <command
 the {term}`command palette <command palette>`.
 
 ```{code} typescript
+:linenos:
 :emphasize-lines: 14
 
     //Register a new command:
