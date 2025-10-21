@@ -246,8 +246,8 @@ will eventually house that content.
 
 To display this widget in the {term}`main area <main area>`, we need to
 implement a {term}`widget <widget>` which displays our content (for now, just
-"Hello, world!"), and then include that content in a {term}`main area widget
-<main area widget>`.
+"Hello, world!"), and then include that content in a
+{term}`main area widget <main area widget>`.
 
 Create a new file `src/widget.ts` and add the widget code:
 
