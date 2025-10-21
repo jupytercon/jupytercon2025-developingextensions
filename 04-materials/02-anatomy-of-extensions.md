@@ -311,7 +311,7 @@ You can import `ILauncher` with:
 import { ILauncher } from '@jupyterlab/launcher'
 ```
 
-...and register your command with the launcher with:
+...and register your {term}`command` with the {term}`launcher`:
 
 ```typescript
 launcher.add({ command });
