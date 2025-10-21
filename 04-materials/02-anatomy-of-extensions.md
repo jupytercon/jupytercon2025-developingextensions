@@ -281,10 +281,67 @@ We can't test this yet because we don't have a convenient way to display the
 widget in JupyterLab yet.
 Let's fix that now.
 
+We'll start by creating our command to display the widget:
 
-### Register with the {term}`command palette <command palette>`
 
-We'll start by creating our command and adding it to the {term}`command palette <command palette>`.
+### Create a {term}`command <command>` to display the {term}`widget <widget>`
+
+In `src/index.ts`, we need to update our plugin to define a command in our
+{term}`plugin's <plugin` `activate` method:
+
+```{code} typescript
+:emphasize-lines: 2,24-33
+
+import { requestAPI } from './handler';
+import { ImageCaptionMainAreaWidget } from './widget';
+
+/**
+ * Initialization data for the myextension extension.
+ */
+const plugin: JupyterFrontEndPlugin<void> = {
+  id: 'myextension:plugin',
+  description: 'A JupyterLab extension.',
+  autoStart: true,
+  activate: (
+      app: JupyterFrontEnd,
+  ) => {
+    console.log('JupyterLab extension myextension is activated!');
+
+    requestAPI<any>('hello')
+      .then(data => {
+        console.log(data);
+      })
+      .catch(reason => {
+        console.error(
+          `The myextension server extension appears to be missing.\n${reason}`
+        );
+      });
+
+    //Register a new command:
+    const command_id = 'image-caption:open';
+    app.commands.addCommand(command_id, {
+      execute: () => {
+        // When the command is executed, create a new instance of our widget
+        const widget = new ImageCaptionMainAreaWidget();
+
+        // Then add it to the main area:
+        app.shell.add(widget, 'main');
+      },
+      icon: imageIcon,
+      label: 'View a random image & caption'
+    });
+  }
+};
+
+```
+
+But right now, this command is not being used by anything!
+Next, we'll add it to the {term}`command palette <command palette>`.
+
+
+### Register our {term}`command <command>` with the {term}`command palette <command palette>`
+
+First, import the command palette interface at the top of `src/index.ts`:
 
 ```{code} typescript
 :emphasize-lines: 5
@@ -296,7 +353,46 @@ import {
 import { ICommandPalette } from '@jupyterlab/apputils';
 ```
 
-<TODO: The rest...>
+Then, add the command palette as a dependency of our plugin:
+
+```{code} typescript
+:emphasize-lines: 5,8-9
+
+const plugin: JupyterFrontEndPlugin<void> = {
+  id: 'myextension:plugin',
+  description: 'A JupyterLab extension.',
+  autoStart: true,
+  requires: [ICommandPalette],  // dependencies of our extension
+  activate: (
+      app: JupyterFrontEnd,
+      // The activation method receives dependencies in the order they are specified in
+      // the "requires" parameter above:
+      palette: ICommandPalette
+  ) => {
+```
+
+Finally, we can use our `palette` object to register our {term}`command <command>` with
+the {term}`command palette <command palette>`.
+
+```{code} typescript
+:emphasize-lines: 14
+
+    //Register a new command:
+    const command_id = 'image-caption:open';
+    app.commands.addCommand(command_id, {
+      execute: () => {
+        // When the command is executed, create a new instance of our widget
+        const widget = new ImageCaptionMainAreaWidget();
+
+        // Then add it to the main area:
+        app.shell.add(widget, 'main');
+      },
+      icon: imageIcon,
+      label: 'View a random image & caption'
+    });
+
+    palette.addItem({ command, category: 'Tutorial' });
+```
 
 
 ### Optional: Register with the {term}`launcher <launcher>`
@@ -321,6 +417,7 @@ We will leave the rest of the implementation up to you!
 
 :::{hint}
 Follow the same steps you followed to register your command with the {term}`command palette <command palette>`.
+Reuse the same command!
 :::
 
 
