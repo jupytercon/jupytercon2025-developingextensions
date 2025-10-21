@@ -253,7 +253,9 @@ implement a {term}`widget <widget>` which displays our content (for now, just
 
 Create a new file `src/widget.ts` and add the widget code:
 
-```typescript
+```{code} typescript
+:linenos:
+
 class ImageCaptionWidget extends Widget {
   // Initialization
   constructor() {
