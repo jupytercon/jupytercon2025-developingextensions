@@ -17,7 +17,7 @@ The widget will be launchable from the {term}`command palette <command palette>`
 :::{tip} Terms
 {term}`extension <extension>`, {term}`plugin <plugin>`, {term}`widget <widget>`,
 {term}`main area widget <main area widget>`, {term}`command <command>`,
-{term}`command palette <command palette>`, {term}`launcher`
+{term}`command palette <command palette>`, {term}`launcher <launcher>`
 :::
 
 :::{note} Inspired by...
