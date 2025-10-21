@@ -287,7 +287,6 @@ Let's fix that now.
 We'll start by creating our command and adding it to the {term}`command palette <command palette>`.
 
 ```{code} typescript
-:linenos:
 :emphasize-lines: 5
 
 import {
