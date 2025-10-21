@@ -240,7 +240,7 @@ That viewer will be a {term}`widget`, so let's start by creating a widget that
 will eventually house that content.
 
 
-## Exercise B (20 minutes): Blank widget
+## Exercise B (20 minutes): Launching a "hello, world" {term}`widget <widget>`
 
 ### Create a "hello, world" widget
 
