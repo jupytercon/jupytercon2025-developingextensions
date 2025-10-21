@@ -298,7 +298,7 @@ In `src/index.ts`, we need to update our plugin to define a command in our
 
 ```{code} typescript
 :linenos:
-:emphasize-lines: 2,24-33
+:emphasize-lines: 2,26-38
 
 import { requestAPI } from './handler';
 import { ImageCaptionMainAreaWidget } from './widget';
