@@ -300,7 +300,7 @@ In `src/index.ts`, we need to update our plugin to define a command in our
 :linenos:
 :emphasize-lines: 2,26-38
 
-import { requestAPI } from './handler';
+import { requestAPI } from './request';
 import { ImageCaptionMainAreaWidget } from './widget';
 
 /**
