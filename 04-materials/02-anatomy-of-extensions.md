@@ -172,6 +172,7 @@ Now, let's build it together from scratch.
 ```bash
 git add .
 git commit -m "Initialize from extension template"
+git push -u origin main
 ```
 :::
 
@@ -207,6 +208,7 @@ git commit -m "Initialize from extension template"
 ```bash
 git add .
 git commit -m "Test development loop with a simple change"
+git push -u origin main
 ```
 :::
 
@@ -450,6 +452,7 @@ the new button in the launcher.
 ```bash
 git add .
 git commit -m "Add 'hello, world' widget and register with command palette"
+git push -u origin main
 ```
 :::
 
