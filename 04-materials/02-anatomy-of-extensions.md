@@ -179,7 +179,7 @@ git commit -m "Initialize from extension template"
 
 1. Make any change to the codebase.
    For example, alter the text in a `console.log()` message.
-   We suggest changing the server's message to `Hello world` instead of `This is ...
+   We suggest changing the server's message to `Hello, world` instead of `This is ...
    endpoint!`.
    While you're making that change, consider renaming some objects and see what code
    needs to be updated.
@@ -222,61 +222,136 @@ Now we have all the knowledge we need to keep iterating on our extension!
 🎓 Well done!
 
 
-## Beyond "Hello, world"
+## Creating a widget
 
-Our working extension is a basic "hello world" application.
+Our working extension is a basic "hello, world" application.
 All it does is log a string to the console, then make a request to the back-end
 for another string, which is also logged to the console.
 This all happens once, when the extension is activated when the user opens JupyterLab.
 
-We can do something more interesting than that! Let's:
+Our goal is to display a viewer for a random photo and caption, with a refresh button to
+instantly display a new image.
+That viewer will be a {term}`widget`, so let's start by creating a widget that
+will eventually house that content.
 
-* Display some content in a {term}`main area widget`
-* Add a launcher button to open that widget
-* Add an interactive behavior to our widget
 
+## Exercise B: Blank widget
 
-### Widget time!
+### Create a temporarily-empty widget
 
-Let's create our widget in `src/widget.ts`:
+To display this widget in the {term}`main area <main area>`, we need to
+implement a {term}`widget <widget>` which displays our content (for now, just
+"Hello, world!"), and then include that content in a {term}`main area widget
+<main area widget>`.
+
+Create a new file `src/widget.ts` and add the widget code:
 
 ```typescript
-import { Widget } from '@lumino/widgets';
-import { requestAPI } from './handler';
-
-export class TutorialWidget extends Widget {
+class ImageCaptionWidget extends Widget {
   // Initialization
   constructor() {
     super();
 
-    // Create and append the HTML <img> tag to our widget's node in the HTML
-    // document
-    this.img = document.createElement('img');
-    this.node.appendChild(this.img);
-
-    // Initialize the image from the server extension
-    this.load_image()
+	// Create and append an HTML <p> (paragraph) tag to our widget's node in
+	// the HTML document
+    const hello = document.createElement('p');
+	hello.innerHTML = "Hello, world!";
+    this.node.appendChild(hello);
   }
+}
 
-  // Fetching data from the server extension
-  load_image(): void {
-    requestAPI<any>('image')
-      .then(data => {
-        console.log(data);
-        this.img.src = data.image_url;
-      })
-      .catch(reason => {
-        console.error(
-          `The tutorial_extension server extension appears to be missing.\n${reason}`
-        );
-      });
+export class ImageCaptionMainAreaWidget extends MainAreaWidget<ImageCaptionWidget> {
+  constructor() {
+    const content = new ImageCaptionWidget();
+    super({ content });
+
+    this.title.label = 'Random image with caption';
+    this.title.caption = this.title.label;
+    this.title.icon = imageIcon;
   }
-
-  // Information for the type checker
-  img: HTMLImageElement;
 }
 ```
 
+We can't test this yet because we don't have a convenient way to display the
+widget in JupyterLab yet.
+Let's fix that now.
+
+
+### Register with the {term}`command palette <command palette>`
+
+We'll start by creating our command and adding it to the {term}`command palette <command palette>`.
+
+```{code} typescript
+:linenos:
+:emphasize-lines: 5
+
+import {
+  JupyterFrontEnd,
+  JupyterFrontEndPlugin
+} from '@jupyterlab/application';
+import { ICommandPalette } from '@jupyterlab/apputils';
+```
+
+<TODO: The rest...>
+
+
+### Optional: Register with the {term}`launcher <launcher>`
+
+Unlike the command palette, this functionality needs to be installed.
+First, install `@jupylab/launcher` with `jlpm add @jupyterlab/launcher` to make
+this dependency available for import.
+
+You can import `ILauncher` with:
+
+```typescript
+import { ILauncher } from '@jupyterlab/launcher'
+```
+
+...and register your command with the launcher with:
+
+```typescript
+launcher.add({ command });
+```
+
+We will leave the rest of the implementation up to you!
+
+:::{hint}
+Follow the same steps you followed to register your command with the {term}`command palette <command palette>`.
+:::
+
+
+### Finally, we can test!
+
+Stop your JupyterLab server (`CTRL+C`), then rebuild your extension (`jlpm
+build`), then restart JupyterLab (`jupyter lab`).
+
+If everything went well, now you can test the extension in your browser.
+
+To test from the {term}`command palette <command palette>`, click
+"View">"Commands" from the {term}`menu bar <menu bar>`, or use the shortcut
+`CTRL+SHIFT+C`.
+Begin typing "Random image" and the command palette interface
+should autocomplete.
+Select "Random image with caption" and press `ENTER`.
+You should see a new tab open containing the text "Hello, world"!
+
+If you registered your extension with the {term}`launcher <launcher>`, you can open a
+new tab with the `+` button at the top of the {term}`main area <main area>` and click
+the new button in the launcher.
+
+
+## What's next?
+
+We've graduated from "Hello, world" in the console to "Hello, world" in a
+{term}`main area widget <main area widget>`.
+That's a big step, but remember our end goal: A viewer for random images and
+captions.
+
+We have all the building blocks now, a server to serve the image data from disk
+with a caption, and a widget to display them.
+Now we need to implement the logic and glue the pieces together.
+
+
 [^rebuild-not-always-required]: You don't actually _always_ need to rebuild -- only when
-you change the JavaScript. If you only changed Python, you just need to restart
+you change the JavaScript. If you only changed Python, you only need to restart
 JupyterLab.
