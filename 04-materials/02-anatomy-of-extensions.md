@@ -242,7 +242,7 @@ will eventually house that content.
 
 ## Exercise B: Blank widget
 
-### Create a temporarily-empty widget
+### Create a "hello, world" widget
 
 To display this widget in the {term}`main area <main area>`, we need to
 implement a {term}`widget <widget>` which displays our content (for now, just
