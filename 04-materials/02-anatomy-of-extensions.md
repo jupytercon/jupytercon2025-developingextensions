@@ -23,16 +23,30 @@ The widget will be launchable from the {term}`command palette <command palette>`
 :::{note} Inspired by...
 :class: dropdown
 
-This tutorial is inspired by the official
-[Astronomy picture of the day](https://jupyterlab.readthedocs.io/en/latest/extension/extension_tutorial.html)
-tutorial with a few changes (some of which we plan to merge back):
+This tutorial is inspired by many prior works.
 
-* Include a server extension
-* Add an interactive element (toolbar button) to refresh the image
-* Use a set of public domain images from the Library of Congress (the NASA astronomy
-  photo API is not reliable during the current government shutdown 😭)
-* Remove unnecessary use of `conda` in favor of more standard tooling
-* Structure the activities around in person teaching and exercises
+* SciPy 2018 tutorial:
+  [repo](https://github.com/jupyterlab/scipy2018-jupyterLab-tutorial)
+  | [video](https://youtu.be/Gzun8PpyBCo?si=M6NWrbQvMpJX1Yjg&t=5390)
+* JupyterCon 2018 tutorial:
+  [repo](https://github.com/jupyterlab/jupytercon-jupyterlab-tutorial)
+* SciPy 2019 tutorial:
+  [repo](https://github.com/jupyterlab/scipy2019-jupyterlab-tutorial)
+  | [video](https://www.youtube.com/watch?v=RFabWieskak)
+* JupyterCon 2020 tutorial:
+  [repo](https://github.com/jupytercon/jupytercon2020-developingextensions)
+* SciPy 2022 tutorial:
+  [repo](https://github.com/marthacryan/developing-extensions-tutorial)
+  | [video](https://www.youtube.com/watch?v=9_-siU-_XoI)
+* The official
+  [Astronomy picture of the day](https://jupyterlab.readthedocs.io/en/latest/extension/extension_tutorial.html)
+  tutorial with a few changes (some of which we plan to merge back):
+    * Include a server extension
+    * Add an interactive element (toolbar button) to refresh the image
+    * Use a set of public domain images from the Library of Congress (the NASA astronomy
+      photo API is not reliable during the current government shutdown 😭)
+    * Remove unnecessary use of `conda` in favor of more standard tooling
+    * Structure the activities around in person teaching and exercises
 :::
 
 
