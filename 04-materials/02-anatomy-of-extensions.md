@@ -366,7 +366,7 @@ Then, add the command palette as a dependency of our plugin:
 
 ```{code} typescript
 :linenos:
-:emphasize-lines: 5,8-9
+:emphasize-lines: 5,8-10
 
 const plugin: JupyterFrontEndPlugin<void> = {
   id: 'myextension:plugin',
