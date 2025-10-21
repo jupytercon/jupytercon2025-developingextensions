@@ -257,10 +257,10 @@ class ImageCaptionWidget extends Widget {
   constructor() {
     super();
 
-	// Create and append an HTML <p> (paragraph) tag to our widget's node in
-	// the HTML document
+    // Create and append an HTML <p> (paragraph) tag to our widget's node in
+    // the HTML document
     const hello = document.createElement('p');
-	hello.innerHTML = "Hello, world!";
+    hello.innerHTML = "Hello, world!";
     this.node.appendChild(hello);
   }
 }
