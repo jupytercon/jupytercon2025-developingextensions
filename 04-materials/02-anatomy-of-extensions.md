@@ -444,6 +444,15 @@ If you registered your extension with the {term}`launcher <launcher>`, you can o
 new tab with the `+` button at the top of the {term}`main area <main area>` and click
 the new button in the launcher.
 
+:::{important} 💾 **Make a Git commit and push to GitHub now!**
+:icon: false
+
+```bash
+git add .
+git commit -m "Add 'hello, world' widget and register with command palette"
+```
+:::
+
 
 ## What's next?
 
