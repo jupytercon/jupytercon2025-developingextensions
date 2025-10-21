@@ -1,4 +1,4 @@
-# 🧩 Working on your own extension
+# 🧩 5 - Working on your own extension
 
 :::{important} Outcome
 After completing this module, you will have:
@@ -25,6 +25,7 @@ This is an **open exploration session**. You'll choose a project that interests 
 
 ## Community Extensions
 [Jupyterlab-contrib](https://jupyterlab-contrib.github.io/extensions.html)
+[Jupyter Marketplase](https://labextensions.dev/)
 
 ### Frontend Extensions
 **Beginner-Friendly:**
@@ -104,5 +105,5 @@ Want to contribute to JupyterLab itself? Here are good first issues:
 
 **After the tutorial:**
 - [JupyterLab Discourse](https://discourse.jupyter.org/c/jupyterlab/17) - Community forum
-- [Zulip Chat](https://gitter.im/jupyterlab/jupyterlab) - Continue conversing with the Jupyter Community!
+- [Zulip Chat](https://jupyter.zulipchat.com/) - Continue conversing with the Jupyter Community!
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/jupyter)
