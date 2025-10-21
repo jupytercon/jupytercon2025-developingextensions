@@ -274,8 +274,8 @@ class ImageCaptionWidget extends Widget {
 
 export class ImageCaptionMainAreaWidget extends MainAreaWidget<ImageCaptionWidget> {
   constructor() {
-    const content = new ImageCaptionWidget();
-    super({ content });
+    const widget = new ImageCaptionWidget();
+    super({ content: widget });
 
     this.title.label = 'Random image with caption';
     this.title.caption = this.title.label;
