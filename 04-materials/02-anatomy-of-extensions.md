@@ -8,7 +8,10 @@
 
 :::{important} Outcomes
 After completing this module, you will have created a new extension from the
-[official template](https://github.com/jupyterlab/extension-template) and ... 🏗️ TODO ...
+[official template](https://github.com/jupyterlab/extension-template) and implemented a
+new widget for displaying a random image and caption from a curated set.
+The widget will be launchable from the {term}`command palette <command palette>` and the
+{term}`launcher <launcher>`.
 :::
 
 :::{tip} Terms
