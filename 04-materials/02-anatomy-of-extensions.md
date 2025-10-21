@@ -356,6 +356,16 @@ with a caption, and a widget to display them.
 Now we need to implement the logic and glue the pieces together.
 
 
+## Exercise C: Serve images and captions from the server extension
+
+<TODO>
+
+
+## Exercise D: Add user interactivity to the widget
+
+<TODO>
+
+
 [^rebuild-not-always-required]: You don't actually _always_ need to rebuild -- only when
 you change the JavaScript. If you only changed Python, you only need to restart
 JupyterLab.
