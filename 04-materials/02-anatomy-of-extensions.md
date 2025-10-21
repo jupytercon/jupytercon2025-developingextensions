@@ -117,7 +117,7 @@ Now, let's build it together from scratch.
     copier copy --trust https://github.com/jupyterlab/extension-template .
     ```
 
-    Be sure to select `frontend-and-server` as the "kind"!
+    Be sure to select "kind": `frontend-and-server`!
     Everything else can be left as default.
 
     ![A demo of instantiating an extension project from the official template](../assets/images/init-from-template.gif)
