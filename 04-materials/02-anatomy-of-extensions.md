@@ -92,7 +92,7 @@ First we'll look at the final extension together. It:
   random image and caption from a small curated collection of public domain images.
 * The viewer also has a "refresh" button to trigger fetching a new image and caption.
 
-Now, let's build it together from scratch.
+🚀 Now, let's build it together from scratch.
 
 
 ## 🏋️ Exercise A (15 minutes): Extension creation and development loop
