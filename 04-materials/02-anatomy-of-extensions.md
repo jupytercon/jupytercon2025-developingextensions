@@ -81,7 +81,7 @@ First we'll look at the final extension together. It:
 Now, let's build it together from scratch.
 
 
-## Exercise A (10 minutes): Extension creation and development loop
+## Exercise A (15 minutes): Extension creation and development loop
 
 ### First, create a new extension from the [official template](https://github.com/jupyterlab/extension-template)
 
