@@ -81,7 +81,7 @@ First we'll look at the final extension together. It:
 Now, let's build it together from scratch.
 
 
-## Exercise A (15 minutes): Extension creation and development loop
+## 🏋️ Exercise A (15 minutes): Extension creation and development loop
 
 ### First, create a new extension from the [official template](https://github.com/jupyterlab/extension-template)
 
@@ -242,7 +242,7 @@ That viewer will be a {term}`widget`, so let's start by creating a widget that
 will eventually house that content.
 
 
-## Exercise B (20 minutes): Launching a "hello, world" {term}`widget <widget>`
+## 🏋️ Exercise B (20 minutes): Launching a "hello, world" {term}`widget <widget>`
 
 ### Create a "hello, world" widget
 
@@ -474,12 +474,12 @@ with a caption, and a widget to display them.
 Now we need to implement the logic and glue the pieces together.
 
 
-## Exercise C: Serve images and captions from the server extension
+## 🏋️ Exercise C: Serve images and captions from the server extension
 
 <TODO>
 
 
-## Exercise D: Add user interactivity to the widget
+## 🏋️ Exercise D: Add user interactivity to the widget
 
 <TODO>
 
