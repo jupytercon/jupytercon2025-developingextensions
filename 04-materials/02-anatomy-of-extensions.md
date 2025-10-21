@@ -386,7 +386,7 @@ the {term}`command palette <command palette>`.
 
 ```{code} typescript
 :linenos:
-:emphasize-lines: 14
+:emphasize-lines: 15
 
     //Register a new command:
     const command_id = 'image-caption:open';
