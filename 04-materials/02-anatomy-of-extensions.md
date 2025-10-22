@@ -570,6 +570,167 @@ Now we need to implement the logic and glue the pieces together.
 
 ## 🏋️ Exercise C: Serve images and captions from the server extension
 
+### Set up images and captions
+
+Create a new directory at `jupytercon2025_extension_workshop/images`:
+
+```bash
+mkdir jupytercon2025_extension_workshop/images
+```
+
+Then, place images in this directory.
+You can choose your own images (favorite cat pictures?) or download images from
+[our demo repository](https://github.com/jupytercon/jupytercon2025-developingextensions-demo/tree/main/jupytercon2025_extension_workshop/images).
+
+:::{important} 💾 **Make a Git commit and push to GitHub now!**
+:icon: false
+
+```bash
+git add .
+git commit -m "Add images"
+git push -u origin main
+```
+:::
+
+Now we need a way to associate captions with each image.
+We'll use a list of Python dictionaries (mappings) to do so.
+Create a new file `jupytercon2025_extension_workshop/images_and_captions.py` and populate it with:
+
+```{code} python
+:filename: jupytercon2025_extension_workshop/images_and_captions.py
+
+# Public domain images from https://www.loc.gov/free-to-use/cats/
+IMAGES_AND_CAPTIONS = [
+	{ "filename": "brunnhilde.jpg", "caption": "Brünnhilde" },
+	{ "filename": "cats.jpg", "caption": "Cats" },
+	{ "filename": "cat-cher-evolution.jpg", "caption": "Evolution of a cat-cher" },
+	{ "filename": "the-entanglement.jpg", "caption": "The entanglement" },
+]
+```
+
+
+### Update the server to serve images and captions
+
+Our server behaviors are defined in
+`jupytercon2025_extension_workshop/routes.py`, so that module will need to know
+about how to access our image data and the associated captions.
+We'll import the data structure we just defined and define a new `Path` object
+that references the images directory we just created.
+We'll need the `random` standard library module in the next step, so we'll
+import that too while we're here:
+
+```{code} python
+:linenos:
+:emphasize-lines: 2-4, 10-12
+:filename: jupytercon2025_extension_workshop/routes.py
+
+import base64
+import json
+import random
+from pathlib import Path
+
+from jupyter_server.base.handlers import APIHandler
+from jupyter_server.utils import url_path_join
+import tornado
+
+from .images_and_captions import IMAGES_AND_CAPTIONS
+
+IMAGES_DIR = Path(__file__).parent.absolute() / "images"
+
+
+class HelloRouteHandler(APIHandler):
+	...
+```
+
+Next, we'll set up a new route handler in our server extension.
+This route handler will select a random entry from the `IMAGES_AND_CAPTIONS`
+constant we imported, open that image, encode its data as a string,
+and then return the string-encoded image data alongside the caption.
+
+```{code} python
+:linenos:
+:emphasize-lines: 5-13
+:filename: jupytercon2025_extension_workshop/routes.py
+
+class HelloRouteHandler(APIHandler):
+	...
+
+
+class ImageAndCaptionRouteHandler(APIHandler):
+    @tornado.web.authenticated
+    def get(self) -> ImageBytesCaption:
+        random_selection = random.choice(IMAGES_AND_CAPTIONS)
+
+        # Read the data and encode the bytes in base64
+        with open(IMAGES_DIR / random_selection["filename"], "rb") as f:
+            b64_bytes = base64.b64encode(f.read()).decode("utf-8")
+
+        self.finish(json.dumps({
+            "b64_bytes": b64_bytes,
+            "caption": random_selection["caption"],
+        }))
+```
+
+Finally, we need to connect our new handler to the appropriate route:
+
+```{code} python
+:linenos:
+:emphasize-lines: 6, 9
+:filename: jupytercon2025_extension_workshop/routes.py
+
+def setup_route_handlers(web_app):
+    host_pattern = ".*$"
+    base_url = web_app.settings["base_url"]
+
+    hello_route_pattern = url_path_join(base_url, "jupytercon2025-extension-workshop", "hello")
+    image_route_pattern = url_path_join(base_url, "jupytercon2025-extension-workshop", "random-image-caption")
+    handlers = [
+        (hello_route_pattern, HelloRouteHandler),
+        (image_route_pattern, ImageAndCaptionRouteHandler),
+    ]
+
+    web_app.add_handlers(host_pattern, handlers)
+```
+
+
+#### Test!
+
+Now's the best time for us to stop and test before moving on to consuming this
+data with our widget.
+Does our server endpoint return the data we expect it to?
+If there's something wrong and we jump straight to working on the UI, we could
+have a bad time.
+
+Since we only altered Python code, we don't need to run `jlpm build`.
+We can see our changes by restarting JupyterLab and visiting
+`http://localhost:8888/jupytercon2025-extension-workshop/random-image-caption`.
+
+Refresh the page several times, and you should see the data change with each
+refresh (except when the same image is randomly selected multiple times in a
+row!).
+
+:::{hint}
+Not working right?
+
+Look in the terminal that's running the `jupyter lab` command.
+Any errors being triggered from the Python code will show up there.
+
+Perhaps you missed an import in a previous step!
+:::
+
+:::{important} 💾 **Make a Git commit and push to GitHub now!**
+:icon: false
+
+```bash
+git add .
+git commit -m "Add random image and caption endpoint"
+git push -u origin main
+```
+:::
+
+
+### Connect the {term}`widget` to the {term}`server extension`
+
 <TODO>
 
 
