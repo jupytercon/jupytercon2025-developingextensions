@@ -304,6 +304,28 @@ export class ImageCaptionMainAreaWidget extends MainAreaWidget<ImageCaptionWidge
 }
 ```
 
+Our widget is using JavaScript to define HTML elements that will appear in the widget.
+That looks like this:
+
+```{mermaid}
+graph TB
+
+    subgraph Widget["Widget (this.node)"]
+        subgraph Hello["&lt;p&gt; element (hello)"]
+            Content["'Hello, world!' (hello.innerHTML)"]
+        end
+    end
+```
+
+And the HTML looks roughly like this:
+
+```html
+<div id="our-widget">
+  <p>Hello, world!</p>
+</div>
+```
+
+
 We can't test this yet because we don't have a convenient way to display the
 widget in JupyterLab yet.
 Let's fix that now.
