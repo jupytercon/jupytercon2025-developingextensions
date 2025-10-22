@@ -108,11 +108,12 @@ micromamba create -n jupytercon2025
 micromamba activate jupyutercon2025
 
 # Install workshop dependencies
+## python & pip: Python language and its official package installer
 ## nodejs: A JavaScript runtime
 ## gh: The GitHub CLI
 ## copier: A tool for quickstarting an extension from a template
 ## jinja2-time: A dependency of the official JupyterLab extension template
-micromamba install nodejs gh "copier~=9.2" jinja2-time
+micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
 ```
 
 ### Create a repository in GitHub and clone it
