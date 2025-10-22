@@ -199,8 +199,8 @@ git push -u origin main
 
 1. Make any change to the codebase.
    For example, alter the text in a `console.log()` message.
-   We suggest changing the server's message to `Hello, world` instead of `This is ...
-   endpoint!`.
+   We suggest changing the server's message from `Hello, world!` to `Hello,
+   <your-name-here>!`.
 
 2. Rebuild the extension with `jlpm build`.
 
