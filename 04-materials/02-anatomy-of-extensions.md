@@ -97,6 +97,24 @@ First we'll look at the final extension together. It:
 
 ## 🏋️ Exercise A (15 minutes): Extension creation and development loop
 
+### Set up workshop dependency environment
+
+```bash
+# Create an environment named "jupytercon2025"
+micromamba create -n jupytercon2025
+
+# Activate it
+# IMPORTANT: Run this every time you open a new terminal!
+micromamba activate jupyutercon2025
+
+# Install workshop dependencies
+## nodejs: A JavaScript runtime
+## gh: The GitHub CLI
+## copier: A tool for quickstarting an extension from a template
+## jinja2-time: A dependency of the official JupyterLab extension template
+micromamba install nodejs gh "copier~=9.2" jinja2-time
+```
+
 ### Create a repository in GitHub and clone it
 
 0. Change to the parent directory where you want to work, e.g.
@@ -120,17 +138,6 @@ First we'll look at the final extension together. It:
 
 
 ### First, create a new extension from the [official template](https://github.com/jupyterlab/extension-template)
-
-:::{important} Prerequisites
-* `copier`. Install with any of the following options:
-    * Into an existing environment (don't forget to activate it first):
-        * `pip install "copier~=9.2" jinja2-time`
-        * `conda install -c  conda-forge "copier~=9.2" jinja2-time`
-    * Globally:
-        * `pipx install "copier~=9.2" --preinstall jinja2-time`
-        * `uv tool install --with jinja2-time copier~=9.2`
-        * `pixi global install "copier~=9.2" --with jinja2-time`
-:::
 
 2. Instantiate the template to get started on your new extension!
 

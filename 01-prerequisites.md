@@ -36,6 +36,22 @@ For the AI-enabled development portion, [Cursor](https://cursor.com/) is another
 choice!
 
 
+## A conda CLI ([micromamba](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html) preferred)
+
+We will provide commands to create your environment and install the necessary
+dependencies.
+
+We will use `micromamba` for all commands, but you can substitute `conda` or `mamba` and
+they should still work.
+
+If you're using Anaconda or Miniconda,
+[configure `conda-forge` as your primary channel](https://conda-forge.org/docs/user/transitioning_from_defaults/).
+We strongly recommend
+[replacing Anaconda/miniconda with Miniforge](https://conda-forge.org/docs/user/transitioning_from_defaults/#uninstalling-anaconda-and-installing-miniforge)
+to avoid complications and the possibility of being subject to Anaconda's terms of
+service.
+
+
 ## Something to manage Python dependencies
 
 **And know how to use it!**
