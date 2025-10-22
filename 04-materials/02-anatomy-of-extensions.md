@@ -97,6 +97,28 @@ First we'll look at the final extension together. It:
 
 ## 🏋️ Exercise A (15 minutes): Extension creation and development loop
 
+### Create a repository in GitHub and clone it
+
+0. Change to the parent directory where you want to work, e.g.
+
+    ```bash
+    cd ~/Projects
+    ```
+
+1. Create a repository in GitHub and clone it
+
+    ```bash
+    # TODO: Test
+    gh repo create jupytercon2025-extension-workshop --public --clone
+    ```
+
+2. Change directory into your new repository
+
+    ```bash
+    cd jupytercon2025-extension-workshop
+    ```
+
+
 ### First, create a new extension from the [official template](https://github.com/jupyterlab/extension-template)
 
 :::{important} Prerequisites
@@ -109,21 +131,6 @@ First we'll look at the final extension together. It:
         * `uv tool install --with jinja2-time copier~=9.2`
         * `pixi global install "copier~=9.2" --with jinja2-time`
 :::
-
-
-0. Change to the parent directory where you want to work, e.g.
-
-    ```bash
-    cd ~/Projects
-    ```
-
-1. Create an extension repo in a new directory:
-
-    ```bash
-    mkdir jupytercon2025-extension-workshop
-    cd jupytercon2025-extension-workshop
-    git init
-    ```
 
 2. Instantiate the template to get started on your new extension!
 
@@ -196,8 +203,6 @@ git commit -m "Initialize from extension template"
 git push -u origin main
 ```
 :::
-
-<TODO: When should they have created a repo on GitHub?>
 
 
 ### Now let's do one complete development loop!
