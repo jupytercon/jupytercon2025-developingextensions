@@ -601,10 +601,10 @@ Create a new file `jupytercon2025_extension_workshop/images_and_captions.py` and
 
 # Public domain images from https://www.loc.gov/free-to-use/cats/
 IMAGES_AND_CAPTIONS = [
-	{ "filename": "brunnhilde.jpg", "caption": "Brünnhilde" },
-	{ "filename": "cats.jpg", "caption": "Cats" },
-	{ "filename": "cat-cher-evolution.jpg", "caption": "Evolution of a cat-cher" },
-	{ "filename": "the-entanglement.jpg", "caption": "The entanglement" },
+    { "filename": "brunnhilde.jpg", "caption": "Brünnhilde" },
+    { "filename": "cats.jpg", "caption": "Cats" },
+    { "filename": "cat-cher-evolution.jpg", "caption": "Evolution of a cat-cher" },
+    { "filename": "the-entanglement.jpg", "caption": "The entanglement" },
 ]
 ```
 
@@ -639,7 +639,7 @@ IMAGES_DIR = Path(__file__).parent.absolute() / "images"
 
 
 class HelloRouteHandler(APIHandler):
-	...
+    ...
 ```
 
 Next, we'll set up a new route handler in our server extension.
@@ -653,7 +653,7 @@ and then return the string-encoded image data alongside the caption.
 :filename: jupytercon2025_extension_workshop/routes.py
 
 class HelloRouteHandler(APIHandler):
-	...
+    ...
 
 
 class ImageAndCaptionRouteHandler(APIHandler):
