@@ -139,7 +139,7 @@ micromamba install nodejs gh "copier~=9.2" jinja2-time
 
 ### First, create a new extension from the [official template](https://github.com/jupyterlab/extension-template)
 
-2. Instantiate the template to get started on your new extension!
+1. Instantiate the template to get started on your new extension!
 
     ```bash
     copier copy --trust https://github.com/jupyterlab/extension-template .
@@ -154,9 +154,9 @@ micromamba install nodejs gh "copier~=9.2" jinja2-time
 
     ![A demo of instantiating an extension project from the official template](../assets/images/init-from-template.gif)
 
-3. List out the files that were created (`ls -la` or `tree -a` are good options)
+2. List out the files that were created (`ls -la` or `tree -a` are good options)
 
-4. Install the extension in development mode
+3. Install the extension in development mode
 
     ```bash
     # Create and activate a virtualenv
@@ -175,7 +175,7 @@ micromamba install nodejs gh "copier~=9.2" jinja2-time
     jlpm build
     ```
 
-5. 🧪 Test it out! Run this command in a **separate terminal**.
+4. 🧪 Test it out! Run this command in a **separate terminal**.
    It will open JupyterLab in your browser automatically.
    Remember to activate the virtual environment again with `source .venv/bin/activate`
    any time you create a new terminal.
@@ -185,7 +185,7 @@ micromamba install nodejs gh "copier~=9.2" jinja2-time
     jupyter lab
     ```
 
-6. Confirm the extension was loaded. Open your browser's dev console (F12 or
+5. Confirm the extension was loaded. Open your browser's dev console (F12 or
    `CTRL+SHIFT+I`) and look for log messages reading:
 
    * `JupyterLab extension jupytercon2025-extension-workshop is activated!`
@@ -194,7 +194,7 @@ micromamba install nodejs gh "copier~=9.2" jinja2-time
 
    **If you do not see these messages, let us know you need help!**
 
-7. Directly test the server portion of the extension by visiting the endpoint in your
+6. Directly test the server portion of the extension by visiting the endpoint in your
    browser (`http://localhost:8888/jupytercon2025-extension-workshop/hello`).
    You should see the same message as the last step:
    `Hello, world! This is the '/jupytercon2025-extension-workshop/hello' endpoint. Try
