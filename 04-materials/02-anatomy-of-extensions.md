@@ -318,7 +318,7 @@ In `src/index.ts`, we need to update our plugin to define a command in our
 
 ```{code} typescript
 :linenos:
-:emphasize-lines: 2,26-38
+:emphasize-lines: 2,26-37
 
 import { requestAPI } from './request';
 import { ImageCaptionMainAreaWidget } from './widget';
@@ -355,7 +355,6 @@ const plugin: JupyterFrontEndPlugin<void> = {
         // Then add it to the main area:
         app.shell.add(widget, 'main');
       },
-      icon: imageIcon,
       label: 'View a random image & caption'
     });
   }
