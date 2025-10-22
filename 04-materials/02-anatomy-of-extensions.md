@@ -449,6 +449,32 @@ Follow the same steps you followed to register your command with the {term}`comm
 Reuse the same command!
 :::
 
+#### My launcher button works, but it has no icon!
+
+Adding an icon is one extra step.
+We can import the icon in `src/index.ts` like so:
+
+```typescript
+import { imageIcon } from '@jupyterlab/ui-components';
+```
+
+and add the icon to the command's metadata:
+
+```{code} typescript
+:linenos:
+:emphasize-lines: 7
+
+    app.commands.addCommand(command, {
+      execute: () => {
+        const widget = new ImageCaptionMainAreaWidget();
+
+        app.shell.add(widget, 'main');
+      },
+      icon: imageIcon,
+      label: 'View a random image & caption'
+    });
+```
+
 
 ### Finally, we can test!
 
