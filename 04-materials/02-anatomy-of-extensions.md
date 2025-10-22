@@ -424,6 +424,32 @@ the {term}`command palette <command palette>`.
 ```
 
 
+### Finally, we can test!
+
+Stop your JupyterLab server (`CTRL+C`), then rebuild your extension (`jlpm
+build`), then restart JupyterLab (`jupyter lab`).
+
+If everything went well, now you can test the extension in your browser.
+
+To test from the {term}`command palette <command palette>`, click
+"View">"Commands" from the {term}`menu bar <menu bar>`, or use the shortcut
+`CTRL+SHIFT+C`.
+Begin typing "Random image" and the command palette interface
+should autocomplete.
+Select "Random image with caption" and press `ENTER`.
+You should see a new tab open containing the text "Hello, world"!
+
+:::{important} 💾 **Make a Git commit and push to GitHub now!**
+:icon: false
+
+```bash
+git add .
+git commit -m "Add 'hello, world' widget and register with command palette"
+git push -u origin main
+```
+:::
+
+
 ### Optional: Register with the {term}`launcher <launcher>`
 
 Unlike the command palette, this functionality needs to be installed.
@@ -448,6 +474,24 @@ We will leave the rest of the implementation up to you!
 Follow the same steps you followed to register your command with the {term}`command palette <command palette>`.
 Reuse the same command!
 :::
+
+#### Test it!
+
+Repeat the build and test procedure from the previous step.
+
+Open a new tab with the `+` button at the top of the {term}`main area <main area>` and
+click the new button in the launcher.
+
+:::{important} 💾 **Make a Git commit and push to GitHub now!**
+:icon: false
+
+```bash
+git add .
+git commit -m "Register widget with launcher"
+git push -u origin main
+```
+:::
+
 
 #### My launcher button works, but it has no icon!
 
@@ -475,32 +519,14 @@ and add the icon to the command's metadata:
     });
 ```
 
-
-### Finally, we can test!
-
-Stop your JupyterLab server (`CTRL+C`), then rebuild your extension (`jlpm
-build`), then restart JupyterLab (`jupyter lab`).
-
-If everything went well, now you can test the extension in your browser.
-
-To test from the {term}`command palette <command palette>`, click
-"View">"Commands" from the {term}`menu bar <menu bar>`, or use the shortcut
-`CTRL+SHIFT+C`.
-Begin typing "Random image" and the command palette interface
-should autocomplete.
-Select "Random image with caption" and press `ENTER`.
-You should see a new tab open containing the text "Hello, world"!
-
-If you registered your extension with the {term}`launcher <launcher>`, you can open a
-new tab with the `+` button at the top of the {term}`main area <main area>` and click
-the new button in the launcher.
+Give it another test, and you should see an icon.
 
 :::{important} 💾 **Make a Git commit and push to GitHub now!**
 :icon: false
 
 ```bash
 git add .
-git commit -m "Add 'hello, world' widget and register with command palette"
+git commit -m "Define icon for widget open command"
 git push -u origin main
 ```
 :::
