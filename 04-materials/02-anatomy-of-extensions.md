@@ -427,7 +427,7 @@ the {term}`command palette <command palette>`.
 ### Optional: Register with the {term}`launcher <launcher>`
 
 Unlike the command palette, this functionality needs to be installed.
-First, install `@jupylab/launcher` with `jlpm add @jupyterlab/launcher` to make
+First, install `@jupyterlab/launcher` with `jlpm add @jupyterlab/launcher` to make
 this dependency available for import.
 
 You can import `ILauncher` with:
