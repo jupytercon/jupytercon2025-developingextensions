@@ -334,10 +334,8 @@ We can't test this because we don't have a convenient way to display the
 widget in JupyterLab yet.
 Let's fix that now.
 
-We'll start by creating our command to display the widget:
 
-
-### Create a {term}`command <command>` to display the {term}`widget <widget>`
+### Create a {term}`command <command>` to display the {term}`widget <widget>` in the {term}`main area <main area>`
 
 In `src/index.ts`, we need to update our plugin to define a command in our
 {term}`plugin's <plugin>` `activate` method:
