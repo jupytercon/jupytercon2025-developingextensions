@@ -311,7 +311,7 @@ We'll start by creating our command to display the widget:
 ### Create a {term}`command <command>` to display the {term}`widget <widget>`
 
 In `src/index.ts`, we need to update our plugin to define a command in our
-{term}`plugin's <plugin` `activate` method:
+{term}`plugin's <plugin>` `activate` method:
 
 ```{code} typescript
 :linenos:
