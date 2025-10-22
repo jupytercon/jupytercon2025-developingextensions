@@ -118,24 +118,54 @@ micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
 
 ### Create a repository in GitHub and clone it
 
+If you're an experienced Git & GitHub user, feel free to do this step the way you
+normally would!
+
 0. Change to the parent directory where you want to work, e.g.
 
-    ```bash
-    cd ~/Projects
-    ```
+   ```bash
+   cd ~/Projects
+   ```
 
-1. Create a repository in GitHub and clone it
+1. If you don't already have GitHub authentication set up on your local machine,
+   authenticate with GitHub.
 
-    ```bash
-    # TODO: Test
-    gh repo create jupytercon2025-extension-workshop --public --clone
-    ```
+   ```bash
+   gh auth login
+   ```
 
-2. Change directory into your new repository
+   Select: `GitHub.com`, `HTTPS`, `Yes`, and `Login with a web browser`, then follow the
+   instructions carefully.
+   Then, set up the Git CLI to authenticate with GitHub:
 
-    ```bash
-    cd jupytercon2025-extension-workshop
-    ```
+   ```bash
+   gh auth setup-git
+   ```
+
+2. Create a repository in GitHub and clone it:
+
+   ```bash
+   gh repo create jupytercon2025-extension-workshop --public --clone
+   ```
+
+3. Change directory into your newly-cloned repository:
+
+   ```bash
+   cd jupytercon2025-extension-workshop
+   ```
+
+4. Ensure your default branch is set to `main`:
+
+   ```bash
+   git config --global init.defaultBranch main
+   ```
+
+5. Configure identity information Git will use when you commit:
+
+   ```bash
+   git config --global user.email "your-email-here@example.com"
+   git config --global user.name "Your Name Here"
+   ```
 
 
 ### First, create a new extension from the [official template](https://github.com/jupyterlab/extension-template)
