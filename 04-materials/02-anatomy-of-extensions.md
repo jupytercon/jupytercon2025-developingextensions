@@ -275,6 +275,9 @@ Create a new file `src/widget.ts` and add the widget code:
 
 import { Widget } from '@lumino/widgets';
 import { MainAreaWidget } from '@jupyterlab/apputils';
+import {
+  imageIcon,
+} from '@jupyterlab/ui-components';
 
 class ImageCaptionWidget extends Widget {
   // Initialization
@@ -321,16 +324,16 @@ import { requestAPI } from './request';
 import { ImageCaptionMainAreaWidget } from './widget';
 
 /**
- * Initialization data for the myextension extension.
+ * Initialization data for the jupytercon2025-extension-workshop extension.
  */
 const plugin: JupyterFrontEndPlugin<void> = {
-  id: 'myextension:plugin',
-  description: 'A JupyterLab extension.',
+  id: 'jupytercon2025-extension-workshop:plugin',
+  description: 'A JupyterLab extension that displays a random image and caption.',
   autoStart: true,
   activate: (
-      app: JupyterFrontEnd,
+    app: JupyterFrontEnd,
   ) => {
-    console.log('JupyterLab extension myextension is activated!');
+    console.log('JupyterLab extension jupytercon2025-extension-workshop is activated!');
 
     requestAPI<any>('hello')
       .then(data => {
@@ -338,7 +341,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
       })
       .catch(reason => {
         console.error(
-          `The myextension server extension appears to be missing.\n${reason}`
+          `The jupytercon2025_extension_workshop server extension appears to be missing.\n${reason}`
         );
       });
 
@@ -357,7 +360,6 @@ const plugin: JupyterFrontEndPlugin<void> = {
     });
   }
 };
-
 ```
 
 But right now, this command is not being used by anything!
