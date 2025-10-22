@@ -120,8 +120,8 @@ First we'll look at the final extension together. It:
 1. Create an extension repo in a new directory:
 
     ```bash
-    mkdir my-jupyterlab-extension
-    cd my-jupyterlab-extension
+    mkdir jupytercon2025-extension-workshop
+    cd jupytercon2025-extension-workshop
     git init
     ```
 
@@ -131,8 +131,12 @@ First we'll look at the final extension together. It:
     copier copy --trust https://github.com/jupyterlab/extension-template .
     ```
 
-    Be sure to select "kind": `frontend-and-server`!
-    Everything else can be left as default.
+    Please input:
+
+    * Kind: `frontend-and-server`
+    * Javascript package name: `jupytercon2025-extension-workshop`
+
+    Everything else can be left as default if you prefer.
 
     ![A demo of instantiating an extension project from the official template](../assets/images/init-from-template.gif)
 
@@ -150,7 +154,7 @@ First we'll look at the final extension together. It:
 
     # Install the frontend and backend components of the extension in development mode:
     jupyter labextension develop . --overwrite
-    jupyter server extension enable myextension
+    jupyter server extension enable jupytercon2025_extension_workshop
 
     # Rebuild extension Typescript source after making changes
     # IMPORTANT: You must do this every time you make a change!
@@ -158,6 +162,7 @@ First we'll look at the final extension together. It:
     ```
 
 5. 🧪 Test it out! Run this command in a **separate terminal**.
+   It will open JupyterLab in your browser automatically.
    Remember to activate the virtual environment again with `source .venv/bin/activate`
    any time you create a new terminal.
    You can keep this terminal open and running JupyterLab in the background!
@@ -169,15 +174,17 @@ First we'll look at the final extension together. It:
 6. Confirm the extension was loaded. Open your browser's dev console (F12 or
    `CTRL+SHIFT+I`) and look for log messages reading:
 
-   * `JupyterLab extension myextension is activated`
-   * `This is /myextension/get-example endpoint!`
+   * `JupyterLab extension jupytercon2025-extension-workshop is activated!`
+   * `Hello, world! This is the '/jupytercon2025-extension-workshop/hello' endpoint. Try
+     visiting me in your browser!`
 
    **If you do not see these messages, let us know you need help!**
 
 7. Directly test the server portion of the extension by visiting the endpoint in your
-   browser (`http://localhost:8888/myextension/get-example`).
+   browser (`http://localhost:8888/jupytercon2025-extension-workshop/hello`).
    You should see the same message as the last step:
-   `This is /myextension/get-example endpoint!`
+   `Hello, world! This is the '/jupytercon2025-extension-workshop/hello' endpoint. Try
+   visiting me in your browser!`
 
 
 :::{important} 💾 **Make a Git commit and push to GitHub now!**
@@ -199,7 +206,8 @@ git push -u origin main
 
 1. Make any change to the codebase.
    For example, alter the text in a `console.log()` message.
-   We suggest changing the server's message from `Hello, world!` to `Hello,
+   We suggest changing `Hello, world!` in the server's message (in
+   `jupytercon2025_extension_workshop/routes.py`) to `Hello,
    <your-name-here>!`.
 
 2. Rebuild the extension with `jlpm build`.
