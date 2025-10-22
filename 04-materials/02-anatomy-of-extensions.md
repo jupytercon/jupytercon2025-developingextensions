@@ -330,8 +330,7 @@ And the HTML looks roughly like this:
 </div>
 ```
 
-
-We can't test this yet because we don't have a convenient way to display the
+We can't test this because we don't have a convenient way to display the
 widget in JupyterLab yet.
 Let's fix that now.
 
