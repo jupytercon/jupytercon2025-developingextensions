@@ -10,6 +10,18 @@ Core extension
 : JupyterLab is composed of modular {term}`extensions <extension>`.
 Core extensions are included with JupyterLab.
 
+Server extension
+: An extension which provides new functionality on the back-end.
+Unlike frontend extensions, server extensions have access to the computer JupyterLab is
+running on, for example to read files from disk.
+[See the official docs for more!](https://jupyter-server.readthedocs.io/en/stable/developers/extensions.html)
+
+Frontend extension
+: And extension which adds functionality that executes solely in the browser.
+This includes themes, UI elements, viewers, and more.
+Many frontend extensions are part of a larger extension with a
+{term}`server extension <server extension>` component.
+
 Plugin
 : The atomic building blocks of JupyterLab architecture and JupyterLab {term}`extensions <extension>`.
 Every extension includes >= 1 plugin.
