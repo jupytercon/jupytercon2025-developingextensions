@@ -38,18 +38,20 @@ choice!
 
 ## A conda CLI ([micromamba](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html) preferred)
 
+This workshop will use conda to manage and isolate dependencies.
+
 We will provide commands to create your environment and install the necessary
 dependencies.
-
 We will use `micromamba` for all commands, but you can substitute `conda` or `mamba` and
 they should still work.
 
 If you're using Anaconda or Miniconda,
 [configure `conda-forge` as your primary channel](https://conda-forge.org/docs/user/transitioning_from_defaults/).
-We strongly recommend
-[replacing Anaconda/miniconda with Miniforge](https://conda-forge.org/docs/user/transitioning_from_defaults/#uninstalling-anaconda-and-installing-miniforge)
-to avoid complications and the possibility of being subject to Anaconda's terms of
-service.
+We **strongly recommend** replacing Anaconda/miniconda with micromamba to avoid
+complications and the possibility of being subject to Anaconda's terms of service.
+
+You may also use [pixi](https://pixi.sh/latest/), but we expect you to be
+self-sufficient if you do.
 
 
 ## Something to manage Python dependencies
