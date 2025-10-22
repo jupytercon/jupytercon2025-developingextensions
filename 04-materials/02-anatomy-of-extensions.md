@@ -731,7 +731,137 @@ git push -u origin main
 
 ### Connect the {term}`widget` to the {term}`server extension`
 
-<TODO>
+Now that our backend is working, we need to glue our widget to it.
+
+First, let's import a utility function to `src/widget.ts` that will handle
+requesting an image and caption from the server:
+
+```{code} typescript
+:linenos:
+:emphasize-lines: 7
+:filename: src/widget.ts
+
+import { Widget } from '@lumino/widgets';
+import { MainAreaWidget } from '@jupyterlab/apputils';
+import {
+  imageIcon,
+} from '@jupyterlab/ui-components';
+
+import { requestAPI } from './request';
+```
+
+Now, let's add the behavior to our widget which uses `requestAPI` to
+communicate with the server.
+This change adds a new method `load_image()` to our widget class, but notice
+that nothing is calling that method yet:
+
+```typescript
+:linenos:
+:emphasize-lines: 7-19, 21-23
+:file: src/widget.ts
+
+class ImageCaptionWidget extends Widget {
+  // Initialization
+  constructor() {
+    // ...
+  }
+
+  // Fetch data from the server extension and save the results to img and
+  // caption class attributes
+  load_image(): void {
+    requestAPI<any>('random-image-caption')
+      .then(data => {
+        console.log(data);
+        this.img.src = `data:image/jpeg;base64, ${data.b64_bytes}`;
+        this.caption.innerHTML = data.caption;
+      })
+      .catch(reason => {
+        console.error(`Error fetching image data.\n${reason}`);
+      });
+  }
+
+  // Information about class attributes for the type checker
+  img: HTMLImageElement;
+  caption: HTMLParagraphElement;
+}
+```
+
+Finally, let's hook this behavior up to display it visually.
+Now, we're calling `load_image()` when we initialize the widget:
+
+```typescript
+:linenos:
+:emphasize-lines: 12-25
+:file: src/widget.ts
+
+class ImageCaptionWidget extends Widget {
+  // Initialization
+  constructor() {
+    super();
+
+    // Create and append an HTML <p> (paragraph) tag to our widget's node in
+    // the HTML document
+    const hello = document.createElement('p');
+    hello.innerHTML = "Hello, world!";
+    this.node.appendChild(hello);
+
+    const center = document.createElement('center');
+    this.node.appendChild(center);
+
+    // Put an <img> tag into the <center> tag, and also save it as a class
+    // attribute so we can update it later.
+    this.img = document.createElement('img');
+    center.appendChild(this.img);
+
+    // Do the same for a caption!
+    this.caption = document.createElement('p');
+    center.appendChild(this.caption);
+
+    // Initialize the image from the server extension
+    this.load_image();
+  }
+
+  // Fetch data from the server extension and save the results to img and
+  // caption class attributes
+  load_image(): void {
+	// ...
+  }
+
+  // Information for the type checker
+  img: HTMLImageElement;
+  caption: HTMLParagraphElement;
+}
+```
+
+#### Test!
+
+Now that we have our widget user interface hooked up to the data coming from the server, let's test again.
+Because we changed the JavaScript, we need to use `jlpm run build`, but we _don't_ need to restart the JupyterLab server.
+We just need to refresh the page!
+
+When you launch your widget, do you see one of your images?
+
+:::{hint}
+Running in to trouble?
+
+Check your browser console for errors.
+
+If you're using your own images, perhaps they aren't JPEG images like the demo images we provided.
+You may need to update the preamble of `this.img.src` from
+`data:image/jpeg;base64` to `data:image/png;base64`, for example.
+If you have mixed data formats, perhaps you could add the mimetype of each
+image to the JSON data sent by the server!
+:::
+
+:::{important} 💾 **Make a Git commit and push to GitHub now!**
+:icon: false
+
+```bash
+git add .
+git commit -m "Add random image and caption endpoint"
+git push -u origin main
+```
+:::
 
 
 ## 🏋️ Exercise D: Add user interactivity to the widget
