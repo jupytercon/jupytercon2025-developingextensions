@@ -739,6 +739,11 @@ git push -u origin main
 <TODO>
 
 
+## 🏋️ Exercise E: Preserve layout
+
+<TODO>
+
+
 [^rebuild-not-always-required]: You don't actually _always_ need to rebuild -- only when
 you change the JavaScript. If you only changed Python, you only need to restart
 JupyterLab.
