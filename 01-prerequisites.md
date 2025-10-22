@@ -47,8 +47,6 @@ they should still work.
 
 If you're using Anaconda or Miniconda,
 [configure `conda-forge` as your primary channel](https://conda-forge.org/docs/user/transitioning_from_defaults/).
-We **strongly recommend** replacing Anaconda/miniconda with micromamba to avoid
-complications and the possibility of being subject to Anaconda's terms of service.
 
 You may also use [pixi](https://pixi.sh/latest/), but we expect you to be
 self-sufficient if you do.
