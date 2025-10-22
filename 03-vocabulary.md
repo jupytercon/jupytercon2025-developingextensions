@@ -36,7 +36,15 @@ Menu bar
 : Top-level menu which exposes context-specific commands.
 
 Main area
-: The central space where JupyterLab runs {term}`main area widgets <main area widget>`.
+: The central space where JupyterLab displays {term}`main area widgets <main area widget>`,
+like Notebooks.
+You can recognize the main area by the tab panel.
+You can click and drag the tab at the top of any {term}`main area widget <main area widget>`
+to subdivide the main area arbitrarily!
+
+Main area widget
+: A widget which opens as a tab or panel in the {term}`main area`.
+For example, the launcher, the Jupyter Notebook editor, the code editor, or the terminal.
 
 Status bar
 : Displays various information about the current session, like the number of running
@@ -51,7 +59,12 @@ Command
 For example, from the {term}`menu bar`.
 [See the official docs for more!](https://jupyterlab.readthedocs.io/en/latest/user/commands.html)
 
-Main area widget
-: A widget which opens as a tab or panel in the {term}`main area`.
-For example, the launcher, the Jupyter Notebook editor, the code editor, or the terminal.
+Command palette
+: A keyboard-driven interface for triggering {term}`commands <command>`.
+[See the official docs for more!](https://jupyterlab.readthedocs.io/en/stable/user/commands.html#command-palette)
+
+Launcher
+: When a new JupyterLab tab is opened, the launcher is displayed.
+It includes categorized buttons to launch any applications that are registered with the launcher.
+[See the official docs for more!](https://jupyterlab.readthedocs.io/en/latest/extension/extension_points.html#launcher)
 :::
