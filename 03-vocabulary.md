@@ -21,7 +21,7 @@ running on, for example to read files from disk.
 
 Frontend extension
 : And extension which adds functionality that executes solely in the browser.
-This includes themes, UI elements, viewers, and more.
+This includes themes, UI elements, viewers, code editors, and more.
 Many frontend extensions are part of a larger extension with a
 {term}`server extension <server extension>` component.
 
