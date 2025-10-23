@@ -160,12 +160,8 @@ micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
 3. Install the extension in development mode
 
     ```bash
-    # Create and activate a virtualenv
-    uv venv .venv
-    source .venv/bin/activate
-
     # Install package in development mode
-    uv pip install --editable ".[dev,test]"
+    pip install --editable ".[dev,test]"
 
     # Install the frontend and backend components of the extension in development mode:
     jupyter labextension develop . --overwrite
