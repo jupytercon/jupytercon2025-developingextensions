@@ -866,7 +866,90 @@ git push -u origin main
 
 ## 🏋️ Exercise D: Add user interactivity to the widget
 
-<TODO>
+Right now, you only get a random image when you first open the widget.
+It's much more interesting if the widget can respond to user actions!
+Let's add a toolbar and refresh button which triggers the image to change immediately.
+
+
+### Import a toolbar UI component and icon
+
+For all of this to work, we need the `ToolbarButton` to use in our
+widget.
+For our toolbar button to be usable, it also needs an icon.
+We can import `refreshIcon` from the same place we got `imageIcon`:
+
+```{code} typescript
+:linenos:
+:emphasize-lines: 4,8
+:filename: src/widget.ts
+
+import { Widget } from '@lumino/widgets';
+import {
+  MainAreaWidget,
+  ToolbarButton,
+} from '@jupyterlab/apputils';
+import {
+  imageIcon,
+  refreshIcon,
+} from '@jupyterlab/ui-components';
+```
+
+
+### Add the button to the widget and connect the logic
+
+Now we can use the `ToolbarButton` class to instantiate a new button with an
+icon, tooltip, and behavior (`onClick`).
+
+For the behavior, we'll reuse our widget's `load_image()` method that we call
+when we initialize the widget.
+Now, it's being called in two cases: when we initialize the widget, and when
+the user clicks the refresh button on the toolbar.
+
+```{code} typescript
+:linenos:
+:emphasize-lines: 10-19
+:filename: src/widget.ts
+
+export class ImageCaptionMainAreaWidget extends MainAreaWidget<ImageCaptionWidget> {
+  constructor() {
+    const widget = new ImageCaptionWidget();
+    super({ content: widget });
+
+    this.title.label = 'Random image with caption';
+    this.title.caption = this.title.label;
+    this.title.icon = imageIcon;
+
+    // Add a refresh button to the toolbar
+    const refreshButton = new ToolbarButton({
+      icon: refreshIcon,
+      tooltip: 'Refresh image',
+      onClick: () => {
+        widget.load_image();
+      }
+    });
+    this.toolbar.addItem('refresh', refreshButton);
+  }
+}
+```
+
+
+### Test!
+
+Build with `jlpm build` and then refresh your browser to see the change!
+Your application should look like this:
+
+![A JupyterLab widget displaying a random cat picture and caption, with a refresh button in the toolbar.](../assets/images/module-2-exercise-d-final.jpg)
+
+:::{important} 💾 **Make a Git commit and push to GitHub now!**
+:icon: false
+
+```bash
+git add .
+git commit -m "Add refresh button to widget toolbar"
+git push -u origin main
+```
+:::
+
 
 
 ## 🏋️ Exercise E: Preserve layout
