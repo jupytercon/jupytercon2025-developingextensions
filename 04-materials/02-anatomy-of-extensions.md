@@ -136,6 +136,10 @@ normally would!
 
    Select reasonable defaults: `GitHub.com`, `HTTPS`, `Yes`, and `Login with a web browser`, then follow the
    instructions carefully.
+   
+   :::{hint}
+   Check out [GitHub authentication](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) about SSH keys later if you get tired of typing username/password
+   :::
    Then, set up the Git CLI to authenticate with GitHub:
 
    ```bash
