@@ -1031,10 +1031,133 @@ git push -u origin main
 :::
 
 
-
 ## 🏋️ Exercise E: Preserve layout
 
-<TODO>
+You may have noticed that when you refresh or close/re-open JupyterLab, your widget
+window disappears.
+JupyterLab can save and restore layouts, but we need to define how our widget restores
+its state.
+
+First, let's import the layout restorer:
+
+```{code} typescript
+:linenos:
+:emphasize-lines: 2,8
+:filename: src/index.ts
+
+import {
+  ILayoutRestorer,
+  JupyterFrontEnd,
+  JupyterFrontEndPlugin
+} from '@jupyterlab/application';
+import {
+  ICommandPalette,
+  WidgetTracker
+} from '@jupyterlab/apputils';
+
+```
+
+Now, we'll define the layout restorer {term}`token <token>` as an _optional_
+dependency, as it may not be available in all JupyterLab deployments.
+When we pass an optional dependency to the `activate` function, we follow two
+key rules:
+
+1. Optional dependencies are passed _after_ required dependencies
+2. Optional dependencies, because they are optional, have the possibility of
+   being `null`
+
+
+```{code} typescript
+:linenos:
+:emphasize-lines: 6,13
+:filename: src/index.ts
+
+const plugin: JupyterFrontEndPlugin<void> = {
+  id: 'jupytercon2025-extension-workshop:plugin',
+  description: 'A JupyterLab extension that displays a random image and caption.',
+  autoStart: true,
+  requires: [ICommandPalette, ILauncher],  // dependencies of our extension
+  optional: [ILayoutRestorer],
+  activate: (
+    app: JupyterFrontEnd,
+    // The activation method receives dependencies in the order they are specified in
+    // the "requires" parameter above:
+    palette: ICommandPalette,
+    launcher: ILauncher,
+    restorer: ILayoutRestorer | null
+  ) => {
+```
+
+Now that we have the dependency, we need to define _how_ the widget's layout
+will be saved and restored.
+First, we need to define a tracker object:
+
+```{code} typescript
+:linenos:
+:emphasize-lines: 1-5
+:filename: src/index.ts
+
+    // Track widget state
+    const tracker_namespace = 'jupytercon2025-extension-workshop';
+    const tracker = new WidgetTracker<ImageCaptionMainAreaWidget>({
+      namespace: tracker_namespace
+    });
+
+    //Register a new command:
+    const command_id = 'image-caption:open';
+    app.commands.addCommand(command_id, {
+      execute: () => {
+```
+
+Then, add our widget to the tracker:
+
+```{code} typescript
+:linenos:
+:emphasize-lines: 6-8
+:filename: src/index.ts
+
+    app.commands.addCommand(command_id, {
+      execute: () => {
+        // When the command is executed, create a new instance of our widget
+        const widget = new ImageCaptionMainAreaWidget();
+
+        if (!tracker.has(widget)) {
+          tracker.add(widget);
+        }
+
+        // Then add it to the main area:
+        app.shell.add(widget, 'main');
+      },
+      icon: imageIcon,
+      label: 'View a random image & caption'
+    });
+```
+
+And finally, restore any previous state when our plugin is activated:
+
+```{code} typescript
+:linenos:
+:emphasize-lines: 4-10
+:filename: src/index.ts
+
+    palette.addItem({ command: command_id, category: 'Tutorial' });
+    launcher.add({ command: command_id });
+
+    // Restore widget state
+    if (restorer) {
+      restorer.restore(tracker, {
+        command: command_id,
+        name: () => tracker_namespace
+      });
+    }
+```
+
+### Test!
+
+To test this change, load your widget in JupyterLab, then refresh the page.
+You should see the widget is still visible!
+You may see a different image; this is because we're loading a new image every time the
+widget is initialized.
 
 
 [^rebuild-not-always-required]: You don't actually _always_ need to rebuild -- only when
