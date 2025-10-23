@@ -481,7 +481,7 @@ git push -u origin main
 
 ### Optional: Register with the {term}`launcher <launcher>`
 
-Unlike the command palette, this functionality needs to be installed.
+Unlike the command palette, this functionality needs to be installed as a dependency.
 First, install `@jupyterlab/launcher` with `jlpm add @jupyterlab/launcher` to make
 this dependency available for import.
 
@@ -490,6 +490,9 @@ You can import `ILauncher` with:
 ```typescript
 import { ILauncher } from '@jupyterlab/launcher'
 ```
+
+Don't forget to add the launcher as a dependency (`requires`) of our plugin, and to pass
+the dependency in to the `activate` function.
 
 ...and register your {term}`command` with the {term}`launcher`:
 
