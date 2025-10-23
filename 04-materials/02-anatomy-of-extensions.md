@@ -176,7 +176,14 @@ normally would!
    cd jupytercon2025-extension-workshop
    ```
 
+4. Get your cloned repository's URL:
 
+   ```bash
+   gh repo view
+   ```
+
+   The URL of your repo will be printed on the final line of output.
+   Copy that URL for the next step!
 
 :::{hint}
 Check out [GitHub authentication](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
@@ -196,6 +203,7 @@ about SSH keys later if you get tired of typing username/password.
 
     * Kind: `frontend-and-server`
     * Javascript package name: `jupytercon2025-extension-workshop`
+    * Repository URL: as printed by the `gh repo view` command
 
     Everything else can be left as default if you prefer.
 
