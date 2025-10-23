@@ -234,7 +234,8 @@ about SSH keys later if you get tired of typing username/password.
 
 4. 🧪 Test it out! Run this command in a **separate terminal**.
    It will open JupyterLab in your browser automatically.
-   Remember to activate the virtual environment again with `source .venv/bin/activate`
+   Remember to activate the virtual environment again with
+   `micromamba activate jupytercon2025`
    any time you create a new terminal.
    You can keep this terminal open and running JupyterLab in the background!
 
