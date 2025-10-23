@@ -116,6 +116,27 @@ micromamba activate jupyutercon2025
 micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
 ```
 
+
+### Set some important Git settings
+
+
+1. When you make commits, Git needs to know who you are.
+   Configure identity information Git will use when you commit:
+
+   ```bash
+   git config --global user.email "your-email-here@example.com"
+   git config --global user.name "Your Name Here"
+   ```
+
+2. The modern conventional branch name is "main", and this tutorial will assume that's
+   your default branch.
+   Ensure your default branch is set to `main`:
+
+   ```bash
+   git config --global init.defaultBranch main
+   ```
+
+
 ### Create a repository in GitHub and clone it
 
 If you're an experienced Git & GitHub user, feel free to do this step the way you
@@ -155,18 +176,7 @@ normally would!
    cd jupytercon2025-extension-workshop
    ```
 
-4. Ensure your default branch is set to `main`:
 
-   ```bash
-   git config --global init.defaultBranch main
-   ```
-
-5. Configure identity information Git will use when you commit:
-
-   ```bash
-   git config --global user.email "your-email-here@example.com"
-   git config --global user.name "Your Name Here"
-   ```
 
 :::{hint}
 Check out [GitHub authentication](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
