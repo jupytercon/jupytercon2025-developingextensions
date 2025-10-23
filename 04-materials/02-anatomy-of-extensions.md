@@ -176,7 +176,13 @@ normally would!
    cd jupytercon2025-extension-workshop
    ```
 
-4. Get your cloned repository's URL:
+4. Add some useful metadata to your repository:
+
+   ```bash
+   gh repo edit --add-topic "jupytercon2025" --add-topic "jupyterlab-extension"
+   ```
+
+5. Get your cloned repository's URL:
 
    ```bash
    gh repo view
