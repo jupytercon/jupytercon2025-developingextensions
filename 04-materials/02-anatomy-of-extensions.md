@@ -755,7 +755,7 @@ communicate with the server.
 This change adds a new method `load_image()` to our widget class, but notice
 that nothing is calling that method yet:
 
-```typescript
+```{code} typescript
 :linenos:
 :emphasize-lines: 7-19, 21-23
 :file: src/widget.ts
@@ -789,7 +789,7 @@ class ImageCaptionWidget extends Widget {
 Finally, let's hook this behavior up to display it visually.
 Now, we're calling `load_image()` when we initialize the widget:
 
-```typescript
+```{code} typescript
 :linenos:
 :emphasize-lines: 12-25
 :file: src/widget.ts
@@ -824,7 +824,7 @@ class ImageCaptionWidget extends Widget {
   // Fetch data from the server extension and save the results to img and
   // caption class attributes
   load_image(): void {
-	// ...
+    // ...
   }
 
   // Information for the type checker
