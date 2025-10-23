@@ -23,6 +23,8 @@ Frontend extension
 : An extension which adds functionality that executes solely in the browser and interact
 with existing JupyterLab frontend components.
 This includes themes, UI elements, viewers, code editors, and more.
+They are built with [Lumino](https://lumino.readthedocs.io/en/latest/) and/or
+[React](https://react.dev/learn) components.
 Many frontend extensions are part of a larger extension with a
 {term}`server extension <server extension>` component.
 
