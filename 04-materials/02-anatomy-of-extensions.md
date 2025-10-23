@@ -938,6 +938,8 @@ export class ImageCaptionMainAreaWidget extends MainAreaWidget<ImageCaptionWidge
 Build with `jlpm build` and then refresh your browser to see the change!
 Your application should look like this:
 
+![A JupyterLab widget displaying a random cat picture and caption, with a refresh button in the toolbar.](../assets/images/module-2-exercise-d-final.jpg)
+
 :::{important} 💾 **Make a Git commit and push to GitHub now!**
 :icon: false
 
