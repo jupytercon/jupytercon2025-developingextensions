@@ -20,7 +20,8 @@ running on, for example to read files from disk.
 [See the official docs for more!](https://jupyter-server.readthedocs.io/en/stable/developers/extensions.html)
 
 Frontend extension
-: And extension which adds functionality that executes solely in the browser.
+: An extension which adds functionality that executes solely in the browser and interact
+with existing JupyterLab frontend components.
 This includes themes, UI elements, viewers, code editors, and more.
 Many frontend extensions are part of a larger extension with a
 {term}`server extension <server extension>` component.
