@@ -134,7 +134,7 @@ normally would!
    gh auth login
    ```
 
-   Select: `GitHub.com`, `HTTPS`, `Yes`, and `Login with a web browser`, then follow the
+   Select reasonable defaults: `GitHub.com`, `HTTPS`, `Yes`, and `Login with a web browser`, then follow the
    instructions carefully.
    Then, set up the Git CLI to authenticate with GitHub:
 
