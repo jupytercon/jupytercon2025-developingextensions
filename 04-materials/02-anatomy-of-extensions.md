@@ -97,6 +97,25 @@ First we'll look at the final extension together. It:
 
 ## 🏋️ Exercise A (15 minutes): Extension creation and development loop
 
+### Set up workshop dependency environment
+
+```bash
+# Create an environment named "jupytercon2025"
+micromamba create -n jupytercon2025
+
+# Activate it
+# IMPORTANT: Run this every time you open a new terminal!
+micromamba activate jupyutercon2025
+
+# Install workshop dependencies
+## python & pip: Python language and its official package installer
+## nodejs: A JavaScript runtime
+## gh: The GitHub CLI
+## copier: A tool for quickstarting an extension from a template
+## jinja2-time: A dependency of the official JupyterLab extension template
+micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
+```
+
 ### Create a repository in GitHub and clone it
 
 0. Change to the parent directory where you want to work, e.g.
@@ -121,18 +140,7 @@ First we'll look at the final extension together. It:
 
 ### First, create a new extension from the [official template](https://github.com/jupyterlab/extension-template)
 
-:::{important} Prerequisites
-* `copier`. Install with any of the following options:
-    * Into an existing environment (don't forget to activate it first):
-        * `pip install "copier~=9.2" jinja2-time`
-        * `conda install -c  conda-forge "copier~=9.2" jinja2-time`
-    * Globally:
-        * `pipx install "copier~=9.2" --preinstall jinja2-time`
-        * `uv tool install --with jinja2-time copier~=9.2`
-        * `pixi global install "copier~=9.2" --with jinja2-time`
-:::
-
-2. Instantiate the template to get started on your new extension!
+1. Instantiate the template to get started on your new extension!
 
     ```bash
     copier copy --trust https://github.com/jupyterlab/extension-template .
@@ -147,17 +155,13 @@ First we'll look at the final extension together. It:
 
     ![A demo of instantiating an extension project from the official template](../assets/images/init-from-template.gif)
 
-3. List out the files that were created (`ls -la` or `tree -a` are good options)
+2. List out the files that were created (`ls -la` or `tree -a` are good options)
 
-4. Install the extension in development mode
+3. Install the extension in development mode
 
     ```bash
-    # Create and activate a virtualenv
-    uv venv .venv
-    source .venv/bin/activate
-
     # Install package in development mode
-    uv pip install --editable ".[dev,test]"
+    pip install --editable ".[dev,test]"
 
     # Install the frontend and backend components of the extension in development mode:
     jupyter labextension develop . --overwrite
@@ -168,7 +172,7 @@ First we'll look at the final extension together. It:
     jlpm build
     ```
 
-5. 🧪 Test it out! Run this command in a **separate terminal**.
+4. 🧪 Test it out! Run this command in a **separate terminal**.
    It will open JupyterLab in your browser automatically.
    Remember to activate the virtual environment again with `source .venv/bin/activate`
    any time you create a new terminal.
@@ -178,7 +182,7 @@ First we'll look at the final extension together. It:
     jupyter lab
     ```
 
-6. Confirm the extension was loaded. Open your browser's dev console (F12 or
+5. Confirm the extension was loaded. Open your browser's dev console (F12 or
    `CTRL+SHIFT+I`) and look for log messages reading:
 
    * `JupyterLab extension jupytercon2025-extension-workshop is activated!`
@@ -187,7 +191,7 @@ First we'll look at the final extension together. It:
 
    **If you do not see these messages, let us know you need help!**
 
-7. Directly test the server portion of the extension by visiting the endpoint in your
+6. Directly test the server portion of the extension by visiting the endpoint in your
    browser (`http://localhost:8888/jupytercon2025-extension-workshop/hello`).
    You should see the same message as the last step:
    `Hello, world! This is the '/jupytercon2025-extension-workshop/hello' endpoint. Try

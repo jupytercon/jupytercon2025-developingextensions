@@ -36,6 +36,22 @@ For the AI-enabled development portion, [Cursor](https://cursor.com/) is another
 choice!
 
 
+## A conda CLI ([micromamba](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html) preferred)
+
+This workshop will use conda to manage and isolate dependencies.
+
+We will provide commands to create your environment and install the necessary
+dependencies.
+We will use `micromamba` for all commands, but you can substitute `conda` or `mamba` and
+they should still work.
+
+If you're using Anaconda or Miniconda,
+[configure `conda-forge` as your primary channel](https://conda-forge.org/docs/user/transitioning_from_defaults/).
+
+You may also use [pixi](https://pixi.sh/latest/), but we expect you to be
+self-sufficient if you do.
+
+
 ## Something to manage Python dependencies
 
 **And know how to use it!**
