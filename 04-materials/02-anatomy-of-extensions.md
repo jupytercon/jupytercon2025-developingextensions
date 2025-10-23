@@ -281,6 +281,7 @@ Create a new file `src/widget.ts` and add the widget code:
 
 ```{code} typescript
 :linenos:
+:filename: src/widget.ts
 
 import { Widget } from '@lumino/widgets';
 import { MainAreaWidget } from '@jupyterlab/apputils';
@@ -347,6 +348,7 @@ In `src/index.ts`, we need to update our plugin to define a command in our
 ```{code} typescript
 :linenos:
 :emphasize-lines: 2,26-37
+:filename: src/index.ts
 
 import { requestAPI } from './request';
 import { ImageCaptionMainAreaWidget } from './widget';
@@ -400,6 +402,7 @@ First, import the command palette interface at the top of `src/index.ts`:
 ```{code} typescript
 :linenos:
 :emphasize-lines: 5
+:filename: src/index.ts
 
 import {
   JupyterFrontEnd,
@@ -413,6 +416,7 @@ Then, add the command palette as a dependency of our plugin:
 ```{code} typescript
 :linenos:
 :emphasize-lines: 5,8-10
+:filename: src/index.ts
 
 const plugin: JupyterFrontEndPlugin<void> = {
   id: 'myextension:plugin',
@@ -433,6 +437,7 @@ the {term}`command palette <command palette>`.
 ```{code} typescript
 :linenos:
 :emphasize-lines: 15
+:filename: src/index.ts
 
     //Register a new command:
     const command_id = 'image-caption:open';
@@ -480,19 +485,26 @@ git push -u origin main
 
 ### Optional: Register with the {term}`launcher <launcher>`
 
-Unlike the command palette, this functionality needs to be installed.
+Unlike the command palette, this functionality needs to be installed as a dependency.
 First, install `@jupyterlab/launcher` with `jlpm add @jupyterlab/launcher` to make
 this dependency available for import.
 
 You can import `ILauncher` with:
 
-```typescript
+```{code} typescript
+:filename: src/index.ts
+
 import { ILauncher } from '@jupyterlab/launcher'
 ```
 
+Don't forget to add the launcher as a dependency (`requires`) of our plugin, and to pass
+the dependency in to the `activate` function.
+
 ...and register your {term}`command` with the {term}`launcher`:
 
-```typescript
+```{code} typescript
+:filename: src/index.ts
+
 launcher.add({ command: command_id });
 ```
 
@@ -526,7 +538,9 @@ git push -u origin main
 Adding an icon is one extra step.
 We can import the icon in `src/index.ts` like so:
 
-```typescript
+```{code} typescript
+:filename: src/index.ts
+
 import { imageIcon } from '@jupyterlab/ui-components';
 ```
 
@@ -535,6 +549,7 @@ and add the icon to the command's metadata:
 ```{code} typescript
 :linenos:
 :emphasize-lines: 7
+:filename: src/index.ts
 
     app.commands.addCommand(command, {
       execute: () => {
@@ -574,10 +589,389 @@ Now we need to implement the logic and glue the pieces together.
 
 ## 🏋️ Exercise C: Serve images and captions from the server extension
 
-<TODO>
+### Set up images and captions
+
+Create a new directory at `jupytercon2025_extension_workshop/images`:
+
+```bash
+mkdir jupytercon2025_extension_workshop/images
+```
+
+Then, place images in this directory.
+You can choose your own images (favorite cat pictures?) or download images from
+[our demo repository](https://github.com/jupytercon/jupytercon2025-developingextensions-demo/tree/main/jupytercon2025_extension_workshop/images).
+
+:::{important} 💾 **Make a Git commit and push to GitHub now!**
+:icon: false
+
+```bash
+git add .
+git commit -m "Add images"
+git push -u origin main
+```
+:::
+
+Now we need a way to associate captions with each image.
+We'll use a list of Python dictionaries (mappings) to do so.
+Create a new file `jupytercon2025_extension_workshop/images_and_captions.py` and populate it with:
+
+```{code} python
+:filename: jupytercon2025_extension_workshop/images_and_captions.py
+
+# Public domain images from https://www.loc.gov/free-to-use/cats/
+IMAGES_AND_CAPTIONS = [
+    { "filename": "brunnhilde.jpg", "caption": "Brünnhilde" },
+    { "filename": "cats.jpg", "caption": "Cats" },
+    { "filename": "cat-cher-evolution.jpg", "caption": "Evolution of a cat-cher" },
+    { "filename": "the-entanglement.jpg", "caption": "The entanglement" },
+]
+```
+
+
+### Update the server to serve images and captions
+
+Our server behaviors are defined in
+`jupytercon2025_extension_workshop/routes.py`, so that module will need to know
+about how to access our image data and the associated captions.
+We'll import the data structure we just defined and define a new `Path` object
+that references the images directory we just created.
+We'll need the `random` standard library module in the next step, so we'll
+import that too while we're here:
+
+```{code} python
+:linenos:
+:emphasize-lines: 2-4, 10-12
+:filename: jupytercon2025_extension_workshop/routes.py
+
+import base64
+import json
+import random
+from pathlib import Path
+
+from jupyter_server.base.handlers import APIHandler
+from jupyter_server.utils import url_path_join
+import tornado
+
+from .images_and_captions import IMAGES_AND_CAPTIONS
+
+IMAGES_DIR = Path(__file__).parent.absolute() / "images"
+
+
+class HelloRouteHandler(APIHandler):
+    ...
+```
+
+Next, we'll set up a new route handler in our server extension.
+This route handler will select a random entry from the `IMAGES_AND_CAPTIONS`
+constant we imported, open that image, encode its data as a string,
+and then return the string-encoded image data alongside the caption.
+
+```{code} python
+:linenos:
+:emphasize-lines: 5-13
+:filename: jupytercon2025_extension_workshop/routes.py
+
+class HelloRouteHandler(APIHandler):
+    ...
+
+
+class ImageAndCaptionRouteHandler(APIHandler):
+    @tornado.web.authenticated
+    def get(self) -> ImageBytesCaption:
+        random_selection = random.choice(IMAGES_AND_CAPTIONS)
+
+        # Read the data and encode the bytes in base64
+        with open(IMAGES_DIR / random_selection["filename"], "rb") as f:
+            b64_bytes = base64.b64encode(f.read()).decode("utf-8")
+
+        self.finish(json.dumps({
+            "b64_bytes": b64_bytes,
+            "caption": random_selection["caption"],
+        }))
+```
+
+Finally, we need to connect our new handler to the appropriate route:
+
+```{code} python
+:linenos:
+:emphasize-lines: 6, 9
+:filename: jupytercon2025_extension_workshop/routes.py
+
+def setup_route_handlers(web_app):
+    host_pattern = ".*$"
+    base_url = web_app.settings["base_url"]
+
+    hello_route_pattern = url_path_join(base_url, "jupytercon2025-extension-workshop", "hello")
+    image_route_pattern = url_path_join(base_url, "jupytercon2025-extension-workshop", "random-image-caption")
+    handlers = [
+        (hello_route_pattern, HelloRouteHandler),
+        (image_route_pattern, ImageAndCaptionRouteHandler),
+    ]
+
+    web_app.add_handlers(host_pattern, handlers)
+```
+
+
+#### Test!
+
+Now's the best time for us to stop and test before moving on to consuming this
+data with our widget.
+Does our server endpoint return the data we expect it to?
+If there's something wrong and we jump straight to working on the UI, we could
+have a bad time.
+
+Since we only altered Python code, we don't need to run `jlpm build`.
+We can see our changes by restarting JupyterLab and visiting
+`http://localhost:8888/jupytercon2025-extension-workshop/random-image-caption`.
+
+Refresh the page several times, and you should see the data change with each
+refresh (except when the same image is randomly selected multiple times in a
+row!).
+
+:::{hint}
+Not working right?
+
+Look in the terminal that's running the `jupyter lab` command.
+Any errors being triggered from the Python code will show up there.
+
+Perhaps you missed an import in a previous step!
+:::
+
+:::{important} 💾 **Make a Git commit and push to GitHub now!**
+:icon: false
+
+```bash
+git add .
+git commit -m "Add random image and caption endpoint"
+git push -u origin main
+```
+:::
+
+
+### Connect the {term}`widget` to the {term}`server extension`
+
+Now that our backend is working, we need to glue our widget to it.
+
+First, let's import a utility function to `src/widget.ts` that will handle
+requesting an image and caption from the server:
+
+```{code} typescript
+:linenos:
+:emphasize-lines: 7
+:filename: src/widget.ts
+
+import { Widget } from '@lumino/widgets';
+import { MainAreaWidget } from '@jupyterlab/apputils';
+import {
+  imageIcon,
+} from '@jupyterlab/ui-components';
+
+import { requestAPI } from './request';
+```
+
+Now, let's add the behavior to our widget which uses `requestAPI` to
+communicate with the server.
+This change adds a new method `load_image()` to our widget class, but notice
+that nothing is calling that method yet:
+
+```{code} typescript
+:linenos:
+:emphasize-lines: 7-19, 21-23
+:file: src/widget.ts
+
+class ImageCaptionWidget extends Widget {
+  // Initialization
+  constructor() {
+    // ...
+  }
+
+  // Fetch data from the server extension and save the results to img and
+  // caption class attributes
+  load_image(): void {
+    requestAPI<any>('random-image-caption')
+      .then(data => {
+        console.log(data);
+        this.img.src = `data:image/jpeg;base64, ${data.b64_bytes}`;
+        this.caption.innerHTML = data.caption;
+      })
+      .catch(reason => {
+        console.error(`Error fetching image data.\n${reason}`);
+      });
+  }
+
+  // Information about class attributes for the type checker
+  img: HTMLImageElement;
+  caption: HTMLParagraphElement;
+}
+```
+
+Finally, let's hook this behavior up to display it visually.
+Now, we're calling `load_image()` when we initialize the widget:
+
+```{code} typescript
+:linenos:
+:emphasize-lines: 12-25
+:file: src/widget.ts
+
+class ImageCaptionWidget extends Widget {
+  // Initialization
+  constructor() {
+    super();
+
+    // Create and append an HTML <p> (paragraph) tag to our widget's node in
+    // the HTML document
+    const hello = document.createElement('p');
+    hello.innerHTML = "Hello, world!";
+    this.node.appendChild(hello);
+
+    const center = document.createElement('center');
+    this.node.appendChild(center);
+
+    // Put an <img> tag into the <center> tag, and also save it as a class
+    // attribute so we can update it later.
+    this.img = document.createElement('img');
+    center.appendChild(this.img);
+
+    // Do the same for a caption!
+    this.caption = document.createElement('p');
+    center.appendChild(this.caption);
+
+    // Initialize the image from the server extension
+    this.load_image();
+  }
+
+  // Fetch data from the server extension and save the results to img and
+  // caption class attributes
+  load_image(): void {
+    // ...
+  }
+
+  // Information for the type checker
+  img: HTMLImageElement;
+  caption: HTMLParagraphElement;
+}
+```
+
+#### Test!
+
+Now that we have our widget user interface hooked up to the data coming from the server, let's test again.
+Because we changed the JavaScript, we need to use `jlpm run build`, but we _don't_ need to restart the JupyterLab server.
+We just need to refresh the page!
+
+When you launch your widget, do you see one of your images?
+
+:::{hint}
+Running in to trouble?
+
+Check your browser console for errors.
+
+If you're using your own images, perhaps they aren't JPEG images like the demo images we provided.
+You may need to update the preamble of `this.img.src` from
+`data:image/jpeg;base64` to `data:image/png;base64`, for example.
+If you have mixed data formats, perhaps you could add the mimetype of each
+image to the JSON data sent by the server!
+:::
+
+:::{important} 💾 **Make a Git commit and push to GitHub now!**
+:icon: false
+
+```bash
+git add .
+git commit -m "Add random image and caption endpoint"
+git push -u origin main
+```
+:::
 
 
 ## 🏋️ Exercise D: Add user interactivity to the widget
+
+Right now, you only get a random image when you first open the widget.
+It's much more interesting if the widget can respond to user actions!
+Let's add a toolbar and refresh button which triggers the image to change immediately.
+
+
+### Import a toolbar UI component and icon
+
+For all of this to work, we need the `ToolbarButton` to use in our
+widget.
+For our toolbar button to be usable, it also needs an icon.
+We can import `refreshIcon` from the same place we got `imageIcon`:
+
+```{code} typescript
+:linenos:
+:emphasize-lines: 4,8
+:filename: src/widget.ts
+
+import { Widget } from '@lumino/widgets';
+import {
+  MainAreaWidget,
+  ToolbarButton,
+} from '@jupyterlab/apputils';
+import {
+  imageIcon,
+  refreshIcon,
+} from '@jupyterlab/ui-components';
+```
+
+
+### Add the button to the widget and connect the logic
+
+Now we can use the `ToolbarButton` class to instantiate a new button with an
+icon, tooltip, and behavior (`onClick`).
+
+For the behavior, we'll reuse our widget's `load_image()` method that we call
+when we initialize the widget.
+Now, it's being called in two cases: when we initialize the widget, and when
+the user clicks the refresh button on the toolbar.
+
+```{code} typescript
+:linenos:
+:emphasize-lines: 10-19
+:filename: src/widget.ts
+
+export class ImageCaptionMainAreaWidget extends MainAreaWidget<ImageCaptionWidget> {
+  constructor() {
+    const widget = new ImageCaptionWidget();
+    super({ content: widget });
+
+    this.title.label = 'Random image with caption';
+    this.title.caption = this.title.label;
+    this.title.icon = imageIcon;
+
+    // Add a refresh button to the toolbar
+    const refreshButton = new ToolbarButton({
+      icon: refreshIcon,
+      tooltip: 'Refresh image',
+      onClick: () => {
+        widget.load_image();
+      }
+    });
+    this.toolbar.addItem('refresh', refreshButton);
+  }
+}
+```
+
+
+### Test!
+
+Build with `jlpm build` and then refresh your browser to see the change!
+Your application should look like this:
+
+![A JupyterLab widget displaying a random cat picture and caption, with a refresh button in the toolbar.](../assets/images/module-2-exercise-d-final.jpg)
+
+:::{important} 💾 **Make a Git commit and push to GitHub now!**
+:icon: false
+
+```bash
+git add .
+git commit -m "Add refresh button to widget toolbar"
+git push -u origin main
+```
+:::
+
+
+
+## 🏋️ Exercise E: Preserve layout
 
 <TODO>
 
