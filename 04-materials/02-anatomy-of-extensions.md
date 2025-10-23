@@ -487,7 +487,9 @@ this dependency available for import.
 
 You can import `ILauncher` with:
 
-```typescript
+```{code} typescript
+:filename: src/index.ts
+
 import { ILauncher } from '@jupyterlab/launcher'
 ```
 
@@ -496,7 +498,9 @@ the dependency in to the `activate` function.
 
 ...and register your {term}`command` with the {term}`launcher`:
 
-```typescript
+```{code} typescript
+:filename: src/index.ts
+
 launcher.add({ command: command_id });
 ```
 
@@ -530,7 +534,9 @@ git push -u origin main
 Adding an icon is one extra step.
 We can import the icon in `src/index.ts` like so:
 
-```typescript
+```{code} typescript
+:filename: src/index.ts
+
 import { imageIcon } from '@jupyterlab/ui-components';
 ```
 
