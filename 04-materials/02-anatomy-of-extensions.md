@@ -277,6 +277,7 @@ Create a new file `src/widget.ts` and add the widget code:
 
 ```{code} typescript
 :linenos:
+:filename: src/widget.ts
 
 import { Widget } from '@lumino/widgets';
 import { MainAreaWidget } from '@jupyterlab/apputils';
@@ -343,6 +344,7 @@ In `src/index.ts`, we need to update our plugin to define a command in our
 ```{code} typescript
 :linenos:
 :emphasize-lines: 2,26-37
+:filename: src/index.ts
 
 import { requestAPI } from './request';
 import { ImageCaptionMainAreaWidget } from './widget';
@@ -396,6 +398,7 @@ First, import the command palette interface at the top of `src/index.ts`:
 ```{code} typescript
 :linenos:
 :emphasize-lines: 5
+:filename: src/index.ts
 
 import {
   JupyterFrontEnd,
@@ -409,6 +412,7 @@ Then, add the command palette as a dependency of our plugin:
 ```{code} typescript
 :linenos:
 :emphasize-lines: 5,8-10
+:filename: src/index.ts
 
 const plugin: JupyterFrontEndPlugin<void> = {
   id: 'myextension:plugin',
@@ -429,6 +433,7 @@ the {term}`command palette <command palette>`.
 ```{code} typescript
 :linenos:
 :emphasize-lines: 15
+:filename: src/index.ts
 
     //Register a new command:
     const command_id = 'image-caption:open';
@@ -531,6 +536,7 @@ and add the icon to the command's metadata:
 ```{code} typescript
 :linenos:
 :emphasize-lines: 7
+:filename: src/index.ts
 
     app.commands.addCommand(command, {
       execute: () => {
