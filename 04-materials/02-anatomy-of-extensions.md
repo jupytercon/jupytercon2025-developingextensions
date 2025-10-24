@@ -2,8 +2,9 @@
 
 :::{hint} Learning objectives
 * Understand the difference between extensions, plugins, and widgets
-* Learn how to get started with writing an extension
-* ...
+* Understand how to get started with writing an extension
+* Understand how to structure and navigate an extension project
+* Practice and get comfortable with the development & testing loop
 :::
 
 :::{important} Outcomes
