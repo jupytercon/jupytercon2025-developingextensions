@@ -983,13 +983,11 @@ import {
 
 ### Add the button to the widget and connect the logic
 
-Now we can use the `ToolbarButton` class to instantiate a new button with an
-icon, tooltip, and behavior (`onClick`).
+Now we can use the `ToolbarButton` class to instantiate a new button with an icon,
+tooltip, and behavior (`onClick`).
 
-For the behavior, we'll reuse our widget's `load_image()` method that we call
+For the button's behavior, we'll reuse our widget's `load_image()` method that we call
 when we initialize the widget.
-Now, it's being called in two cases: when we initialize the widget, and when
-the user clicks the refresh button on the toolbar.
 
 ```{code} typescript
 :linenos:
