@@ -404,8 +404,14 @@ git push -u origin main
 
 Follow the same testing steps as last time.
 
-Do you see the change in the console messages?
-Do you see the change when directly accessing the server with the browser?
+:::{important} 👀 You should notice...
+:class: simple
+:icon: false
+
+The console messages in your browser changed according to the edits you made.
+
+The server endpoint returns a new value according to the edits you made.
+:::
 
 **Please repeat this development loop as many times as you can to get more comfortable
 with it.**
