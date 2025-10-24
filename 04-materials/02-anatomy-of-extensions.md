@@ -122,7 +122,6 @@ micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
 
 ### Set some important Git settings
 
-
 1. When you make commits, Git needs to know who you are.
    Configure identity information Git will use when you commit:
 
