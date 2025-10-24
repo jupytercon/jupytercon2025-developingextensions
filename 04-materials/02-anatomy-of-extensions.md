@@ -279,7 +279,7 @@ git push -u origin main
 :::
 
 
-### Now let's do one complete development loop!
+### Now let's do a complete development loop!
 
 0. Close the JupyterLab server with `CTRL+C`.
 
@@ -298,6 +298,9 @@ Follow the same testing steps as last time.
 
 Do you see the change in the console messages?
 Do you see the change when directly accessing the server with the browser?
+
+**Please repeat this development loop as many times as you can to get more comfortable
+with it.**
 
 
 :::{important} 💾 **Make a Git commit and push to GitHub now!**
