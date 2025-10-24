@@ -97,6 +97,14 @@ micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
    ```
 
 
+:::{important} 👀 You should notice...
+:class: simple
+:icon: false
+
+...these commands produce no output when successful.
+:::
+
+
 ### Create a GitHub repository and clone it locally
 
 If you're an experienced Git & GitHub user, feel free to do this step the way you
@@ -118,38 +126,61 @@ normally would!
    Select reasonable defaults: `GitHub.com`, `HTTPS`, `Yes`, and `Login with a web browser`, then follow the
    instructions carefully.
 
-   Then, set up the Git CLI to authenticate with GitHub:
+   :::{important} 👀 You should notice...
+   :class: simple
+   :icon: false
+
+   ...after answering the questions, you'll be prompted to copy a secret token, then
+   press `ENTER` to open a special page in your browser, then paste the token there.
+
+   You'll have to confirm some prompts in your browser, then you should see this message
+   in your terminal:
+
+   ```
+   ✓ Authentication complete
+   ```
+   :::
+
+2. Set up the Git CLI to authenticate with GitHub:
 
    ```bash
    gh auth setup-git
    ```
 
-2. Create a repository in GitHub and clone it:
+3. Create a repository in GitHub and clone it:
 
    ```bash
    gh repo create jupytercon2025-extension-workshop --public --clone
    ```
 
-3. Change directory into your newly-cloned repository:
+4. Change directory into your newly-cloned repository:
 
    ```bash
    cd jupytercon2025-extension-workshop
    ```
 
-4. Add some useful metadata to your repository:
+5. Add some useful metadata to your repository:
 
    ```bash
    gh repo edit --add-topic "jupytercon2025" --add-topic "jupyterlab-extension"
    ```
 
-5. Get your cloned repository's URL:
+6. Get your cloned repository's URL:
 
    ```bash
    gh repo view
    ```
 
-   The URL of your repo will be printed on the final line of output.
-   Copy that URL for the next step!
+   :::{important} 👀 You should notice...
+   :class: simple
+   :icon: false
+
+   ...a full description of your repository is printed to the terminal.
+   The final line of output includes a repository URL starting with
+   `https://github.com/`.
+   :::
+
+   **Copy the entire repository URL for the next step!**
 
 
 ## Extensions and plugins and widgets -- oh, my!
@@ -222,25 +253,75 @@ Our extension will:
 
 2. List the files that were created (`ls -la` or `tree -a` are good options).
 
-   You should now see a long list of files that the extension template created for you,
-   including project configuration files like `pyproject.toml` and `package.json`,
-   documentation files like `README.md` and `RELEASE.md`, and source code directories
-   like `src/` (JavaScript) and `jupytercon2025_extension_workshop/` (Python).
+   :::{important} 👀 You should notice...
+   :class: simple
+   :icon: false
+
+   ...a long list of files that the extension template created for you,
+   including:
+
+   * Project configuration files like `pyproject.toml` and `package.json`
+   * Documentation files like `README.md` and `RELEASE.md`
+   * Source code directories like `src/` (JavaScript) and
+     `jupytercon2025_extension_workshop/` (Python).
+   :::
 
 3. Install the extension in development mode
 
-    ```bash
-    # Install package in development mode
-    pip install --editable ".[dev,test]"
+   ```bash
+   # Install package in development mode
+   pip install --editable ".[dev,test]"
+   ```
 
-    # Install the frontend and backend components of the extension in development mode:
-    jupyter labextension develop . --overwrite
-    jupyter server extension enable jupytercon2025_extension_workshop
+   :::{important} 👀 You should notice...
+   :class: simple
+   :icon: false
 
-    # Rebuild extension Typescript source after making changes
-    # IMPORTANT: We must do this every time we make a change!
-    jlpm build
-    ```
+   ...lots of terminal output!
+   The final line should read:
+
+   ```bash
+   Successfully installed <a long list of Python packages like MarkupSafe, AnyIO, ...,
+   jupytercon2025_extension_workshop, jupyterlab, ..., webencodings, and
+   websocket-client>
+   ```
+   :::
+
+4. Install the extension to JupyterLab
+
+   ```bash
+   # Install the frontend and backend components of the extension in development mode:
+   jupyter labextension develop . --overwrite
+   jupyter server extension enable jupytercon2025_extension_workshop
+   ```
+
+   :::{important} 👀 You should notice...
+   :class: simple
+   :icon: false
+
+   ...3 lines of terminal output starting with `Installing`, `Removing`, and
+   `Symlinking`.
+   :::
+
+5. Build the extension
+
+   ```bash
+   # Rebuild extension Typescript source after making changes
+   # IMPORTANT: We must do this every time we make a change!
+   jlpm build
+   ```
+
+   :::{important} 👀 You should notice...
+   :class: simple
+   :icon: false
+
+   ...many lines of colorful terminal output ending with a message similar to:
+
+   ```bash
+   webpack 5.102.1 compiled successfully in 26 ms
+   ```
+   :::
+
 
 #### 🧪 Test
 
@@ -254,24 +335,45 @@ Our extension will:
 
    We can keep this terminal open and running JupyterLab in the background!
 
-    ```bash
-    jupyter lab
-    ```
+   ```bash
+   jupyter lab
+   ```
+
+   :::{important} 👀 You should notice...
+   :class: simple
+   :icon: false
+
+   ...JupyterLab automatically opened in your browser when you started the server.
+   :::
 
 2. Confirm the extension was loaded. Open your browser's dev console (F12 or
-   `CTRL+SHIFT+I`) and look for log messages reading:
+   `CTRL+SHIFT+I`) and...
+
+   :::{important} 👀 You should notice...
+   :class: simple
+   :icon: false
+
+   ...log messages reading:
 
    * `JupyterLab extension jupytercon2025-extension-workshop is activated!`
    * `Hello, world! This is the '/jupytercon2025-extension-workshop/hello' endpoint. Try
      visiting me in your browser!`
 
    **If you do not see these messages, let instructors know you need help!**
+   :::
 
 3. Test the server endpoint by visiting it in your browser
    (`http://localhost:8888/jupytercon2025-extension-workshop/hello`).
-   We should see the same message as the last step:
+
+   :::{important} 👀 You should notice...
+   :class: simple
+   :icon: false
+
+   ...the same message as you saw in the console in the last step, but this time in your
+   main browser window:
    `Hello, world! This is the '/jupytercon2025-extension-workshop/hello' endpoint. Try
    visiting me in your browser!`
+   :::
 
 
 :::{important} 💾 **Make a Git commit and push to GitHub now!**
@@ -551,7 +653,14 @@ To test from the {term}`command palette <command palette>`, click
 Begin typing "Random image" and the command palette interface
 should autocomplete.
 Select "Random image with caption" and press `ENTER`.
-We should see a new tab open containing the text "Hello, world"!
+
+:::{important} 👀 You should notice...
+:class: simple
+:icon: false
+
+...a new tab open in the JupyterLab interface containing the text "Hello, world"!
+:::
+
 
 :::{important} 💾 **Make a Git commit and push to GitHub now!**
 :icon: false
@@ -939,7 +1048,15 @@ Now that we have our widget user interface hooked up to the data coming from the
 Because we changed the JavaScript, we need to use `jlpm run build`, but we _don't_ need to restart the JupyterLab server.
 We just need to refresh the page!
 
-When you launch your widget, do you see one of your images?
+:::{important} 👀 You should notice...
+:class: simple
+:icon: false
+
+...when you launch the widget from the {term}`command palette <command palette>` or
+{term}`launcher <launcher>`, one of the images we uploaded at the beginning of this
+exercise is shown, alongside the associated caption.
+:::
+
 
 :::{hint}
 Running into trouble?
@@ -952,6 +1069,7 @@ You may need to update the preamble of `this.img.src` from
 If you have mixed data formats, perhaps you could add the mimetype of each
 image to the JSON data sent by the server!
 :::
+
 
 :::{important} 💾 **Make a Git commit and push to GitHub now!**
 :icon: false
@@ -1033,10 +1151,17 @@ export class ImageCaptionMainAreaWidget extends MainAreaWidget<ImageCaptionWidge
 
 ### 🧪 Test
 
-Build with `jlpm build` and then refresh your browser to see the change!
-Our application should look like this:
+Build with `jlpm build` and then refresh your browser.
+
+:::{important} 👀 You should notice...
+:class: simple
+:icon: false
+
+...our application looks like this:
 
 ![A JupyterLab widget displaying a random cat picture and caption, with a refresh button in the toolbar.](../assets/images/module-2-exercise-d-final.jpg)
+:::
+
 
 :::{important} 💾 **Make a Git commit and push to GitHub now!**
 :icon: false
@@ -1049,10 +1174,19 @@ git push -u origin main
 :::
 
 
+## Problem: The widget disappears when we refresh the page
+
+:::{important} 👀 You should notice...
+:class: simple
+:icon: false
+
+...when you refresh or close/re-open JupyterLab in your browser, our widget window
+disappears.
+:::
+
+
 ## 🏋️ Exercise E (15 minutes): Preserve layout
 
-You may have noticed that when you refresh or close/re-open JupyterLab, our widget
-window disappears.
 JupyterLab can save and restore layouts, but we need to define how our widget restores
 its state.
 
@@ -1173,9 +1307,16 @@ And finally, restore any previous state when our plugin is activated:
 ### 🧪 Test
 
 To test this change, load our widget in JupyterLab, then refresh the page.
-You should see the widget is still visible!
+
+:::{important} 👀 You should notice...
+:class: simple
+:icon: false
+
+...the widget is still visible!
+
 You may see a different image; this is because we're loading a new image every time the
 widget is initialized.
+:::
 
 
 [^rebuild-not-always-required]: We don't actually _always_ need to rebuild -- only when
