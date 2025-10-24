@@ -950,7 +950,7 @@ git push -u origin main
 :::
 
 
-## 🏋️ Exercise D: Add user interactivity to the widget
+## 🏋️ Exercise D (15 minutes): Add user interactivity to the widget
 
 Right now, you only get a random image when you first open the widget.
 It's much more interesting if the widget can respond to user actions!
@@ -1035,7 +1035,7 @@ git push -u origin main
 :::
 
 
-## 🏋️ Exercise E: Preserve layout
+## 🏋️ Exercise E (15 minutes): Preserve layout
 
 You may have noticed that when you refresh or close/re-open JupyterLab, our widget
 window disappears.
