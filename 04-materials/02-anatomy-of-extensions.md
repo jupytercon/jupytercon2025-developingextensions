@@ -110,7 +110,7 @@ micromamba create -n jupytercon2025
 
 # Activate it
 # IMPORTANT: Run this every time you open a new terminal!
-micromamba activate jupyutercon2025
+micromamba activate jupytercon2025
 
 # Install workshop dependencies
 ## python & pip: Python language and its official package installer
