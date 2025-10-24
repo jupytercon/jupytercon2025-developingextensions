@@ -107,9 +107,6 @@ micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
 
 ### Create a GitHub repository and clone it locally
 
-If you're an experienced Git & GitHub user, feel free to do this step the way you
-normally would!
-
 0. Change to the parent directory where you want to work, e.g.
 
    ```bash
