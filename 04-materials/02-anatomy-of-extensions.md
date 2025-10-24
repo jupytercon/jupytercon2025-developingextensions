@@ -100,6 +100,8 @@ First we'll look at the final extension together. It:
 
 ### Set up workshop dependency environment
 
+You'll use this environment for the rest of this workshop:
+
 ```bash
 # Create an environment named "jupytercon2025"
 micromamba create -n jupytercon2025
