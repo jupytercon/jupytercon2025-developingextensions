@@ -1069,8 +1069,7 @@ When we pass an optional dependency to the `activate` function, we follow two
 key rules:
 
 1. Optional dependencies are passed _after_ required dependencies
-2. Optional dependencies, because they are optional, have the possibility of
-   being `null`
+2. Optional dependencies always have the possibility of being `null`
 
 
 ```{code} typescript
