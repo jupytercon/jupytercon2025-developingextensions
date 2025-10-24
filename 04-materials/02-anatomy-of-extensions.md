@@ -232,7 +232,9 @@ about SSH keys later if you get tired of typing username/password.
     jlpm build
     ```
 
-4. 🧪 Test it out! Run this command in a **separate terminal**.
+#### 🧪 Test
+
+1. Run this command in a **separate terminal**.
    It will open JupyterLab in your browser automatically.
    Remember to activate the virtual environment again with
    `micromamba activate jupytercon2025`
@@ -243,7 +245,7 @@ about SSH keys later if you get tired of typing username/password.
     jupyter lab
     ```
 
-5. Confirm the extension was loaded. Open your browser's dev console (F12 or
+2. Confirm the extension was loaded. Open your browser's dev console (F12 or
    `CTRL+SHIFT+I`) and look for log messages reading:
 
    * `JupyterLab extension jupytercon2025-extension-workshop is activated!`
@@ -252,7 +254,7 @@ about SSH keys later if you get tired of typing username/password.
 
    **If you do not see these messages, let us know you need help!**
 
-6. Directly test the server portion of the extension by visiting the endpoint in your
+3. Directly test the server portion of the extension by visiting the endpoint in your
    browser (`http://localhost:8888/jupytercon2025-extension-workshop/hello`).
    You should see the same message as the last step:
    `Hello, world! This is the '/jupytercon2025-extension-workshop/hello' endpoint. Try
@@ -282,11 +284,13 @@ git push -u origin main
 
 2. Rebuild the extension with `jlpm build`.
 
-3. Start JupyterLab again with `jupyter lab`.
 
-4. Test again following steps 5 & 6 above.
-   Do you see the change in the console messages?
-   Do you see the change when directly accessing the server with the browser?
+#### 🧪 Test
+
+Follow the same testing steps as last time.
+
+Do you see the change in the console messages?
+Do you see the change when directly accessing the server with the browser?
 
 
 :::{important} 💾 **Make a Git commit and push to GitHub now!**
@@ -518,7 +522,7 @@ the {term}`command palette <command palette>`.
 ```
 
 
-### Finally, we can test!
+### 🧪 Test
 
 Stop your JupyterLab server (`CTRL+C`), then rebuild your extension (`jlpm
 build`), then restart JupyterLab (`jupyter lab`).
@@ -576,7 +580,7 @@ Follow the same steps you followed to register your command with the {term}`comm
 Reuse the same command!
 :::
 
-#### Test it!
+#### 🧪 Test
 
 Repeat the build and test procedure from the previous step.
 
@@ -773,7 +777,7 @@ def setup_route_handlers(web_app):
 ```
 
 
-#### Test!
+#### 🧪 Test
 
 Now's the best time for us to stop and test before moving on to consuming this
 data with our widget.
@@ -913,7 +917,7 @@ class ImageCaptionWidget extends Widget {
 }
 ```
 
-#### Test!
+#### 🧪 Test
 
 Now that we have our widget user interface hooked up to the data coming from the server, let's test again.
 Because we changed the JavaScript, we need to use `jlpm run build`, but we _don't_ need to restart the JupyterLab server.
@@ -1013,7 +1017,7 @@ export class ImageCaptionMainAreaWidget extends MainAreaWidget<ImageCaptionWidge
 ```
 
 
-### Test!
+### 🧪 Test
 
 Build with `jlpm build` and then refresh your browser to see the change!
 Your application should look like this:
