@@ -654,7 +654,7 @@ with a caption, and a widget to display them.
 Now we need to implement the logic and glue the pieces together.
 
 
-## 🏋️ Exercise C: Serve images and captions from the server extension
+## 🏋️ Exercise C (20 minutes): Serve images and captions from the server extension
 
 ### Set up images and captions
 
