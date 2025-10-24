@@ -256,8 +256,8 @@ about SSH keys later if you get tired of typing username/password.
 
    **If you do not see these messages, let us know you need help!**
 
-3. Directly test the server portion of the extension by visiting the endpoint in your
-   browser (`http://localhost:8888/jupytercon2025-extension-workshop/hello`).
+3. Test the server endpoint by visiting it in your browser
+   (`http://localhost:8888/jupytercon2025-extension-workshop/hello`).
    You should see the same message as the last step:
    `Hello, world! This is the '/jupytercon2025-extension-workshop/hello' endpoint. Try
    visiting me in your browser!`
