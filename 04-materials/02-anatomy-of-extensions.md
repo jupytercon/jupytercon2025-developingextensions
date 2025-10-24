@@ -53,11 +53,13 @@ This tutorial is inspired by many prior works.
 
 ## Extensions and plugins and widgets -- oh, my!
 
-An {term}`extension <extension>` and a {term}`plugin <plugin>` sound like the same thing at first.
+While they sound similar, `extensions <extension>` and {term}`plugins <plugin>` serve
+different purposes.
 
-{term}`Plugins <plugin>` are the fundamental building block of the JupyterLab architecture, and
-extensions are the delivery mechanism or "container" for those building blocks.
-Extensions are the thing you `pip install`, and they often contain more than one plugin.
+{term}`Plugins <plugin>` are JupyterLab's fundamental building blocks which define
+functionality and business logic.
+{term}`Extensions <extension>` are the delivery mechanism or "container" for plugins.
+Extensions are the thing that end-users `pip install`
 
 :::{pull-quote}
 End-users care about extensions, and developers care about plugins.
