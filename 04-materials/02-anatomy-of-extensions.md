@@ -214,7 +214,7 @@ normally would!
 
     ![A demo of instantiating an extension project from the official template](../assets/images/init-from-template.gif)
 
-2. List out the files that were created (`ls -la` or `tree -a` are good options)
+2. List the files that were created (`ls -la` or `tree -a` are good options)
 
 3. Install the extension in development mode
 
