@@ -8,7 +8,7 @@
 :::
 
 :::{important} Outcomes
-After completing this module, you will have created a new extension from the
+After completing this module, we will have created a new extension from the
 [official template](https://github.com/jupyterlab/extension-template) and implemented a
 new widget for displaying a random image and caption from a curated set.
 The widget will be launchable from the {term}`command palette <command palette>` and the
@@ -102,7 +102,7 @@ Our extension will:
 
 ### Set up workshop dependency environment
 
-You'll use this environment for the rest of this workshop:
+We'll use this environment for the rest of this workshop:
 
 ```bash
 # Create an environment named "jupytercon2025"
@@ -124,8 +124,8 @@ micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
 
 ### Set some important Git settings
 
-1. When you make commits, Git needs to know who you are.
-   Configure identity information Git will use when you commit:
+1. When we make commits, Git needs to know who you are.
+   Configure identity information Git will use when we commit:
 
    ```bash
    git config --global user.email "your-email-here@example.com"
@@ -203,7 +203,7 @@ about SSH keys later if you get tired of typing username/password.
 
 ### First, create a new extension from the [official template](https://github.com/jupyterlab/extension-template)
 
-1. Instantiate the template to get started on your new extension!
+1. Instantiate the template to get started on our new extension!
 
     ```bash
     copier copy --trust https://github.com/jupyterlab/extension-template .
@@ -232,7 +232,7 @@ about SSH keys later if you get tired of typing username/password.
     jupyter server extension enable jupytercon2025_extension_workshop
 
     # Rebuild extension Typescript source after making changes
-    # IMPORTANT: You must do this every time you make a change!
+    # IMPORTANT: We must do this every time we make a change!
     jlpm build
     ```
 
@@ -240,10 +240,13 @@ about SSH keys later if you get tired of typing username/password.
 
 1. Run this command in a **separate terminal**.
    It will open JupyterLab in your browser automatically.
-   Remember to activate the virtual environment again with
-   `micromamba activate jupytercon2025`
-   any time you create a new terminal.
-   You can keep this terminal open and running JupyterLab in the background!
+
+   :::{hint} Reminder
+   Activate the virtual environment again with `micromamba activate jupytercon2025` any
+   time you create a new terminal.
+   :::
+
+   We can keep this terminal open and running JupyterLab in the background!
 
     ```bash
     jupyter lab
@@ -256,11 +259,11 @@ about SSH keys later if you get tired of typing username/password.
    * `Hello, world! This is the '/jupytercon2025-extension-workshop/hello' endpoint. Try
      visiting me in your browser!`
 
-   **If you do not see these messages, let us know you need help!**
+   **If you do not see these messages, let instructors know you need help!**
 
 3. Test the server endpoint by visiting it in your browser
    (`http://localhost:8888/jupytercon2025-extension-workshop/hello`).
-   You should see the same message as the last step:
+   We should see the same message as the last step:
    `Hello, world! This is the '/jupytercon2025-extension-workshop/hello' endpoint. Try
    visiting me in your browser!`
 
@@ -539,7 +542,7 @@ To test from the {term}`command palette <command palette>`, click
 Begin typing "Random image" and the command palette interface
 should autocomplete.
 Select "Random image with caption" and press `ENTER`.
-You should see a new tab open containing the text "Hello, world"!
+We should see a new tab open containing the text "Hello, world"!
 
 :::{important} 💾 **Make a Git commit and push to GitHub now!**
 :icon: false
@@ -558,7 +561,7 @@ Unlike the command palette, this functionality needs to be installed as a depend
 First, install `@jupyterlab/launcher` with `jlpm add @jupyterlab/launcher` to make
 this dependency available for import.
 
-You can import `ILauncher` with:
+We can import `ILauncher` with:
 
 ```{code} typescript
 :filename: src/index.ts
@@ -569,7 +572,7 @@ import { ILauncher } from '@jupyterlab/launcher'
 Don't forget to add the launcher as a dependency (`requires`) of our plugin, and to pass
 the dependency in to the `activate` function.
 
-...and register your {term}`command` with the {term}`launcher`:
+...and register our {term}`command` with the {term}`launcher`:
 
 ```{code} typescript
 :filename: src/index.ts
@@ -577,10 +580,10 @@ the dependency in to the `activate` function.
 launcher.add({ command: command_id });
 ```
 
-We will leave the rest of the implementation up to you!
+The rest of the implementation up to you!
 
 :::{hint}
-Follow the same steps you followed to register your command with the {term}`command palette <command palette>`.
+Follow the same steps you followed to register our command with the {term}`command palette <command palette>`.
 Reuse the same command!
 :::
 
@@ -1024,7 +1027,7 @@ export class ImageCaptionMainAreaWidget extends MainAreaWidget<ImageCaptionWidge
 ### 🧪 Test
 
 Build with `jlpm build` and then refresh your browser to see the change!
-Your application should look like this:
+Our application should look like this:
 
 ![A JupyterLab widget displaying a random cat picture and caption, with a refresh button in the toolbar.](../assets/images/module-2-exercise-d-final.jpg)
 
@@ -1041,7 +1044,7 @@ git push -u origin main
 
 ## 🏋️ Exercise E: Preserve layout
 
-You may have noticed that when you refresh or close/re-open JupyterLab, your widget
+You may have noticed that when you refresh or close/re-open JupyterLab, our widget
 window disappears.
 JupyterLab can save and restore layouts, but we need to define how our widget restores
 its state.
@@ -1162,12 +1165,11 @@ And finally, restore any previous state when our plugin is activated:
 
 ### 🧪 Test
 
-To test this change, load your widget in JupyterLab, then refresh the page.
+To test this change, load our widget in JupyterLab, then refresh the page.
 You should see the widget is still visible!
 You may see a different image; this is because we're loading a new image every time the
 widget is initialized.
 
 
-[^rebuild-not-always-required]: You don't actually _always_ need to rebuild -- only when
-you change the JavaScript. If you only changed Python, you only need to restart
-JupyterLab.
+[^rebuild-not-always-required]: We don't actually _always_ need to rebuild -- only when
+we change the JavaScript. If we only changed Python, we only need to restart JupyterLab.
