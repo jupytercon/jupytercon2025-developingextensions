@@ -208,7 +208,7 @@ normally would!
 
     * Kind: `frontend-and-server`
     * Javascript package name: `jupytercon2025-extension-workshop`
-    * Repository URL: as printed by the `gh repo view` command
+    * Repository URL: as printed by the `gh repo view` command in the previous step
 
     Everything else can be left as default if you prefer.
 
