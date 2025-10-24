@@ -1,4 +1,4 @@
-# 🪩 Show & tell
+# 🪩 3 - Show & tell
 
 :::{hint} Learning objectives
 * Discover advanced applications for JupyterLab extensions
