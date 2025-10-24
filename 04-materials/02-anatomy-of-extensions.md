@@ -752,7 +752,7 @@ class HelloRouteHandler(APIHandler):
 
 class ImageAndCaptionRouteHandler(APIHandler):
     @tornado.web.authenticated
-    def get(self) -> ImageBytesCaption:
+    def get(self):
         random_selection = random.choice(IMAGES_AND_CAPTIONS)
 
         # Read the data and encode the bytes in base64
