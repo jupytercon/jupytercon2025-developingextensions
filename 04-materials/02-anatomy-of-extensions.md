@@ -325,15 +325,15 @@ Our extension will:
 
 #### 🧪 Test
 
-1. Run this command in a **separate terminal**.
-   It will open JupyterLab in your browser automatically.
+1. Start JupyterLab in a **separate terminal**.
 
    :::{hint} Reminder
    Activate the virtual environment again with `micromamba activate jupytercon2025` any
    time you create a new terminal.
    :::
 
-   We can keep this terminal open and running JupyterLab in the background!
+   After running this command, we can keep this terminal open and running JupyterLab in
+   the background!
 
    ```bash
    jupyter lab
