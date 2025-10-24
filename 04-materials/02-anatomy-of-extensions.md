@@ -157,7 +157,7 @@ different purposes.
 {term}`Plugins <plugin>` are JupyterLab's fundamental building blocks which define
 functionality and business logic.
 {term}`Extensions <extension>` are the delivery mechanism or "container" for plugins.
-Extensions are the thing that end-users `pip install`
+Extensions are the thing that end-users `pip install`.
 
 :::{pull-quote}
 End-users care about extensions, and developers care about plugins.
