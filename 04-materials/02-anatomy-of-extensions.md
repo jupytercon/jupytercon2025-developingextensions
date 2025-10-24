@@ -220,7 +220,12 @@ Our extension will:
 
     ![A demo of instantiating an extension project from the official template](../assets/images/init-from-template.gif)
 
-2. List the files that were created (`ls -la` or `tree -a` are good options)
+2. List the files that were created (`ls -la` or `tree -a` are good options).
+
+   You should now see a long list of files that the extension template created for you,
+   including project configuration files like `pyproject.toml` and `package.json`,
+   documentation files like `README.md` and `RELEASE.md`, and source code directories
+   like `src/` (JavaScript) and `jupytercon2025_extension_workshop/` (Python).
 
 3. Install the extension in development mode
 
