@@ -8,11 +8,14 @@
 :::
 
 :::{important} Outcomes
-After completing this module, we will have created a new extension from the
-[official template](https://github.com/jupyterlab/extension-template) and implemented a
-new widget for displaying a random image and caption from a curated set.
-The widget will be launchable from the {term}`command palette <command palette>` and the
-{term}`launcher <launcher>`.
+In this module, we will create a new extension starting from the
+[official template](https://github.com/jupyterlab/extension-template).
+We'll implement a new widget for displaying a random image and caption from a curated
+set.
+We'll implement launching this widget from the {term}`command palette <command palette>`
+and the {term}`launcher <launcher>`.
+We'll implement a user interaction which enables users to request a new random item in
+real time.
 :::
 
 :::{tip} Terms
