@@ -81,21 +81,19 @@ graph TB
 ```
 
 
-## Now we're ready to build an extension!
+## What are we building together?
 
-First, let's look at
+First, we'll examine and demonstrate
 [the extension we're going to build today](https://github.com/jupytercon/jupytercon2025-developingextensions-demo).
-The README in this repository describes the functionality we will build out.
 
-First we'll look at the final extension together. It:
+Our extension will:
 
-* Adds a new button to the launcher
-* Adds a new command to the command palette
-* When either of those is triggered, it opens a new tab/window with a viewer showing a
-  random image and caption from a small curated collection of public domain images.
-* The viewer also has a "refresh" button to trigger fetching a new image and caption.
+* Add a viewer for a small collection of public domain images and captions
+* Enable the user to interactively display a random item from the collection
+* Add a new button to the launcher to open the viewer
+* Add a new command to the command palette to open the viewer
 
-🚀 Now, let's build it together from scratch.
+🚀 Let's build it together from scratch.
 
 
 ## 🏋️ Exercise A (15 minutes): Extension creation and development loop
