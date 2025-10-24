@@ -195,11 +195,6 @@ normally would!
    The URL of your repo will be printed on the final line of output.
    Copy that URL for the next step!
 
-:::{hint}
-Check out [GitHub authentication](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
-about SSH keys later if you get tired of typing username/password.
-:::
-
 
 ### First, create a new extension from the [official template](https://github.com/jupyterlab/extension-template)
 
