@@ -51,56 +51,9 @@ This tutorial is inspired by many prior works.
 :::
 
 
-## Extensions and plugins and widgets -- oh, my!
+## 🛠️ Setup
 
-While they sound similar, `extensions <extension>` and {term}`plugins <plugin>` serve
-different purposes.
-
-{term}`Plugins <plugin>` are JupyterLab's fundamental building blocks which define
-functionality and business logic.
-{term}`Extensions <extension>` are the delivery mechanism or "container" for plugins.
-Extensions are the thing that end-users `pip install`
-
-:::{pull-quote}
-End-users care about extensions, and developers care about plugins.
-:::
-
-A {term}`widget <widget>` is a user interface component provided by a plugin, either for
-the end user to display (e.g. an interactive visualization of data) or for JupyterLab to
-display (e.g. a document viewer that opens when you double-click a particular file
-type).
-
-```{mermaid}
-graph TB
-
-    subgraph Extension["Extension"]
-        subgraph Plugin["Plugin(s) (n>=1)"]
-            Widget["Widget(s) (n>=0)"]
-        end
-    end
-
-    style Widget stroke-dasharray: 5 5
-```
-
-
-## What are we building together?
-
-First, we'll examine and demonstrate
-[the extension we're going to build today](https://github.com/jupytercon/jupytercon2025-developingextensions-demo).
-
-Our extension will:
-
-* Add a viewer for a small collection of public domain images and captions
-* Enable the user to interactively display a random item from the collection
-* Add a new button to the launcher to open the viewer
-* Add a new command to the command palette to open the viewer
-
-🚀 Let's build it together from scratch.
-
-
-## 🏋️ Exercise A (15 minutes): Extension creation and development loop
-
-### Set up workshop dependency environment
+### Dependency environment
 
 We'll use this environment for the rest of this workshop:
 
@@ -122,7 +75,7 @@ micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
 ```
 
 
-### Set some important Git settings
+### Important Git settings
 
 1. When we make commits, Git needs to know who you are.
    Configure identity information Git will use when we commit:
@@ -141,7 +94,7 @@ micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
    ```
 
 
-### Create a repository in GitHub and clone it
+### Create a GitHub repository and clone it locally
 
 If you're an experienced Git & GitHub user, feel free to do this step the way you
 normally would!
@@ -195,6 +148,55 @@ normally would!
    The URL of your repo will be printed on the final line of output.
    Copy that URL for the next step!
 
+
+## Extensions and plugins and widgets -- oh, my!
+
+While they sound similar, `extensions <extension>` and {term}`plugins <plugin>` serve
+different purposes.
+
+{term}`Plugins <plugin>` are JupyterLab's fundamental building blocks which define
+functionality and business logic.
+{term}`Extensions <extension>` are the delivery mechanism or "container" for plugins.
+Extensions are the thing that end-users `pip install`
+
+:::{pull-quote}
+End-users care about extensions, and developers care about plugins.
+:::
+
+A {term}`widget <widget>` is a user interface component provided by a plugin, either for
+the end user to display (e.g. an interactive visualization of data) or for JupyterLab to
+display (e.g. a document viewer that opens when you double-click a particular file
+type).
+
+```{mermaid}
+graph TB
+
+    subgraph Extension["Extension"]
+        subgraph Plugin["Plugin(s) (n>=1)"]
+            Widget["Widget(s) (n>=0)"]
+        end
+    end
+
+    style Widget stroke-dasharray: 5 5
+```
+
+
+## What are we building together?
+
+First, we'll examine and demonstrate
+[the extension we're going to build today](https://github.com/jupytercon/jupytercon2025-developingextensions-demo).
+
+Our extension will:
+
+* Add a viewer for a small collection of public domain images and captions
+* Enable the user to interactively display a random item from the collection
+* Add a new button to the launcher to open the viewer
+* Add a new command to the command palette to open the viewer
+
+🚀 Let's build it together from scratch.
+
+
+## 🏋️ Exercise A (15 minutes): Extension creation and development loop
 
 ### First, create a new extension from the [official template](https://github.com/jupyterlab/extension-template)
 
