@@ -209,13 +209,14 @@ Our extension will:
     copier copy --trust https://github.com/jupyterlab/extension-template .
     ```
 
-    Please input:
+    Please be sure to correctly input:
 
+    * Your name and e-mail
     * Kind: `frontend-and-server`
     * Javascript package name: `jupytercon2025-extension-workshop`
     * Repository URL: as printed by the `gh repo view` command in the previous step
 
-    Everything else can be left as default if you prefer.
+    The remaining values can be left as default.
 
     ![A demo of instantiating an extension project from the official template](../assets/images/init-from-template.gif)
 
