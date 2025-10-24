@@ -928,7 +928,7 @@ We just need to refresh the page!
 When you launch your widget, do you see one of your images?
 
 :::{hint}
-Running in to trouble?
+Running into trouble?
 
 Check your browser console for errors.
 
