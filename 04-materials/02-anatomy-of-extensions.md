@@ -1156,7 +1156,8 @@ And finally, restore any previous state when our plugin is activated:
     }
 ```
 
-### Test!
+
+### 🧪 Test
 
 To test this change, load your widget in JupyterLab, then refresh the page.
 You should see the widget is still visible!
