@@ -229,7 +229,7 @@ Our extension will:
 
 ## 🏋️ Exercise A (15 minutes): Extension creation and development loop
 
-### First, create a new extension from the [official template](https://github.com/jupyterlab/extension-template)
+### Create a new extension from the [official template](https://github.com/jupyterlab/extension-template)
 
 1. Instantiate the template to get started on our new extension!
 
@@ -384,7 +384,7 @@ git push -u origin main
 :::
 
 
-### Now let's do a complete development loop!
+### Do a complete development loop
 
 0. Close the JupyterLab server with `CTRL+C`.
 
