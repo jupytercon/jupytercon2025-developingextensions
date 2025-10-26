@@ -285,10 +285,9 @@ Our extension will:
    ```
    :::
 
-4. Connect the extension to JupyterLab
+4. Connect the extension, frontend and server, to JupyterLab
 
    ```bash
-   # Install the frontend and backend components of the extension in development mode:
    jupyter labextension develop . --overwrite
    jupyter server extension enable jupytercon2025_extension_workshop
    ```
