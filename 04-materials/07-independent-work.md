@@ -402,7 +402,7 @@ Before opening a PR, verify:
 
 **If you're blocked**:
 - Comment on the issue asking for clarification
-- Join the project's community chat (often Gitter or Discord)
+- Join the [Jupyter Zulip chat](https://jupyter.zulipchat.com) (or project-specific chat if available)
 - Ask instructors during this session
 - It's okay to pause and try something else
 
@@ -490,6 +490,17 @@ Don't stay stuck! Ask an instructor if:
 - You want guidance on architecture decisions
 - You're unsure if your contribution approach is right
 
+:::{tip} Core Developers Are Here!
+Many Jupyter and JupyterLab core developers are in the room and at JupyterCon 2025. This is a unique opportunity to:
+- Ask questions about extension development directly from the experts
+- Get feedback on your architecture and design decisions
+- Learn about upcoming changes and best practices
+- Discuss contribution opportunities
+- Connect with the people who built the platform you're extending
+
+Don't be shy - they're here to help and love seeing new contributors!
+:::
+
 **Asking well gets better help**:
 - Share your exact error message
 - Show what you've already tried
@@ -553,8 +564,9 @@ Before the session ends, take 10 minutes to:
 
 **To contribute more**:
 - Subscribe to issues on extensions you've contributed to
-- Join the [JupyterLab community forum](https://discourse.jupyter.org/)
-- Attend Jupyter community calls
+- Join the [Jupyter Zulip chat](https://jupyter.zulipchat.com) for real-time discussions
+- Participate in the [Jupyter Discourse forum](https://discourse.jupyter.org/)
+- Attend [Jupyter Community Calls](https://discourse.jupyter.org/t/jupyter-community-calendar/2485) - bring your questions or request code review from experienced developers
 - Help others getting started
 
 :::{tip} The Journey Continues
