@@ -285,7 +285,7 @@ Our extension will:
    ```
    :::
 
-4. Install the extension to JupyterLab
+4. Connect the extension to JupyterLab
 
    ```bash
    # Install the frontend and backend components of the extension in development mode:
