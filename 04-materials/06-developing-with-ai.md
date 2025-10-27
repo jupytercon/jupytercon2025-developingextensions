@@ -90,7 +90,7 @@ AI coding assistants are powered by **Large Language Models ({term}`LLMs <LLM>`)
 - **Other Notable Models:** Llama 3.3-70B (Meta), Mistral Small 3.2, Gemma 3 (Google)
 - **Licenses:** Vary from fully open (Apache 2.0, MIT) to restricted commercial use
 - **Deployment:** Can be self-hosted using tools like [Ollama](https://ollama.com/), [LM Studio](https://lmstudio.ai/), or [vLLM](https://github.com/vllm-project/vllm)
-- **Pros:** Full control, no API costs, data stays local, latest Chinese models often outperform Western alternatives
+- **Pros:** Full control, no API costs, data stays local, latest open models often outperform closed frontier ones
 - **Cons:** Requires technical setup and adequate hardware (16GB+ VRAM for smaller models, 48GB+ for larger ones)
 
 ### Understanding AI coding tool categories
