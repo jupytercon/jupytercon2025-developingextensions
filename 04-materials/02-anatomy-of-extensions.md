@@ -456,7 +456,7 @@ Now we have all the knowledge we need to keep iterating on our extension!
 Our working extension is a basic "hello, world" application.
 All it does is log a string to the console, then make a request to the back-end
 for another string, which is also logged to the console.
-This all happens once, when the extension is activated when the user opens JupyterLab.
+This all happens **once** when the user opens JupyterLab and the extension is activated.
 
 Our goal is to display a viewer for a random photo and caption, with a refresh button to
 instantly display a new image.
