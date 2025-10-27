@@ -235,8 +235,8 @@ Most AI tools can be "coerced" into using local models by configuring them to po
 ### Choosing your tool
 
 For this workshop:
-- We would start with with **Cursor**
-- We would run through the same steps again using **Claude Code**
+- We will start with with **Cursor**
+- We will run through the same steps again using **Claude Code**
 
 :::{note} Further Reading
 :class: dropdown
