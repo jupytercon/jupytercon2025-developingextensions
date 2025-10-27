@@ -712,7 +712,7 @@ We'll use AI to extend this viewer with basic image editing features. This exerc
 - How to debug and fix issues with AI assistance
 - Managing AI context with fresh chats for new phases
 
-### Demo: The Power (and Peril) of One-Shot Prompts
+### Step 1: The Power (and Peril) of One-Shot Prompts
 
 Before we dive into our structured approach, let's witness what modern AI can accomplish with a single, well-crafted prompt. This demonstration shows both the impressive capabilities and important limitations of AI-driven development.
 
@@ -760,7 +760,7 @@ When you give this prompt to an AI agent like Cursor or Claude Code, it will typ
 6. **Modify the frontend widget** with new UI controls
 7. **Run build commands** to verify everything compiles
 
-**In about 2-3 minutes**, you could have a fully functional image editor!
+**In about 2-3 minutes**, you will have a fully functional image editor!
 
 #### The Hidden Cost: Decisions Made Without You
 
@@ -800,33 +800,22 @@ This works great for prototypes, but in production code, you need to understand 
 
 If you want to experience the one-shot approach:
 
-1. **Create a new branch to experiment:**
-   ```bash
-   git checkout -b one-shot-demo
-   ```
+1. **Give your AI the one-shot prompt above**
 
-2. **Give your AI the one-shot prompt above**
+2. **Watch as it generates the entire feature** (2-3 minutes)
 
-3. **Watch as it generates the entire feature** (2-3 minutes)
-
-4. **Test the functionality:**
+3. **Test the functionality:**
    ```bash
    jlpm build
    jupyter lab
    ```
 
-5. **Examine what was created:**
+4. **Examine what was created:**
    - Look at the code structure
    - Notice the architectural choices
    - Find at least 3 decisions you might have made differently
 
-6. **Roll back when done:**
-   ```bash
-   git diff  # See all the changes
-   git checkout .  # Discard all changes
-   git checkout main  # Return to main branch
-   git branch -D one-shot-demo  # Delete the demo branch
-   ```
+5. **Roll back when done:**
 
 #### The Better Way: Structured, Iterative Development
 
@@ -837,13 +826,13 @@ While one-shot prompts are impressive for demos, professional development requir
 3. **Reviews each step** - Catch issues early
 4. **Maintains control** - You make the key decisions
 
-This takes longer (45 minutes vs. 3 minutes) but results in:
+This takes longer but results in:
 - ✅ Code you understand and can maintain
 - ✅ Architecture that fits your needs
 - ✅ Proper error handling and edge cases
 - ✅ Learning opportunities at each step
 
-### Step 1: Create an Implementation Plan (Don't Skip This!)
+### Step 2: Create an Implementation Plan
 
 **The rise of the Product Manager mindset:** AI works best with detailed specifications, not agile "figure it out as we go." Embrace structured planning.
 
@@ -929,7 +918,7 @@ Cursor has a "Plan" mode that creates temporary plans. **Don't use it.** File-ba
 Always save plans to files: `plans/*.md`
 :::
 
-### Step 2: Implement Phase by Phase
+### Step 3: Implement Phase by Phase
 
 **Context window management:** Instead of one long chat for everything, start fresh for each phase.
 
@@ -965,7 +954,7 @@ Always save plans to files: `plans/*.md`
 
 **Why new chats?** Keeps context window small (<50%), prevents AI confusion, reduces costs. File-based plans allow us to start new chats and still keep the required context.
 
-### Step 3: Adopt a "Product Manager" Mindset
+### Step 4: Adopt a "Product Manager" Mindset
 
 **Effective prompts use Product Manager thinking: clear requirements, constraints, and acceptance criteria.**
 
