@@ -52,9 +52,6 @@ This tutorial is inspired by many prior works.
       photo API is not reliable during the current government shutdown 😭)
     * Remove unnecessary use of `conda` in favor of more standard tooling
     * Structure the activities around in person teaching and exercises
-  * [Agentic AI Programming for Python Course](https://training.talkpython.fm/courses/agentic-ai-programming-for-python)
-    by TalkPython['Training']
-    * Ideas for teaching AI-assisted coding in 2025
 :::
 
 

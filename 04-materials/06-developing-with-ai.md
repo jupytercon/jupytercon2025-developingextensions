@@ -13,6 +13,16 @@ After this module, you will have:
 - Confidence to continue exploring extension ideas primarily by prompting, while being able to understand and edit the generated code
 ::::
 
+:::{note} Inspired by...
+:class: dropdown
+
+This module's teaching approach is inspired by:
+
+* [Agentic AI Programming for Python Course](https://training.talkpython.fm/courses/agentic-ai-programming-for-python)
+  by TalkPython Training
+  * Ideas for teaching AI-assisted coding in 2025
+:::
+
 
 ## AI-assisted development in 2025
 
