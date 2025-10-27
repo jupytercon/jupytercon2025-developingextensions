@@ -252,7 +252,7 @@ For this workshop:
 ## Getting started
 
 ### Repo
-For this module, we will start with an existing extension that we built in chapter 2. If you are not caught up or just joining us for the afternoon session, please grab a reference implementation from <...>.
+For this module, we will start with an existing extension that we built in chapter 2. If you are not caught up or just joining us for the afternoon session, please grab a reference implementation from [our demo repository](https://github.com/mfisher87/jupytercon2025-developingextensions-demo).
 
 In our initial setup, we cloned an official JupyterLab extension template.
 This template was recently enhanced to include AI-specific configurations and rulesets.
