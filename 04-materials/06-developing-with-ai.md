@@ -313,7 +313,7 @@ If you'd prefer to start fresh or didn't complete the anatomy module:
    jupyter lab
    ```
 
-Make sure your git tree is clean, there are no unsaved and uncommited files. This is going to be important later
+Make sure your git tree is clean, there are no unsaved and uncommitted files. This is going to be important later
 
 ### AI tool
 
