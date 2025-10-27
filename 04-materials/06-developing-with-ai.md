@@ -351,7 +351,7 @@ After completing this exercise (via either path), take a moment to reflect:
 
 ### Quick Reflection (Optional)
 
-Think about these questions—we'll discuss as a group:
+Think about these questions — we'll discuss as a group:
 
 1. **What surprised you most about working with AI?**
    - Did it understand JupyterLab patterns better or worse than expected?
