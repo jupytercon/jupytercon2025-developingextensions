@@ -2,16 +2,21 @@
 
 :::{hint} Learning objectives
 * Understand the difference between extensions, plugins, and widgets
-* Learn how to get started with writing an extension
-* ...
+* Understand how to get started with writing an extension
+* Understand how to structure and navigate an extension project
+* Practice and get comfortable with the development & testing loop
 :::
 
 :::{important} Outcomes
-After completing this module, you will have created a new extension from the
-[official template](https://github.com/jupyterlab/extension-template) and implemented a
-new widget for displaying a random image and caption from a curated set.
-The widget will be launchable from the {term}`command palette <command palette>` and the
-{term}`launcher <launcher>`.
+In this module, we will:
+
+* Create a new extension starting from the
+[official template](https://github.com/jupyterlab/extension-template).
+* Implement a new widget for displaying a random image and caption from a curated set.
+* Implement launching this widget from the {term}`command palette <command palette>`
+  and the {term}`launcher <launcher>`.
+* Implement a user interaction which enables users to request a new random item in
+  real time.
 :::
 
 :::{tip} Terms
@@ -53,54 +58,11 @@ This tutorial is inspired by many prior works.
 :::
 
 
-## Extensions and plugins and widgets -- oh, my!
+## 🛠️ Setup
 
-An {term}`extension <extension>` and a {term}`plugin <plugin>` sound like the same thing at first.
-The important thing to understand is that plugins are functionality, and extensions are
-the package around that functionality.
+### Dependency environment
 
-{term}`Plugins <plugin>` are the fundamental building block of the JupyterLab architecture, and
-extensions are the delivery mechanism or "container" for those building blocks.
-Extensions are the thing you `pip install`, and they often contain more than one plugin.
-
-A {term}`widget <widget>` is a user interface component provided by a plugin, either for use by
-the end user to display (e.g. an interactive visualization of data) or for JupyterLab to
-display (e.g. a document viewer that opens when you double-click a particular file
-type).
-
-```{mermaid}
-graph TB
-
-    subgraph Extension["Extension"]
-        subgraph Plugin["Plugin(s) (n>=1)"]
-            Widget["Widget(s) (n>=0)"]
-        end
-    end
-
-    style Widget stroke-dasharray: 5 5
-```
-
-
-## Now we're ready to build an extension!
-
-First, let's look at
-[the extension we're going to build today](https://github.com/jupytercon/jupytercon2025-developingextensions-demo).
-The README in this repository describes the functionality we will build out.
-
-First we'll look at the final extension together. It:
-
-* Adds a new button to the launcher
-* Adds a new command to the command palette
-* When either of those is triggered, it opens a new tab/window with a viewer showing a
-  random image and caption from a small curated collection of public domain images.
-* The viewer also has a "refresh" button to trigger fetching a new image and caption.
-
-🚀 Now, let's build it together from scratch.
-
-
-## 🏋️ Exercise A (15 minutes): Extension creation and development loop
-
-### Set up workshop dependency environment
+We'll use this environment for the rest of this workshop:
 
 ```bash
 # Create an environment named "jupytercon2025"
@@ -108,7 +70,7 @@ micromamba create -n jupytercon2025
 
 # Activate it
 # IMPORTANT: Run this every time you open a new terminal!
-micromamba activate jupyutercon2025
+micromamba activate jupytercon2025
 
 # Install workshop dependencies
 ## python & pip: Python language and its official package installer
@@ -120,11 +82,10 @@ micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
 ```
 
 
-### Set some important Git settings
+### Important Git settings
 
-
-1. When you make commits, Git needs to know who you are.
-   Configure identity information Git will use when you commit:
+1. Git needs to know who you are.
+   Configure identity information Git will use when we commit:
 
    ```bash
    git config --global user.email "your-email-here@example.com"
@@ -140,10 +101,15 @@ micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
    ```
 
 
-### Create a repository in GitHub and clone it
+:::{important} 👀 You should notice...
+:class: simple
+:icon: false
 
-If you're an experienced Git & GitHub user, feel free to do this step the way you
-normally would!
+...these commands produce no output when successful.
+:::
+
+
+### Create a GitHub repository and clone it locally
 
 0. Change to the parent directory where you want to work, e.g.
 
@@ -161,105 +127,253 @@ normally would!
    Select reasonable defaults: `GitHub.com`, `HTTPS`, `Yes`, and `Login with a web browser`, then follow the
    instructions carefully.
 
-   Then, set up the Git CLI to authenticate with GitHub:
+   :::{important} 👀 You should notice...
+   :class: simple
+   :icon: false
+
+   ...after answering the questions, you'll be prompted to copy a secret token, then
+   press `ENTER` to open a special page in your browser, then paste the token there.
+
+   You'll have to confirm some prompts in your browser, then you should see this message
+   in your terminal:
+
+   ```
+   ✓ Authentication complete
+   ```
+   :::
+
+2. Set up the Git CLI to authenticate with GitHub:
 
    ```bash
    gh auth setup-git
    ```
 
-2. Create a repository in GitHub and clone it:
+3. Create a repository in GitHub and clone it:
 
    ```bash
    gh repo create jupytercon2025-extension-workshop --public --clone
    ```
 
-3. Change directory into your newly-cloned repository:
+4. Change directory into your newly-cloned repository:
 
    ```bash
    cd jupytercon2025-extension-workshop
    ```
 
-4. Add some useful metadata to your repository:
+5. Add some useful metadata to your repository:
 
    ```bash
    gh repo edit --add-topic "jupytercon2025" --add-topic "jupyterlab-extension"
    ```
 
-5. Get your cloned repository's URL:
+6. Get your cloned repository's URL:
 
    ```bash
    gh repo view
    ```
 
-   The URL of your repo will be printed on the final line of output.
-   Copy that URL for the next step!
+   :::{important} 👀 You should notice...
+   :class: simple
+   :icon: false
 
-:::{hint}
-Check out [GitHub authentication](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
-about SSH keys later if you get tired of typing username/password.
+   ...a full description of your repository is printed to the terminal.
+   The final line of output includes a repository URL starting with
+   `https://github.com/`.
+   :::
+
+   **Copy the entire repository URL for the next step!**
+
+
+## Extensions and plugins and widgets -- oh, my!
+
+While they sound similar, `extensions <extension>` and {term}`plugins <plugin>` serve
+different purposes.
+
+{term}`Plugins <plugin>` are JupyterLab's fundamental building blocks which define
+functionality and business logic.
+{term}`Extensions <extension>` are the delivery mechanism or "container" for plugins.
+Extensions are the thing that end-users `pip install`.
+
+:::{pull-quote}
+End-users care about extensions, and developers care about plugins.
 :::
 
+A {term}`widget <widget>` is a user interface component provided by a plugin, either for
+the end user to display (e.g. an interactive visualization of data) or for JupyterLab to
+display (e.g. a document viewer that opens when you double-click a particular file
+type).
 
-### First, create a new extension from the [official template](https://github.com/jupyterlab/extension-template)
+```{mermaid}
+graph TB
 
-1. Instantiate the template to get started on your new extension!
+    subgraph Extension["Extension"]
+        subgraph Plugin["Plugin(s) (n>=1)"]
+            Widget["Widget(s) (n>=0)"]
+        end
+    end
+
+    style Widget stroke-dasharray: 5 5
+```
+
+
+## What are we building together?
+
+First, we'll examine and demonstrate
+[the extension we're going to build today](https://github.com/jupytercon/jupytercon2025-developingextensions-demo).
+
+Our extension will:
+
+* Add a viewer for a small collection of public domain images and captions
+* Enable the user to interactively display a random item from the collection
+* Add a new button to the launcher to open the viewer
+* Add a new command to the command palette to open the viewer
+
+🚀 Let's build it together from scratch.
+
+
+## 🏋️ Exercise A (15 minutes): Extension creation and development loop
+
+### Create a new extension from the [official template](https://github.com/jupyterlab/extension-template)
+
+1. Instantiate the template to get started on our new extension!
 
     ```bash
     copier copy --trust https://github.com/jupyterlab/extension-template .
     ```
 
-    Please input:
+    Please be sure to correctly input:
 
+    * Your name and e-mail
     * Kind: `frontend-and-server`
     * Javascript package name: `jupytercon2025-extension-workshop`
-    * Repository URL: as printed by the `gh repo view` command
+    * Repository URL: as printed by the `gh repo view` command in the previous step
 
-    Everything else can be left as default if you prefer.
+    The remaining values can be left as default.
 
     ![A demo of instantiating an extension project from the official template](../assets/images/init-from-template.gif)
 
-2. List out the files that were created (`ls -la` or `tree -a` are good options)
+2. List the files that were created (`ls -la` or `tree -a` are good options).
+
+   :::{important} 👀 You should notice...
+   :class: simple
+   :icon: false
+
+   ...a long list of files that the extension template created for you,
+   including:
+
+   * Project configuration files like `pyproject.toml` and `package.json`
+   * Documentation files like `README.md` and `RELEASE.md`
+   * Source code directories like `src/` (JavaScript) and
+     `jupytercon2025_extension_workshop/` (Python).
+   :::
 
 3. Install the extension in development mode
 
-    ```bash
-    # Install package in development mode
-    pip install --editable ".[dev,test]"
+   ```bash
+   # Install package in development mode
+   pip install --editable ".[dev,test]"
+   ```
 
-    # Install the frontend and backend components of the extension in development mode:
-    jupyter labextension develop . --overwrite
-    jupyter server extension enable jupytercon2025_extension_workshop
+   :::{important} 👀 You should notice...
+   :class: simple
+   :icon: false
 
-    # Rebuild extension Typescript source after making changes
-    # IMPORTANT: You must do this every time you make a change!
-    jlpm build
-    ```
+   ...lots of terminal output!
+   The final line should read:
 
-4. 🧪 Test it out! Run this command in a **separate terminal**.
-   It will open JupyterLab in your browser automatically.
-   Remember to activate the virtual environment again with
-   `micromamba activate jupytercon2025`
-   any time you create a new terminal.
-   You can keep this terminal open and running JupyterLab in the background!
+   ```bash
+   Successfully installed <a long list of Python packages like MarkupSafe, AnyIO, ...,
+   jupytercon2025_extension_workshop, jupyterlab, ..., webencodings, and
+   websocket-client>
+   ```
+   :::
 
-    ```bash
-    jupyter lab
-    ```
+4. Connect the extension, frontend and server, to JupyterLab
 
-5. Confirm the extension was loaded. Open your browser's dev console (F12 or
-   `CTRL+SHIFT+I`) and look for log messages reading:
+   ```bash
+   jupyter labextension develop . --overwrite
+   jupyter server extension enable jupytercon2025_extension_workshop
+   ```
+
+   :::{important} 👀 You should notice...
+   :class: simple
+   :icon: false
+
+   ...3 lines of terminal output starting with `Installing`, `Removing`, and
+   `Symlinking`.
+   :::
+
+5. Build the extension
+
+   ```bash
+   # Rebuild extension Typescript source after making changes
+   # IMPORTANT: We must do this every time we make a change!
+   jlpm build
+   ```
+
+   :::{important} 👀 You should notice...
+   :class: simple
+   :icon: false
+
+   ...many lines of colorful terminal output ending with a message similar to:
+
+   ```bash
+   webpack 5.102.1 compiled successfully in 26 ms
+   ```
+   :::
+
+
+#### 🧪 Test
+
+1. Start JupyterLab in a **separate terminal**.
+
+   :::{hint} Reminder
+   Activate the virtual environment again with `micromamba activate jupytercon2025` any
+   time you create a new terminal.
+   :::
+
+   After running this command, we can keep this terminal open and running JupyterLab in
+   the background!
+
+   ```bash
+   jupyter lab
+   ```
+
+   :::{important} 👀 You should notice...
+   :class: simple
+   :icon: false
+
+   ...JupyterLab automatically opened in your browser when you started the server.
+   :::
+
+2. Confirm the extension was loaded. Open your browser's dev console (F12 or
+   `CTRL+SHIFT+I`) and...
+
+   :::{important} 👀 You should notice...
+   :class: simple
+   :icon: false
+
+   ...log messages reading:
 
    * `JupyterLab extension jupytercon2025-extension-workshop is activated!`
    * `Hello, world! This is the '/jupytercon2025-extension-workshop/hello' endpoint. Try
      visiting me in your browser!`
 
-   **If you do not see these messages, let us know you need help!**
+   **If you do not see these messages, let instructors know you need help!**
+   :::
 
-6. Directly test the server portion of the extension by visiting the endpoint in your
-   browser (`http://localhost:8888/jupytercon2025-extension-workshop/hello`).
-   You should see the same message as the last step:
+3. Test the server endpoint by visiting it in your browser
+   (`http://localhost:8888/jupytercon2025-extension-workshop/hello`).
+
+   :::{important} 👀 You should notice...
+   :class: simple
+   :icon: false
+
+   ...the same message as you saw in the console in the last step, but this time in your
+   main browser window:
    `Hello, world! This is the '/jupytercon2025-extension-workshop/hello' endpoint. Try
    visiting me in your browser!`
+   :::
 
 
 :::{important} 💾 **Make a Git commit and push to GitHub now!**
@@ -273,7 +387,7 @@ git push -u origin main
 :::
 
 
-### Now let's do one complete development loop!
+### Do a complete development loop
 
 0. Close the JupyterLab server with `CTRL+C`.
 
@@ -285,11 +399,22 @@ git push -u origin main
 
 2. Rebuild the extension with `jlpm build`.
 
-3. Start JupyterLab again with `jupyter lab`.
 
-4. Test again following steps 5 & 6 above.
-   Do you see the change in the console messages?
-   Do you see the change when directly accessing the server with the browser?
+#### 🧪 Test
+
+Follow the same testing steps as last time.
+
+:::{important} 👀 You should notice...
+:class: simple
+:icon: false
+
+The console messages in your browser changed according to the edits you made.
+
+The server endpoint returns a new value according to the edits you made.
+:::
+
+**Please repeat this development loop as many times as you can to get more comfortable
+with it.**
 
 
 :::{important} 💾 **Make a Git commit and push to GitHub now!**
@@ -521,7 +646,7 @@ the {term}`command palette <command palette>`.
 ```
 
 
-### Finally, we can test!
+### 🧪 Test
 
 Stop your JupyterLab server (`CTRL+C`), then rebuild your extension (`jlpm
 build`), then restart JupyterLab (`jupyter lab`).
@@ -534,7 +659,14 @@ To test from the {term}`command palette <command palette>`, click
 Begin typing "Random image" and the command palette interface
 should autocomplete.
 Select "Random image with caption" and press `ENTER`.
-You should see a new tab open containing the text "Hello, world"!
+
+:::{important} 👀 You should notice...
+:class: simple
+:icon: false
+
+...a new tab open in the JupyterLab interface containing the text "Hello, world"!
+:::
+
 
 :::{important} 💾 **Make a Git commit and push to GitHub now!**
 :icon: false
@@ -553,7 +685,7 @@ Unlike the command palette, this functionality needs to be installed as a depend
 First, install `@jupyterlab/launcher` with `jlpm add @jupyterlab/launcher` to make
 this dependency available for import.
 
-You can import `ILauncher` with:
+We can import `ILauncher` with:
 
 ```{code} typescript
 :filename: src/index.ts
@@ -564,7 +696,7 @@ import { ILauncher } from '@jupyterlab/launcher'
 Don't forget to add the launcher as a dependency (`requires`) of our plugin, and to pass
 the dependency in to the `activate` function.
 
-...and register your {term}`command` with the {term}`launcher`:
+...and register our {term}`command` with the {term}`launcher`:
 
 ```{code} typescript
 :filename: src/index.ts
@@ -572,14 +704,14 @@ the dependency in to the `activate` function.
 launcher.add({ command: command_id });
 ```
 
-We will leave the rest of the implementation up to you!
+The rest of the implementation up to you!
 
 :::{hint}
-Follow the same steps you followed to register your command with the {term}`command palette <command palette>`.
+Follow the same steps you followed to register our command with the {term}`command palette <command palette>`.
 Reuse the same command!
 :::
 
-#### Test it!
+#### 🧪 Test
 
 Repeat the build and test procedure from the previous step.
 
@@ -651,7 +783,7 @@ with a caption, and a widget to display them.
 Now we need to implement the logic and glue the pieces together.
 
 
-## 🏋️ Exercise C: Serve images and captions from the server extension
+## 🏋️ Exercise C (20 minutes): Serve images and captions from the server extension
 
 ### Set up images and captions
 
@@ -741,7 +873,7 @@ class HelloRouteHandler(APIHandler):
 
 class ImageAndCaptionRouteHandler(APIHandler):
     @tornado.web.authenticated
-    def get(self) -> ImageBytesCaption:
+    def get(self):
         random_selection = random.choice(IMAGES_AND_CAPTIONS)
 
         # Read the data and encode the bytes in base64
@@ -776,7 +908,7 @@ def setup_route_handlers(web_app):
 ```
 
 
-#### Test!
+#### 🧪 Test
 
 Now's the best time for us to stop and test before moving on to consuming this
 data with our widget.
@@ -916,16 +1048,24 @@ class ImageCaptionWidget extends Widget {
 }
 ```
 
-#### Test!
+#### 🧪 Test
 
 Now that we have our widget user interface hooked up to the data coming from the server, let's test again.
 Because we changed the JavaScript, we need to use `jlpm run build`, but we _don't_ need to restart the JupyterLab server.
 We just need to refresh the page!
 
-When you launch your widget, do you see one of your images?
+:::{important} 👀 You should notice...
+:class: simple
+:icon: false
+
+...when you launch the widget from the {term}`command palette <command palette>` or
+{term}`launcher <launcher>`, one of the images we uploaded at the beginning of this
+exercise is shown, alongside the associated caption.
+:::
+
 
 :::{hint}
-Running in to trouble?
+Running into trouble?
 
 Check your browser console for errors.
 
@@ -935,6 +1075,7 @@ You may need to update the preamble of `this.img.src` from
 If you have mixed data formats, perhaps you could add the mimetype of each
 image to the JSON data sent by the server!
 :::
+
 
 :::{important} 💾 **Make a Git commit and push to GitHub now!**
 :icon: false
@@ -947,7 +1088,7 @@ git push -u origin main
 :::
 
 
-## 🏋️ Exercise D: Add user interactivity to the widget
+## 🏋️ Exercise D (15 minutes): Add user interactivity to the widget
 
 Right now, you only get a random image when you first open the widget.
 It's much more interesting if the widget can respond to user actions!
@@ -980,13 +1121,11 @@ import {
 
 ### Add the button to the widget and connect the logic
 
-Now we can use the `ToolbarButton` class to instantiate a new button with an
-icon, tooltip, and behavior (`onClick`).
+Now we can use the `ToolbarButton` class to instantiate a new button with an icon,
+tooltip, and behavior (`onClick`).
 
-For the behavior, we'll reuse our widget's `load_image()` method that we call
+For the button's behavior, we'll reuse our widget's `load_image()` method that we call
 when we initialize the widget.
-Now, it's being called in two cases: when we initialize the widget, and when
-the user clicks the refresh button on the toolbar.
 
 ```{code} typescript
 :linenos:
@@ -1016,12 +1155,19 @@ export class ImageCaptionMainAreaWidget extends MainAreaWidget<ImageCaptionWidge
 ```
 
 
-### Test!
+### 🧪 Test
 
-Build with `jlpm build` and then refresh your browser to see the change!
-Your application should look like this:
+Build with `jlpm build` and then refresh your browser.
+
+:::{important} 👀 You should notice...
+:class: simple
+:icon: false
+
+...our application looks like this:
 
 ![A JupyterLab widget displaying a random cat picture and caption, with a refresh button in the toolbar.](../assets/images/module-2-exercise-d-final.jpg)
+:::
+
 
 :::{important} 💾 **Make a Git commit and push to GitHub now!**
 :icon: false
@@ -1034,10 +1180,19 @@ git push -u origin main
 :::
 
 
-## 🏋️ Exercise E: Preserve layout
+## Problem: The widget disappears when we refresh the page
 
-You may have noticed that when you refresh or close/re-open JupyterLab, your widget
-window disappears.
+:::{important} 👀 You should notice...
+:class: simple
+:icon: false
+
+...when you refresh or close/re-open JupyterLab in your browser, our widget window
+disappears.
+:::
+
+
+## 🏋️ Exercise E (15 minutes): Preserve layout
+
 JupyterLab can save and restore layouts, but we need to define how our widget restores
 its state.
 
@@ -1066,8 +1221,7 @@ When we pass an optional dependency to the `activate` function, we follow two
 key rules:
 
 1. Optional dependencies are passed _after_ required dependencies
-2. Optional dependencies, because they are optional, have the possibility of
-   being `null`
+2. Optional dependencies always have the possibility of being `null`
 
 
 ```{code} typescript
@@ -1155,14 +1309,21 @@ And finally, restore any previous state when our plugin is activated:
     }
 ```
 
-### Test!
 
-To test this change, load your widget in JupyterLab, then refresh the page.
-You should see the widget is still visible!
+### 🧪 Test
+
+To test this change, load our widget in JupyterLab, then refresh the page.
+
+:::{important} 👀 You should notice...
+:class: simple
+:icon: false
+
+...the widget is still visible!
+
 You may see a different image; this is because we're loading a new image every time the
 widget is initialized.
+:::
 
 
-[^rebuild-not-always-required]: You don't actually _always_ need to rebuild -- only when
-you change the JavaScript. If you only changed Python, you only need to restart
-JupyterLab.
+[^rebuild-not-always-required]: We don't actually _always_ need to rebuild -- only when
+we change the JavaScript. If we only changed Python, we only need to restart JupyterLab.
