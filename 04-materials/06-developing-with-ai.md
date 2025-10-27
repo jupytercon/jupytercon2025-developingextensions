@@ -52,15 +52,15 @@ Before we dive into tools and techniques, let's set the right mindset for workin
 You would never hire a developer and expect absolute perfection in their creative work. Apply the same perspective to AI. If it gets most things right and you refine the rest, that's a massive productivity win.
 :::
 
-### Understanding LLMs (large language models)
+### Understanding {term}`LLMs <LLM>` (large language models)
 
-AI coding assistants are powered by **Large Language Models (LLMs)** — neural networks trained on vast amounts of text and code. These models can:
+AI coding assistants are powered by **Large Language Models ({term}`LLMs <LLM>`)** — neural networks trained on vast amounts of text and code. These models can:
 - Understand context from your codebase
 - Generate code snippets based on natural language descriptions
 - Explain existing code and suggest improvements
 - Debug errors by analyzing stack traces and code patterns
 
-### Where LLMs live: deployment models
+### Where {term}`LLMs <LLM>` live: deployment models
 
 **Frontier Models (Cloud-Hosted):**
 - **Examples:**
@@ -77,7 +77,7 @@ AI coding assistants are powered by **Large Language Models (LLMs)** — neural 
 - **Examples:** Claude Haiku, Qwen3-30B-A3B (approaching GPT-4o performance), Mistral Small 3.2, Llama 3.3-70B
 - **Deployment:** Can run on cloud APIs or self-hosted on consumer hardware
 - **Pros:** Lower cost or free (if self-hosted), faster responses, good balance of capability and efficiency
-- **Cons:** Less capable than frontier models, self-hosting requires GPU resources (typically 16GB+ VRAM)
+- **Cons:** Less capable than frontier models, self-hosting requires GPU resources (typically 16GB+ {term}`VRAM`)
 
 **Open-source & open-weight models (2025 state-of-the-art):**
 - **Highly Recommended for Coding:**
@@ -203,7 +203,7 @@ Now that you understand the categories, here are the **agentic AI tools** you ca
 - **Best for:** CLI warriors who live in the terminal; Simon Willison's primary coding tool
 - **Install:** Requires Node.js 18+, then `npm install -g @anthropic/claude-code`
 
-:::{tip} Self-Hosting LLMs
+:::{tip} Self-Hosting {term}`LLMs <LLM>`
 If you want to run models locally (for privacy or cost savings), tools like [Ollama](https://ollama.com/) make it easy:
 
 ```bash

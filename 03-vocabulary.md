@@ -85,4 +85,15 @@ Launcher
 : When a new JupyterLab tab is opened, the launcher is displayed.
 It includes categorized buttons to launch any applications that are registered with the launcher.
 [See the official docs for more!](https://jupyterlab.readthedocs.io/en/latest/extension/extension_points.html#launcher)
+
+VRAM
+: Video Random Access Memory - dedicated memory on a graphics processing unit (GPU) used for storing image data, textures, and other graphics-related information.
+In the context of AI development, VRAM is crucial for loading and running large language models locally.
+Typical consumer GPUs have between 4GB to 24GB of VRAM, with high-end models offering more.
+
+LLM
+: Large Language Model - a type of artificial intelligence model trained on vast amounts of text data to understand and generate human-like text.
+LLMs can assist with coding tasks like writing code, debugging, refactoring, and explaining complex concepts.
+Examples include GPT-5, Claude, and Qwen.
+These models are characterized by having billions of parameters and the ability to perform diverse language tasks without task-specific training.
 :::
