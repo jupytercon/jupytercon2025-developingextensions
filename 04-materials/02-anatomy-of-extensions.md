@@ -1,12 +1,5 @@
 # 🧬 2 - Anatomy of an extension
 
-:::{hint} Learning objectives
-* Understand the difference between extensions, plugins, and widgets
-* Understand how to get started with writing an extension
-* Understand how to structure and navigate an extension project
-* Practice and get comfortable with the development & testing loop
-:::
-
 :::{important} Outcomes
 In this module, we will:
 
