@@ -196,7 +196,7 @@ Now that you understand the categories, here are the **agentic AI tools** you ca
 - **LLM Options:**
   - Requires Anthropic API key
   - Works with Claude Sonnet 4.5, Claude 4 Opus, and other Claude models
-- **Best for:** CLI warriors who live in the terminal; Simon Willison's primary coding tool
+- **Best for:** CLI warriors who live in the terminal
 - **Install:** Requires Node.js 18+, then `npm install -g @anthropic/claude-code`
 
 :::{tip} Self-Hosting {term}`LLMs <LLM>`
