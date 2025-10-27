@@ -47,9 +47,157 @@ The following three examples with prompts have been tested and confirmed working
 
 #### 🎉 Confetti celebration button
 
+**Complexity**: Beginner (Frontend only)
+**Time**: 15-20 minutes
+**What you'll learn**: Status bar integration, DOM manipulation, visual effects
+
+**The Prompt**:
+```
+Add a button in the status bar to celebrate something! It should show confetti
+on top of the UI for 3 seconds
+```
+
+**Expected Results**:
+- Status bar shows a celebration button (usually bottom-right)
+- Clicking triggers confetti animation overlay
+- Animation appears on top of all UI elements
+- Confetti clears after ~3 seconds
+- Multiple clicks work correctly
+
+**What to Watch For**:
+
+If the confetti doesn't appear:
+```
+The button is there but I don't see confetti. Check that the z-index
+is high enough and the confetti container is properly positioned.
+```
+
+To customize:
+```
+Make the confetti more colorful and add a sound effect when it triggers.
+```
+
+**Verified Setup**:
+- ✅ macOS 15.7, Claude Code (Claude Sonnet 4.5)
+- ✅ `conda` environment: Python 3.13, Node.js 22, JupyterLab
+- 📹 [Watch the demo](https://www.loom.com/share/2afabea0184045fa868271f9ab0ca083)
+
+:::{tip}
+This is a perfect first project - it's self-contained, purely visual, and you'll immediately see if it works. It teaches you about JupyterLab's status bar API without backend complexity.
+:::
+
 #### 🎨 Custom theme extension
 
+**Complexity**: Beginner (Frontend only)
+**Time**: 20-30 minutes
+**What you'll learn**: Theme customization, CSS styling, JupyterLab theming system
+
+**The Prompt**:
+```
+Create a theme based on [your favorite movie/show/game/aesthetic]
+```
+
+**Example**:
+```
+Create a theme based on Netflix show KPop Demon Hunters
+```
+
+**Expected results**:
+- A new theme appears in Settings → Theme menu
+- Theme includes custom colors matching your chosen aesthetic
+- JupyterLab interface reflects the theme's visual style
+- Theme can be toggled on/off
+
+**What to watch for**:
+
+To add a background image to the main panel:
+```
+Can we use this image as a background for main panel?
+[paste your image URL]
+```
+
+Example:
+```
+Can we use this image as a background for main panel?
+https://www.billboard.com/wp-content/uploads/2025/07/kpop-demon-hunters-billboard-1800.jpg?w=942&h=628&crop=1
+```
+
+To refine the styling:
+```
+The background image is too bright - make it more subtle with reduced opacity
+and add a dark overlay so text is readable.
+```
+
+To adjust colors:
+```
+Update the sidebar and toolbar colors to match the theme's color palette.
+Use [specific colors] for accent elements.
+```
+
+**Tips for finding images**:
+- Search "[theme name] wallpaper 4k" for high-quality backgrounds
+- Look for images with good contrast for text readability
+- Consider color palettes - extract 3-5 main colors from your chosen image (AI can help you with it!)
+- Free image sources: Unsplash, Pexels, Wallhaven
+
+:::{tip}
+This is a perfect creative project! You get immediate visual feedback, can personalize your JupyterLab environment, and learn how JupyterLab's theming system works. Plus, you'll have a custom theme you actually want to use daily.
+
+Themes are also great conversation starters - share your theme with other workshop participants!
+:::
+
 #### 📊 CPU monitor widget
+
+**Complexity**: Intermediate (Frontend + Server)
+**Time**: 30-40 minutes
+**What you'll learn**: REST API integration, backend data processing, graceful error handling
+
+**The Prompt**:
+```
+Create a JupyterLab extension that monitors CPU stats:
+- Use psutil on the backend to get utilization and temperature data
+- Create a REST API endpoint
+- Display it in a widget in the main area
+- Handle gracefully if some fields aren't available
+```
+
+**Expected results**:
+- Extension installs `psutil` successfully
+- Widget appears in main area when launched
+- CPU utilization percentage displays
+- Updates automatically (polling every few seconds)
+- No errors when temperature data is unavailable
+- Widget layout is readable and organized
+
+**What to watch for**:
+
+If `psutil` isn't installed:
+```
+I'm getting ModuleNotFoundError for psutil. Update pyproject.toml to
+include psutil as a dependency.
+```
+
+If the widget doesn't update:
+```
+The widget shows data once but doesn't update. Add automatic polling
+every 2 seconds to refresh the CPU stats.
+```
+
+To extend it:
+```
+Add a graph that shows CPU usage over the last 60 seconds,
+and highlight in red when usage is above 80%.
+```
+
+**Verified setup**:
+- ✅ macOS 15.7, Cursor (Claude Sonnet 4.5 MAX)
+- ✅ `conda` environment: Python 3.13, Node.js 22, JupyterLab
+- ⚠️ Temperature data gracefully handled as N/A on macOS (expected)
+- 📹 [Watch the demo](https://www.loom.com/share/9f6d11d537a94a30af7559fd4d80eea2)
+
+:::{tip}
+This teaches you the full stack: backend API design, frontend-backend communication, error handling, and periodic updates. It's a perfect template for any monitoring or dashboard extension.
+:::
 
 ### More extension ideas
 
