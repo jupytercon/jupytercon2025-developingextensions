@@ -43,6 +43,8 @@ Create something entirely new using the extension template, AI assistance, and t
 3. Choose your extension type based on your idea:
    - **Frontend only**: For UI-only features (widgets, buttons, panels)
    - **Frontend + Server**: When you need Python backend logic (data processing, file system access, external APIs)
+   - **Theme**: Customize the look and feel of JupyterLab by creating your own theme extension (colors, fonts, icons)
+   
 
 4. Install and verify the base extension works:
 
@@ -242,11 +244,9 @@ Pick an idea that matches your comfort level and interests:
 2. **Git status widget**: Display current branch, uncommitted changes count
 3. **Environment inspector**: Show installed packages and Python/Node versions
 4. **Todo list with persistence**: Sidebar panel that saves tasks to disk
-5. **Markdown preview**: Add support for custom syntax like mermaid diagrams
 
 **Advanced**:
-1. **Collaborative cursor**: Show where teammates are working (requires WebSocket)
-2. **AI code review**: Send selected code to an LLM and show suggestions
+2. **AI code assistant**: Create a chat with LLM
 3. **Performance profiler**: Instrument notebook cells and show execution metrics
 4. **Custom file format viewer**: Add support for viewing proprietary file types
 5. **Real-time log viewer**: Stream and filter server logs in a widget
@@ -270,30 +270,7 @@ Contributing to established extensions is a great way to learn real-world patter
 
 Here are actively-maintained JupyterLab extensions that welcome contributions:
 
-**Data Visualization & Analysis**:
-- [jupyterlab-matplotlib](https://github.com/matplotlib/ipympl) - Interactive matplotlib widgets
-- [jupyterlab-plotly](https://github.com/plotly/plotly.py) - Plotly chart integration
-- [jupyterlab-bokeh](https://github.com/bokeh/jupyterlab_bokeh) - Bokeh visualization support
-
-**Development Tools**:
-- [jupyterlab-git](https://github.com/jupyterlab/jupyterlab-git) - Git integration UI
-- [jupyterlab-lsp](https://github.com/jupyter-lsp/jupyterlab-lsp) - Language Server Protocol support
-- [jupyterlab-code-formatter](https://github.com/ryantam626/jupyterlab_code_formatter) - Code formatting tools
-
-**Collaboration & Sharing**:
-- [jupyter-collaboration](https://github.com/jupyterlab/jupyter-collaboration) - Real-time collaboration
-- [jupyterlab-commenting](https://github.com/jupyterlab/jupyterlab-commenting) - Add comments to notebooks
-- [jupyterlab-drawio](https://github.com/QuantStack/jupyterlab-drawio) - Diagram editor integration
-
-**File Viewers & Editors**:
-- [jupyterlab-myst](https://github.com/executablebooks/jupyterlab-myst) - MyST markdown support
-- [jupyterlab-geojson](https://github.com/jupyterlab/jupyter-renderers) - GeoJSON file viewer
-- [jupyterlab-fasta](https://github.com/jupyterlab/jupyter-renderers) - Biological sequence viewer
-
-**Productivity**:
-- [jupyterlab-execute-time](https://github.com/deshaw/jupyterlab-execute-time) - Show cell execution times
-- [jupyterlab-spellchecker](https://github.com/jupyterlab-contrib/spellchecker) - Spell checking for markdown
-- [jupyterlab-variableInspector](https://github.com/lckr/jupyterlab-variableInspector) - Variable explorer
+TODO: Add them
 
 ### How to Find Good First Issues
 
@@ -566,7 +543,7 @@ Before the session ends, take 10 minutes to:
 - Subscribe to issues on extensions you've contributed to
 - Join the [Jupyter Zulip chat](https://jupyter.zulipchat.com) for real-time discussions
 - Participate in the [Jupyter Discourse forum](https://discourse.jupyter.org/)
-- Attend [Jupyter Community Calls](https://discourse.jupyter.org/t/jupyter-community-calendar/2485) - bring your questions or request code review from experienced developers
+- Attend [Jupyter Community Calls](https://jupyter.org/community#calendar) - bring your questions or request code review from experienced developers
 - Help others getting started
 
 :::{tip} The Journey Continues
