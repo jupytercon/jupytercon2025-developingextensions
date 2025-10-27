@@ -451,7 +451,7 @@ Now we have all the knowledge we need to keep iterating on our extension!
 🎓 Well done!
 
 
-## Creating a widget
+## 😖 "Hello, world" is boring!
 
 Our working extension is a basic "hello, world" application.
 All it does is log a string to the console, then make a request to the back-end
@@ -789,6 +789,9 @@ Finally, we know that we can register our command with the
 {term}`command palette <command palette>` and/or the {term}`launcher <launcher>`
 to give the user an easy way to execute the command to open the widget.
 
+
+## 😖 It's still just "hello, world"!
+
 We've graduated from "Hello, world" in the console to "Hello, world" in a
 {term}`main area widget <main area widget>`.
 That's a big step, but remember our end goal: A viewer for random images and
@@ -1117,6 +1120,9 @@ We know how to provide JSON data from the server and consume it in a {term}`widg
 
 We know how to dynamically update {term}`widget` HTML elements.
 
+
+## 😖 The widget isn't interactive!
+
 Right now, you only get a random image when you first open the widget.
 It's much more interesting if the widget can respond to user actions!
 
@@ -1220,7 +1226,7 @@ We know how to add a button to the toolbar with an icon, tooltip, and `onClick`
 behavior.
 
 
-## Problem: The widget disappears when we refresh the page
+## 😖 The widget disappears when we refresh the page
 
 :::{important} 👀 You should notice...
 :class: simple
