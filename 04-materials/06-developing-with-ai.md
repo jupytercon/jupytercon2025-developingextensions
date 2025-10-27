@@ -374,7 +374,7 @@ You've now experienced the complete AI-assisted development workflow:
 
 ### Continuing your journey
 
-The next chapter, {doc}`07-independent-work`, provides **independent exploration time** where you can:
+The next chapter provides **independent exploration time** where you can:
 
 1. **Build your own extension from scratch** - Using the template and proven project ideas
 2. **Contribute to existing extensions** - Give back to the community and learn from production code
