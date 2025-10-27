@@ -1,25 +1,25 @@
 # ⭐ Instructors
 
-## Rosio Reyes
+## Rosio Reyes ([@RRosio](https://github.com/rrosio))
 
 **Software Engineer, OSS @ Anaconda**
 
 I'm a contributor to the Jupyter ecosystem. I am currently working on extension development and testing for Gator (which provides environment and package management interface) and jupyter-fsspec (providing an interface for interacting with fsspec filesystems). I'm especially interested in building tools that are maintainable, well tested and contributor friendly. I enjoy working with others to improve the experience of developing in the Jupyter community.
 
 
-## [Konstantin Taletsky](https://taletskiy.com/)
+## [Konstantin Taletsky](https://taletskiy.com/) ([@ktaletsk](https://github.com/ktaletsk))
 
 **Jupyter Developer, OSS @ Anaconda**
 
 I’m a longtime Jupyter user and contributor, maintainer of Gator and JupyterLab-LaTeX, with hands-on work across JupyterLab, JupyterHub, and the wider ecosystem. I built a JupyterHub-based platform serving 300+ NIH researchers; worked on numerous JupyterLab extensions and recently built a community JupyterLab Marketplace (https://labextensions.dev/).
 
 
-## Jason Grout
+## Jason Grout ([@jasongrout](https://github.com/jasongrout/))
 
 TODO: Bio
 
 
-## [Matt Fisher](https://mfisher87.github.io)
+## [Matt Fisher](https://mfisher87.github.io) ([@mfisher87](https://github.com/mfisher87/))
 
 **Research Software Engineer @ [Schmidt Center for Data Science and Environment, UC Berkeley](https://dse.berkeley.edu/)**
 
