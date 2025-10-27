@@ -300,11 +300,6 @@ If you'd prefer to start fresh or didn't complete the anatomy module:
    cd jupytercon2025-ai-workshop
    ```
 
-2. Check out the completed state from the anatomy module:
-
-   ```bash
-   git checkout exercise-e-step-1
-   ```
 
 3. Install and verify the extension works:
 
