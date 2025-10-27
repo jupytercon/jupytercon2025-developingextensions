@@ -330,7 +330,7 @@ Our extension will:
    :::
 
 
-#### 🧪 Test
+### 🧪 Test
 
 1. Start JupyterLab in a **separate terminal**.
 
@@ -407,7 +407,7 @@ git push -u origin main
 2. Rebuild the extension with `jlpm build`.
 
 
-#### 🧪 Test
+### 🧪 Test
 
 Follow the same testing steps as last time.
 
@@ -927,7 +927,7 @@ def setup_route_handlers(web_app):
 ```
 
 
-#### 🧪 Test
+### 🧪 Test
 
 Now's the best time for us to stop and test before moving on to consuming this
 data with our widget.
@@ -1067,7 +1067,7 @@ class ImageCaptionWidget extends Widget {
 }
 ```
 
-#### 🧪 Test
+### 🧪 Test
 
 Now that we have our widget user interface hooked up to the data coming from the server, let's test again.
 Because we changed the JavaScript, we need to use `jlpm run build`, but we _don't_ need to restart the JupyterLab server.
