@@ -240,7 +240,7 @@ Our extension will:
 
 ## 🏋️ Exercise A (15 minutes): Extension creation and development loop
 
-### Create a new extension from the [official template](https://github.com/jupyterlab/extension-template)
+### 🔧 Create a new extension from the [official template](https://github.com/jupyterlab/extension-template)
 
 1. Instantiate the template to get started on our new extension!
 
@@ -394,7 +394,7 @@ git push -u origin main
 :::
 
 
-### Do a complete development loop
+### 🔧 Do a complete development loop
 
 0. Close the JupyterLab server with `CTRL+C`.
 
@@ -466,7 +466,7 @@ will eventually house that content.
 
 ## 🏋️ Exercise B (20 minutes): Launching a "hello, world" {term}`widget <widget>`
 
-### Create a "hello, world" widget
+### 🔧 Create a "hello, world" widget
 
 To display this widget in the {term}`main area <main area>`, we need to
 implement a {term}`widget <widget>` which displays our content (for now, just
@@ -536,7 +536,7 @@ widget in JupyterLab yet.
 Let's fix that now.
 
 
-### Create a {term}`command <command>` to display the {term}`widget <widget>` in the {term}`main area <main area>`
+### 🔧 Create a {term}`command <command>` to display the {term}`widget <widget>` in the {term}`main area <main area>`
 
 In `src/index.ts`, we need to update our plugin to define a command in our
 {term}`plugin's <plugin>` `activate` method:
@@ -591,7 +591,7 @@ But right now, this command is not being used by anything!
 Next, we'll add it to the {term}`command palette <command palette>`.
 
 
-### Register our {term}`command <command>` with the {term}`command palette <command palette>`
+### 🔧 Register our {term}`command <command>` with the {term}`command palette <command palette>`
 
 First, import the command palette interface at the top of `src/index.ts`:
 
@@ -686,7 +686,7 @@ git push -u origin main
 :::
 
 
-### Optional: Register with the {term}`launcher <launcher>`
+### 🔧 Optional: Register with the {term}`launcher <launcher>`
 
 Unlike the command palette, this functionality needs to be installed as a dependency.
 First, install `@jupyterlab/launcher` with `jlpm add @jupyterlab/launcher` to make
@@ -736,7 +736,7 @@ git push -u origin main
 :::
 
 
-#### My launcher button works, but it has no icon!
+#### Troubleshooting: My launcher button works, but it has no icon!
 
 Adding an icon is one extra step.
 We can import the icon in `src/index.ts` like so:
@@ -804,7 +804,7 @@ Now we need to implement the logic and glue the pieces together.
 
 ## 🏋️ Exercise C (20 minutes): Serve images and captions from the server extension
 
-### Set up images and captions
+### 🔧 Define images and captions
 
 Create a new directory at `jupytercon2025_extension_workshop/images`:
 
@@ -843,7 +843,7 @@ IMAGES_AND_CAPTIONS = [
 ```
 
 
-### Update the server to serve images and captions
+### 🔧 Update the server to serve images and captions
 
 Our server behaviors are defined in
 `jupytercon2025_extension_workshop/routes.py`, so that module will need to know
@@ -963,7 +963,7 @@ git push -u origin main
 :::
 
 
-### Connect the {term}`widget` to the {term}`server extension`
+### 🔧 Connect the {term}`widget` to the {term}`server extension`
 
 Now that our backend is working, we need to glue our widget to it.
 
@@ -1132,7 +1132,7 @@ It's much more interesting if the widget can respond to user actions!
 Let's add a toolbar and refresh button which triggers the image to change immediately.
 
 
-### Import a toolbar UI component and icon
+### 🔧 Import a toolbar UI component and icon
 
 For all of this to work, we need the `ToolbarButton` to use in our
 widget.
@@ -1156,7 +1156,7 @@ import {
 ```
 
 
-### Add the button to the widget and connect the logic
+### 🔧 Add the button to the widget and connect the logic
 
 Now we can use the `ToolbarButton` class to instantiate a new button with an icon,
 tooltip, and behavior (`onClick`).
