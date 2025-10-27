@@ -435,7 +435,7 @@ git push -u origin main
 :::
 
 
-### What just happened?
+### 🧠 What do we know now?
 
 We know how to get started: we learned how to instantiate a new extension from the
 official template and set it up for development.
@@ -778,7 +778,16 @@ git push -u origin main
 :::
 
 
-## What's next?
+### 🧠 What do we know now?
+
+We know that a {term}`widget <widget>` by itself isn't very useful, and we need some way to display it.
+
+We decided we want to display our widget in the {term}`main area <main area>`, and we
+know that we need a {term}`command <command>` to achieve that.
+
+Finally, we know that we can register our command with the
+{term}`command palette <command palette>` and/or the {term}`launcher <launcher>`
+to give the user an easy way to execute the command to open the widget.
 
 We've graduated from "Hello, world" in the console to "Hello, world" in a
 {term}`main area widget <main area widget>`.
@@ -1095,10 +1104,25 @@ git push -u origin main
 :::
 
 
-## 🏋️ Exercise D (15 minutes): Add user interactivity to the widget
+### 🧠 What do we know now?
+
+We know that a {term}`server extension <server extension>` can access the hardware
+resources of the JupyterLab server, for example to read data from disk.
+
+We know that server extensions provide HTTP endpoints that can be consumed by
+{term}`frontend extensions <frontend extension>`.
+
+We know how to provide JSON data from the server and consume it in a {term}`widget
+<widget>`.
+
+We know how to dynamically update {term}`widget` HTML elements.
 
 Right now, you only get a random image when you first open the widget.
 It's much more interesting if the widget can respond to user actions!
+
+
+## 🏋️ Exercise D (10 minutes): Add interactivity to the widget
+
 Let's add a toolbar and refresh button which triggers the image to change immediately.
 
 
@@ -1185,6 +1209,15 @@ git commit -m "Add refresh button to widget toolbar"
 git push -u origin main
 ```
 :::
+
+
+### 🧠 What do we know now?
+
+We know that {term}`main area widgets <main area widget>` can offer a toolbar for
+interacting with the widget.
+
+We know how to add a button to the toolbar with an icon, tooltip, and `onClick`
+behavior.
 
 
 ## Problem: The widget disappears when we refresh the page
@@ -1330,6 +1363,15 @@ To test this change, load our widget in JupyterLab, then refresh the page.
 You may see a different image; this is because we're loading a new image every time the
 widget is initialized.
 :::
+
+
+### 🧠 What do we know now?
+
+We know that by default, JupyterLab doesn't track our open widget or restore its state
+when we refresh the page.
+
+We know that we can use the `WidgetTracker` to remember the state of our widget and the
+`ILayoutRestorer` plugin to restore that state.
 
 
 [^rebuild-not-always-required]: We don't actually _always_ need to rebuild -- only when
