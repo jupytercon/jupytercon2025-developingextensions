@@ -141,7 +141,6 @@ Not all AI coding tools are created equal. Understanding the different categorie
 - Understands your entire codebase
 - Can execute commands (build, test, format)
 - Reads documentation and error messages
-- Self-corrects when things go wrong
 - Works iteratively with you
 
 **Use cases:**
