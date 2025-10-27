@@ -54,9 +54,9 @@ self-sufficient if you do.
 
 ## Programming experience
 
-There is a lot of JavaScript & TypeScript involved in extension development.
+There is JavaScript & TypeScript involved in extension development.
 If you are comfortable with Python, you will likely be comfortable with the level of
-TypeScript we'll be using.
+TypeScript we'll be writing.
 
 Experience writing JavaScript, TypeScript, or programming for the browser is a bonus,
-but not required.
+but **not required**.
