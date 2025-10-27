@@ -205,25 +205,24 @@ Pick an idea that matches your comfort level and interests:
 
 #### Beginner (frontend only)
 1. **Theme switcher dropdown**: Add a quick theme selector to the toolbar for easy switching
-2. **Clock widget**: Status bar item showing current time with configurable timezone
-3. **Quote of the day**: Main area widget that fetches and displays random quotes
-4. **Keyboard shortcut viewer**: Panel showing all available shortcuts
-5. **Custom welcome screen**: Override the default launcher with your own design
-6. **Pomodoro timer**: Status bar timer for focused work sessions with notifications
+2. **Quote of the day**: Main area widget that fetches and displays random quotes
+3. **Keyboard shortcut viewer**: Panel showing all available shortcuts
+4. **Pomodoro timer**: Status bar timer for focused work sessions with notifications
 
 #### Intermediate (frontend + server)
 1. **File size analyzer**: Scan workspace directory and show largest files/folders
 2. **Git status widget**: Display current branch, uncommitted changes count
-3. **Environment inspector**: Show installed packages and Python/Node versions
+3. **Environment inspector**: Show installed packages and Python version
 4. **Todo list with persistence**: Sidebar panel that saves tasks to disk
 
 #### Advanced
+5. **Custom welcome screen**: Override the default launcher with your own design
 2. **AI code assistant**: Create a chat with LLM
 3. **Performance profiler**: Instrument notebook cells and show execution metrics
 4. **Custom file format viewer**: Add support for viewing proprietary file types
 5. **Real-time log viewer**: Stream and filter server logs in a widget
 
-### 💡 More ideas from JupyterLab community
+### 💡 Even more ideas from JupyterLab community
 [JupyterLab Extension Ideas](https://github.com/jupyterlab/jupyterlab/issues?q=sort%3Aupdated-desc+state%3Aopen+label%3A%22tag%3AExtension+Idea%22)
 
 ## Path 2: Contribute to existing extensions
@@ -238,14 +237,9 @@ Contributing to established extensions is a great way to learn real-world patter
 - Build your portfolio and resume
 - Connect with the Jupyter community
 
-## Path 3: Explore and experiment
-
-
-
 ## Community Extensions
 [Jupyterlab-contrib](https://jupyterlab-contrib.github.io/extensions.html)
 [Jupyter Marketplase](https://labextensions.dev/)
-
 
 
 ## 🔧 Key JupyterLab APIs
@@ -306,12 +300,37 @@ Want to contribute to JupyterLab itself? Here are good first issues:
 
 ## 💬 Getting Help
 
-**During this session:**
+### During this session
 - Raise your hand for instructor help
 - Discuss with neighbors
 - [Zulip](https://jupyter.zulipchat.com/#feed) for real-time chat
 
-**After the tutorial:**
-- [JupyterLab Discourse](https://discourse.jupyter.org/c/jupyterlab/17) - Community forum
-- [Zulip Chat](https://jupyter.zulipchat.com/) - Continue conversing with the Jupyter Community!
+### After the tutorial
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/jupyter)
+
+**To continue developing**:
+- Add automated tests (`pytest` for Python, `jest` for TypeScript)
+- Set up continuous integration (template includes GitHub Actions)
+- Write comprehensive documentation
+- Create example notebooks showing your extension in use
+
+**To share your work**:
+- Publish to PyPI: `python -m build && twine upload dist/*`
+- Write a blog post about your development experience
+- Present at a local developer meetup or a conference
+
+**To contribute more**:
+- Subscribe to issues on extensions you've contributed to
+- Join the [Jupyter Zulip chat](https://jupyter.zulipchat.com) for real-time discussions and help from contributors and users
+- Participate in the [Jupyter Discourse forum](https://discourse.jupyter.org/)
+- Attend [Jupyter Community Calls](https://jupyter.org/community#calendar) - bring your questions or request code review from experienced developers
+- Help others getting started
+
+:::{tip} The Journey Continues
+Building JupyterLab extensions is a skill that develops over time. Every extension you build, every contribution you make, and every bug you debug deepens your understanding.
+
+The patterns you've learned here - using AI assistance effectively, reading documentation, debugging systematically, and iterating rapidly - apply to all software development, not just JupyterLab.
+
+Keep building, keep learning, and welcome to the JupyterLab extension developer community! 🚀
+:::
+
