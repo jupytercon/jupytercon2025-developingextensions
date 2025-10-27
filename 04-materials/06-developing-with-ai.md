@@ -147,7 +147,7 @@ Not all AI coding tools are created equal. Understanding the different categorie
 - ✅ Generating tests based on implementation
 - ✅ Updating documentation alongside code
 
-**Key difference:** It doesn't just suggest—it **acts** like a team member with tools.
+**Key difference:** It doesn't just suggest — it **acts** like a team member with tools.
 
 **Example workflow:**
 ```
