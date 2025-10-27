@@ -337,6 +337,7 @@ You are totally welcome to use any AI tool you have installed on your computer! 
 - Send a single prompt to Cursor
 - Basic debugging
 - Power and peril of one-shot prompts
+- git restore . to undo the changes made by the one-shot prompt?
 
 ### Exercise C (20 minutes): Product manager framework
 - Learn how to use structured approach to AI-assisted development
