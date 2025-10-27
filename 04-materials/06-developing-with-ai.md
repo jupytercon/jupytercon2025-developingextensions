@@ -28,11 +28,9 @@ This module's teaching approach is inspired by:
 
 If you haven't used AI-assisted development tools yet, you're about to experience a significant shift in how you write code. AI coding assistants can help you explore APIs, generate boilerplate, debug errors, and iterate on features much faster than traditional workflows.
 
-### Setting expectations: your AI partner is like a knowledgeable junior developer
+### Setting expectations
 
 Before we dive into tools and techniques, let's set the right mindset for working with AI.
-
-**Don't expect perfection.** If AI gets 95% of what you need correct, that's incredible — exactly what you'd get from a talented junior developer given the same instructions.
 
 **Key mental model:** Think of your AI assistant as a fast, eager junior developer who:
 - ✅ Learns quickly and has read tons of documentation (but maybe not the latest stuff)
@@ -41,16 +39,17 @@ Before we dive into tools and techniques, let's set the right mindset for workin
 - ✅ Benefits from clear instructions and iterative feedback
 - ✅ Gets better with guidance and context
 
+:::{important} Don't expect perfection
+If AI gets 95% of what you need correct, that's incredible — exactly what you'd get from a talented junior developer given the same instructions.
+You would never hire a developer and expect absolute perfection in their creative work. Apply the same perspective to AI. If it gets most things right and you refine the rest, that's a massive productivity win.
+:::
+
 **The right mindset:**
 - Don't get frustrated by small mistakes — iterate and guide
 - **Review all generated code** (you wouldn't merge a PR without review)
 - Ask questions: "Why did you choose this approach?"
 - Treat errors as learning opportunities for both you and the AI
 - Don't be afraid to roll back to the beginning and start over if AI doubled down on a wrong path
-
-:::{important} Don't expect perfection
-You would never hire a developer and expect absolute perfection in their creative work. Apply the same perspective to AI. If it gets most things right and you refine the rest, that's a massive productivity win.
-:::
 
 ### Understanding {term}`LLMs <LLM>` (large language models)
 
@@ -80,14 +79,13 @@ AI coding assistants are powered by **Large Language Models ({term}`LLMs <LLM>`)
 - **Cons:** Less capable than frontier models, self-hosting requires GPU resources (typically 16GB+ {term}`VRAM`)
 
 **Open-source & open-weight models (2025 state-of-the-art):**
-- **Highly Recommended for Coding:**
+- **Examples:**
   - **Qwen3-235B-A22B** (Apache 2.0 license): 235B params with 22B active, 262K context, exceptional reasoning
   - **GLM-4.5** (Open License): Strong coding and agentic abilities, runs on consumer hardware
   - **GLM-4.5 Air**: Optimized for 48GB RAM laptops when quantized
   - **Qwen3-Coder**: Specialized for code generation tasks
   - **DeepSeek-R1**: 671B params (37B active), MIT license, advanced reasoning (86.7% on AIME)
   - **OpenAI GPT-OSS-120B/20B** (Apache 2.0): Near o4-mini performance, consumer-friendly
-- **Other Notable Models:** Llama 3.3-70B (Meta), Mistral Small 3.2, Gemma 3 (Google)
 - **Licenses:** Vary from fully open (Apache 2.0, MIT) to restricted commercial use
 - **Deployment:** Can be self-hosted using tools like [Ollama](https://ollama.com/), [LM Studio](https://lmstudio.ai/), or [vLLM](https://github.com/vllm-project/vllm)
 - **Pros:** Full control, no API costs, data stays local, latest open models often outperform closed frontier ones
@@ -149,31 +147,13 @@ Not all AI coding tools are created equal. Understanding the different categorie
 
 **Key difference:** It doesn't just suggest — it **acts** like a team member with tools.
 
-**Example workflow:**
-```
-You: "Add image filters to this widget. Use Pillow on the backend."
-
-Agentic AI:
-1. Reads your widget.ts to understand structure
-2. Checks pyproject.toml for dependencies
-3. Adds Pillow to dependencies
-4. Creates new endpoint in routes.py
-5. Updates widget with filter buttons
-6. Runs `jlpm build` to verify TypeScript compiles
-7. Reports: "Done. Found one type error, fixed it."
-```
-
-**Verdict:** **This is what we're using in this workshop.** Agentic AI is a fundamentally different experience from chat or autocomplete.
-
-:::{tip} Focus on Agentic Tools
-If you've tried AI coding before and found it frustrating, chances are you were using chat-based AI or basic autocomplete. The techniques in this workshop are designed for **agentic, tool-using AI** that can understand and operate on your full project.
-:::
+**Verdict:** When building real features, prioritize agentic tools. They understand your codebase, execute commands, and iterate with you—a fundamentally different (and more productive) experience than chat or autocomplete.
 
 ### AI IDEs and tools for extension development
 
-Now that you understand the categories, here are the **agentic AI tools** you can use in this workshop, ranging from GUI-first to CLI-native:
+Now that you understand the categories, here are the **agentic AI tools** we will use in this workshop:
 
-#### 1. **Cursor** (popular UI-first IDE)
+#### 1. **Cursor**
 - **What it is:** A fork of VS Code with deep AI integration
 - **LLM Options:**
   - Built-in models (Claude Sonnet 4.5, GPT-5, Gemini 2.5 Pro) with Cursor subscription (starting $20/month)
@@ -182,16 +162,7 @@ Now that you understand the categories, here are the **agentic AI tools** you ca
 - **Best for:** Developers who want a polished, GUI-driven experience
 - **Download:** [cursor.com](https://cursor.com/)
 
-#### 2. **Cline** (open-source VS Code extension)
-- **What it is:** A VS Code extension (formerly Claude Dev) that provides AI-assisted coding
-- **LLM Options:**
-  - Bring your own API key (OpenAI, Anthropic, Google, etc.)
-  - Supports OpenAI-compatible APIs (e.g., Ollama, LM Studio)
-  - Fully open-source and community-driven
-- **Best for:** Developers who prefer VS Code and want flexibility
-- **Install:** Search "Cline" in VS Code extensions or visit [github.com/cline/cline](https://github.com/cline/cline)
-
-#### 3. **Claude Code** (CLI for power users)
+#### 2. **Claude Code**
 - **What it is:** Command-line interface for Claude, optimized for coding workflows
 - **LLM Options:**
   - Requires Anthropic API key
