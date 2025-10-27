@@ -14,9 +14,23 @@ I'm a contributor to the Jupyter ecosystem. I am currently working on extension 
 I’m a longtime Jupyter user and contributor, maintainer of Gator and JupyterLab-LaTeX, with hands-on work across JupyterLab, JupyterHub, and the wider ecosystem. I built a JupyterHub-based platform serving 300+ NIH researchers; worked on numerous JupyterLab extensions and recently built a community JupyterLab Marketplace (https://labextensions.dev/).
 
 
-## Jason Grout ([`@jasongrout`](https://github.com/jasongrout/))
+## [Jason Grout](https://jasongrout.org/) ([`@jasongrout`](https://github.com/jasongrout/))
 
-TODO: Bio
+**Jason's title here @ independent**
+
+I am an open-source [Jupyter](https://jupyter.org/) developer and community leader.
+In Jupyter, I currently serve in leadership positions, including the
+[Jupyter Executive Council](https://jupyter.org/about#executive-council-members), the
+[Jupyter Foundation Governing Board](https://jupyterfoundation.org/), the
+[Jupyter Community Building Committee](https://jupyter.org/governance/people.html#community-building-subcommittee),
+and the
+[Jupyter Trademarks Committee](https://jupyter.org/governance/people.html#trademark-subcommittee).
+
+I am also a
+[Jupyter Distinguished Contributor](https://jupyter.org/about#distinguished-contributors)
+with significant core contributions to
+[JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) and the interactive
+[Jupyter Widgets](http://ipywidgets.readthedocs.io/en/stable/) system.
 
 
 ## [Matt Fisher](https://mfisher87.github.io) ([`@mfisher87`](https://github.com/mfisher87/))
