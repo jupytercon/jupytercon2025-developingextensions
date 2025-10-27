@@ -93,7 +93,10 @@ AI coding assistants are powered by **Large Language Models ({term}`LLMs <LLM>`)
 
 ### Understanding AI coding tool categories
 
-Not all AI coding tools are created equal. Understanding the different categories helps you choose the right tool and set appropriate expectations.
+Not all AI coding tools are created equal. **In this workshop, we will be working with Agentic AI tools** (like Cursor and Claude Code) because they understand your codebase, execute commands, and iterate with you—a fundamentally different and more productive experience than chat or autocomplete.
+
+:::{note} Why Agentic AI? Detailed comparison of AI tool categories
+:class: dropdown
 
 #### 🥉 Chat-based AI (ChatGPT, Claude web interface)
 
@@ -148,6 +151,7 @@ Not all AI coding tools are created equal. Understanding the different categorie
 **Key difference:** It doesn't just suggest — it **acts** like a team member with tools.
 
 **Verdict:** When building real features, prioritize agentic tools. They understand your codebase, execute commands, and iterate with you—a fundamentally different (and more productive) experience than chat or autocomplete.
+:::
 
 ### AI IDEs and tools for extension development
 
