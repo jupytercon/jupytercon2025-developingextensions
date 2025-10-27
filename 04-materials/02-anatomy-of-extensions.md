@@ -992,7 +992,7 @@ that nothing is calling that method yet:
 ```{code} typescript
 :linenos:
 :emphasize-lines: 7-19, 21-23
-:file: src/widget.ts
+:filename: src/widget.ts
 
 class ImageCaptionWidget extends Widget {
   // Initialization
@@ -1026,7 +1026,7 @@ Now, we're calling `load_image()` when we initialize the widget:
 ```{code} typescript
 :linenos:
 :emphasize-lines: 12-25
-:file: src/widget.ts
+:filename: src/widget.ts
 
 class ImageCaptionWidget extends Widget {
   // Initialization
