@@ -57,6 +57,13 @@ This tutorial is inspired by many prior works.
 
 ## 🛠️ Setup
 
+Before we get started, we need to set up:
+
+* Development dependencies on our local machine
+* Git configuration on our local machine
+* A repository on GitHub
+
+
 ### Dependency environment
 
 We'll use this environment for the rest of this workshop:
