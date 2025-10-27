@@ -97,7 +97,7 @@ AI coding assistants are powered by **Large Language Models ({term}`LLMs <LLM>`)
 
 Not all AI coding tools are created equal. Understanding the different categories helps you choose the right tool and set appropriate expectations.
 
-#### ❌ Chat-based AI (ChatGPT, Claude web interface)
+#### 🥉 Chat-based AI (ChatGPT, Claude web interface)
 
 **How it works:**
 - You paste code snippets → AI gives you code back
@@ -117,7 +117,7 @@ Not all AI coding tools are created equal. Understanding the different categorie
 
 **Verdict:** Good for learning, frustrating for building features.
 
-#### ⚠️ Autocomplete AI (GitHub Copilot basic mode)
+#### 🥈 Autocomplete AI (GitHub Copilot basic mode)
 
 **How it works:**
 - Suggests code as you type (like enhanced IntelliSense)
@@ -135,7 +135,7 @@ Not all AI coding tools are created equal. Understanding the different categorie
 
 **Verdict:** Some people really prefer this mode (i.e. experienced developers who know when to ignore it, someone who prefers light touch AI interactions), but it can slow down beginners.
 
-#### ✅ Agentic AI (Cursor, Claude Code, Cline, GitHub Copilot Workspace)
+#### 🥇 Agentic AI (Cursor, Claude Code, Cline, GitHub Copilot Workspace)
 
 **How it works:**
 - Understands your entire codebase
