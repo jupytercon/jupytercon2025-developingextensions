@@ -31,8 +31,8 @@ JupyterCon!
 
 | Time      | Duration    | Topic                                                                                              | Presenter(s)      |
 |-----------|-------------|----------------------------------------------------------------------------------------------------|-------------------|
-| 1:30 PM   | 45 minutes  | [](./04-materials/06-developing-with-ai.md)                                                        | Konstantin, Matt  |
+| 1:30 PM   | 45 minutes  | [](./04-materials/05-developing-with-ai.md)                                                        | Konstantin, Matt  |
 | 2:15 PM   | 15 minutes  | 🗨️ Q&A, discussion                                                                                 | All               |
-| 2:30 PM   | 30 minutes  | [](./04-materials/05-working-on-your-own.md)                                                       | Rosio             |
+| 2:30 PM   | 30 minutes  | [](./04-materials/06-working-on-your-own.md)                                                       | Rosio             |
 | 3:00 PM   | 30 minutes  | ☕️ **Coffee break!**                                                                               |                   |
-| 3:30 PM   | 90 minutes  | [](./04-materials/05-working-on-your-own.md), continued                                            | All               |
+| 3:30 PM   | 90 minutes  | [](./04-materials/06-working-on-your-own.md), continued                                            | All               |
