@@ -52,28 +52,11 @@ You may also use [pixi](https://pixi.sh/latest/), but we expect you to be
 self-sufficient if you do.
 
 
-## Something to manage Python dependencies
-
-**And know how to use it!**
-
-We will provide commands, but you should be comfortable with the basics like creating
-and activating virtual environments.
-
-For example, [pip](https://pip.pypa.io/en/stable/), [uv](https://docs.astral.sh/uv/),
-[conda/mamba](https://conda-forge.org/download/), or
-[pixi](https://pixi.sh/latest/).
-
-If you're using conda, please
-[configure `conda-forge` as your primary channel](https://conda-forge.org/docs/user/transitioning_from_defaults/).
-We recommend [replacing Anaconda/miniconda with Miniforge](https://conda-forge.org/docs/user/transitioning_from_defaults/#uninstalling-anaconda-and-installing-miniforge)
-to avoid complications.
-
-
 ## Programming experience
 
-There is a lot of JavaScript & TypeScript involved in extension development.
+There is JavaScript & TypeScript involved in extension development.
 If you are comfortable with Python, you will likely be comfortable with the level of
-TypeScript we'll be using.
+TypeScript we'll be writing.
 
 Experience writing JavaScript, TypeScript, or programming for the browser is a bonus,
-but not required.
+but **not required**.
