@@ -1,12 +1,5 @@
 # 🧬 2 - Anatomy of an extension
 
-:::{hint} Learning objectives
-* Understand the difference between extensions, plugins, and widgets
-* Understand how to get started with writing an extension
-* Understand how to structure and navigate an extension project
-* Practice and get comfortable with the development & testing loop
-:::
-
 :::{important} Outcomes
 In this module, we will:
 
@@ -50,7 +43,6 @@ This tutorial is inspired by many prior works.
     * Add an interactive element (toolbar button) to refresh the image
     * Use a set of public domain images from the Library of Congress (the NASA astronomy
       photo API is not reliable during the current government shutdown 😭)
-    * Remove unnecessary use of `conda` in favor of more standard tooling
     * Structure the activities around in person teaching and exercises
 :::
 
