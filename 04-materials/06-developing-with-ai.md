@@ -14,7 +14,7 @@ After this module, you will have:
 ::::
 
 
-## AI-Assisted Development in 2025
+## AI-assisted development in 2025
 
 If you haven't used AI-assisted development tools yet, you're about to experience a significant shift in how you write code. AI coding assistants can help you explore APIs, generate boilerplate, debug errors, and iterate on features much faster than traditional workflows.
 
