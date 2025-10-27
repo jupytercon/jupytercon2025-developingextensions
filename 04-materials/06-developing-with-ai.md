@@ -197,7 +197,7 @@ Now that you understand the categories, here are the **agentic AI tools** you ca
   - Requires Anthropic API key
   - Works with Claude Sonnet 4.5, Claude 4 Opus, and other Claude models
 - **Best for:** CLI warriors who live in the terminal
-- **Install:** Requires Node.js 18+, then `npm install -g @anthropic/claude-code`
+- **Install:** Requires Node.js 18+, then `npm install --global @anthropic/claude-code`
 
 :::{tip} Self-Hosting {term}`LLMs <LLM>`
 If you want to run models locally (for privacy or cost savings), tools like [Ollama](https://ollama.com/) make it easy:
