@@ -18,7 +18,7 @@ After this module, you will have:
 
 If you haven't used AI-assisted development tools yet, you're about to experience a significant shift in how you write code. AI coding assistants can help you explore APIs, generate boilerplate, debug errors, and iterate on features much faster than traditional workflows.
 
-### Setting Expectations: Your AI Partner is Like a Skilled Junior Developer
+### Setting Expectations: Your AI Partner is Like a Knowledgeable Junior Developer
 
 Before we dive into tools and techniques, let's set the right mindset for working with AI.
 
