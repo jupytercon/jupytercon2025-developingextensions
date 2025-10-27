@@ -323,7 +323,6 @@ We will be using Cursor and Claude Code throughout this tutorial. Please, instal
 You are totally welcome to use any AI tool you have installed on your computer! Many of them follow similar patterns and expose similar functionality.
 
 ## Getting started  (15 minutes)
-- set up repo from previous exercise or checkpoint
 - install cursor and claude code (existing installed tools are fine to use too)
 
 ## Exercise A (15 minutes): Understand AI rules
