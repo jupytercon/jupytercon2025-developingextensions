@@ -305,8 +305,8 @@ If you'd prefer to start fresh or didn't complete the anatomy module:
 
    ```bash
    # Create/activate environment
-   micromamba create -n jupytercon2025-ai python pip nodejs gh "copier~=9.2" jinja2-time
-   micromamba activate jupytercon2025-ai
+   micromamba create -n jupytercon2025 python pip nodejs gh "copier~=9.2" jinja2-time
+   micromamba activate jupytercon2025
 
    # Install the extension in development mode
    pip install --editable ".[dev,test]"
