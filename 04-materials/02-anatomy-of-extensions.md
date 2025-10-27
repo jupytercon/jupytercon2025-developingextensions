@@ -82,6 +82,7 @@ micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
 ### Important Git settings
 
 1. Git needs to know who you are.
+
    Configure identity information Git will use when we commit:
 
    ```bash
@@ -89,8 +90,9 @@ micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
    git config --global user.name "Your Name Here"
    ```
 
-2. The modern conventional branch name is "main", and this tutorial will assume that's
-   your default branch.
+2. The modern conventional branch name is `main`, and this tutorial will assume
+   you're working on the `main` branch.
+
    Ensure your default branch is set to `main`:
 
    ```bash
