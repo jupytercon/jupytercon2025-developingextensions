@@ -1240,9 +1240,12 @@ disappears.
 ## 🏋️ Exercise E (15 minutes): Preserve layout
 
 JupyterLab can save and restore layouts, but we need to define how our widget restores
-its state.
+its state for that to work.
 
-First, let's import the layout restorer:
+The layout restorer **loads** layouts, and the widget tracker **saves** layouts.
+
+
+### 🔧 Import the layout restorer plugin and widget tracker
 
 ```{code} typescript
 :linenos:
@@ -1260,6 +1263,9 @@ import {
 } from '@jupyterlab/apputils';
 
 ```
+
+
+### 🔧 Use the layout restorer plugin as a dependency
 
 Now, we'll define the layout restorer {term}`token <token>` as an _optional_
 dependency, as it may not be available in all JupyterLab deployments.
@@ -1290,6 +1296,9 @@ const plugin: JupyterFrontEndPlugin<void> = {
     restorer: ILayoutRestorer | null
   ) => {
 ```
+
+
+### 🔧 Track our widget and conditionally restore it
 
 Now that we have the dependency, we need to define _how_ the widget's layout
 will be saved and restored.
