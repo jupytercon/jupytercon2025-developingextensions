@@ -22,7 +22,7 @@ If you haven't used AI-assisted development tools yet, you're about to experienc
 
 Before we dive into tools and techniques, let's set the right mindset for working with AI.
 
-**Don't expect perfection.** If AI gets 95% of what you need correct, that's incredible—exactly what you'd get from a talented junior developer given the same instructions.
+**Don't expect perfection.** If AI gets 95% of what you need correct, that's incredible — exactly what you'd get from a talented junior developer given the same instructions.
 
 **Key mental model:** Think of your AI assistant as a fast, eager junior developer who:
 - ✅ Learns quickly and has read tons of documentation (but maybe not the latest stuff)
