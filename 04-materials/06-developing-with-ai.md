@@ -18,7 +18,7 @@ After this module, you will have:
 
 If you haven't used AI-assisted development tools yet, you're about to experience a significant shift in how you write code. AI coding assistants can help you explore APIs, generate boilerplate, debug errors, and iterate on features much faster than traditional workflows.
 
-### Setting Expectations: Your AI Partner is Like a Knowledgeable Junior Developer
+### Setting expectations: your AI partner is like a knowledgeable junior developer
 
 Before we dive into tools and techniques, let's set the right mindset for working with AI.
 
@@ -42,7 +42,7 @@ Before we dive into tools and techniques, let's set the right mindset for workin
 You would never hire a developer and expect absolute perfection in their creative work. Apply the same perspective to AI. If it gets most things right and you refine the rest, that's a massive productivity win.
 :::
 
-### Understanding LLMs (Large Language Models)
+### Understanding LLMs (large language models)
 
 AI coding assistants are powered by **Large Language Models (LLMs)** — neural networks trained on vast amounts of text and code. These models can:
 - Understand context from your codebase
@@ -50,7 +50,7 @@ AI coding assistants are powered by **Large Language Models (LLMs)** — neural 
 - Explain existing code and suggest improvements
 - Debug errors by analyzing stack traces and code patterns
 
-### Where LLMs Live: Deployment Models
+### Where LLMs live: deployment models
 
 **Frontier Models (Cloud-Hosted):**
 - **Examples:**
@@ -63,13 +63,13 @@ AI coding assistants are powered by **Large Language Models (LLMs)** — neural 
 - **Pros:** State-of-the-art capabilities, specialized for different tasks (coding vs reasoning vs speed), no local compute needed
 - **Cons:** Requires internet connection, ongoing costs, data leaves your machine
 
-**Mid-Tier and Efficient Models (Cloud or Local):**
+**Mid-tier and efficient models (cloud or local):**
 - **Examples:** Claude Haiku, Qwen3-30B-A3B (approaching GPT-4o performance), Mistral Small 3.2, Llama 3.3-70B
 - **Deployment:** Can run on cloud APIs or self-hosted on consumer hardware
 - **Pros:** Lower cost or free (if self-hosted), faster responses, good balance of capability and efficiency
 - **Cons:** Less capable than frontier models, self-hosting requires GPU resources (typically 16GB+ VRAM)
 
-**Open-Source & Open-Weight Models (2025 State-of-the-Art):**
+**Open-source & open-weight models (2025 state-of-the-art):**
 - **Highly Recommended for Coding:**
   - **Qwen3-235B-A22B** (Apache 2.0): 235B params with 22B active, 262K context, exceptional reasoning
   - **GLM-4.5** (Open License): Strong coding and agentic abilities, runs on consumer hardware
@@ -83,11 +83,11 @@ AI coding assistants are powered by **Large Language Models (LLMs)** — neural 
 - **Pros:** Full control, no API costs, data stays local, latest Chinese models often outperform Western alternatives
 - **Cons:** Requires technical setup and adequate hardware (16GB+ VRAM for smaller models, 48GB+ for larger ones)
 
-### Understanding AI Coding Tool Categories
+### Understanding AI coding tool categories
 
 Not all AI coding tools are created equal. Understanding the different categories helps you choose the right tool and set appropriate expectations.
 
-#### ❌ Chat-Based AI (ChatGPT, Claude web interface)
+#### ❌ Chat-based AI (ChatGPT, Claude web interface)
 
 **How it works:**
 - You paste code snippets → AI gives you code back
@@ -163,11 +163,11 @@ Agentic AI:
 If you've tried AI coding before and found it frustrating, chances are you were using chat-based AI or basic autocomplete. The techniques in this workshop are designed for **agentic, tool-using AI** that can understand and operate on your full project.
 :::
 
-### AI IDEs and Tools for Extension Development
+### AI IDEs and tools for extension development
 
 Now that you understand the categories, here are the **agentic AI tools** you can use in this workshop, ranging from GUI-first to CLI-native:
 
-#### 1. **Cursor** (Popular UI-First IDE)
+#### 1. **Cursor** (popular UI-first IDE)
 - **What it is:** A fork of VS Code with deep AI integration
 - **LLM Options:**
   - Built-in models (Claude Sonnet 4.5, GPT-5, Gemini 2.5 Pro) with Cursor subscription (starting $20/month)
@@ -176,7 +176,7 @@ Now that you understand the categories, here are the **agentic AI tools** you ca
 - **Best for:** Developers who want a polished, GUI-driven experience
 - **Download:** [cursor.com](https://cursor.com/)
 
-#### 2. **Cline** (Open-Source VS Code Extension)
+#### 2. **Cline** (open-source VS Code extension)
 - **What it is:** A VS Code extension (formerly Claude Dev) that provides AI-assisted coding
 - **LLM Options:**
   - Bring your own API key (OpenAI, Anthropic, Google, etc.)
@@ -185,7 +185,7 @@ Now that you understand the categories, here are the **agentic AI tools** you ca
 - **Best for:** Developers who prefer VS Code and want flexibility
 - **Install:** Search "Cline" in VS Code extensions or visit [github.com/cline/cline](https://github.com/cline/cline)
 
-#### 3. **Claude Code** (CLI for Power Users)
+#### 3. **Claude Code** (CLI for power users)
 - **What it is:** Command-line interface for Claude, optimized for coding workflows
 - **LLM Options:**
   - Requires Anthropic API key
@@ -226,7 +226,7 @@ ollama run deepseek-r1
 Most AI tools can be "coerced" into using local models by configuring them to point to an OpenAI-compatible API endpoint.
 :::
 
-### Choosing Your Tool
+### Choosing your tool
 
 For this workshop:
 - We would start with with **Cursor**
@@ -243,7 +243,7 @@ For this workshop:
 - [LM Studio](https://lmstudio.ai/) — GUI for running local LLMs
 :::
 
-## Getting Started
+## Getting started
 
 ### Repo
 For this module, we will start with an existing extension that we built in chapter 2. If you are not caught up or just joining us for the afternoon session, please grab a reference implementation from <...>.
@@ -253,7 +253,7 @@ This template was recently enhanced to include AI-specific configurations and ru
 
 In {doc}`02-anatomy-of-extensions`, you built a JupyterLab extension that displays random images with captions from a curated collection. Now, we'll use AI to extend this viewer with image editing capabilities.
 
-### Option 1: Continue with Your Own Extension
+### Option 1: Continue with your own extension
 
 If you completed the anatomy module and want to continue with your extension:
 
@@ -278,7 +278,7 @@ If you completed the anatomy module and want to continue with your extension:
 
 4. Skip to [AI tool](#ai-tool) below.
 
-### Option 2: Clone the Finished Extension
+### Option 2: Clone the finished extension
 
 If you'd prefer to start fresh or didn't complete the anatomy module:
 
@@ -321,7 +321,7 @@ We will be using Cursor and Claude Code throughout this tutorial. Please, instal
 
 You are totally welcome to use any AI tool you have installed on your computer! Many of them follow similar patterns and expose similar functionality.
 
-## Getting Started  (15 minutes)
+## Getting started  (15 minutes)
 - set up repo from previous exercise or checkpoint
 - install cursor and claude code (existing installed tools are fine to use too)
 
@@ -337,19 +337,19 @@ You are totally welcome to use any AI tool you have installed on your computer! 
 - Basic debugging
 - Power and peril of one-shot prompts
 
-### Exercise C (20 minutes): Product Manager framework
+### Exercise C (20 minutes): Product manager framework
 - Learn how to use structured approach to AI-assisted development
 - User stories
 
-###  Demo: AI from the Command Line (10 minutes)
+###  Demo: AI from the command line (10 minutes)
 - Demonstrate using Claude Code for development workflow
 - Study hall is a good time to try it out
 
-## Reflection and Next Steps
+## Reflection and next steps
 
 After completing this exercise (via either path), take a moment to reflect:
 
-### Quick Reflection (Optional)
+### Quick reflection (optional)
 
 Think about these questions — we'll discuss as a group:
 
@@ -372,9 +372,9 @@ Think about these questions — we'll discuss as a group:
 We'll share experiences as a group and create a live poll about which techniques resonated most. Your instructor will facilitate this discussion.
 :::
 
-### Key Takeaways
+### Key takeaways
 
-### Challenge Extensions (Optional)
+### Challenge extensions (optional)
 
 
 :::{important} 💾 **Final Git commit and push!**
@@ -387,7 +387,7 @@ git push
 
 ---
 
-## What's Next?
+## What's next?
 
 You've now experienced the complete AI-assisted development workflow:
 - ✅ Used AI to generate code for new features
@@ -395,7 +395,7 @@ You've now experienced the complete AI-assisted development workflow:
 - ✅ Learned to provide effective context and constraints
 - ✅ Understood when to accept AI suggestions vs. when to customize
 
-### Continuing Your Journey
+### Continuing your journey
 
 The next chapter, {doc}`07-independent-work`, provides **independent exploration time** where you can:
 
