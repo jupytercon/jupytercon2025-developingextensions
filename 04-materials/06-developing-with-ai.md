@@ -99,10 +99,7 @@ Not all AI coding tools are created equal. Understanding the different categorie
 
 #### 🥉 Chat-based AI (ChatGPT, Claude web interface)
 
-**How it works:**
-- You paste code snippets → AI gives you code back
-- No context of your full project structure
-- Requires manual copy/paste workflow
+**How it works:** You paste code snippets → AI gives you code back
 
 **Use cases:**
 - ✅ Quick one-off questions ("How do I use async/await in TypeScript?")
