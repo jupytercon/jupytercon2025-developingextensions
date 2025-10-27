@@ -53,7 +53,7 @@ AI coding assistants are powered by **Large Language Models (LLMs)** — neural 
 ### Where LLMs Live: Deployment Models
 
 **Frontier Models (Cloud-Hosted):**
-- **Examples:** 
+- **Examples:**
   - **Claude Sonnet 4.5** (Anthropic): Best coding model, $3/$15 per M tokens
   - **GPT-5** (OpenAI): Best overall reasoning, $1.25/$10 per M tokens
   - **Gemini 2.5 Pro** (Google): Best for speed/context (1M tokens), multimodal
@@ -169,7 +169,7 @@ Now that you understand the categories, here are the **agentic AI tools** you ca
 
 #### 1. **Cursor** (Popular UI-First IDE)
 - **What it is:** A fork of VS Code with deep AI integration
-- **LLM Options:** 
+- **LLM Options:**
   - Built-in models (Claude Sonnet 4.5, GPT-5, Gemini 2.5 Pro) with Cursor subscription (starting $20/month)
   - Bring your own API key (OpenAI, Anthropic, Google, or other providers)
   - Can be configured to use local models (Qwen3-Coder, GLM-4.5, DeepSeek-R1) via OpenAI-compatible APIs
@@ -248,7 +248,7 @@ For this workshop:
 ### Repo
 For this module, we will start with an existing extension that we built in chapter 2. If you are not caught up or just joining us for the afternoon session, please grab a reference implementation from <...>.
 
-In our initial setup, we cloned an official JupyterLab extension template. 
+In our initial setup, we cloned an official JupyterLab extension template.
 This template was recently enhanced to include AI-specific configurations and rulesets.
 
 In {doc}`02-anatomy-of-extensions`, you built a JupyterLab extension that displays random images with captions from a curated collection. Now, we'll use AI to extend this viewer with image editing capabilities.
@@ -270,7 +270,7 @@ If you completed the anatomy module and want to continue with your extension:
    ```bash
    # Activate your environment
    micromamba activate jupytercon2025
-   
+
    # Build and start JupyterLab
    jlpm build
    jupyter lab
@@ -302,12 +302,12 @@ If you'd prefer to start fresh or didn't complete the anatomy module:
    # Create/activate environment
    micromamba create -n jupytercon2025-ai python pip nodejs gh "copier~=9.2" jinja2-time
    micromamba activate jupytercon2025-ai
-   
+
    # Install the extension in development mode
    pip install --editable ".[dev,test]"
    jupyter labextension develop . --overwrite
    jupyter server extension enable jupytercon2025_extension_workshop
-   
+
    # Build and start JupyterLab
    jlpm build
    jupyter lab
@@ -322,25 +322,25 @@ We will be using Cursor and Claude Code throughout this tutorial. Please, instal
 You are totally welcome to use any AI tool you have installed on your computer! Many of them follow similar patterns and expose similar functionality.
 
 ## Getting Started  (15 minutes)
-- set up repo from previous exercise or checkpoint  
-- install cursor and claude code (existing installed tools are fine to use too)  
-  
-## Exercise A (15 minutes): Understand AI rules  
-- Inspect AGENTS.md  
-- Familiarize yourself with UI of Cursor  
-- Choose AI model  
-- Ask AI chat questions to verify that it recognizes the rules  
-  
-## Exercise B (30 minutes): Build it!  
-- Discuss our goal briefly (go from image viewer to image editor)  
-- Send a single prompt to Cursor  
-- Basic debugging  
-- Power and peril of one-shot prompts  
-  
-### Exercise C (20 minutes): Product Manager framework  
-- Learn how to use structured approach to AI-assisted development  
-- User stories  
-  
+- set up repo from previous exercise or checkpoint
+- install cursor and claude code (existing installed tools are fine to use too)
+
+## Exercise A (15 minutes): Understand AI rules
+- Inspect AGENTS.md
+- Familiarize yourself with UI of Cursor
+- Choose AI model
+- Ask AI chat questions to verify that it recognizes the rules
+
+## Exercise B (30 minutes): Build it!
+- Discuss our goal briefly (go from image viewer to image editor)
+- Send a single prompt to Cursor
+- Basic debugging
+- Power and peril of one-shot prompts
+
+### Exercise C (20 minutes): Product Manager framework
+- Learn how to use structured approach to AI-assisted development
+- User stories
+
 ###  Demo: AI from the Command Line (10 minutes)
 - Demonstrate using Claude Code for development workflow
 - Study hall is a good time to try it out
@@ -353,7 +353,7 @@ After completing this exercise (via either path), take a moment to reflect:
 
 Think about these questions—we'll discuss as a group:
 
-1. **What surprised you most about working with AI?** 
+1. **What surprised you most about working with AI?**
    - Did it understand JupyterLab patterns better or worse than expected?
    - Were there moments where it "just got it" vs. moments where you had to guide it heavily?
 

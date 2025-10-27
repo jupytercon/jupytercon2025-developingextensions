@@ -3,8 +3,8 @@
 :::{hint} Session Format
 This is **independent exploration time** - similar to office hours or a study hall. Work at your own pace on a project that interests you. Instructors are available to help when you get stuck.
 
-**Duration**: 120 minutes (until the end of the day) 
-**Format**: Self-directed with instructor support  
+**Duration**: 120 minutes (until the end of the day)
+**Format**: Self-directed with instructor support
 **Goal**: Apply what you've learned by building something new or contributing to an existing extension
 :::
 
@@ -44,7 +44,7 @@ Create something entirely new using the extension template, AI assistance, and t
    - **Frontend only**: For UI-only features (widgets, buttons, panels)
    - **Frontend + Server**: When you need Python backend logic (data processing, file system access, external APIs)
    - **Theme**: Customize the look and feel of JupyterLab by creating your own theme extension (colors, fonts, icons)
-   
+
 
 4. Install and verify the base extension works:
 
@@ -52,10 +52,10 @@ Create something entirely new using the extension template, AI assistance, and t
    # Install in development mode
    pip install --editable ".[dev,test]"
    jupyter labextension develop . --overwrite
-   
+
    # If you chose frontend + server:
    jupyter server extension enable <your-extension-name>
-   
+
    # Build and test
    jlpm build
    jupyter lab
@@ -69,13 +69,13 @@ These three examples have been tested and confirmed working. Pick one that match
 
 #### 🎉 Confetti Celebration Button
 
-**Complexity**: Beginner (Frontend only)  
-**Time**: 15-20 minutes  
+**Complexity**: Beginner (Frontend only)
+**Time**: 15-20 minutes
 **What you'll learn**: Status bar integration, DOM manipulation, visual effects
 
 **The Prompt**:
 ```
-Add a button in the status bar to celebrate something! It should show confetti 
+Add a button in the status bar to celebrate something! It should show confetti
 on top of the UI for 3 seconds
 ```
 
@@ -90,7 +90,7 @@ on top of the UI for 3 seconds
 
 If the confetti doesn't appear:
 ```
-The button is there but I don't see confetti. Check that the z-index 
+The button is there but I don't see confetti. Check that the z-index
 is high enough and the confetti container is properly positioned.
 ```
 
@@ -112,8 +112,8 @@ This is a perfect first project - it's self-contained, purely visual, and you'll
 
 #### 🎨 Custom Theme Extension
 
-**Complexity**: Beginner (Frontend only)  
-**Time**: 20-30 minutes  
+**Complexity**: Beginner (Frontend only)
+**Time**: 20-30 minutes
 **What you'll learn**: Theme customization, CSS styling, JupyterLab theming system
 
 **The Prompt**:
@@ -136,19 +136,19 @@ Create a theme based on Netflix show KPop Demon Hunters
 
 To add a background image to the main panel:
 ```
-Can we use this image as a background for main panel? 
+Can we use this image as a background for main panel?
 [paste your image URL]
 ```
 
 Example:
 ```
-Can we use this image as a background for main panel? 
+Can we use this image as a background for main panel?
 https://www.billboard.com/wp-content/uploads/2025/07/kpop-demon-hunters-billboard-1800.jpg?w=942&h=628&crop=1
 ```
 
 To refine the styling:
 ```
-The background image is too bright - make it more subtle with reduced opacity 
+The background image is too bright - make it more subtle with reduced opacity
 and add a dark overlay so text is readable.
 ```
 
@@ -165,7 +165,7 @@ Use [specific colors] for accent elements.
 - Free image sources: Unsplash, Pexels, Wallhaven
 
 :::{tip}
-This is a perfect creative project! You get immediate visual feedback, can personalize your JupyterLab environment, and learn how JupyterLab's theming system works. Plus, you'll have a custom theme you actually want to use daily. 
+This is a perfect creative project! You get immediate visual feedback, can personalize your JupyterLab environment, and learn how JupyterLab's theming system works. Plus, you'll have a custom theme you actually want to use daily.
 
 Themes are also great conversation starters - share your theme with other workshop participants!
 :::
@@ -174,15 +174,15 @@ Themes are also great conversation starters - share your theme with other worksh
 
 #### 📊 CPU Monitor Widget
 
-**Complexity**: Intermediate (Frontend + Server)  
-**Time**: 30-40 minutes  
+**Complexity**: Intermediate (Frontend + Server)
+**Time**: 30-40 minutes
 **What you'll learn**: REST API integration, backend data processing, graceful error handling
 
 **The Prompt**:
 ```
 Create a JupyterLab extension that monitors CPU stats:
 - Use psutil on the backend to get utilization and temperature data
-- Create a REST API endpoint 
+- Create a REST API endpoint
 - Display it in a widget in the main area
 - Handle gracefully if some fields aren't available
 ```
@@ -199,19 +199,19 @@ Create a JupyterLab extension that monitors CPU stats:
 
 If `psutil` isn't installed:
 ```
-I'm getting ModuleNotFoundError for psutil. Update pyproject.toml to 
+I'm getting ModuleNotFoundError for psutil. Update pyproject.toml to
 include psutil as a dependency.
 ```
 
 If the widget doesn't update:
 ```
-The widget shows data once but doesn't update. Add automatic polling 
+The widget shows data once but doesn't update. Add automatic polling
 every 2 seconds to refresh the CPU stats.
 ```
 
 To extend it:
 ```
-Add a graph that shows CPU usage over the last 60 seconds, 
+Add a graph that shows CPU usage over the last 60 seconds,
 and highlight in red when usage is above 80%.
 ```
 
@@ -298,7 +298,7 @@ TODO: Add them
    # Fork the repository on GitHub first, then:
    git clone https://github.com/YOUR-USERNAME/extension-name.git
    cd extension-name
-   
+
    # Follow the project's CONTRIBUTING.md instructions
    # Usually similar to:
    pip install --editable ".[dev,test]"
@@ -324,7 +324,7 @@ TODO: Add them
    # Run the project's test suite
    jlpm test
    pytest
-   
+
    # Test manually in JupyterLab
    jupyter lab
    ```
@@ -348,12 +348,12 @@ TODO: Add them
 AI can help you understand existing code:
 
 ```
-Explain how this widget's lifecycle works - especially the initialize() 
+Explain how this widget's lifecycle works - especially the initialize()
 and dispose() methods.
 ```
 
 ```
-I want to add a new filter option to this panel. Show me where to add 
+I want to add a new filter option to this panel. Show me where to add
 the UI component and how to wire it to the existing filtering logic.
 ```
 
@@ -409,17 +409,17 @@ These are bite-sized experiments you can complete quickly:
 Use these prompts with your AI assistant to explore JupyterLab's capabilities:
 
 ```
-Show me all the different places I can add UI elements in JupyterLab 
+Show me all the different places I can add UI elements in JupyterLab
 (toolbar, menu bar, status bar, sidebar, etc.) with minimal code examples.
 ```
 
 ```
-Create a simple example of each JupyterLab widget type: MainAreaWidget, 
+Create a simple example of each JupyterLab widget type: MainAreaWidget,
 Panel, ToolbarButton, and Dialog.
 ```
 
 ```
-Demonstrate how to listen for JupyterLab events: file opened, cell executed, 
+Demonstrate how to listen for JupyterLab events: file opened, cell executed,
 theme changed, etc.
 ```
 
@@ -438,7 +438,7 @@ Pick an extension from the list in Path 2 and explore its codebase:
 
 **Use AI to understand**:
 ```
-I'm reading the jupyterlab-git extension. Explain how the git panel 
+I'm reading the jupyterlab-git extension. Explain how the git panel
 widget is registered and what lifecycle methods it implements.
 ```
 
@@ -553,4 +553,3 @@ The patterns you've learned here - using AI assistance effectively, reading docu
 
 Keep building, keep learning, and welcome to the JupyterLab extension developer community! 🚀
 :::
-
