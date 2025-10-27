@@ -1,4 +1,4 @@
-# 🤖 6 - Developing extensions with AI assistance
+# 🤖 5 - Developing extensions with AI assistance
 
 ::::{hint} Learning objectives
 - Use an AI assistant (Cursor, Claude Code, etc.) to build and modify JupyterLab extensions by writing effective prompts with context, constraints, and acceptance criteria; point AI to official docs/APIs and require citations
@@ -292,6 +292,7 @@ If you'd prefer to start fresh or didn't complete the anatomy module:
 
 Make sure your git tree is clean, there are no unsaved and uncommitted files. This is going to be important later
 
+(ai-tool)=
 ### AI tool
 
 We will be using Cursor and Claude Code throughout this tutorial. Please, install them if you would like to follow.

@@ -1,4 +1,4 @@
-# 🧩 5 - Working on your own extension
+# 🧩 6 - Working on your own extension
 
 :::{important} Outcome
 After completing this module, you will have:
