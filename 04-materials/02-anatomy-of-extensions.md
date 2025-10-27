@@ -71,7 +71,7 @@ We'll use this environment for the rest of this workshop:
 
 ```bash
 # Create an environment named "jupytercon2025"
-micromamba create -n jupytercon2025
+micromamba create --name jupytercon2025
 
 # Activate it
 # IMPORTANT: Run this every time you open a new terminal!
