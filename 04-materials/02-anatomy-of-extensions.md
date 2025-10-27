@@ -1380,5 +1380,12 @@ We know that we can use the `WidgetTracker` to remember the state of our widget 
 `ILayoutRestorer` plugin to restore that state.
 
 
+## 🎉 Great job!
+
+The extension we built together today is just a small example of what can be done with
+the Jupyter extension system.
+What other things can you imagine building?
+
+
 [^rebuild-not-always-required]: We don't actually _always_ need to rebuild -- only when
 we change the JavaScript. If we only changed Python, we only need to restart JupyterLab.
