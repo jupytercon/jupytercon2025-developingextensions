@@ -32,7 +32,7 @@ Before we dive into tools and techniques, let's set the right mindset for workin
 - ✅ Gets better with guidance and context
 
 **The right mindset:**
-- Don't get frustrated by small mistakes—iterate and guide
+- Don't get frustrated by small mistakes — iterate and guide
 - Review all generated code (you wouldn't merge a PR without review)
 - Ask questions: "Why did you choose this approach?"
 - Treat errors as learning opportunities for both you and the AI
