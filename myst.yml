@@ -1,7 +1,7 @@
 version: 1
 
 project:
-  title: "JupyterCon Workshop: Extension Development for Everyone!"
+  title: "Extension Development for Everyone!"
   # description:
   # keywords: []
   # authors: []
@@ -22,4 +22,4 @@ site:
     style: "assets/styles/style.css"
     # favicon: favicon.ico
     # logo: site_logo.png
-    logo_text: "JupyterLab Extension Development for Everyone!"
+    logo_text: "JupyterCon 2025: Extension Development for Everyone!"
