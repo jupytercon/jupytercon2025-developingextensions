@@ -18,8 +18,8 @@
 1. {term}`Menu bar`
 2. {term}`Main area`
 3. {term}`Status bar`
-4. Left {term}`side panel`
-5. Right {term}`side panel`
+4. Left {term}`side panel <side panel>`
+5. Right {term}`side panel <side panel>`
 
 
 ## Extension types
