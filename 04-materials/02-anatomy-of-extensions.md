@@ -66,6 +66,7 @@ Before we get started, we need to set up:
 
 ### Dependency environment
 
+Create an environment named `jupytercon2025`.
 We'll use this environment for the rest of this workshop:
 
 ```bash
