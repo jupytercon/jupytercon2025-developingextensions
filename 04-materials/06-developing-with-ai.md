@@ -127,7 +127,7 @@ Not all AI coding tools are created equal. Understanding the different categorie
 **Limitations:**
 - ⚠️ Often 90% right (which means constantly fighting it)
 - ⚠️ Interrupts your flow with suggestions
-- ⚠️ No understanding of "correctness"—just statistical likelihood
+- ⚠️ No understanding of "correctness" — just statistical likelihood
 - ⚠️ Can be distracting or helpful depending on your preference.
 
 **Verdict:** Some people really prefer this mode (i.e. experienced developers who know when to ignore it, someone who prefers light touch AI interactions), but it can slow down beginners.
