@@ -254,10 +254,11 @@ For this workshop:
 ### Repo
 For this module, we will start with an existing extension that we built in chapter 2. If you are not caught up or just joining us for the afternoon session, please grab a reference implementation from [our demo repository](https://github.com/mfisher87/jupytercon2025-developingextensions-demo).
 
-In our initial setup, we cloned an official JupyterLab extension template.
+In {doc}`02-anatomy-of-extensions`, we started off by cloning an official [JupyterLab extension template](https://github.com/jupyterlab/extension-template).
 This template was recently enhanced to include AI-specific configurations and rulesets.
+Then, we built a JupyterLab extension that displays random images with captions from a curated collection.
 
-In {doc}`02-anatomy-of-extensions`, you built a JupyterLab extension that displays random images with captions from a curated collection. Now, we'll use AI to extend this viewer with image editing capabilities.
+Now, we'll use AI to extend this viewer with image editing capabilities.
 
 ### Option 1: Continue with your own extension
 
