@@ -159,6 +159,7 @@ Now that you understand the categories, here are the **agentic AI tools** we wil
 
 #### 1. **Cursor**
 - **What it is:** A fork of VS Code with deep AI integration
+- **Pricing:** Free plan available (includes one-week Pro trial, limited agent requests, and tab completions). See [cursor.com/pricing](https://cursor.com/pricing) for details.
 - **LLM Options:**
   - Built-in models (Claude Sonnet 4.5, GPT-5, Gemini 2.5 Pro) with Cursor subscription (starting $20/month)
   - Bring your own API key (OpenAI, Anthropic, Google, or other providers)
@@ -295,12 +296,57 @@ Make sure your git tree is clean, there are no unsaved and uncommitted files. Th
 (ai-tool)=
 ### AI tool
 
-We will be using Cursor and Claude Code throughout this tutorial. Please, install them if you would like to follow.
+We will be using Cursor and Claude Code throughout this tutorial. Please install them if you would like to follow along.
 
 You are totally welcome to use any AI tool you have installed on your computer! Many of them follow similar patterns and expose similar functionality.
 
+#### Setting up Cursor
+
+1. **Download Cursor**
+   - Visit [cursor.com](https://cursor.com/) and download the installer for your operating system
+   - Install Cursor like any other application
+
+2. **Create a Cursor account**
+   - Launch Cursor
+   - You'll be prompted to sign in or create an account
+   - Sign up for a free account (no credit card required)
+   - The free plan includes a one-week Pro trial, limited agent requests, and tab completions
+
+3. **Sign up for the free plan**
+   - During your first launch, Cursor will offer you the free plan with a Pro trial
+   - Accept the free plan to get started
+   - See [cursor.com/pricing](https://cursor.com/pricing) for details on what's included
+
+:::{tip}
+The free plan is perfect for this workshop! You'll have access to AI features including:
+- Agent mode for building features
+- AI chat for asking questions
+- Code completions
+:::
+
+#### Setting up Claude Code (optional)
+
+If you prefer working from the command line, you can also install Claude Code:
+
+1. **Install Node.js 18+** (if not already installed)
+   - Visit [nodejs.org](https://nodejs.org/) or use your package manager
+
+2. **Install Claude Code**
+   ```bash
+   npm install --global @anthropic/claude-code
+   ```
+
+3. **Get an Anthropic API key**
+   - Visit [console.anthropic.com](https://console.anthropic.com/)
+   - Sign up for an account and generate an API key
+   - Note: This requires payment setup, unlike Cursor's free plan
+
 ## Getting started  (15 minutes)
-- install cursor and claude code (existing installed tools are fine to use too)
+
+By now, you should have:
+- ✅ Cursor installed with a free account created
+- ✅ (Optional) Claude Code installed with an API key configured
+- ✅ Your extension repository open and ready to work with
 
 ## Exercise A (15 minutes): Understand AI rules
 - Inspect AGENTS.md
