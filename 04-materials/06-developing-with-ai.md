@@ -48,7 +48,7 @@ Before we dive into tools and techniques, let's set the right mindset for workin
 - Treat errors as learning opportunities for both you and the AI
 - Don't be afraid to roll back to the beginning and start over if AI doubled down on a wrong path
 
-:::{important} Perfection is Off the Mark
+:::{important} Don't expect perfection
 You would never hire a developer and expect absolute perfection in their creative work. Apply the same perspective to AI. If it gets most things right and you refine the rest, that's a massive productivity win.
 :::
 
