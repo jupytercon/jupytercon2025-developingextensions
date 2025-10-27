@@ -81,7 +81,7 @@ AI coding assistants are powered by **Large Language Models (LLMs)** — neural 
 
 **Open-source & open-weight models (2025 state-of-the-art):**
 - **Highly Recommended for Coding:**
-  - **Qwen3-235B-A22B** (Apache 2.0): 235B params with 22B active, 262K context, exceptional reasoning
+  - **Qwen3-235B-A22B** (Apache 2.0 license): 235B params with 22B active, 262K context, exceptional reasoning
   - **GLM-4.5** (Open License): Strong coding and agentic abilities, runs on consumer hardware
   - **GLM-4.5 Air**: Optimized for 48GB RAM laptops when quantized
   - **Qwen3-Coder**: Specialized for code generation tasks
