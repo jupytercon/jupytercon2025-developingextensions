@@ -24,14 +24,67 @@
 
 ## Extension types
 
-🏗️ TODO!
+### {term}`Server extension`
+
+Extensions that run on the JupyterLab server, which means it has access to the same
+hardware as JupyterLab and can, for example, load data from disk and perform
+computations.
+
+Examples:
+
+* [jupyter-server-proxy](https://github.com/jupyterhub/jupyter-server-proxy) enables
+  running, supervising, and proxying additional web services within a JupyterLab
+  deployment.
+* [nbgitpuller](https://github.com/jupyterhub/nbgitpuller) enables automated fetching of
+  content in a Git repository into JupyterLab from a special URL.
+  Especially useful for teachers to provide their students with access to educational
+  materials in a JupyterHub by clicking a single link.
 
 
-## Example extensions
+### {term}`Frontend extension`
 
-🏗️ TODO!
+Extensions that run in the JupyterLab frontend (i.e. the user's browser), which means it
+can change anything about the appearance of JupyterLab and provide new {term}`widgets
+<widget>` for display and/or interactions.
 
-* List extensions
-* Link to their docs / home page
-* Brief summary, what makes it unique architecturally, e.g. is it frontend only, does it
-  have server component, does it expose new commands.
+Examples:
+
+* [jupyterthemes](https://github.com/dunovank/jupyter-themes) provides custom
+  appearances for Notebooks.
+* ...
+
+
+### Frontend **and** server
+
+A very common pattern is extensions which combine frontend and server extensions to
+provide new interface features which trigger behavior on the server.
+
+Examples:
+
+* [jupyter-resource-usage](https://github.com/jupyter-server/jupyter-resource-usage)
+  displays information about kernel resource (CPU, RAM) usage in the frontend.
+* [gator](https://github.com/mamba-org/gator) enables graphical management of
+  conda/mamba environments.
+* [JupyterGIS](https://jupytergis.readthedocs.io/en/latest/) (beta) provides a
+  Geospatial Information System (GIS) interface for working with geospatial data.
+* ..
+
+
+### {term}`MIME renderer extension` (a.k.a. "mimetype" extension)
+
+Extensions that tell Jupyter how to view information in a specific file type
+([MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types)).
+
+These are a subset of {term}`frontend extensions <frontend extension>` which map a
+{term}`widget` viewer with the supported file MIME type strings.
+
+Examples:
+
+* [jupyterlab-geojson](https://pypi.org/project/jupyterlab-geojson/) enables
+  double-clicking on GeoJSON files and viewing them on a JupyterLab-native map viewer.
+* ...
+
+
+## More...
+
+🏗️ TODO! What go here?
