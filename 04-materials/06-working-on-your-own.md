@@ -28,6 +28,14 @@ You have two paths:
 All paths are valuable! Pick what excites you most.
 :::
 
+## 🚀 Getting Started
+
+Before diving into your chosen path, make sure you have:
+
+- [ ] A clear goal (extension idea or GitHub issue to work on)
+- [ ] Development environment ready (if building new: follow [Setup](02-anatomy-of-extensions.md#️-setup) and [Exercise A](02-anatomy-of-extensions.md#️-exercise-a-15-minutes-extension-creation-and-development-loop))
+- [ ] Access to [JupyterLab API docs](https://jupyterlab.readthedocs.io/en/latest/api/) and [Extension Examples](https://github.com/jupyterlab/extension-examples)
+
 ## Path 1: Build your own extension from scratch
 
 Create something entirely new using the extension template, AI assistance, and the patterns you've learned.
@@ -379,99 +387,46 @@ Before opening a PR, verify:
 - Make the requested changes iteratively
 - Maintainers are volunteers - be patient and courteous
 
-## 📚 Essential resources
+## Development Workflow
 
-### Documentation
-- [JupyterLab Extension Developer Guide](https://jupyterlab.readthedocs.io/en/latest/extension/extension_dev.html)
-- [JupyterLab API Reference](https://jupyterlab.readthedocs.io/en/latest/api/)
-- [Jupyter Server Extension Guide](https://jupyter-server.readthedocs.io/en/latest/developers/extensions.html)
+This is the cycle you'll repeat many times during development:
 
-### Code Examples
-- [Extension Examples Repository](https://github.com/jupyterlab/extension-examples) - 40+ example extensions
-- [JupyterLab GitHub](https://github.com/jupyterlab/jupyterlab) - Core extensions source code
-
-### 🔧 Key JupyterLab APIs
-
-#### Commonly Used Tokens/Services:
-| API | Use Case | Documentation |
-|-----|----------|---------------|
-| `INotebookTracker` | Track active notebooks | [Docs](https://jupyterlab.readthedocs.io/en/latest/api/modules/notebook.html) |
-| `IStatusBar` | Add widgets to status bar | [Docs](https://jupyterlab.readthedocs.io/en/latest/api/modules/statusbar.html) |
-| `ICommandPalette` | Register commands | [Docs](https://jupyterlab.readthedocs.io/en/latest/api/modules/apputils.html) |
-| `IFileBrowserFactory` | Access file browser | [Docs](https://jupyterlab.readthedocs.io/en/latest/api/modules/filebrowser.html) |
-| `IThemeManager` | Theme customization | [Docs](https://jupyterlab.readthedocs.io/en/latest/api/modules/apputils.html) |
-| `ISettingRegistry` | Extension settings | [Docs](https://jupyterlab.readthedocs.io/en/latest/api/modules/settingregistry.html) |
-
-
-### Jupyter Server Extensions:
-- **Jupyter Server Handlers**: [Documentation](https://jupyter-server.readthedocs.io/en/latest/developers/extensions.html)
-- **Tornado Request Handlers**: [Tornado Docs](https://www.tornadoweb.org/en/stable/web.html)
-
-
-### Tools
-- [Browser DevTools](https://developer.chrome.com/docs/devtools/overview) - Debug frontend
-- Run JupyterLab with `--debug` to see more server side details
-
-### Extension ecosystem
-- [Jupyter Marketplace](https://labextensions.dev/) - provides up-to-date snapshot of JupyterLab extension ecosystem with currently active JupyterLab extensions, PyPI download stats, GitHub stars, time since last update
-- [jupyterlab-extension](https://github.com/topics/jupyterlab-extension) simplifies GitHub search for existing extensions
-
-## 🚀 Getting Started Checklist
-
-- [ ] Choose an extension idea (or GitHub issue)
-- [ ] Create extension from template (if new project)
-- [ ] Identify which JupyterLab APIs you'll need
-- [ ] Look up API documentation and examples
-- [ ] Set up development environment #TODO: links and `jlpm` commands for quick reference
-- [ ] Start coding!
-- [ ] Test frequently (`jupyter lab --dev-mode`) #TODO: watch for iterative dev
-- [ ] Ask instructors for help when stuck
-
-## General guidance
-
-### Making the most of this time
-
-**Focus on learning, not perfection**:
-- Getting stuck and debugging teaches you more than smooth sailing
-- Small working features beat ambitious broken ones
-- Exploring multiple approaches builds intuition
-
-**Document your journey**:
-- Take notes on what prompts work well
-- Save error messages and solutions
-- Write down "aha!" moments
-- Update your extension's README as you go
-
-**Connect with others**:
-- Share what you're working on with neighbors
-- Help each other debug issues
-- Show off cool features you've created
-- Ask each other questions
-
-### AI Development workflow (reminder)
-
-The cycle you'll repeat many times:
-
-1. **Write a clear prompt** - Context, requirements, constraints
-2. **Review generated code** - Read it, understand it, don't blindly accept
-3. **Build**: `jlpm build`
+1. **Write a clear prompt** - Provide context, requirements, and constraints
+2. **Review generated code** - Read and understand it; don't blindly accept
+3. **Build**: Run `jlpm build` to compile your extension
 4. **Test**: Refresh JupyterLab (or restart if backend changed)
-5. **Debug**: Browser console and terminal for errors
+5. **Debug**: Check browser console and terminal for errors
 6. **Iterate**: Refine your prompt based on results
-7. **Commit**: Save working states frequently
+7. **Commit**: Save working states frequently with git
+
+### Tips for productive development
+
+- **Focus on small wins**: Small working features beat ambitious broken ones
+- **Document as you go**: Note what prompts work well, save error solutions, update README
+- **Learn through debugging**: Getting stuck teaches you more than smooth sailing
+- **Collaborate**: Share progress with neighbors, help each other debug, show off features
 
 ## 💬 Getting Help
 
 ### During this session
+
+**Where to get help:**
 - Raise your hand for instructor help
 - Discuss with neighbors
-- [Zulip](https://jupyter.zulipchat.com/#feed) for real-time chat
+- [Jupyter Zulip](https://jupyter.zulipchat.com/#feed) for real-time chat
 
-Don't stay stuck! Ask an instructor if:
+**When to ask for help** - Don't stay stuck! Ask an instructor if:
 - You've tried the same thing 3-4 times with no progress
+- AI suggests something that contradicts JupyterLab patterns
 - Build succeeds but feature doesn't appear
 - You want guidance on architecture decisions
 - You're unsure if your contribution approach is right
+
+**How to ask effectively:**
+- Share your exact error message
+- Show what you've already tried
+- Explain what you expected vs. what happened
+- Include relevant code snippets
 
 :::{tip} Core Developers Are Here!
 Many Jupyter and JupyterLab core developers are in the room and at JupyterCon 2025. This is a unique opportunity to:
@@ -528,6 +483,42 @@ Before the session ends, take 10 minutes to:
 - Participate in the [Jupyter Discourse forum](https://discourse.jupyter.org/)
 - Attend [Jupyter Community Calls](https://jupyter.org/community#calendar) - bring your questions or request code review from experienced developers
 - Help others getting started
+
+## 📚 Reference Materials
+
+Bookmark these resources for when you need them during development:
+
+### Documentation
+- [JupyterLab Extension Developer Guide](https://jupyterlab.readthedocs.io/en/latest/extension/extension_dev.html)
+- [JupyterLab API Reference](https://jupyterlab.readthedocs.io/en/latest/api/)
+- [Jupyter Server Extension Guide](https://jupyter-server.readthedocs.io/en/latest/developers/extensions.html)
+
+### Code Examples
+- [Extension Examples Repository](https://github.com/jupyterlab/extension-examples) - 40+ example extensions
+- [JupyterLab GitHub](https://github.com/jupyterlab/jupyterlab) - Core extensions source code
+
+### Key JupyterLab APIs
+
+Common tokens and services you'll use:
+
+| API | Use Case | Documentation |
+|-----|----------|---------------|
+| `INotebookTracker` | Track active notebooks | [Docs](https://jupyterlab.readthedocs.io/en/latest/api/modules/notebook.html) |
+| `IStatusBar` | Add widgets to status bar | [Docs](https://jupyterlab.readthedocs.io/en/latest/api/modules/statusbar.html) |
+| `ICommandPalette` | Register commands | [Docs](https://jupyterlab.readthedocs.io/en/latest/api/modules/apputils.html) |
+| `IFileBrowserFactory` | Access file browser | [Docs](https://jupyterlab.readthedocs.io/en/latest/api/modules/filebrowser.html) |
+| `IThemeManager` | Theme customization | [Docs](https://jupyterlab.readthedocs.io/en/latest/api/modules/apputils.html) |
+| `ISettingRegistry` | Extension settings | [Docs](https://jupyterlab.readthedocs.io/en/latest/api/modules/settingregistry.html) |
+
+### Server Extensions
+- [Jupyter Server Handlers](https://jupyter-server.readthedocs.io/en/latest/developers/extensions.html)
+- [Tornado Request Handlers](https://www.tornadoweb.org/en/stable/web.html)
+
+### Tools & Discovery
+- [Browser DevTools](https://developer.chrome.com/docs/devtools/overview) - Debug frontend
+- Run JupyterLab with `--debug` flag for detailed server logs
+- [Jupyter Marketplace](https://labextensions.dev/) - Snapshot of active extensions with stats
+- [jupyterlab-extension topic](https://github.com/topics/jupyterlab-extension) - Browse extensions on GitHub
 
 :::{tip} The Journey Continues
 Building JupyterLab extensions is a skill that develops over time. Every extension you build, every contribution you make, and every bug you debug deepens your understanding.
