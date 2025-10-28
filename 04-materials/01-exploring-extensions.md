@@ -16,7 +16,7 @@
 ## What is JupyterLab?
 
 It's not just an interface for working with Notebooks.
-The Jupyter Notebook interface has been around since _blank_, and in the mid-2010s,
+The Notebook interface has been around since 2011, and in 2018,
 JupyterLab was introduced to provide a more comprehensive environment, like an operating
 system, for interactive computation.
 
