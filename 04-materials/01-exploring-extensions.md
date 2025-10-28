@@ -13,7 +13,18 @@
 :::
 
 
+## What is JupyterLab?
+
+It's not just an interface for working with Notebooks.
+The Notebook interface has been around since 2011, and in 2018,
+JupyterLab was introduced to provide a more comprehensive environment, like an operating
+system, for interactive computation.
+
+
 ## [The JupyterLab interface](https://jupyterlab.readthedocs.io/en/latest/user/interface.html)
+
+We assume you've seen this interface before, but let's quickly go over the technical
+terms for the components of the interface so we're all on the same page.
 
 [![The JupyterLab interface, including the "menu bar", "main area", "status bar", "left side panel", and "right side panel"](../assets/images/jupyterlab-interface.png)](../assets/images/jupyterlab-interface.png)
 
@@ -56,7 +67,14 @@ graph TB
 ```
 
 
-## Extension types
+## {term}`Core extensions <core extension>`
+
+JupyterLab itself is a collection of extensions.
+For example, the Notebook editor, file browser, and code console are all core extensions
+that are bundled with JupyterLab.
+
+
+## Extension categories
 
 ### {term}`Server extension`
 
@@ -64,7 +82,10 @@ Extensions that run on the JupyterLab server, which means it has access to the s
 hardware as JupyterLab and can, for example, load data from disk and perform
 computations.
 
-Examples:
+**Server extensions are written in Python**.
+
+
+#### Examples
 
 * [jupyter-server-proxy](https://github.com/jupyterhub/jupyter-server-proxy) enables
   running, supervising, and proxying additional web services within a JupyterLab
@@ -81,7 +102,12 @@ Extensions that run in the JupyterLab frontend (i.e. the user's browser), which 
 can change anything about the appearance of JupyterLab and provide new
 {term}`widgets <widget>` for display and/or interactions.
 
-Examples:
+These are sometimes referred to as "lab extensions".
+
+**Frontend extensions are written in JavaScript or TypeScript**.
+
+
+#### Examples
 
 * [jupyterthemes](https://github.com/dunovank/jupyter-themes) provides custom
   appearances for Notebooks.
@@ -93,7 +119,8 @@ Examples:
 A very common pattern is extensions which combine frontend and server extensions to
 provide new interface features which trigger behavior on the server.
 
-Examples:
+
+#### Examples
 
 * [jupyterlab-git](https://github.com/jupyterlab/jupyterlab-git)
   provides visual git management.
@@ -103,7 +130,7 @@ Examples:
   conda/mamba environments.
 * [JupyterGIS](https://jupytergis.readthedocs.io/en/latest/) (beta) provides a
   Geospatial Information System (GIS) interface for working with geospatial data.
-* ..
+* ...
 
 
 ### {term}`MIME renderer extension` (a.k.a. "mimetype" extension)
@@ -111,16 +138,12 @@ Examples:
 Extensions that tell Jupyter how to view information in a specific file type
 ([MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types)).
 
-These are a subset of {term}`frontend extensions <frontend extension>` which map a
+These are a special case of {term}`frontend extensions <frontend extension>` which map a
 {term}`widget` viewer with the supported file MIME type strings.
 
-Examples:
+
+#### Examples
 
 * [jupyterlab-geojson](https://pypi.org/project/jupyterlab-geojson/) enables
   double-clicking on GeoJSON files and viewing them on a JupyterLab-native map viewer.
 * ...
-
-
-## More...
-
-🏗️ TODO! What go here?
