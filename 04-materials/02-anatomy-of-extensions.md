@@ -55,7 +55,7 @@ Before we get started, we need to set up:
 * A repository on GitHub
 
 
-### Dependency environment
+### 🔧 Dependency environment
 
 Create an environment named `jupytercon2025`.
 We'll use this environment for the rest of this workshop:
@@ -78,7 +78,7 @@ micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
 ```
 
 
-### Important Git settings
+### 🔧 Important Git settings
 
 1. Git needs to know who you are.
 
@@ -107,7 +107,7 @@ micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
 :::
 
 
-### Create a GitHub repository and clone it locally
+### 🔧 Create a GitHub repository and clone it locally
 
 0. Change to the parent directory where you want to work, e.g.
 
