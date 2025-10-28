@@ -104,4 +104,11 @@ LLM
 LLMs can assist with coding tasks like writing code, debugging, refactoring, and explaining complex concepts.
 Examples include GPT-5, Claude, and Qwen.
 These models are characterized by having billions of parameters and the ability to perform diverse language tasks without task-specific training.
+
+Agentic AI
+: AI systems that can autonomously take actions like an agent, rather than just providing suggestions.
+The key differentiator is **tool use**—agentic AI can execute commands (build, test, format), read files, search codebases, and make changes directly.
+These tools work in an **agentic loop**: they plan an action, use a tool to execute it, observe the result, and decide the next step—iterating until the task is complete.
+Examples include Cursor, Claude Code, and Cline.
+Unlike chat-based or autocomplete AI, agentic tools act like a team member with tools—they don't just suggest, they do.
 :::

@@ -129,9 +129,9 @@ Most AI tools can be "coerced" into using local models by configuring them to po
 :::
 
 
-### Understanding AI coding tool categories
+### AI tools for extension development
 
-Not all AI coding tools are created equal. **In this workshop, we will be working with Agentic AI tools** (like Cursor and Claude Code) because they understand your codebase, execute commands, and iterate with you—a fundamentally different and more productive experience than chat or autocomplete.
+Not all AI coding tools are created equal. **In this workshop, we'll use {term}`agentic AI <agentic AI>` tools** that can understand your codebase, execute commands, and iterate with you—a fundamentally different and more productive experience than chat or autocomplete.
 
 :::{note} Why Agentic AI? Detailed comparison of AI tool categories
 :class: dropdown
@@ -191,9 +191,7 @@ Not all AI coding tools are created equal. **In this workshop, we will be workin
 **Verdict:** When building real features, prioritize agentic tools. They understand your codebase, execute commands, and iterate with you—a fundamentally different (and more productive) experience than chat or autocomplete.
 :::
 
-### AI IDEs and tools for extension development
-
-Now that you understand the categories, here are the **agentic AI tools** we will use in this workshop. We'll start with **Cursor** to demonstrate the AI-assisted workflow, then repeat key steps using **Claude Code** for a CLI-based approach. Both tools offer similar agentic capabilities, so you can choose whichever fits your preferred workflow after the workshop.
+We'll work with **Cursor** to demonstrate the AI-assisted workflow, then repeat key steps using **Claude Code** for a CLI-based approach. Both tools offer similar capabilities, so you can choose whichever fits your preferred workflow after the workshop.
 
 #### 1. **Cursor**
 - **What it is:** A fork of VS Code with deep AI integration
@@ -203,6 +201,7 @@ Now that you understand the categories, here are the **agentic AI tools** we wil
   - Bring your own API key (OpenAI, Anthropic, Google, or other providers)
   - Can be configured to use local models (Qwen3-Coder, GLM-4.5, DeepSeek-R1) via OpenAI-compatible APIs
 - **Best for:** Developers who want a polished, GUI-driven experience
+- **Alternatives:** [Windsurf](https://codeium.com/windsurf) (free tier, $15/mo Pro), [GitHub Copilot Workspace](https://github.com/features/copilot) ($10-39/mo), [Cline](https://cline.bot/) (VS Code extension), [Replit Agent](https://replit.com/) (cloud-based)
 - **Download:** [cursor.com](https://cursor.com/)
 
 #### 2. **Claude Code**
@@ -211,6 +210,7 @@ Now that you understand the categories, here are the **agentic AI tools** we wil
   - Requires Anthropic API key
   - Works with Claude Sonnet 4.5, Claude 4 Opus, and other Claude models
 - **Best for:** CLI warriors who live in the terminal
+- **Alternatives:** [Aider](https://aider.chat/) (open-source, multi-model), [Gemini CLI](https://cloud.google.com/gemini/code-assist) (free tier), Cline CLI mode
 - **Install:** Requires Node.js 18+, then `npm install --global @anthropic/claude-code`
 
 :::{note} Further Reading
