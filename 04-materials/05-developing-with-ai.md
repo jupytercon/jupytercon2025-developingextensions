@@ -431,7 +431,54 @@ cursor ~/Projects/jupytercon2025-extension-workshop
 1. Open the Cursor Chat panel (`Cmd/Ctrl + L`) and choose Ask Mode
 
 :::{note}
-We recommend to start with Claude Sonnet 4.5 model, but feel free to try other models later!
+**⚠️ Avoid "Auto" mode** — it picks the cheapest model, not the best one.
+
+**Recommended Models:**
+- **GPT-5** for planning and reasoning tasks
+- **Claude Sonnet 4.5** for coding tasks
+
+These models provide the best balance of quality and capability for JupyterLab extension development.
+:::
+
+:::{dropdown} More Details on Model Selection
+:icon: info
+
+**Model selection impacts both quality and cost.**
+
+1. **Enable model selector:**
+   - Settings → Cursor Settings → General
+   - Find "Usage Summary" → Set to "Always" (not "Auto")
+   - This shows your credit usage at bottom of chat panel
+
+2. **Choose models strategically:**
+
+   | Task | Recommended Model | Why |
+   |------|------------------|-----|
+   | Planning & Reasoning | GPT-5 or Claude Sonnet 4.5 (Thinking) | GPT-5 leads reasoning benchmarks; Claude excellent for extended thinking |
+   | Coding (Best Overall) | Claude Sonnet 4.5 | "Best coding model in the world" per Simon Willison; 99.29% safety rate |
+   | Long Coding Sessions | Claude Opus 4.1 | Sustains focus for 30+ hours, ideal for large refactors and multi-step tasks |
+   | Speed & Long Context | Gemini 2.5 Pro | 1M token context, sub-second streaming, best latency |
+   | Quick fixes | Claude Haiku 4.5 or GPT-5 Mini | Faster, cheaper for simple edits and routine tasks |
+   | Local Development | GLM-4.5 Air, Qwen3-235B, or DeepSeek-R1 | Best open models for self-hosting on consumer hardware |
+   | Avoid | Auto | Cursor picks cheapest, not best |
+
+3. **Watch your context usage:**
+   - Look for percentage in chat (e.g., "23.4%")
+   - Keep under 50% for best results
+   - Above 70%? Start a new chat
+
+4. **Monitor credits:**
+   - Check `cursor.com/settings` → Usage
+   - Typical costs: Planning ($1-2), Implementation ($0.30-0.50)
+
+**Start Big, Optimize Later**
+For planning and architecture, always use the highest-quality model available:
+- **Cloud:** GPT-5 for reasoning, Claude Sonnet 4.5 for coding
+- **Self-hosted:** DeepSeek-R1 or Qwen3-235B-A22B
+
+You can downgrade to faster/cheaper models (Claude Haiku 4.5, GPT-5 Mini, or GLM-4.5 Air) for routine edits, but don't skimp on the thinking phase.
+:::
+
 :::
 
 2. Ask AI chat questions to verify that it recognizes the rules. Paste the below prompt into the chat
