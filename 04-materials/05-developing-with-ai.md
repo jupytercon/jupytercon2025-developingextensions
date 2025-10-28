@@ -197,7 +197,7 @@ We'll work with **Cursor** to demonstrate the AI-assisted workflow, then repeat 
 - **What it is:** A fork of VS Code with deep AI integration
 - **Pricing:** Free Hobby plan (includes one-week Pro trial, limited agent requests, and limited tab completions). Paid plans \$20-200/mo offer extended/unlimited usage limits and faster response times. See [cursor.com/pricing](https://cursor.com/pricing) for details.
 - **LLM Options:**
-  - Built-in models (Claude Sonnet 4.5, GPT-5, Gemini 2.5 Pro) with Cursor subscription
+  - Built-in models (Claude Sonnet 4.5, GPT-5, Gemini 2.5 Pro and more) with Cursor subscription
 - **Best for:** Developers who want a polished, GUI-driven experience
 - **Alternatives:** [Windsurf](https://codeium.com/windsurf) (free tier, \$15/mo Pro), [GitHub Copilot Workspace](https://github.com/features/copilot) (\$10-39/mo), [Cline](https://cline.bot/) (VS Code extension, free), [Continue](https://continue.dev/) (VS Code/JetBrains extension, free or \$10/mo Teams), [Roo Code](https://roocode.com/) (VS Code extension, free or \$20/mo Pro), [Kilocode](https://kilocode.ai/) (VS Code/JetBrains, free or \$29/user/mo Teams), [Replit Agent](https://replit.com/) (cloud-based)
 - **Download:** [cursor.com](https://cursor.com/)
