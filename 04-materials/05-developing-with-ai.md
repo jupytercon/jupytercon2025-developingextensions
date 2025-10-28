@@ -209,7 +209,7 @@ We'll work with **Cursor** to demonstrate the AI-assisted workflow, then repeat 
   - Works with Opus 4.1, Sonnet 4.5, Haiku 4.5, and other Claude models
 - **Best for:** CLI warriors who live in the terminal
 - **Alternatives:** [Gemini CLI](https://github.com/google-gemini/gemini-cli) (free tier available), [Cline](https://github.com/cline/cline) (VS Code extension with CLI mode, free), [Continue](https://github.com/continuedev/continue) (IDE/terminal/CI agent, free), [Plandex](https://github.com/plandex-ai/plandex) (designed for large projects), [aichat](https://github.com/sigoden/aichat) (all-in-one LLM CLI), [GitHub Copilot CLI](https://github.com/github/copilot-cli), [Aider](https://github.com/Aider-AI/aider) (Git-integrated, open-source), [Google Jules](https://jules.google/) (async background agent, beta)
-- **Install:** Requires Node.js 18+, then `npm install --global @anthropic/claude-code`
+- **Install:** Requires Node.js, then `npm install --global @anthropic/claude-code`
 
 :::{note} Further Reading
 :class: dropdown
@@ -275,7 +275,7 @@ If you'd prefer to start fresh or didn't complete the anatomy module:
 
    ```bash
    # Create/activate environment
-   micromamba create -n jupytercon2025 python pip nodejs gh "copier~=9.2" jinja2-time
+   micromamba create -n jupytercon2025 python pip nodejs=22 gh "copier~=9.2" jinja2-time
    micromamba activate jupytercon2025
 
    # Install the extension in development mode
@@ -315,10 +315,13 @@ We recommend you sign up for a free Hobby plan for this workshop! You'll have on
 
 #### ⌨️ Setting up Claude Code
 
-If you prefer working from the command line, you can also install Claude Code:
 
-1. **Install Node.js 18+** (if not already installed)
-   - Visit [nodejs.org](https://nodejs.org/) or use your package manager
+1. **Use your workshop environment**
+   - You already have Node.js 22 installed in your `jupytercon2025` environment
+   - Make sure the environment is activated:
+   ```bash
+   micromamba activate jupytercon2025
+   ```
 
 2. **Install Claude Code**
    ```bash
