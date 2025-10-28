@@ -91,6 +91,40 @@ AI coding assistants are powered by **Large Language Models ({term}`LLMs <LLM>`)
 - **Pros:** Full control, no API costs, data stays local, latest open models often outperform closed frontier ones
 - **Cons:** Requires technical setup and adequate hardware (16GB+ VRAM for smaller models, 48GB+ for larger ones)
 
+:::{dropdown} 💡 Self-Hosting {term}`LLMs <LLM>` (Optional)
+If you want to run models locally (for privacy or cost savings), tools like [Ollama](https://ollama.com/) make it easy:
+
+```bash
+# Install Ollama
+# macOS: Download from https://ollama.com/download/mac
+# Windows: Download from https://ollama.com/download/windows
+# Linux:
+curl -fsSL https://ollama.com/install.sh | sh
+
+# Download and run a recommended coding model
+# For powerful machines (24GB+ VRAM):
+ollama run qwen3-coder
+
+# For laptops/consumer hardware (16GB RAM):
+ollama run glm-4.5-air
+
+# For reasoning tasks:
+ollama run deepseek-r1
+
+# Use with Cursor/Cline via OpenAI-compatible API
+# Point to http://localhost:11434/v1
+```
+
+**Model Selection Guide:**
+- **Best for coding on powerful hardware:** Qwen3-235B or GLM-4.5
+- **Best for laptops (48GB RAM):** GLM-4.5 Air (quantized)
+- **Best for consumer GPUs (16-24GB):** Qwen3-Coder or DeepSeek-R1-Distill
+- **Budget option:** GPT-OSS-20B (runs on 16GB RAM)
+
+Most AI tools can be "coerced" into using local models by configuring them to point to an OpenAI-compatible API endpoint.
+:::
+
+
 ### Understanding AI coding tool categories
 
 Not all AI coding tools are created equal. **In this workshop, we will be working with Agentic AI tools** (like Cursor and Claude Code) because they understand your codebase, execute commands, and iterate with you—a fundamentally different and more productive experience than chat or autocomplete.
@@ -155,7 +189,7 @@ Not all AI coding tools are created equal. **In this workshop, we will be workin
 
 ### AI IDEs and tools for extension development
 
-Now that you understand the categories, here are the **agentic AI tools** we will use in this workshop:
+Now that you understand the categories, here are the **agentic AI tools** we will use in this workshop. We'll start with **Cursor** to demonstrate the AI-assisted workflow, then repeat key steps using **Claude Code** for a CLI-based approach. Both tools offer similar agentic capabilities, so you can choose whichever fits your preferred workflow after the workshop.
 
 #### 1. **Cursor**
 - **What it is:** A fork of VS Code with deep AI integration
@@ -174,45 +208,6 @@ Now that you understand the categories, here are the **agentic AI tools** we wil
   - Works with Claude Sonnet 4.5, Claude 4 Opus, and other Claude models
 - **Best for:** CLI warriors who live in the terminal
 - **Install:** Requires Node.js 18+, then `npm install --global @anthropic/claude-code`
-
-:::{tip} Self-Hosting {term}`LLMs <LLM>`
-If you want to run models locally (for privacy or cost savings), tools like [Ollama](https://ollama.com/) make it easy:
-
-```bash
-# Install Ollama
-# macOS: Download from https://ollama.com/download/mac
-# Windows: Download from https://ollama.com/download/windows
-# Linux:
-curl -fsSL https://ollama.com/install.sh | sh
-
-# Download and run a recommended coding model
-# For powerful machines (24GB+ VRAM):
-ollama run qwen3-coder
-
-# For laptops/consumer hardware (16GB RAM):
-ollama run glm-4.5-air
-
-# For reasoning tasks:
-ollama run deepseek-r1
-
-# Use with Cursor/Cline via OpenAI-compatible API
-# Point to http://localhost:11434/v1
-```
-
-**Model Selection Guide:**
-- **Best for coding on powerful hardware:** Qwen3-235B or GLM-4.5
-- **Best for laptops (48GB RAM):** GLM-4.5 Air (quantized)
-- **Best for consumer GPUs (16-24GB):** Qwen3-Coder or DeepSeek-R1-Distill
-- **Budget option:** GPT-OSS-20B (runs on 16GB RAM)
-
-Most AI tools can be "coerced" into using local models by configuring them to point to an OpenAI-compatible API endpoint.
-:::
-
-### Choosing your tool
-
-For this workshop:
-- We will start with with **Cursor**
-- We will run through the same steps again using **Claude Code**
 
 :::{note} Further Reading
 :class: dropdown
