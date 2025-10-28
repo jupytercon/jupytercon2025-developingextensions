@@ -233,7 +233,7 @@ Then, we built a JupyterLab extension that displays random images with captions 
 
 Now, we'll use AI to extend this viewer with image editing capabilities.
 
-### 🔄 Option 1: Continue with your own extension
+#### 🔄 Option 1: Continue with your own extension
 
 If you completed the anatomy module and want to continue with your extension:
 
@@ -258,7 +258,7 @@ If you completed the anatomy module and want to continue with your extension:
 
 4. Skip to [AI tool](#ai-tool) below.
 
-### 📥 Option 2: Clone the finished extension
+#### 📥 Option 2: Clone the finished extension
 
 If you'd prefer to start fresh or didn't complete the anatomy module:
 
@@ -300,25 +300,20 @@ You are totally welcome to use any AI tool you have installed on your computer! 
 #### 🎨 Setting up Cursor
 
 1. **Download Cursor**
-   - Visit [cursor.com](https://cursor.com/) and download the installer for your operating system
+   - Visit [cursor.com](https://cursor.com/download) and download the installer for your operating system
    - Install Cursor like any other application
 
 2. **Create a Cursor account**
    - Launch Cursor
    - You'll be prompted to sign in or create an account
-   - Sign up for a free account (no credit card required)
-   - The free plan includes a one-week Pro trial, limited agent requests, and tab completions
-
-3. **Sign up for the free plan**
-   - During your first launch, Cursor will offer you the free plan with a Pro trial
-   - Accept the free plan to get started
-   - See [cursor.com/pricing](https://cursor.com/pricing) for details on what's included
+   - Sign up for a free account
+   - The [Hobby plan](https://cursor.com/pricing) includes a one-week Pro trial
 
 :::{tip}
 We recommend you sign up for a free Hobby plan for this workshop! You'll have one week to access agentic AI features.
 :::
 
-#### ⌨️ Setting up Claude Code (optional)
+#### ⌨️ Setting up Claude Code
 
 If you prefer working from the command line, you can also install Claude Code:
 
