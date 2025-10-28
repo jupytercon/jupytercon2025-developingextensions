@@ -19,6 +19,14 @@ Unlike frontend extensions, server extensions have access to the computer Jupyte
 running on, for example to read files from disk.
 [See the official docs for more!](https://jupyter-server.readthedocs.io/en/stable/developers/extensions.html)
 
+MIME renderer extension
+: An extension which teaches JupyterLab how to view a new type of file.
+For example,
+[jupyterlab-geojson](https://github.com/jupyterlab/jupyter-renderers/tree/main/packages/geojson-extension)
+enables JupyterLab to open a "slippy map" to display geospatial vector data in the
+GeoJSON format.
+Also known as a "mimetype" extension.
+
 Frontend extension
 : An extension which modifies the user interface and/or adds functionality that executes
 solely in the browser, and interacts with existing JupyterLab frontend components.
