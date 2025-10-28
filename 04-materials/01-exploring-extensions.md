@@ -147,8 +147,3 @@ These are a special case of {term}`frontend extensions <frontend extension>` whi
 * [jupyterlab-geojson](https://pypi.org/project/jupyterlab-geojson/) enables
   double-clicking on GeoJSON files and viewing them on a JupyterLab-native map viewer.
 * ...
-
-
-## More...
-
-🏗️ TODO! What go here?
