@@ -64,7 +64,14 @@ graph TB
 ```
 
 
-## Extension types
+## Core extensions
+
+JupyterLab itself is a collection of extensions.
+For example, the Notebook editor, file browser, and code console are all core extensions
+that are bundled with JupyterLab.
+
+
+## Extension categories
 
 ### {term}`Server extension`
 
