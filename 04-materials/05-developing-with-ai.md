@@ -581,9 +581,80 @@ Technical requirements:
 - Maintain the existing refresh functionality
 ```
 
+### What Happens with This Prompt?
 
+When you give this prompt to an AI agent like Cursor or Claude Code, it will typically:
+
+1. **Analyze your existing codebase** to understand the current structure
+2. **Make architectural decisions** about implementation patterns
+3. **Generate 200+ lines of code** across multiple files
+4. **Update dependencies** in pyproject.toml
+5. **Create new endpoints** in your backend
+6. **Modify the frontend widget** with new UI controls
+7. **Run build commands** to verify everything compiles
+
+Send the prompt and watch as it generates the entire feature. **In about 2-3 minutes**, you will have a fully functional image editor!
+
+**Review the generated code**
+- Cursor will suggest changes across multiple files
+- Read through each change carefully
+- Notice the architectural choices
+- Look for comments explaining the approach
+- Check if dependencies were added correctly
+
+**Accept or modify** the suggestions
+- Click "Accept" to apply all changes
+- Or click individual files to review and edit before accepting
+
+**Test the functionality:**
+```bash
+jlpm build
+jupyter lab
+```
+
+**Test the new features**:
+- Open the image viewer widget
+- Try each filter button
+- Check the browser console for errors (`F12` or `Cmd+Option+I`)
+- Check the terminal running `jupyter lab` for Python errors
+- Find at least 3 decisions you might have made differently
+
+### The Hidden Cost: Decisions Made Without You
+
+While impressive, this one-shot approach makes numerous decisions on your behalf:
+
+**Architecture Decisions:**
+- ❓ Base64 encoding vs. temporary file URLs?
+- ❓ Stateful vs. stateless image processing?
+- ❓ Where to store edited images?
+
+**UI/UX Decisions:**
+- ❓ Button placement and styling
+- ❓ Slider ranges and defaults
+- ❓ Error message presentation
+- ❓ Loading state indicators
+
+**Technical Implementation:**
+- ❓ PIL filter parameters (blur radius, sharpen intensity)
+- ❓ Image format handling (JPEG quality, PNG transparency)
+- ❓ Memory management for large images
+- ❓ Caching strategy for processed images
+
+**Code Quality:**
+- ❓ Error handling approach
+- ❓ TypeScript type definitions
+- ❓ Test coverage
+
+:::{warning} The Product Manager Trap
+When you use one-shot prompts, you're essentially saying: "AI, you be the product manager, architect, and developer all at once."
+
+This works great for prototypes, but in production code, you need to understand and own these decisions.
+:::
 
 ### Basic debugging
+
+**The debugging workflow:** Don't manually debug—let AI help! It can read error messages, understand context, and propose fixes.
+
 ### git restore . to undo the changes made by the one-shot prompt?
 
 ### 📊 Exercise C (20 minutes): Product manager framework
