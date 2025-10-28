@@ -84,7 +84,8 @@ computations.
 
 **Server extensions are written in Python**.
 
-Examples:
+
+#### Examples
 
 * [jupyter-server-proxy](https://github.com/jupyterhub/jupyter-server-proxy) enables
   running, supervising, and proxying additional web services within a JupyterLab
@@ -105,7 +106,8 @@ These are sometimes referred to as "lab extensions".
 
 **Frontend extensions are written in JavaScript or TypeScript**.
 
-Examples:
+
+#### Examples
 
 * [jupyterthemes](https://github.com/dunovank/jupyter-themes) provides custom
   appearances for Notebooks.
@@ -117,7 +119,8 @@ Examples:
 A very common pattern is extensions which combine frontend and server extensions to
 provide new interface features which trigger behavior on the server.
 
-Examples:
+
+#### Examples
 
 * [jupyterlab-git](https://github.com/jupyterlab/jupyterlab-git)
   provides visual git management.
@@ -138,7 +141,8 @@ Extensions that tell Jupyter how to view information in a specific file type
 These are a special case of {term}`frontend extensions <frontend extension>` which map a
 {term}`widget` viewer with the supported file MIME type strings.
 
-Examples:
+
+#### Examples
 
 * [jupyterlab-geojson](https://pypi.org/project/jupyterlab-geojson/) enables
   double-clicking on GeoJSON files and viewing them on a JupyterLab-native map viewer.
