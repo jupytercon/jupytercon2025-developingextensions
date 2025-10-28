@@ -82,6 +82,8 @@ Extensions that run on the JupyterLab server, which means it has access to the s
 hardware as JupyterLab and can, for example, load data from disk and perform
 computations.
 
+**Server extensions are written in Python**.
+
 Examples:
 
 * [jupyter-server-proxy](https://github.com/jupyterhub/jupyter-server-proxy) enables
@@ -98,6 +100,10 @@ Examples:
 Extensions that run in the JupyterLab frontend (i.e. the user's browser), which means it
 can change anything about the appearance of JupyterLab and provide new
 {term}`widgets <widget>` for display and/or interactions.
+
+These are sometimes referred to as "lab extensions".
+
+**Frontend extensions are written in JavaScript or TypeScript**.
 
 Examples:
 
