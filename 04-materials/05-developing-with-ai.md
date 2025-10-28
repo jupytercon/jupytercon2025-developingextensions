@@ -336,10 +336,38 @@ By now, you should have:
 - ✅ Your extension repository open and ready to work with
 
 ## 📋 Exercise A (15 minutes): Understand AI rules
-- Inspect AGENTS.md
-- Familiarize yourself with UI of Cursor
-- Choose AI model
-- Ask AI chat questions to verify that it recognizes the rules
+
+Before jumping into code generation, let's set up the "invisible infrastructure" that makes AI assistants work well. This configuration is what makes the difference between mediocre and excellent AI-generated code.
+
+### AI rules
+
+AI Rules (also called Cursor Rules, or system prompts) are instructions that automatically precede every conversation with your AI assistant. They're like permanent coaching that guides the AI's behavior.
+
+**AGENTS.md: The Emerging Standard**
+
+In 2025, the AI coding ecosystem converged on **AGENTS.md** as the universal format for agent instructions. Emerging as an open standard with OpenAI convening an industry working group and growing adoption across the ecosystem, AGENTS.md replaces fragmented tool-specific formats—it's just plain Markdown, no special schemas needed.
+
+**Tool Support Status:**
+
+| Tool | Support | Format |
+|------|---------|--------|
+| **Cursor** | ✅ Native | AGENTS.md + .cursor/rules/ |
+| **GitHub Copilot** | ✅ Native | AGENTS.md (maintains .github/copilot-instructions.md for backward compatibility) |
+| **Zed Editor** | ✅ Native | AGENTS.md |
+| **Roo Code** | ✅ Native | AGENTS.md |
+| **Claude Code** | ⚙️ Via symlink | Create: `ln -s AGENTS.md CLAUDE.md` |
+| **Gemini CLI** | ⚙️ Via symlink | Create: `ln -s AGENTS.md GEMINI.md` |
+| **Aider** | ⚙️ Config | Add to .aider.conf.yml: `read: AGENTS.md` |
+| **Continue.dev** | ❌ Not yet | Use .continue/rules/ |
+| **Cline** | ❌ Not yet | Use .clinerules/rules.md |
+
+**Key advantage:** Single AGENTS.md file works across your entire team regardless of which AI tool they use—no more maintaining separate .cursorrules, CLAUDE.md, and GEMINI.md files.
+
+For this workshop, the official copier template provides AGENTS.md and can create symlinks for Claude Code and Gemini CLI. You should already have these rules configured in your repo if you selected 'Y' on the copier's question about AI tools. Let's understand what's there and why it helps.
+
+### Familiarize yourself with UI of Cursor
+### Choose AI model
+### Ask AI chat questions to verify that it recognizes the rules
 
 ## 🏗️ Exercise B (30 minutes): Build it!
 - Discuss our goal briefly (go from image viewer to image editor)
