@@ -459,7 +459,7 @@ Before the session ends, take 10 minutes to:
 - Open-source on GitHub: write a good README, choose t
 - Write a blog post about your development experience
 - Present at a local developer meetup or a conference
-- Track downloads 
+- Track downloads
 
 #### 🌍 To contribute more
 - Subscribe to issues on extensions you've contributed to
