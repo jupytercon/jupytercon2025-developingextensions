@@ -1074,10 +1074,10 @@ resources of the JupyterLab server, for example to read data from disk.
 We know that server extensions provide HTTP endpoints that can be consumed by
 {term}`frontend extensions <frontend extension>`.
 
-We know how to provide JSON data from the server and consume it in a {term}`widget
-<widget>`.
+We know how to provide JSON data from the server and consume it in a
+{term}`widget <widget>`.
 
-We know how to dynamically update {term}`widget` HTML elements.
+We know how to dynamically update {term}`widget <widget>` HTML elements.
 
 
 ## 😖 The widget isn't interactive!

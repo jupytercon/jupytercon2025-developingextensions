@@ -26,8 +26,8 @@
 
 ## Extensions and plugins and widgets -- oh, my!
 
-While they sound similar, `extensions <extension>` and {term}`plugins <plugin>` serve
-different purposes.
+While they sound similar, {term}`extensions <extension>` and {term}`plugins <plugin>`
+serve different purposes.
 
 {term}`Plugins <plugin>` are JupyterLab's fundamental building blocks which define
 functionality and business logic.
@@ -78,8 +78,8 @@ Examples:
 ### {term}`Frontend extension`
 
 Extensions that run in the JupyterLab frontend (i.e. the user's browser), which means it
-can change anything about the appearance of JupyterLab and provide new {term}`widgets
-<widget>` for display and/or interactions.
+can change anything about the appearance of JupyterLab and provide new
+{term}`widgets <widget>` for display and/or interactions.
 
 Examples:
 
