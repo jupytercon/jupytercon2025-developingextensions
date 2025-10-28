@@ -237,7 +237,9 @@ Contributing to established extensions is a great way to learn real-world patter
 - Build your portfolio and resume
 - Connect with the Jupyter community
 
-### Open Source Extensions
+### Find your project
+
+#### Popular open source extensions
 
 - [JupyterLab-Contrib Extensions](https://jupyterlab-contrib.github.io/extensions.html) - Community-maintained collection of popular JupyterLab extensions
 - [Jupytext](https://github.com/mwouts/jupytext) - Edit Jupyter notebooks as plain text files (Python, Markdown, R scripts)
@@ -256,8 +258,8 @@ Contributing to established extensions is a great way to learn real-world patter
 - [Mitosheet](https://github.com/mito-ds/mito) - Spreadsheet interface that generates Python code for data transformations
 - [nbgrader](https://github.com/jupyter/nbgrader) - Create and grade assignments with autograding and manual feedback
 
-### 🐛 Beginner-Friendly GitHub
 
+#### 🐛 Beginner-friendly JupyterLab core
 Want to contribute to JupyterLab itself? Here are good first issues:
 
 **JupyterLab Core:**
@@ -267,6 +269,115 @@ Want to contribute to JupyterLab itself? Here are good first issues:
 **Extension Template:**
 - [Extension Template Issues](https://github.com/jupyterlab/extension-template/issues)
 
+### Check the project needs
+**Check the project board or GitHub Issues** for:
+- Feature requests that align with your interests
+- Bug reports you can reproduce
+- Documentation improvements
+
+**Browse recent issues** and look for:
+- Questions you can answer
+- Problems you've encountered yourself
+- Features you wish existed
+
+### Making your first contribution
+
+1. **Set up the development environment**:
+
+   ```bash
+   # Fork the repository on GitHub first, then:
+   git clone https://github.com/YOUR-USERNAME/extension-name.git
+   cd extension-name
+
+   # Follow the project's CONTRIBUTING.md instructions
+   # Usually similar to:
+   pip install --editable ".[dev,test]"
+   jupyter labextension develop . --overwrite
+   jlpm build
+   ```
+
+2. **Create a branch** for your work:
+
+   ```bash
+   git checkout -b fix/issue-123-button-alignment
+   ```
+
+3. **Make your changes**:
+   - Start small - fix one thing at a time
+   - Follow the project's code style
+   - Add or update tests if applicable
+   - Update documentation
+
+4. **Test thoroughly**:
+
+   ```bash
+   # Run the project's test suite
+   jlpm test
+   pytest
+
+   # Test manually in JupyterLab
+   jupyter lab
+   ```
+
+5. **Commit and push**:
+
+   ```bash
+   git add .
+   git commit -m "Fix button alignment in toolbar (#123)"
+   git push -u origin fix/issue-123-button-alignment
+   ```
+
+6. **Open a Pull Request**:
+   - Go to the original repository on GitHub
+   - Click "New Pull Request"
+   - Select your fork and branch
+   - Describe what you changed and why
+   - Reference the issue number if applicable
+
+:::{tip} Using AI for Contributions
+AI can help you understand existing code:
+
+```
+Explain how this widget's lifecycle works - especially the initialize()
+and dispose() methods.
+```
+
+```
+I want to add a new filter option to this panel. Show me where to add
+the UI component and how to wire it to the existing filtering logic.
+```
+
+```
+This extension uses React. Convert this example to use React best practices
+while maintaining compatibility with the existing component structure.
+```
+:::
+
+### Contribution checklist
+
+Before opening a PR, verify:
+
+- [ ] Code follows the project's style guide
+- [ ] Changes are tested (automated tests and manual testing)
+- [ ] Documentation is updated if needed
+- [ ] Commit messages are clear and descriptive
+- [ ] PR description explains what and why
+- [ ] You've read and followed CONTRIBUTING.md
+- [ ] Tests pass in CI/CD (after opening PR)
+
+### When contributing gets stuck
+
+**If you're blocked**:
+- Comment on the issue asking for clarification
+- Join the [Jupyter Zulip chat](https://jupyter.zulipchat.com) (or project-specific chat if available)
+- Ask instructors during this session
+- It's okay to pause and try something else
+
+**If maintainers request changes**:
+- Don't take it personally - it's about code quality
+- Ask questions if feedback is unclear
+- Make the requested changes iteratively
+- Maintainers are volunteers - be patient and courteous
 
 ## 🔧 Key JupyterLab APIs
 
