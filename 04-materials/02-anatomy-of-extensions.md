@@ -204,7 +204,7 @@ Our extension will:
 1. Instantiate the template to get started on our new extension!
 
     ```bash
-    copier copy --trust https://github.com/jupyterlab/extension-template .
+    copier copy --trust --vcs-ref HEAD https://github.com/jupyterlab/extension-template .
     ```
 
     Please be sure to correctly input:
