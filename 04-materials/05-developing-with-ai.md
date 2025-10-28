@@ -365,9 +365,100 @@ In 2025, the AI coding ecosystem converged on **AGENTS.md** as the universal for
 
 For this workshop, the official copier template provides AGENTS.md and can create symlinks for Claude Code and Gemini CLI. You should already have these rules configured in your repo if you selected 'Y' on the copier's question about AI tools. Let's understand what's there and why it helps.
 
-### Familiarize yourself with UI of Cursor
-### Choose AI model
-### Ask AI chat questions to verify that it recognizes the rules
+### What's in Your AGENTS.md File
+
+1. **Open Cursor app**
+2. **Set up cursor cli command**
+
+3. **Open your extension folder in Cursor**
+
+```bash
+cursor ~/Projects/jupytercon2025-extension-workshop
+```
+
+4. **Take a moment to get familiar with the interface**
+   Main area for coding tabs, left side panel for file browser and extensions, right side panel for a chat interface. All should look very similar to VSCode or JupyterLab.
+
+5. **Check that the rules file exists:**
+   Look for `AGENTS.md` file in your extension root
+
+   :::{important}
+   If neither `AGENTS.md` exists, **let an instructor know!** These files contain important context and rules that help AI assistants generate better JupyterLab extension code.
+   :::
+
+6. **Review the ruleset file**
+   Open `AGENTS.md`
+   Key sections you'll find:
+
+   **Code Quality Rules:**
+   - Use structured logging (not `console.log()`)
+   - Define explicit TypeScript interfaces
+   - Avoid the `any` type
+   - Use typeguards over type casts
+
+   **Naming Conventions:**
+   - Python: `snake_case` for functions, `PascalCase` for classes
+   - TypeScript: `camelCase` for variables, `PascalCase` for classes
+   - No mixing styles!
+
+   **Project Structure Guidelines:**
+   - Frontend code in `src/`
+   - Backend Python in `<extension_name>/`
+   - Commands registered in `src/index.ts`
+   - Routes in `<extension_name>/routes.py`
+
+   **JupyterLab-Specific Patterns:**
+   - How to register commands
+   - When to use `ReactWidget` vs `Widget`
+   - REST API best practices with `ServerConnection`
+   - State persistence with `IStateDB`
+
+   **Development Workflow:**
+   - When to run `jlpm build` (TypeScript changes)
+   - When to restart Jupyter (Python changes)
+   - How to debug (browser console, terminal logs)
+
+   **Common Pitfalls to Avoid:**
+   - ❌ Don't use `document.getElementById()` (use JupyterLab APIs)
+   - ❌ Don't hardcode URLs (use `ServerConnection.makeSettings()`)
+   - ❌ Don't forget `dispose()` methods (prevents memory leaks)
+   - ❌ Don't mix `npm` and `jlpm` (use `jlpm` only)
+
+**Why this matters:** These rules teach AI the JupyterLab patterns **before** it writes any code. Without them, AI might use generic React patterns or wrong APIs. With them, AI generates code that follows JupyterLab conventions from the start.
+
+### Verify that Cursor recognizes the rules
+
+1. Open a chat panel and choose Ask Mode
+
+:::{note}
+We recommend to start with Claude Sonnet 4.5 model, but feel free to try other models later!
+:::
+
+2. Ask AI chat questions to verify that it recognizes the rules
+
+   ```
+   What package manager should I use for JupyterLab extensions?
+   ```
+
+   :::{note} No Visual Indicator
+   Cursor automatically reads and applies AGENTS.md, but there's **no visual indicator** in the interface showing it's active.
+   [![The Cursor interface showing the user promopt "Can I use package-lock.json with this repo?" with a part of the AI model "thinking" tokens saying "From the rules section, there's a clear directive about package management: ✅ Do: Use jlpm exclusively"](../assets/images/implicit-agents-md.png)
+   :::
+
+   AI should respond with `jlpm`, not `npm` or `yarn` - that comes from your AGENTS.md rules!
+
+3. Try another test:
+   ```
+   What TypeScript conventions should we follow?
+   ```
+
+   AI should mention strict mode, camelCase, avoiding `any` type, etc.
+
+   :::{tip}
+   **If AI gives wrong answers** (like suggesting `npm` instead of `jlpm`):
+   - Restart Cursor
+   - Make sure AGENTS.md is in your project root (not a subdirectory)
+   - Check that the file is named exactly `AGENTS.md` (case-sensitive)
 
 ## 🏗️ Exercise B (30 minutes): Build it!
 - Discuss our goal briefly (go from image viewer to image editor)
@@ -383,6 +474,8 @@ For this workshop, the official copier template provides AGENTS.md and can creat
 ### 🖥️  Demo: AI from the command line (10 minutes)
 - Demonstrate using Claude Code for development workflow
 - Study hall is a good time to try it out
+
+
 
 ## 🤔 Reflection and next steps
 
