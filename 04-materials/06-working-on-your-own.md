@@ -36,11 +36,11 @@ Before diving into your chosen path, make sure you have:
 - [ ] Development environment ready (if building new: follow [Setup](02-anatomy-of-extensions.md#️-setup) and [Exercise A](02-anatomy-of-extensions.md#️-exercise-a-15-minutes-extension-creation-and-development-loop))
 - [ ] Access to [JupyterLab API docs](https://jupyterlab.readthedocs.io/en/latest/api/) and [Extension Examples](https://github.com/jupyterlab/extension-examples)
 
-## Path 1: Build your own extension from scratch
+## 🔨 Path 1: Build your own extension from scratch
 
 Create something entirely new using the extension template, AI assistance, and the patterns you've learned.
 
-### Quick start
+### ⚡ Quick start
 
 Follow these sections from chapter 2 to start a new extension from a template:
 
@@ -49,7 +49,7 @@ Follow these sections from chapter 2 to start a new extension from a template:
 
 Once you have your extension set up and working, return here to choose an inspiration project below.
 
-### Inspiration
+### 💫 Inspiration
 
 The following three examples with prompts have been tested and confirmed working. Pick one that matches your interests - whether you want visual effects, creative customization, or full-stack development. Use them as-is to practice prompt engineering, or as inspiration for your own ideas.
 
@@ -207,23 +207,23 @@ and highlight in red when usage is above 80%.
 This teaches you the full stack: backend API design, frontend-backend communication, error handling, and periodic updates. It's a perfect template for any monitoring or dashboard extension.
 :::
 
-### More extension ideas
+### 🌟 More extension ideas
 
 Pick an idea that matches your comfort level and interests:
 
-#### Beginner (frontend only)
+#### 🎓 Beginner (frontend only)
 1. **Theme switcher dropdown**: Add a quick theme selector to the toolbar for easy switching
 2. **Quote of the day**: Main area widget that fetches and displays random quotes
 3. **Keyboard shortcut viewer**: Panel showing all available shortcuts
 4. **Pomodoro timer**: Status bar timer for focused work sessions with notifications
 
-#### Intermediate (frontend + server)
+#### 🚦 Intermediate (frontend + server)
 1. **File size analyzer**: Scan workspace directory and show largest files/folders
 2. **Git status widget**: Display current branch, uncommitted changes count
 3. **Environment inspector**: Show installed packages and Python version
 4. **Todo list with persistence**: Sidebar panel that saves tasks to disk
 
-#### Advanced
+#### 🎯 Advanced
 5. **Custom welcome screen**: Override the default launcher with your own design
 2. **AI code assistant**: Create a chat with LLM
 3. **Performance profiler**: Instrument notebook cells and show execution metrics
@@ -233,11 +233,11 @@ Pick an idea that matches your comfort level and interests:
 ### 💡 Even more ideas from JupyterLab community
 [JupyterLab Extension Ideas](https://github.com/jupyterlab/jupyterlab/issues?q=sort%3Aupdated-desc+state%3Aopen+label%3A%22tag%3AExtension+Idea%22)
 
-## Path 2: Contribute to existing extensions
+## 🤝 Path 2: Contribute to existing extensions
 
 Contributing to established extensions is a great way to learn real-world patterns and give back to the community.
 
-### Why contribute?
+### 🌱 Why contribute?
 
 - Learn from production-quality code
 - Work with maintainers who know JupyterLab well
@@ -245,9 +245,9 @@ Contributing to established extensions is a great way to learn real-world patter
 - Build your portfolio and resume
 - Connect with the Jupyter community
 
-### Find your project
+### 🔍 Find your project
 
-#### Popular open source extensions
+#### 🌐 Popular open source extensions
 
 - [JupyterLab-Contrib Extensions](https://jupyterlab-contrib.github.io/extensions.html) - Community-maintained collection of popular JupyterLab extensions
 - [Jupytext](https://github.com/mwouts/jupytext) - Edit Jupyter notebooks as plain text files (Python, Markdown, R scripts)
@@ -277,7 +277,7 @@ Want to contribute to JupyterLab itself? Here are good first issues:
 **Extension Template:**
 - [Extension Template Issues](https://github.com/jupyterlab/extension-template/issues)
 
-### Check the project needs
+### ✅ Check the project needs
 **Check the project board or GitHub Issues** for:
 - Feature requests that align with your interests
 - Bug reports you can reproduce
@@ -288,7 +288,7 @@ Want to contribute to JupyterLab itself? Here are good first issues:
 - Problems you've encountered yourself
 - Features you wish existed
 
-### Making your first contribution
+### 🎬 Making your first contribution
 
 1. **Set up the development environment**:
 
@@ -361,7 +361,7 @@ while maintaining compatibility with the existing component structure.
 ```
 :::
 
-### Contribution checklist
+### 📋 Contribution checklist
 
 Before opening a PR, verify:
 
@@ -373,7 +373,7 @@ Before opening a PR, verify:
 - [ ] You've read and followed CONTRIBUTING.md
 - [ ] Tests pass in CI/CD (after opening PR)
 
-### When contributing gets stuck
+### 🔧 When contributing gets stuck
 
 **If you're blocked**:
 - Comment on the issue asking for clarification
@@ -387,7 +387,7 @@ Before opening a PR, verify:
 - Make the requested changes iteratively
 - Maintainers are volunteers - be patient and courteous
 
-## Development Workflow
+## 🔄 Development Workflow
 
 This is the cycle you'll repeat many times during development:
 
@@ -399,7 +399,7 @@ This is the cycle you'll repeat many times during development:
 6. **Iterate**: Refine your prompt based on results
 7. **Commit**: Save working states frequently with git
 
-### Tips for productive development
+### 💪 Tips for productive development
 
 - **Focus on small wins**: Small working features beat ambitious broken ones
 - **Document as you go**: Note what prompts work well, save error solutions, update README
@@ -408,7 +408,7 @@ This is the cycle you'll repeat many times during development:
 
 ## 💬 Getting Help
 
-### During this session
+### 👥 During this session
 
 **Where to get help:**
 - Raise your hand for instructor help
@@ -439,7 +439,7 @@ Many Jupyter and JupyterLab core developers are in the room and at JupyterCon 20
 Don't be shy - they're here to help and love seeing new contributors!
 :::
 
-### Wrapping up your work
+### 🎁 Wrapping up your work
 
 Before the session ends, take 10 minutes to:
 
@@ -462,22 +462,22 @@ Before the session ends, take 10 minutes to:
    - What would you explore next?
 
 
-### After the tutorial
+### 🚪 After the tutorial
 
-#### To continue developing
+#### 🛠️ To continue developing
 - Add automated tests (`pytest` for Python, `jest` for TypeScript)
 - Set up continuous integration (template includes GitHub Actions)
 - Write comprehensive documentation
 - Create example notebooks showing your extension in use
 
-#### To share your work
+#### 📢 To share your work
 - Publish to PyPI: `python -m build && twine upload dist/*`
 - Open-source on GitHub: write a good README, choose t
 - Write a blog post about your development experience
 - Present at a local developer meetup or a conference
 - Track downloads 
 
-#### To contribute more
+#### 🌍 To contribute more
 - Subscribe to issues on extensions you've contributed to
 - Join the [Jupyter Zulip chat](https://jupyter.zulipchat.com) for real-time discussions and help from contributors and users
 - Participate in the [Jupyter Discourse forum](https://discourse.jupyter.org/)
@@ -488,16 +488,16 @@ Before the session ends, take 10 minutes to:
 
 Bookmark these resources for when you need them during development:
 
-### Documentation
+### 📖 Documentation
 - [JupyterLab Extension Developer Guide](https://jupyterlab.readthedocs.io/en/latest/extension/extension_dev.html)
 - [JupyterLab API Reference](https://jupyterlab.readthedocs.io/en/latest/api/)
 - [Jupyter Server Extension Guide](https://jupyter-server.readthedocs.io/en/latest/developers/extensions.html)
 
-### Code Examples
+### 💻 Code Examples
 - [Extension Examples Repository](https://github.com/jupyterlab/extension-examples) - 40+ example extensions
 - [JupyterLab GitHub](https://github.com/jupyterlab/jupyterlab) - Core extensions source code
 
-### Key JupyterLab APIs
+### 🔑 Key JupyterLab APIs
 
 Common tokens and services you'll use:
 
@@ -510,11 +510,11 @@ Common tokens and services you'll use:
 | `IThemeManager` | Theme customization | [Docs](https://jupyterlab.readthedocs.io/en/latest/api/modules/apputils.html) |
 | `ISettingRegistry` | Extension settings | [Docs](https://jupyterlab.readthedocs.io/en/latest/api/modules/settingregistry.html) |
 
-### Server Extensions
+### 🖥️ Server Extensions
 - [Jupyter Server Handlers](https://jupyter-server.readthedocs.io/en/latest/developers/extensions.html)
 - [Tornado Request Handlers](https://www.tornadoweb.org/en/stable/web.html)
 
-### Tools & Discovery
+### 🔬 Tools & Discovery
 - [Browser DevTools](https://developer.chrome.com/docs/devtools/overview) - Debug frontend
 - Run JupyterLab with `--debug` flag for detailed server logs
 - [Jupyter Marketplace](https://labextensions.dev/) - Snapshot of active extensions with stats
