@@ -74,7 +74,7 @@ on top of the UI for 3 seconds
 
 **What to Watch For**:
 
-If the confetti doesn't appear:
+If the confetti doesn't appear, try prompting:
 ```
 The button is there but I don't see confetti. Check that the z-index
 is high enough and the confetti container is properly positioned.
