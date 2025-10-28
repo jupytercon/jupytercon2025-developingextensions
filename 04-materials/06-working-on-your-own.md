@@ -456,7 +456,7 @@ Before the session ends, take 10 minutes to:
 
 #### 📢 To share your work
 - Publish to PyPI: `python -m build && twine upload dist/*`
-- Open-source on GitHub: write a good README, choose t
+- Open-source on GitHub: write a good README, set `jupyterlab-extension` as a repo topic
 - Write a blog post about your development experience
 - Present at a local developer meetup or a conference
 - Track downloads
