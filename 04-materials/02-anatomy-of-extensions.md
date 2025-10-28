@@ -75,7 +75,7 @@ micromamba activate jupytercon2025
 ## gh: The GitHub CLI
 ## copier: A tool for quickstarting an extension from a template
 ## jinja2-time: A dependency of the official JupyterLab extension template
-micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
+micromamba install python pip nodejs=22 gh "copier~=9.2" jinja2-time
 ```
 
 
