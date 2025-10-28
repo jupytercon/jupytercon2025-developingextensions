@@ -315,7 +315,6 @@ We recommend you sign up for a free Hobby plan for this workshop! You'll have on
 
 #### ⌨️ Setting up Claude Code
 
-
 1. **Use your workshop environment**
    - You already have Node.js 22 installed in your `jupytercon2025` environment
    - Make sure the environment is activated:
@@ -328,16 +327,12 @@ We recommend you sign up for a free Hobby plan for this workshop! You'll have on
    npm install --global @anthropic/claude-code
    ```
 
-3. **Get an Anthropic API key**
-   - Visit [console.anthropic.com](https://console.anthropic.com/)
-   - Sign up for an account and generate an API key
-   - Note: This requires payment setup, unlike Cursor's free plan
-
-## ✅ Getting started  (15 minutes)
+3. **Set up Claude subscription or Anthropic API key**
+   - More details to be added
 
 By now, you should have:
 - ✅ Cursor installed with a free account created
-- ✅ (Optional) Claude Code installed with an API key configured
+- ✅ Claude Code installed with an API key configured
 - ✅ Your extension repository open and ready to work with
 
 ## 📋 Exercise A (15 minutes): Understand AI rules
