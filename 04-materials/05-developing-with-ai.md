@@ -358,9 +358,9 @@ By now, you should have:
 
 ## 🤔 Reflection and next steps
 
-After completing this exercise (via either path), take a moment to reflect:
+Phew! 😮‍💨 That was a lot! Now we've completed our exercises let's take a moment to reflect:
 
-### 💭 Quick reflection (optional)
+### 💭 Quick reflection
 
 Think about these questions — we'll discuss as a group:
 
@@ -412,7 +412,6 @@ The next chapter provides **independent exploration time** where you can:
 
 1. **Build your own extension from scratch** - Using the template and proven project ideas
 2. **Contribute to existing extensions** - Give back to the community and learn from production code
-3. **Explore and experiment** - Try multiple small projects to deepen your understanding
 
 Choose the path that interests you most, work at your own pace, and instructors will be available to help when you get stuck.
 
