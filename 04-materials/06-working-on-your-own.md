@@ -227,7 +227,7 @@ Pick an idea that matches your comfort level and interests:
 5. **Custom welcome screen**: Override the default launcher with your own design
 2. **AI code assistant**: Create a chat with LLM
 3. **Performance profiler**: Instrument notebook cells and show execution metrics
-4. **Custom file format viewer**: Add support for viewing proprietary file types
+4. **Custom file format viewer**: Add support for viewing unsupported file types
 5. **Real-time log viewer**: Stream and filter server logs in a widget
 
 ### 💡 Even more ideas from JupyterLab community
