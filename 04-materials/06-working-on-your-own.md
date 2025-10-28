@@ -366,7 +366,7 @@ Before opening a PR, verify:
 - It's okay to pause and try something else
 
 **If maintainers request changes**:
-- Don't take it personally - it's about code quality
+- Don't take it personally - writing high quality code requires collaboration
 - Ask questions if feedback is unclear
 - Make the requested changes iteratively
 - Maintainers are volunteers - be patient and courteous
