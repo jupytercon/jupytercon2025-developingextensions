@@ -174,7 +174,7 @@ Create a JupyterLab extension that monitors CPU stats:
 - Widget appears in main area when launched
 - CPU utilization percentage displays
 - Updates automatically (polling every few seconds)
-- No errors when temperature data is unavailable
+- Widget gracefully handles when temperature data is unavailable
 - Widget layout is readable and organized
 
 **What to watch for**:
