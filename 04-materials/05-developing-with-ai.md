@@ -61,23 +61,30 @@ AI coding assistants are powered by **Large Language Models ({term}`LLMs <LLM>`)
 ### Where {term}`LLMs <LLM>` live: deployment models
 
 **Frontier Models (Cloud-Hosted):**
-- **Examples:**
-  - **Claude Sonnet 4.5** (Anthropic): Best coding model, $3/$15 per M tokens
-  - **GPT-5** (OpenAI): Best overall reasoning, $1.25/$10 per M tokens
-  - **Gemini 2.5 Pro** (Google): Best for speed/context (1M tokens), multimodal
-  - **Claude 4 Opus** (Anthropic): Best for long-horizon coding (30+ hour tasks), $15/$75 per M tokens
 - **Deployment:** Run on massive server infrastructure by model providers
 - **Access:** Pay-per-token via API keys
+- **Examples:**
+  - **Claude Sonnet 4.5** (Anthropic): Best coding model, \$3/\$15 per M tokens
+  - **GPT-5** (OpenAI): Best overall reasoning, \$1.25/\$10 per M tokens
+  - **Gemini 2.5 Pro** (Google): Best for speed/context (1M tokens), multimodal
+  - **Claude 4 Opus** (Anthropic): Best for long-horizon coding (30+ hour tasks), \$15/\$75 per M tokens
 - **Pros:** State-of-the-art capabilities, specialized for different tasks (coding vs reasoning vs speed), no local compute needed
 - **Cons:** Requires internet connection, ongoing costs, data leaves your machine
 
 **Mid-tier and efficient models (cloud or local):**
-- **Examples:** Claude Haiku, Qwen3-30B-A3B (approaching GPT-4o performance), Mistral Small 3.2, Llama 3.3-70B
 - **Deployment:** Can run on cloud APIs or self-hosted on consumer hardware
+- **Examples:**
+  - **Claude Haiku**
+  - **Qwen3-30B-A3B** (approaching GPT-4o performance),
+  - **Mistral Small 3.2**
+  - **Llama 3.3-70B**
 - **Pros:** Lower cost or free (if self-hosted), faster responses, good balance of capability and efficiency
 - **Cons:** Less capable than frontier models, self-hosting requires GPU resources (typically 16GB+ {term}`VRAM`)
 
+
 **Open-source & open-weight models (2025 state-of-the-art):**
+- **Licenses:** Vary from fully open (Apache 2.0, MIT) to restricted commercial use
+- **Deployment:** Can be self-hosted using tools like [Ollama](https://ollama.com/), [LM Studio](https://lmstudio.ai/), or [vLLM](https://github.com/vllm-project/vllm)
 - **Examples:**
   - **Qwen3-235B-A22B** (Apache 2.0 license): 235B params with 22B active, 262K context, exceptional reasoning
   - **GLM-4.5** (Open License): Strong coding and agentic abilities, runs on consumer hardware
@@ -85,8 +92,6 @@ AI coding assistants are powered by **Large Language Models ({term}`LLMs <LLM>`)
   - **Qwen3-Coder**: Specialized for code generation tasks
   - **DeepSeek-R1**: 671B params (37B active), MIT license, advanced reasoning (86.7% on AIME)
   - **OpenAI GPT-OSS-120B/20B** (Apache 2.0): Near o4-mini performance, consumer-friendly
-- **Licenses:** Vary from fully open (Apache 2.0, MIT) to restricted commercial use
-- **Deployment:** Can be self-hosted using tools like [Ollama](https://ollama.com/), [LM Studio](https://lmstudio.ai/), or [vLLM](https://github.com/vllm-project/vllm)
 - **Pros:** Full control, no API costs, data stays local, latest open models often outperform closed frontier ones
 - **Cons:** Requires technical setup and adequate hardware (16GB+ VRAM for smaller models, 48GB+ for larger ones)
 
