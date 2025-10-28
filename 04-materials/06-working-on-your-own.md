@@ -379,9 +379,20 @@ Before opening a PR, verify:
 - Make the requested changes iteratively
 - Maintainers are volunteers - be patient and courteous
 
-## 🔧 Key JupyterLab APIs
+## 📚 Essential resources
 
-### Commonly Used Tokens/Services:
+### Documentation
+- [JupyterLab Extension Developer Guide](https://jupyterlab.readthedocs.io/en/latest/extension/extension_dev.html)
+- [JupyterLab API Reference](https://jupyterlab.readthedocs.io/en/latest/api/)
+- [Jupyter Server Extension Guide](https://jupyter-server.readthedocs.io/en/latest/developers/extensions.html)
+
+### Code Examples
+- [Extension Examples Repository](https://github.com/jupyterlab/extension-examples) - 40+ example extensions
+- [JupyterLab GitHub](https://github.com/jupyterlab/jupyterlab) - Core extensions source code
+
+### 🔧 Key JupyterLab APIs
+
+#### Commonly Used Tokens/Services:
 | API | Use Case | Documentation |
 |-----|----------|---------------|
 | `INotebookTracker` | Track active notebooks | [Docs](https://jupyterlab.readthedocs.io/en/latest/api/modules/notebook.html) |
@@ -392,21 +403,10 @@ Before opening a PR, verify:
 | `ISettingRegistry` | Extension settings | [Docs](https://jupyterlab.readthedocs.io/en/latest/api/modules/settingregistry.html) |
 
 
-### For Server Extensions:
-
+### Jupyter Server Extensions:
 - **Jupyter Server Handlers**: [Documentation](https://jupyter-server.readthedocs.io/en/latest/developers/extensions.html)
 - **Tornado Request Handlers**: [Tornado Docs](https://www.tornadoweb.org/en/stable/web.html)
 
-## 📚 Essential Resources
-
-### Documentation
-- [JupyterLab Extension Developer Guide](https://jupyterlab.readthedocs.io/en/latest/extension/extension_dev.html)
-- [JupyterLab API Reference](https://jupyterlab.readthedocs.io/en/latest/api/)
-- [Jupyter Server Extension Guide](https://jupyter-server.readthedocs.io/en/latest/developers/extensions.html)
-
-### Code Examples
-- [Extension Examples Repository](https://github.com/jupyterlab/extension-examples) - 40+ example extensions
-- [JupyterLab GitHub](https://github.com/jupyterlab/jupyterlab) - Core extensions source code
 
 ### Tools
 - [Browser DevTools](https://developer.chrome.com/docs/devtools/overview) - Debug frontend
@@ -427,12 +427,51 @@ Before opening a PR, verify:
 - [ ] Test frequently (`jupyter lab --dev-mode`) #TODO: watch for iterative dev
 - [ ] Ask instructors for help when stuck
 
+## General guidance
+
+### Making the most of this time
+
+**Focus on learning, not perfection**:
+- Getting stuck and debugging teaches you more than smooth sailing
+- Small working features beat ambitious broken ones
+- Exploring multiple approaches builds intuition
+
+**Document your journey**:
+- Take notes on what prompts work well
+- Save error messages and solutions
+- Write down "aha!" moments
+- Update your extension's README as you go
+
+**Connect with others**:
+- Share what you're working on with neighbors
+- Help each other debug issues
+- Show off cool features you've created
+- Ask each other questions
+
+### AI Development workflow (reminder)
+
+The cycle you'll repeat many times:
+
+1. **Write a clear prompt** - Context, requirements, constraints
+2. **Review generated code** - Read it, understand it, don't blindly accept
+3. **Build**: `jlpm build`
+4. **Test**: Refresh JupyterLab (or restart if backend changed)
+5. **Debug**: Browser console and terminal for errors
+6. **Iterate**: Refine your prompt based on results
+7. **Commit**: Save working states frequently
+
 ## 💬 Getting Help
 
 ### During this session
 - Raise your hand for instructor help
 - Discuss with neighbors
 - [Zulip](https://jupyter.zulipchat.com/#feed) for real-time chat
+
+Don't stay stuck! Ask an instructor if:
+- You've tried the same thing 3-4 times with no progress
+- Build succeeds but feature doesn't appear
+- You want guidance on architecture decisions
+- You're unsure if your contribution approach is right
 
 :::{tip} Core Developers Are Here!
 Many Jupyter and JupyterLab core developers are in the room and at JupyterCon 2025. This is a unique opportunity to:
@@ -444,6 +483,28 @@ Many Jupyter and JupyterLab core developers are in the room and at JupyterCon 20
 
 Don't be shy - they're here to help and love seeing new contributors!
 :::
+
+### Wrapping up your work
+
+Before the session ends, take 10 minutes to:
+
+1. **Commit your changes**:
+   ```bash
+   git add .
+   git commit -m "Work in progress: [what you accomplished]"
+   git push
+   ```
+
+2. **Document your progress** in README.md:
+   - What you built or contributed
+   - What works and what's still in progress
+   - Interesting challenges you solved
+   - Next steps you'd like to take
+
+3. **Reflect** on what you learned:
+   - What surprised you about AI-assisted development?
+   - What JupyterLab concepts clicked for you?
+   - What would you explore next?
 
 
 ### After the tutorial
