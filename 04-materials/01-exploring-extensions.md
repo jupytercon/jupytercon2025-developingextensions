@@ -121,7 +121,7 @@ Examples:
   conda/mamba environments.
 * [JupyterGIS](https://jupytergis.readthedocs.io/en/latest/) (beta) provides a
   Geospatial Information System (GIS) interface for working with geospatial data.
-* ..
+* ...
 
 
 ### {term}`MIME renderer extension` (a.k.a. "mimetype" extension)
