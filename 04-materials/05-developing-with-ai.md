@@ -437,7 +437,7 @@ We recommend to start with Claude Sonnet 4.5 model, but feel free to try other m
 2. Ask AI chat questions to verify that it recognizes the rules. Paste the below prompt into the chat
 
    ```
-   What package manager should I use for JupyterLab extensions?
+   What package manager should I use for JupyterLab extension frontend?
    ```
 
    :::{note} No Visual Indicator
@@ -447,18 +447,31 @@ We recommend to start with Claude Sonnet 4.5 model, but feel free to try other m
 
    AI should respond with `jlpm`, not `npm` or `yarn` - that comes from your AGENTS.md rules!
 
-3. Try another test:
-   ```
-   What TypeScript conventions should we follow?
-   ```
-
-   AI should mention strict mode, camelCase, avoiding `any` type, etc.
-
    :::{tip} If AI gives wrong answers
    - Restart Cursor
    - Make sure AGENTS.md is in your project root (not a subdirectory)
    - Check that the file is named exactly `AGENTS.md` (case-sensitive)
    :::
+
+3. Get ready for the development. Start a new chat and choose Agent Mode:
+   ```
+   Prepare my extension for development:
+   1. Check that I am using the correct environment `jupytercon2025`
+   2. Check that my environment have JupyterLab and nodejs installed
+   3. Check that TypeScript is configured correctly
+   4. Verify extension is installed
+   5. Build my extension
+   ```
+
+   AI should respond with:
+   - Checking your enviro
+   - Mentions rules from AGENTS.md (strict mode, camelCase, etc.)
+   - Shows awareness of JupyterLab patterns
+
+:::{tip} You're Ready!
+Once AI can reference your project structure, coding rules, and build your project, you're set up for success. This configuration is what separates "AI that generates random code" from "AI that writes code that matches your project's patterns."
+:::
+
 
 ## 🏗️ Exercise B (30 minutes): Build it!
 ### Understanding your starting point
@@ -520,6 +533,7 @@ Technical requirements:
 - Add filter buttons to the widget toolbar
 - Maintain the existing refresh functionality
 ```
+
 
 
 ### Basic debugging
