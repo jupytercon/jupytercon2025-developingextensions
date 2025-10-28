@@ -49,13 +49,21 @@ This tutorial is inspired by many prior works.
 
 ## 🛠️ Setup
 
+Before we get started, we need to set up:
+
+* Development dependencies on our local machine
+* Git configuration on our local machine
+* A repository on GitHub
+
+
 ### Dependency environment
 
+Create an environment named `jupytercon2025`.
 We'll use this environment for the rest of this workshop:
 
 ```bash
 # Create an environment named "jupytercon2025"
-micromamba create -n jupytercon2025
+micromamba create --name jupytercon2025
 
 # Activate it
 # IMPORTANT: Run this every time you open a new terminal!
@@ -74,6 +82,7 @@ micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
 ### Important Git settings
 
 1. Git needs to know who you are.
+
    Configure identity information Git will use when we commit:
 
    ```bash
@@ -81,8 +90,9 @@ micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
    git config --global user.name "Your Name Here"
    ```
 
-2. The modern conventional branch name is "main", and this tutorial will assume that's
-   your default branch.
+2. The modern conventional branch name is `main`, and this tutorial will assume
+   you're working on the `main` branch.
+
    Ensure your default branch is set to `main`:
 
    ```bash
@@ -222,7 +232,7 @@ Our extension will:
 
 ## 🏋️ Exercise A (15 minutes): Extension creation and development loop
 
-### Create a new extension from the [official template](https://github.com/jupyterlab/extension-template)
+### 🔧 Create a new extension from the [official template](https://github.com/jupyterlab/extension-template)
 
 1. Instantiate the template to get started on our new extension!
 
@@ -312,7 +322,7 @@ Our extension will:
    :::
 
 
-#### 🧪 Test
+### 🧪 Test
 
 1. Start JupyterLab in a **separate terminal**.
 
@@ -376,7 +386,7 @@ git push -u origin main
 :::
 
 
-### Do a complete development loop
+### 🔧 Do a complete development loop
 
 0. Close the JupyterLab server with `CTRL+C`.
 
@@ -389,7 +399,7 @@ git push -u origin main
 2. Rebuild the extension with `jlpm build`.
 
 
-#### 🧪 Test
+### 🧪 Test
 
 Follow the same testing steps as last time.
 
@@ -417,7 +427,7 @@ git push -u origin main
 :::
 
 
-### What just happened?
+### 🧠 What do we know now?
 
 We know how to get started: we learned how to instantiate a new extension from the
 official template and set it up for development.
@@ -433,12 +443,12 @@ Now we have all the knowledge we need to keep iterating on our extension!
 🎓 Well done!
 
 
-## Creating a widget
+## 😖 "Hello, world" is boring!
 
 Our working extension is a basic "hello, world" application.
 All it does is log a string to the console, then make a request to the back-end
 for another string, which is also logged to the console.
-This all happens once, when the extension is activated when the user opens JupyterLab.
+This all happens **once** when the user opens JupyterLab and the extension is activated.
 
 Our goal is to display a viewer for a random photo and caption, with a refresh button to
 instantly display a new image.
@@ -448,7 +458,7 @@ will eventually house that content.
 
 ## 🏋️ Exercise B (20 minutes): Launching a "hello, world" {term}`widget <widget>`
 
-### Create a "hello, world" widget
+### 🔧 Create a "hello, world" widget
 
 To display this widget in the {term}`main area <main area>`, we need to
 implement a {term}`widget <widget>` which displays our content (for now, just
@@ -518,7 +528,7 @@ widget in JupyterLab yet.
 Let's fix that now.
 
 
-### Create a {term}`command <command>` to display the {term}`widget <widget>` in the {term}`main area <main area>`
+### 🔧 Create a {term}`command <command>` to display the {term}`widget <widget>` in the {term}`main area <main area>`
 
 In `src/index.ts`, we need to update our plugin to define a command in our
 {term}`plugin's <plugin>` `activate` method:
@@ -573,7 +583,7 @@ But right now, this command is not being used by anything!
 Next, we'll add it to the {term}`command palette <command palette>`.
 
 
-### Register our {term}`command <command>` with the {term}`command palette <command palette>`
+### 🔧 Register our {term}`command <command>` with the {term}`command palette <command palette>`
 
 First, import the command palette interface at the top of `src/index.ts`:
 
@@ -668,7 +678,7 @@ git push -u origin main
 :::
 
 
-### Optional: Register with the {term}`launcher <launcher>`
+### 🔧 Optional: Register with the {term}`launcher <launcher>`
 
 Unlike the command palette, this functionality needs to be installed as a dependency.
 First, install `@jupyterlab/launcher` with `jlpm add @jupyterlab/launcher` to make
@@ -718,7 +728,7 @@ git push -u origin main
 :::
 
 
-#### My launcher button works, but it has no icon!
+#### Troubleshooting: My launcher button works, but it has no icon!
 
 Adding an icon is one extra step.
 We can import the icon in `src/index.ts` like so:
@@ -760,7 +770,19 @@ git push -u origin main
 :::
 
 
-## What's next?
+### 🧠 What do we know now?
+
+We know that a {term}`widget <widget>` by itself isn't very useful, and we need some way to display it.
+
+We decided we want to display our widget in the {term}`main area <main area>`, and we
+know that we need a {term}`command <command>` to achieve that.
+
+Finally, we know that we can register our command with the
+{term}`command palette <command palette>` and/or the {term}`launcher <launcher>`
+to give the user an easy way to execute the command to open the widget.
+
+
+## 😖 It's still just "hello, world"!
 
 We've graduated from "Hello, world" in the console to "Hello, world" in a
 {term}`main area widget <main area widget>`.
@@ -774,7 +796,7 @@ Now we need to implement the logic and glue the pieces together.
 
 ## 🏋️ Exercise C (20 minutes): Serve images and captions from the server extension
 
-### Set up images and captions
+### 🔧 Define images and captions
 
 Create a new directory at `jupytercon2025_extension_workshop/images`:
 
@@ -813,7 +835,7 @@ IMAGES_AND_CAPTIONS = [
 ```
 
 
-### Update the server to serve images and captions
+### 🔧 Update the server to serve images and captions
 
 Our server behaviors are defined in
 `jupytercon2025_extension_workshop/routes.py`, so that module will need to know
@@ -897,7 +919,7 @@ def setup_route_handlers(web_app):
 ```
 
 
-#### 🧪 Test
+### 🧪 Test
 
 Now's the best time for us to stop and test before moving on to consuming this
 data with our widget.
@@ -933,7 +955,7 @@ git push -u origin main
 :::
 
 
-### Connect the {term}`widget` to the {term}`server extension`
+### 🔧 Connect the {term}`widget` to the {term}`server extension`
 
 Now that our backend is working, we need to glue our widget to it.
 
@@ -962,7 +984,7 @@ that nothing is calling that method yet:
 ```{code} typescript
 :linenos:
 :emphasize-lines: 7-19, 21-23
-:file: src/widget.ts
+:filename: src/widget.ts
 
 class ImageCaptionWidget extends Widget {
   // Initialization
@@ -996,7 +1018,7 @@ Now, we're calling `load_image()` when we initialize the widget:
 ```{code} typescript
 :linenos:
 :emphasize-lines: 12-25
-:file: src/widget.ts
+:filename: src/widget.ts
 
 class ImageCaptionWidget extends Widget {
   // Initialization
@@ -1037,7 +1059,7 @@ class ImageCaptionWidget extends Widget {
 }
 ```
 
-#### 🧪 Test
+### 🧪 Test
 
 Now that we have our widget user interface hooked up to the data coming from the server, let's test again.
 Because we changed the JavaScript, we need to use `jlpm run build`, but we _don't_ need to restart the JupyterLab server.
@@ -1077,14 +1099,32 @@ git push -u origin main
 :::
 
 
-## 🏋️ Exercise D (15 minutes): Add user interactivity to the widget
+### 🧠 What do we know now?
+
+We know that a {term}`server extension <server extension>` can access the hardware
+resources of the JupyterLab server, for example to read data from disk.
+
+We know that server extensions provide HTTP endpoints that can be consumed by
+{term}`frontend extensions <frontend extension>`.
+
+We know how to provide JSON data from the server and consume it in a {term}`widget
+<widget>`.
+
+We know how to dynamically update {term}`widget` HTML elements.
+
+
+## 😖 The widget isn't interactive!
 
 Right now, you only get a random image when you first open the widget.
 It's much more interesting if the widget can respond to user actions!
+
+
+## 🏋️ Exercise D (10 minutes): Add interactivity to the widget
+
 Let's add a toolbar and refresh button which triggers the image to change immediately.
 
 
-### Import a toolbar UI component and icon
+### 🔧 Import a toolbar UI component and icon
 
 For all of this to work, we need the `ToolbarButton` to use in our
 widget.
@@ -1108,7 +1148,7 @@ import {
 ```
 
 
-### Add the button to the widget and connect the logic
+### 🔧 Add the button to the widget and connect the logic
 
 Now we can use the `ToolbarButton` class to instantiate a new button with an icon,
 tooltip, and behavior (`onClick`).
@@ -1169,7 +1209,16 @@ git push -u origin main
 :::
 
 
-## Problem: The widget disappears when we refresh the page
+### 🧠 What do we know now?
+
+We know that {term}`main area widgets <main area widget>` can offer a toolbar for
+interacting with the widget.
+
+We know how to add a button to the toolbar with an icon, tooltip, and `onClick`
+behavior.
+
+
+## 😖 The widget disappears when we refresh the page
 
 :::{important} 👀 You should notice...
 :class: simple
@@ -1183,9 +1232,12 @@ disappears.
 ## 🏋️ Exercise E (15 minutes): Preserve layout
 
 JupyterLab can save and restore layouts, but we need to define how our widget restores
-its state.
+its state for that to work.
 
-First, let's import the layout restorer:
+The layout restorer **loads** layouts, and the widget tracker **saves** layouts.
+
+
+### 🔧 Import the layout restorer plugin and widget tracker
 
 ```{code} typescript
 :linenos:
@@ -1203,6 +1255,9 @@ import {
 } from '@jupyterlab/apputils';
 
 ```
+
+
+### 🔧 Use the layout restorer plugin as a dependency
 
 Now, we'll define the layout restorer {term}`token <token>` as an _optional_
 dependency, as it may not be available in all JupyterLab deployments.
@@ -1233,6 +1288,9 @@ const plugin: JupyterFrontEndPlugin<void> = {
     restorer: ILayoutRestorer | null
   ) => {
 ```
+
+
+### 🔧 Track our widget and conditionally restore it
 
 Now that we have the dependency, we need to define _how_ the widget's layout
 will be saved and restored.
@@ -1312,6 +1370,22 @@ To test this change, load our widget in JupyterLab, then refresh the page.
 You may see a different image; this is because we're loading a new image every time the
 widget is initialized.
 :::
+
+
+### 🧠 What do we know now?
+
+We know that by default, JupyterLab doesn't track our open widget or restore its state
+when we refresh the page.
+
+We know that we can use the `WidgetTracker` to remember the state of our widget and the
+`ILayoutRestorer` plugin to restore that state.
+
+
+## 🎉 Great job!
+
+The extension we built together today is just a small example of what can be done with
+the Jupyter extension system.
+What other things can you imagine building?
 
 
 [^rebuild-not-always-required]: We don't actually _always_ need to rebuild -- only when
