@@ -428,13 +428,13 @@ cursor ~/Projects/jupytercon2025-extension-workshop
 
 ### Verify that Cursor recognizes the rules
 
-1. Open a chat panel and choose Ask Mode
+1. Open the Cursor Chat panel (`Cmd/Ctrl + L`) and choose Ask Mode
 
 :::{note}
 We recommend to start with Claude Sonnet 4.5 model, but feel free to try other models later!
 :::
 
-2. Ask AI chat questions to verify that it recognizes the rules
+2. Ask AI chat questions to verify that it recognizes the rules. Paste the below prompt into the chat
 
    ```
    What package manager should I use for JupyterLab extensions?
@@ -454,28 +454,183 @@ We recommend to start with Claude Sonnet 4.5 model, but feel free to try other m
 
    AI should mention strict mode, camelCase, avoiding `any` type, etc.
 
-   :::{tip}
-   **If AI gives wrong answers** (like suggesting `npm` instead of `jlpm`):
+   :::{tip} If AI gives wrong answers
    - Restart Cursor
    - Make sure AGENTS.md is in your project root (not a subdirectory)
    - Check that the file is named exactly `AGENTS.md` (case-sensitive)
+   :::
 
 ## 🏗️ Exercise B (30 minutes): Build it!
-- Discuss our goal briefly (go from image viewer to image editor)
-- Send a single prompt to Cursor
-- Basic debugging
-- Power and peril of one-shot prompts
-- git restore . to undo the changes made by the one-shot prompt?
+### Understanding your starting point
+
+Before we extend the functionality, a quick reminder on what the extension currently does:
+
+**Current Features:**
+- ✅ Displays random images from a curated collection
+- ✅ Shows captions for each image
+- ✅ Refresh button to load a new random image
+- ✅ Layout restoration (widget persists across JupyterLab sessions)
+
+%**Frontend (TypeScript):**
+%- `src/index.ts`: Plugin registration, command definitions, launcher/palette integration
+%- `src/widget.ts`: Main UI widget that displays images and captions
+%- `src/request.ts`: Utility for communicating with the backend API
+%
+%**Backend (Python):**
+%- `jupytercon2025_extension_workshop/routes.py`: REST API handlers
+%- `jupytercon2025_extension_workshop/images_and_captions.py`: Image metadata
+%- `jupytercon2025_extension_workshop/images/`: Image files on disk
+
+### Goal: Add Image Editing Capabilities
+
+We'll use AI to extend this viewer with basic image editing features. This exercise demonstrates:
+- Power and limitation of a single prompt approach to building features
+- The iterative development cycle: plan → implement → test → refine
+- How to debug and fix issues with AI assistance
+- Monitoring AI context
+
+### Power and peril of one-shot prompts
+
+Before we dive into our structured approach, let's witness what modern AI can accomplish with a single, well-crafted prompt. This demonstration shows both the impressive capabilities and important limitations of AI-driven development.
+
+With the right context and a detailed prompt, AI can build complete features in minutes. Here's a prompt that could generate our entire image editing extension:
+
+```
+Extend this image viewer extension to add image editing capabilities:
+
+Add editing controls to the widget:
+- Buttons for filters: grayscale, sepia, blur, sharpen
+- Basic crop functionality (50% crop from center)
+- Brightness/contrast adjustments (slider controls)
+- Save edited image back to disk
+
+Use Pillow (PIL) on the backend to process images. The backend should:
+- Accept the image filename and editing operation via REST API
+- Apply the transformation using appropriate Pillow methods
+- Return the processed image to the frontend as base64-encoded data
+
+The frontend should:
+- Update the displayed image immediately after each edit
+- Show the current filter/transformation applied
+- Allow chaining multiple edits before saving
+
+Technical requirements:
+- Add Pillow to the Python dependencies
+- Create a new REST endpoint `/edit-image` in routes.py
+- Add filter buttons to the widget toolbar
+- Maintain the existing refresh functionality
+```
+
+
+### Basic debugging
+### git restore . to undo the changes made by the one-shot prompt?
 
 ### 📊 Exercise C (20 minutes): Product manager framework
-- Learn how to use structured approach to AI-assisted development
-- User stories
+
+#### The better way: structured, iterative development
+
+While one-shot prompts are impressive for demos, professional development requires a more thoughtful approach. We'll now proceed with a structured workflow that:
+
+1. **Plans before coding** - Understand the architecture first
+2. **Implements in phases** - Build incrementally with checkpoints
+3. **Reviews each step** - Catch issues early
+4. **Maintains control** - You make the key decisions
+
+This takes longer but results in:
+- ✅ Code you understand and can maintain
+- ✅ Architecture that fits your needs
+- ✅ Proper error handling and edge cases
+- ✅ Learning opportunities at each step
+
+#### The rise of the Product Manager mindset
+AI works best with detailed specifications, not agile "figure it out as we go." Embrace structured planning.
+
+Before generating any code, we'll have AI create a phased implementation plan. This:
+- ✅ Keeps AI focused and prevents scope creep
+- ✅ Gives you a roadmap to refer back to
+- ✅ Makes it easy to resume work across sessions
+- ✅ Documents architectural decisions
+
+1. **Create a plans directory:**
+
+   ```bash
+   mkdir plans
+   ```
+
+2. **Start a new chat in Cursor** and use this prompt:
+
+   ````
+   I'm extending a JupyterLab image viewer to add image editing capabilities.
+
+   Please create a detailed implementation plan and save it to plans/image-editing-feature.md
+
+   **Requirements:**
+   - Add filter buttons (grayscale, sepia, blur, sharpen)
+   - Use Pillow (PIL) on the backend for processing
+   - New REST endpoint `/edit-image` for transformations
+   - Update frontend to display edited images immediately
+   - Basic crop functionality (50% from center)
+   - Brightness/contrast sliders
+   - Save edited image back to disk
+
+   **DO NOT WRITE CODE YET.** Create a phased plan with:
+
+   **Phase 1: MVP**
+   - Basic filter buttons (grayscale, sepia)
+   - Backend endpoint scaffolding
+   - Frontend display of processed images
+
+   **Phase 2: Advanced Filters**
+   - Blur and sharpen filters
+   - Crop functionality
+   - Brightness/contrast adjustments
+
+   **Phase 3: Polish**
+   - Save functionality
+   - Undo/redo buttons
+   - Loading states and error handling
+
+   For each phase, list:
+   - Specific files to create/modify
+   - Python/TypeScript dependencies needed
+   - Testing approach
+   - Potential issues to watch for
+
+   Save this plan to plans/image-editing-feature.md
+   ````
+
+3. **Review the plan:**
+   - Open `plans/image-editing-feature.md`
+   - Read through each phase
+   - Ask questions if anything is unclear:
+     ```
+     In Phase 1, why did you choose to handle images as base64?
+     What are the alternatives?
+     ```
+
+4. **Commit the plan:**
+
+   ```bash
+   git add plans/image-editing-feature.md
+   git commit -m "Add implementation plan for image editing feature"
+   ```
+
+**Why this matters:** You now have a versioned plan that AI (and you) can reference. As you work through phases, AI will stay focused on the current step.
+
+:::{tip} Planning Mode vs. File-Based Plans
+Cursor has a "Plan" mode that creates temporary plans. **Don't use it.** File-based plans are:
+- ✅ Versioned in Git
+- ✅ Synced across machines
+- ✅ Reviewable and editable
+- ✅ Persistent across sessions
+
+Always save plans to files: `plans/*.md`
+:::
+
+
 
 ### 🖥️  Demo: AI from the command line (10 minutes)
 - Demonstrate using Claude Code for development workflow
-- Study hall is a good time to try it out
-
-
 
 ## 🤔 Reflection and next steps
 
