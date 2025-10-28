@@ -208,7 +208,7 @@ We'll work with **Cursor** to demonstrate the AI-assisted workflow, then repeat 
   - Requires Claude subscription or Anthropic API key. Can also work through cloud providers, like Amazon Bedrock
   - Works with Opus 4.1, Sonnet 4.5, Haiku 4.5, and other Claude models
 - **Best for:** CLI warriors who live in the terminal
-- **Alternatives:** [Gemini CLI](https://github.com/google-gemini/gemini-cli) (free tier available), [Cline](https://github.com/cline/cline) (VS Code extension with CLI mode, free), [Continue](https://github.com/continuedev/continue) (IDE/terminal/CI agent, free), [Plandex](https://github.com/plandex-ai/plandex) (designed for large projects), [aichat](https://github.com/sigoden/aichat) (all-in-one LLM CLI), [GitHub Copilot CLI](https://github.com/github/copilot-cli), [Aider](https://github.com/Aider-AI/aider) (Git-integrated, open-source), [Google Jules](https://ai.google.dev/docs/jules) (async background agent, beta)
+- **Alternatives:** [Gemini CLI](https://github.com/google-gemini/gemini-cli) (free tier available), [Cline](https://github.com/cline/cline) (VS Code extension with CLI mode, free), [Continue](https://github.com/continuedev/continue) (IDE/terminal/CI agent, free), [Plandex](https://github.com/plandex-ai/plandex) (designed for large projects), [aichat](https://github.com/sigoden/aichat) (all-in-one LLM CLI), [GitHub Copilot CLI](https://github.com/github/copilot-cli), [Aider](https://github.com/Aider-AI/aider) (Git-integrated, open-source), [Google Jules](https://jules.google/) (async background agent, beta)
 - **Install:** Requires Node.js 18+, then `npm install --global @anthropic/claude-code`
 
 :::{note} Further Reading
