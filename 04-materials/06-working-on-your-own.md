@@ -158,7 +158,7 @@ Themes are also great conversation starters - share your theme with other worksh
 
 **Complexity**: Intermediate (Frontend + Server)
 **Time**: 30-40 minutes
-**What you'll learn**: REST API integration, backend data processing, graceful error handling
+**What you'll work on**: REST API integration, backend data processing, error handling
 
 **The Prompt**:
 ```
