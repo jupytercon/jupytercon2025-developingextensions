@@ -511,4 +511,3 @@ The patterns you've learned here - using AI assistance effectively, reading docu
 
 Keep building, keep learning, and welcome to the JupyterLab extension developer community! 🚀
 :::
-
