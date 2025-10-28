@@ -20,7 +20,7 @@ We will be using the [official template](https://github.com/jupyterlab/extension
 This is an **open exploration session** - similar to office hours or a study hall. You'll choose a project that interests you and work on it with instructor support. Don't worry about finishing - the goal is to practice the development workflow and problem-solving.
 
 :::{tip} Choose Your Own Adventure
-You have three paths:
+You have two paths:
 
 1. **Build from Scratch** - Create a new extension using the template and AI assistance
 2. **Contribute to Existing Extensions** - Add features or fix issues in established projects
@@ -237,9 +237,35 @@ Contributing to established extensions is a great way to learn real-world patter
 - Build your portfolio and resume
 - Connect with the Jupyter community
 
-## Community Extensions
-[Jupyterlab-contrib](https://jupyterlab-contrib.github.io/extensions.html)
-[Jupyter Marketplase](https://labextensions.dev/)
+### Open Source Extensions
+
+- [JupyterLab-Contrib Extensions](https://jupyterlab-contrib.github.io/extensions.html) - Community-maintained collection of popular JupyterLab extensions
+- [Jupytext](https://github.com/mwouts/jupytext) - Edit Jupyter notebooks as plain text files (Python, Markdown, R scripts)
+- [anywidget](https://github.com/manzt/anywidget) - Build custom interactive widgets for Jupyter with simple HTML/JS/CSS
+- [ipympl](https://github.com/matplotlib/ipympl) - Interactive Matplotlib figures with pan/zoom controls in notebooks
+- [nbdime](https://github.com/jupyter/nbdime) - Diff and merge notebooks with built-in conflict resolution
+- [JupyterLab LSP](https://github.com/jupyter-lsp/jupyterlab-lsp) - Language Server Protocol integration for code completion and linting
+- [JupyterLab Git](https://github.com/jupyterlab/jupyterlab-git) - Visual Git interface with staging, commits, and diff viewer
+- [jupyter-server-proxy](https://github.com/jupyterhub/jupyter-server-proxy) - Proxy web services running alongside your Jupyter server
+- [jupyter-archive](https://github.com/jupyterlab-contrib/jupyter-archive) - Download and extract archive files (zip, tar.gz) from JupyterLab
+- [ipylab](https://github.com/jtpio/ipylab) - Control JupyterLab from Python notebooks (open files, run commands)
+- [Jupyter AI](https://github.com/jupyterlab/jupyter-ai) - Native AI assistant chat interface powered by various LLM providers
+- [jupyterlab-code-formatter](https://github.com/jupyterlab-contrib/jupyterlab_code_formatter) - Format code cells with Black, isort, autopep8, and more
+- [jupyter-collaboration](https://github.com/jupyterlab/jupyter-collaboration) - Real-time collaborative editing of notebooks and files
+- [jupysql-plugin](https://github.com/ploomber/jupysql-plugin) - Interactive SQL client with query history and table explorer
+- [Mitosheet](https://github.com/mito-ds/mito) - Spreadsheet interface that generates Python code for data transformations
+- [nbgrader](https://github.com/jupyter/nbgrader) - Create and grade assignments with autograding and manual feedback
+
+### 🐛 Beginner-Friendly GitHub
+
+Want to contribute to JupyterLab itself? Here are good first issues:
+
+**JupyterLab Core:**
+- [Good First Issues](https://github.com/jupyterlab/jupyterlab/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+- [Documentation Issues](https://github.com/jupyterlab/jupyterlab/issues?q=is%3Aissue+is%3Aopen+label%3Adocumentation)
+
+**Extension Template:**
+- [Extension Template Issues](https://github.com/jupyterlab/extension-template/issues)
 
 
 ## 🔧 Key JupyterLab APIs
@@ -260,32 +286,24 @@ Contributing to established extensions is a great way to learn real-world patter
 - **Jupyter Server Handlers**: [Documentation](https://jupyter-server.readthedocs.io/en/latest/developers/extensions.html)
 - **Tornado Request Handlers**: [Tornado Docs](https://www.tornadoweb.org/en/stable/web.html)
 
-
-## 🐛 Beginner-Friendly GitHub
-
-Want to contribute to JupyterLab itself? Here are good first issues:
-
-**JupyterLab Core:**
-- [Good First Issues](https://github.com/jupyterlab/jupyterlab/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
-- [Documentation Issues](https://github.com/jupyterlab/jupyterlab/issues?q=is%3Aissue+is%3Aopen+label%3Adocumentation)
-
-**Extension Template:**
-- [Extension Template Issues](https://github.com/jupyterlab/extension-template/issues)
-
 ## 📚 Essential Resources
 
-### Documentation:
+### Documentation
 - [JupyterLab Extension Developer Guide](https://jupyterlab.readthedocs.io/en/latest/extension/extension_dev.html)
 - [JupyterLab API Reference](https://jupyterlab.readthedocs.io/en/latest/api/)
 - [Jupyter Server Extension Guide](https://jupyter-server.readthedocs.io/en/latest/developers/extensions.html)
 
-### Code Examples:
+### Code Examples
 - [Extension Examples Repository](https://github.com/jupyterlab/extension-examples) - 40+ example extensions
 - [JupyterLab GitHub](https://github.com/jupyterlab/jupyterlab) - Core extensions source code
 
-### Tools:
+### Tools
 - [Browser DevTools](https://developer.chrome.com/docs/devtools/overview) - Debug frontend
 - Run JupyterLab with `--debug` to see more server side details
+
+### Extension ecosystem
+- [Jupyter Marketplace](https://labextensions.dev/) - provides up-to-date snapshot of JupyterLab extension ecosystem with currently active JupyterLab extensions, PyPI download stats, GitHub stars, time since last update
+- [jupyterlab-extension](https://github.com/topics/jupyterlab-extension) simplifies GitHub search for existing extensions
 
 ## 🚀 Getting Started Checklist
 
@@ -305,21 +323,34 @@ Want to contribute to JupyterLab itself? Here are good first issues:
 - Discuss with neighbors
 - [Zulip](https://jupyter.zulipchat.com/#feed) for real-time chat
 
-### After the tutorial
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/jupyter)
+:::{tip} Core Developers Are Here!
+Many Jupyter and JupyterLab core developers are in the room and at JupyterCon 2025. This is a unique opportunity to:
+- Ask questions about extension development directly from the experts
+- Get feedback on your architecture and design decisions
+- Learn about upcoming changes and best practices
+- Discuss contribution opportunities
+- Connect with the people who built the platform you're extending
 
-**To continue developing**:
+Don't be shy - they're here to help and love seeing new contributors!
+:::
+
+
+### After the tutorial
+
+#### To continue developing
 - Add automated tests (`pytest` for Python, `jest` for TypeScript)
 - Set up continuous integration (template includes GitHub Actions)
 - Write comprehensive documentation
 - Create example notebooks showing your extension in use
 
-**To share your work**:
+#### To share your work
 - Publish to PyPI: `python -m build && twine upload dist/*`
+- Open-source on GitHub: write a good README, choose t
 - Write a blog post about your development experience
 - Present at a local developer meetup or a conference
+- Track downloads 
 
-**To contribute more**:
+#### To contribute more
 - Subscribe to issues on extensions you've contributed to
 - Join the [Jupyter Zulip chat](https://jupyter.zulipchat.com) for real-time discussions and help from contributors and users
 - Participate in the [Jupyter Discourse forum](https://discourse.jupyter.org/)
