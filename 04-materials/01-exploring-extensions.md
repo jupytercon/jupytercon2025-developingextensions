@@ -64,7 +64,7 @@ graph TB
 ```
 
 
-## Core extensions
+## {term}`Core extensions <core extension>`
 
 JupyterLab itself is a collection of extensions.
 For example, the Notebook editor, file browser, and code console are all core extensions
