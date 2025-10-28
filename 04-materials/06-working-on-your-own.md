@@ -502,6 +502,7 @@ Common tokens and services you'll use:
 - [Browser DevTools](https://developer.chrome.com/docs/devtools/overview) - Debug frontend
 - Run JupyterLab with `--debug` flag for detailed server logs
 - [Jupyter Marketplace](https://labextensions.dev/) - Snapshot of active extensions with stats
+- [JupyterLab-Contrib Extensions](https://jupyterlab-contrib.github.io/extensions.html) - A list of some unofficial extensions by the community
 - [jupyterlab-extension topic](https://github.com/topics/jupyterlab-extension) - Browse extensions on GitHub
 
 :::{tip} The Journey Continues
