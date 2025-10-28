@@ -57,7 +57,7 @@ The following three examples with prompts have been tested and confirmed working
 
 **Complexity**: Beginner (Frontend only)
 **Time**: 15-20 minutes
-**What you'll learn**: Status bar integration, DOM manipulation, visual effects
+**What you'll work with**: Status bar integration, DOM manipulation, visual effects
 
 **The Prompt**:
 ```
