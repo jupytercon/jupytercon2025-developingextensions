@@ -23,11 +23,11 @@ This module's teaching approach is inspired by:
 :::
 
 
-## AI-assisted development in 2025
+## 🚀 AI-assisted development in 2025
 
 If you haven't used AI-assisted development tools yet, you're about to experience a significant shift in how you write code. AI coding assistants can help you explore APIs, generate boilerplate, debug errors, and iterate on features much faster than traditional workflows.
 
-### Setting expectations
+### 🎯 Setting expectations
 
 Before we dive into tools and techniques, let's set the right mindset for working with AI.
 
@@ -50,7 +50,7 @@ You would never hire a developer and expect absolute perfection in their creativ
 - Treat errors as learning opportunities for both you and the AI
 - Don't be afraid to roll back to the beginning and start over if AI doubled down on a wrong path
 
-### Understanding {term}`LLMs <LLM>` (large language models)
+### 🧠 Understanding {term}`LLMs <LLM>` (large language models)
 
 AI coding assistants are powered by **Large Language Models ({term}`LLMs <LLM>`)** — neural networks trained on vast amounts of text and code. These models can:
 - Understand context from your codebase
@@ -58,7 +58,7 @@ AI coding assistants are powered by **Large Language Models ({term}`LLMs <LLM>`)
 - Explain existing code and suggest improvements
 - Debug errors by analyzing stack traces and code patterns
 
-### Where {term}`LLMs <LLM>` live: deployment models
+### ☁️ Where {term}`LLMs <LLM>` live: deployment models
 
 **Frontier Models (Cloud-Hosted):**
 - **Deployment:** Run on massive server infrastructure by model providers
@@ -129,7 +129,7 @@ Most AI tools can be "coerced" into using local models by configuring them to po
 :::
 
 
-### AI tools for extension development
+### 🛠️ AI tools for extension development
 
 Not all AI coding tools are created equal. **In this workshop, we'll use {term}`agentic AI <agentic AI>` tools** that can understand your codebase, execute commands, and iterate with you—a fundamentally different and more productive experience than chat or autocomplete.
 
@@ -193,7 +193,7 @@ Not all AI coding tools are created equal. **In this workshop, we'll use {term}`
 
 We'll work with **Cursor** to demonstrate the AI-assisted workflow, then repeat key steps using **Claude Code** for a CLI-based approach. Both tools offer similar capabilities, so you can choose whichever fits your preferred workflow after the workshop.
 
-#### 1. **Cursor**
+#### 1. 🖱️ **Cursor**
 - **What it is:** A fork of VS Code with deep AI integration
 - **Pricing:** Free plan available (includes one-week Pro trial, limited agent requests, and tab completions). See [cursor.com/pricing](https://cursor.com/pricing) for details.
 - **LLM Options:**
@@ -204,7 +204,7 @@ We'll work with **Cursor** to demonstrate the AI-assisted workflow, then repeat 
 - **Alternatives:** [Windsurf](https://codeium.com/windsurf) (free tier, $15/mo Pro), [GitHub Copilot Workspace](https://github.com/features/copilot) ($10-39/mo), [Cline](https://cline.bot/) (VS Code extension), [Replit Agent](https://replit.com/) (cloud-based)
 - **Download:** [cursor.com](https://cursor.com/)
 
-#### 2. **Claude Code**
+#### 2. 💻 **Claude Code**
 - **What it is:** Command-line interface for Claude, optimized for coding workflows
 - **LLM Options:**
   - Requires Anthropic API key
@@ -224,9 +224,9 @@ We'll work with **Cursor** to demonstrate the AI-assisted workflow, then repeat 
 - [LM Studio](https://lmstudio.ai/) — GUI for running local LLMs
 :::
 
-## Getting started
+## 🏁 Getting started
 
-### Repo
+### 📦 Repo
 For this module, we will start with an existing extension that we built in chapter 2. If you are not caught up or just joining us for the afternoon session, please grab a reference implementation from [our demo repository](https://github.com/mfisher87/jupytercon2025-developingextensions-demo).
 
 In {doc}`02-anatomy-of-extensions`, we started off by cloning an official [JupyterLab extension template](https://github.com/jupyterlab/extension-template).
@@ -235,7 +235,7 @@ Then, we built a JupyterLab extension that displays random images with captions 
 
 Now, we'll use AI to extend this viewer with image editing capabilities.
 
-### Option 1: Continue with your own extension
+### 🔄 Option 1: Continue with your own extension
 
 If you completed the anatomy module and want to continue with your extension:
 
@@ -260,7 +260,7 @@ If you completed the anatomy module and want to continue with your extension:
 
 4. Skip to [AI tool](#ai-tool) below.
 
-### Option 2: Clone the finished extension
+### 📥 Option 2: Clone the finished extension
 
 If you'd prefer to start fresh or didn't complete the anatomy module:
 
@@ -293,13 +293,13 @@ If you'd prefer to start fresh or didn't complete the anatomy module:
 Make sure your git tree is clean, there are no unsaved and uncommitted files. This is going to be important later
 
 (ai-tool)=
-### AI tool
+### ⚙️ AI tool
 
 We will be using Cursor and Claude Code throughout this tutorial. Please install them if you would like to follow along.
 
 You are totally welcome to use any AI tool you have installed on your computer! Many of them follow similar patterns and expose similar functionality.
 
-#### Setting up Cursor
+#### 🎨 Setting up Cursor
 
 1. **Download Cursor**
    - Visit [cursor.com](https://cursor.com/) and download the installer for your operating system
@@ -323,7 +323,7 @@ The free plan is perfect for this workshop! You'll have access to AI features in
 - Code completions
 :::
 
-#### Setting up Claude Code (optional)
+#### ⌨️ Setting up Claude Code (optional)
 
 If you prefer working from the command line, you can also install Claude Code:
 
@@ -340,39 +340,39 @@ If you prefer working from the command line, you can also install Claude Code:
    - Sign up for an account and generate an API key
    - Note: This requires payment setup, unlike Cursor's free plan
 
-## Getting started  (15 minutes)
+## ✅ Getting started  (15 minutes)
 
 By now, you should have:
 - ✅ Cursor installed with a free account created
 - ✅ (Optional) Claude Code installed with an API key configured
 - ✅ Your extension repository open and ready to work with
 
-## Exercise A (15 minutes): Understand AI rules
+## 📋 Exercise A (15 minutes): Understand AI rules
 - Inspect AGENTS.md
 - Familiarize yourself with UI of Cursor
 - Choose AI model
 - Ask AI chat questions to verify that it recognizes the rules
 
-## Exercise B (30 minutes): Build it!
+## 🏗️ Exercise B (30 minutes): Build it!
 - Discuss our goal briefly (go from image viewer to image editor)
 - Send a single prompt to Cursor
 - Basic debugging
 - Power and peril of one-shot prompts
 - git restore . to undo the changes made by the one-shot prompt?
 
-### Exercise C (20 minutes): Product manager framework
+### 📊 Exercise C (20 minutes): Product manager framework
 - Learn how to use structured approach to AI-assisted development
 - User stories
 
-###  Demo: AI from the command line (10 minutes)
+### 🖥️  Demo: AI from the command line (10 minutes)
 - Demonstrate using Claude Code for development workflow
 - Study hall is a good time to try it out
 
-## Reflection and next steps
+## 🤔 Reflection and next steps
 
 After completing this exercise (via either path), take a moment to reflect:
 
-### Quick reflection (optional)
+### 💭 Quick reflection (optional)
 
 Think about these questions — we'll discuss as a group:
 
@@ -395,9 +395,9 @@ Think about these questions — we'll discuss as a group:
 We'll share experiences as a group and create a live poll about which techniques resonated most. Your instructor will facilitate this discussion.
 :::
 
-### Key takeaways
+### 🔑 Key takeaways
 
-### Challenge extensions (optional)
+### 🎓 Challenge extensions (optional)
 
 
 :::{important} 💾 **Final Git commit and push!**
@@ -410,7 +410,7 @@ git push
 
 ---
 
-## What's next?
+## 🎯 What's next?
 
 You've now experienced the complete AI-assisted development workflow:
 - ✅ Used AI to generate code for new features
@@ -418,7 +418,7 @@ You've now experienced the complete AI-assisted development workflow:
 - ✅ Learned to provide effective context and constraints
 - ✅ Understood when to accept AI suggestions vs. when to customize
 
-### Continuing your journey
+### 🌟 Continuing your journey
 
 The next chapter provides **independent exploration time** where you can:
 
