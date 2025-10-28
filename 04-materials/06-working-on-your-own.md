@@ -98,7 +98,7 @@ This is a perfect first project - it's self-contained, purely visual, and you'll
 
 **Complexity**: Beginner (Frontend only)
 **Time**: 20-30 minutes
-**What you'll learn**: Theme customization, CSS styling, JupyterLab theming system
+**What you'll work with**: Theme customization, CSS styling, JupyterLab theming system
 
 **The Prompt**:
 ```
