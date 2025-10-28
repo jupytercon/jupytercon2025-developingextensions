@@ -61,6 +61,8 @@ provide new interface features which trigger behavior on the server.
 
 Examples:
 
+* [jupyterlab-git](https://github.com/jupyterlab/jupyterlab-git)
+  provides visual git management.
 * [jupyter-resource-usage](https://github.com/jupyter-server/jupyter-resource-usage)
   displays information about kernel resource (CPU, RAM) usage in the frontend.
 * [gator](https://github.com/mamba-org/gator) enables graphical management of
