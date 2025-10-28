@@ -13,7 +13,6 @@ In this module, we will:
 :::
 
 :::{tip} Terms
-{term}`extension <extension>`, {term}`plugin <plugin>`, {term}`widget <widget>`,
 {term}`main area widget <main area widget>`, {term}`command <command>`,
 {term}`command palette <command palette>`, {term}`launcher <launcher>`
 :::
@@ -56,7 +55,7 @@ Before we get started, we need to set up:
 * A repository on GitHub
 
 
-### Dependency environment
+### 🔧 Dependency environment
 
 Create an environment named `jupytercon2025`.
 We'll use this environment for the rest of this workshop:
@@ -79,7 +78,7 @@ micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
 ```
 
 
-### Important Git settings
+### 🔧 Important Git settings
 
 1. Git needs to know who you are.
 
@@ -108,7 +107,7 @@ micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
 :::
 
 
-### Create a GitHub repository and clone it locally
+### 🔧 Create a GitHub repository and clone it locally
 
 0. Change to the parent directory where you want to work, e.g.
 
@@ -181,38 +180,6 @@ micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
    :::
 
    **Copy the entire repository URL for the next step!**
-
-
-## Extensions and plugins and widgets -- oh, my!
-
-While they sound similar, `extensions <extension>` and {term}`plugins <plugin>` serve
-different purposes.
-
-{term}`Plugins <plugin>` are JupyterLab's fundamental building blocks which define
-functionality and business logic.
-{term}`Extensions <extension>` are the delivery mechanism or "container" for plugins.
-Extensions are the thing that end-users `pip install`.
-
-:::{pull-quote}
-End-users care about extensions, and developers care about plugins.
-:::
-
-A {term}`widget <widget>` is a user interface component provided by a plugin, either for
-the end user to display (e.g. an interactive visualization of data) or for JupyterLab to
-display (e.g. a document viewer that opens when you double-click a particular file
-type).
-
-```{mermaid}
-graph TB
-
-    subgraph Extension["Extension"]
-        subgraph Plugin["Plugin(s) (n>=1)"]
-            Widget["Widget(s) (n>=0)"]
-        end
-    end
-
-    style Widget stroke-dasharray: 5 5
-```
 
 
 ## What are we building together?
