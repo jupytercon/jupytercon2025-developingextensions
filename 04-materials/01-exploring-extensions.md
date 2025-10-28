@@ -23,6 +23,9 @@ system, for interactive computation.
 
 ## [The JupyterLab interface](https://jupyterlab.readthedocs.io/en/latest/user/interface.html)
 
+We assume you've seen this interface before, but let's quickly go over the technical
+terms for the components of the interface so we're all on the same page.
+
 [![The JupyterLab interface, including the "menu bar", "main area", "status bar", "left side panel", and "right side panel"](../assets/images/jupyterlab-interface.png)](../assets/images/jupyterlab-interface.png)
 
 1. {term}`Menu bar`
