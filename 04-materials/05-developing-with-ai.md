@@ -195,22 +195,20 @@ We'll work with **Cursor** to demonstrate the AI-assisted workflow, then repeat 
 
 #### 1. 🖱️ **Cursor**
 - **What it is:** A fork of VS Code with deep AI integration
-- **Pricing:** Free plan available (includes one-week Pro trial, limited agent requests, and tab completions). See [cursor.com/pricing](https://cursor.com/pricing) for details.
+- **Pricing:** Free Hobby plan (includes one-week Pro trial, limited agent requests, and limited tab completions). Paid plans \$20-200/mo offer extended/unlimited usage limits and faster response times. See [cursor.com/pricing](https://cursor.com/pricing) for details.
 - **LLM Options:**
-  - Built-in models (Claude Sonnet 4.5, GPT-5, Gemini 2.5 Pro) with Cursor subscription (starting $20/month)
-  - Bring your own API key (OpenAI, Anthropic, Google, or other providers)
-  - Can be configured to use local models (Qwen3-Coder, GLM-4.5, DeepSeek-R1) via OpenAI-compatible APIs
+  - Built-in models (Claude Sonnet 4.5, GPT-5, Gemini 2.5 Pro) with Cursor subscription
 - **Best for:** Developers who want a polished, GUI-driven experience
-- **Alternatives:** [Windsurf](https://codeium.com/windsurf) (free tier, $15/mo Pro), [GitHub Copilot Workspace](https://github.com/features/copilot) ($10-39/mo), [Cline](https://cline.bot/) (VS Code extension), [Replit Agent](https://replit.com/) (cloud-based)
+- **Alternatives:** [Windsurf](https://codeium.com/windsurf) (free tier, \$15/mo Pro), [GitHub Copilot Workspace](https://github.com/features/copilot) (\$10-39/mo), [Cline](https://cline.bot/) (VS Code extension, free), [Continue](https://continue.dev/) (VS Code/JetBrains extension, free or \$10/mo Teams), [Roo Code](https://roocode.com/) (VS Code extension, free or \$20/mo Pro), [Kilocode](https://kilocode.ai/) (VS Code/JetBrains, free or \$29/user/mo Teams), [Replit Agent](https://replit.com/) (cloud-based)
 - **Download:** [cursor.com](https://cursor.com/)
 
 #### 2. 💻 **Claude Code**
 - **What it is:** Command-line interface for Claude, optimized for coding workflows
 - **LLM Options:**
-  - Requires Anthropic API key
-  - Works with Claude Sonnet 4.5, Claude 4 Opus, and other Claude models
+  - Requires Claude subscription or Anthropic API key. Can also work through cloud providers, like Amazon Bedrock
+  - Works with Opus 4.1, Sonnet 4.5, Haiku 4.5, and other Claude models
 - **Best for:** CLI warriors who live in the terminal
-- **Alternatives:** [Aider](https://aider.chat/) (open-source, multi-model), [Gemini CLI](https://cloud.google.com/gemini/code-assist) (free tier), Cline CLI mode
+- **Alternatives:** [Gemini CLI](https://github.com/google-gemini/gemini-cli) (free tier available), [Cline](https://github.com/cline/cline) (VS Code extension with CLI mode, free), [Continue](https://github.com/continuedev/continue) (IDE/terminal/CI agent, free), [Plandex](https://github.com/plandex-ai/plandex) (designed for large projects), [aichat](https://github.com/sigoden/aichat) (all-in-one LLM CLI), [GitHub Copilot CLI](https://github.com/github/copilot-cli), [Aider](https://github.com/Aider-AI/aider) (Git-integrated, open-source), [Google Jules](https://ai.google.dev/docs/jules) (async background agent, beta)
 - **Install:** Requires Node.js 18+, then `npm install --global @anthropic/claude-code`
 
 :::{note} Further Reading
@@ -317,10 +315,7 @@ You are totally welcome to use any AI tool you have installed on your computer! 
    - See [cursor.com/pricing](https://cursor.com/pricing) for details on what's included
 
 :::{tip}
-The free plan is perfect for this workshop! You'll have access to AI features including:
-- Agent mode for building features
-- AI chat for asking questions
-- Code completions
+We recommend you sign up for a free Hobby plan for this workshop! You'll have one week to access agentic AI features.
 :::
 
 #### ⌨️ Setting up Claude Code (optional)
