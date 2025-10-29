@@ -1132,7 +1132,7 @@ when we initialize the widget.
 
 ```{code} typescript
 :linenos:
-:emphasize-lines: 10-19
+:emphasize-lines: 10-18
 :filename: src/widget.ts
 
 export class ImageCaptionMainAreaWidget extends MainAreaWidget<ImageCaptionWidget> {
