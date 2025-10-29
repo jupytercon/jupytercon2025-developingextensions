@@ -463,7 +463,7 @@ Open your `AGENTS.md` file and find the "Environment Activation (CRITICAL)" sect
  **All `jlpm`, `pip`, and `jupyter` commands MUST run within the activated environment.**
 ```
 
-This tells the AI assistant to use `micromamba` with the `jupytercon2025` environment that we're using in this workshop, making it easier for the AI to run build commands correctly.
+This tells the AI assistant to use `micromamba` with the `jupytercon2025` environment that we're using in this workshop, making it easier for the AI to run build commands correctly. If you use other environment manager, adjust accordingly.
 
 ### Verify that Cursor recognizes the rules
 
