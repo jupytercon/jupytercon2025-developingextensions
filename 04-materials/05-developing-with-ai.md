@@ -809,8 +809,25 @@ Always save plans to files: `plans/*.md`
 
 ### Implement Phase by Phase
 
-:::{tip}
-**Context window management:** Instead of one long chat for everything, start fresh for each phase.
+:::{tip} Managing Context and Costs
+Instead of one long chat for everything, start fresh for each phase.
+
+Why new chats? It has do with LLMs context window. Saturating the context window leads to AI confusion and runs up the costs. File-based plans allow us to start new chats and still keep the required context.
+
+As you work through phases, keep an eye on these metrics:
+
+**Context window percentage** (shown in Cursor chat):
+- **< 30%:** Healthy, plenty of room
+- **30-50%:** Good, AI still focused
+- **50-70%:** Getting crowded, consider new chat soon
+- **> 70%:** Start new chat immediately
+
+**When to start a new chat:**
+- ✅ Completed a phase (Phase 1 → Phase 2)
+- ✅ Switching focus areas (backend → frontend)
+- ✅ Context above 50%
+- ✅ AI seems confused or gives inconsistent answers
+- ✅ Major refactoring complete
 :::
 
 1. **Start a NEW chat** for Phase 1 (`Cmd/Ctrl + K`)
@@ -843,7 +860,14 @@ Always save plans to files: `plans/*.md`
    Phase 1 is complete. Now implement advanced filters (blur, sharpen, crop).
    ```
 
-**Why new chats?** Keeps context window small (<50%), prevents AI confusion, reduces costs. File-based plans allow us to start new chats and still keep the required context.
+6. **Commit after Phase 2 works:**
+
+   ```bash
+   git add .
+   git commit -m "Phase 2: Add advanced filters (blur, sharpen, crop)"
+   ```
+
+::: Adopt a "product manager" mindset
 
 :::{important} 💾 **Final Git commit and push!**
 ```bash
