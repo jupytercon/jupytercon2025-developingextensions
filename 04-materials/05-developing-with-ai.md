@@ -545,10 +545,16 @@ You can downgrade to faster/cheaper models (Claude Haiku 4.5, GPT-5 Mini, or GLM
    5. Build my extension
    ```
 
-   AI should respond with:
-   - Checking your enviro
-   - Mentions rules from AGENTS.md (strict mode, camelCase, etc.)
-   - Shows awareness of JupyterLab patterns
+   AI should respond with (Claude Sonnet 4.5):
+   - Checking your environment and switching to `jupytercon2025` for the rest of the commands
+   - Verify tools like `jlpm` are available in the environment`
+   - Checking that extension is currently installed by looking into the outputs of `jupyter labextension list` and `jupyter server extension list`
+   - Building the extension for you
+   - Providing a summary of operations and suggestions on how to get it running
+
+  :::{dropdown} Here's how it looks
+  ![Prepare for development in Cursor/AI dev environment](../assets/images/prepare-for-dev.png)
+  :::
 
 :::{tip} You're Ready!
 Once AI can reference your project structure, coding rules, and build your project, you're set up for success. This configuration is what separates "AI that generates random code" from "AI that writes code that matches your project's patterns."
