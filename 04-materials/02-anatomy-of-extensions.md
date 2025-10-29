@@ -612,7 +612,6 @@ the {term}`command palette <command palette>`.
         // Then add it to the main area:
         app.shell.add(widget, 'main');
       },
-      icon: imageIcon,
       label: 'View a random image & caption'
     });
 
