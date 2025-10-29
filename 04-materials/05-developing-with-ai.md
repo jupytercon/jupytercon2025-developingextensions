@@ -264,7 +264,7 @@ If you'd prefer to start fresh or didn't complete the anatomy module:
 
 1. Ensure you are authenticated with GitHub CLI:
 
-   See {ref}`Chapter 2 → Create a GitHub repository and clone it locally <gh-auth-setup>` (steps 1–2) for GitHub CLI authentication and `gh auth setup-git`.
+   See {ref}`Chapter 2 → Create a GitHub repository and clone it locally <gh-auth-setup>` (steps 2-3) for GitHub CLI authentication and `gh auth setup-git`.
 
 2. Fork the demo repository to your GitHub account and clone it locally:
 
