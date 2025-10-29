@@ -13,7 +13,6 @@ In this module, we will:
 :::
 
 :::{tip} Terms
-{term}`extension <extension>`, {term}`plugin <plugin>`, {term}`widget <widget>`,
 {term}`main area widget <main area widget>`, {term}`command <command>`,
 {term}`command palette <command palette>`, {term}`launcher <launcher>`
 :::
@@ -56,7 +55,7 @@ Before we get started, we need to set up:
 * A repository on GitHub
 
 
-### Dependency environment
+### 🔧 Dependency environment
 
 Create an environment named `jupytercon2025`.
 We'll use this environment for the rest of this workshop:
@@ -75,11 +74,11 @@ micromamba activate jupytercon2025
 ## gh: The GitHub CLI
 ## copier: A tool for quickstarting an extension from a template
 ## jinja2-time: A dependency of the official JupyterLab extension template
-micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
+micromamba install python pip nodejs=22 gh "copier~=9.2" jinja2-time
 ```
 
 
-### Important Git settings
+### 🔧 Important Git settings
 
 1. Git needs to know who you are.
 
@@ -108,7 +107,7 @@ micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
 :::
 
 
-### Create a GitHub repository and clone it locally
+### 🔧 Create a GitHub repository and clone it locally
 
 0. Change to the parent directory where you want to work, e.g.
 
@@ -180,39 +179,7 @@ micromamba install python pip nodejs gh "copier~=9.2" jinja2-time
    `https://github.com/`.
    :::
 
-   **Copy the entire repository URL for the next step!**
-
-
-## Extensions and plugins and widgets -- oh, my!
-
-While they sound similar, `extensions <extension>` and {term}`plugins <plugin>` serve
-different purposes.
-
-{term}`Plugins <plugin>` are JupyterLab's fundamental building blocks which define
-functionality and business logic.
-{term}`Extensions <extension>` are the delivery mechanism or "container" for plugins.
-Extensions are the thing that end-users `pip install`.
-
-:::{pull-quote}
-End-users care about extensions, and developers care about plugins.
-:::
-
-A {term}`widget <widget>` is a user interface component provided by a plugin, either for
-the end user to display (e.g. an interactive visualization of data) or for JupyterLab to
-display (e.g. a document viewer that opens when you double-click a particular file
-type).
-
-```{mermaid}
-graph TB
-
-    subgraph Extension["Extension"]
-        subgraph Plugin["Plugin(s) (n>=1)"]
-            Widget["Widget(s) (n>=0)"]
-        end
-    end
-
-    style Widget stroke-dasharray: 5 5
-```
+   **Copy the entire repository URL** and **leave this terminal window open** for the next step!
 
 
 ## What are we building together?
@@ -236,20 +203,27 @@ Our extension will:
 
 1. Instantiate the template to get started on our new extension!
 
-    ```bash
-    copier copy --trust https://github.com/jupyterlab/extension-template .
-    ```
+   We've pre-populated the answers to many of the questions the template normally asks
+   in the command below.
+   If you want to use this template in the future for a different project, omit all the
+   `--data` arguments.
 
-    Please be sure to correctly input:
+   ```bash
+   copier copy --trust --vcs-ref v4.5.0 https://github.com/jupyterlab/extension-template . \
+     --data kind=frontend-and-server \
+     --data labextension_name=jupytercon2025-extension-workshop \
+     --data python_name=jupytercon2025_extension_workshop \
+     --data project_short_description="A JupyterLab extension that displays a random image and caption." \
+     --data has_settings=false \
+     --data has_binder=false \
+     --data test=true \
+     --data has_ai_rules=true \
+     --data create_claude_symlink=true \
+     --data create_gemini_symlink=true
+   ```
 
-    * Your name and e-mail
-    * Kind: `frontend-and-server`
-    * Javascript package name: `jupytercon2025-extension-workshop`
-    * Repository URL: as printed by the `gh repo view` command in the previous step
-
-    The remaining values can be left as default.
-
-    ![A demo of instantiating an extension project from the official template](../assets/images/init-from-template.gif)
+    Please be sure to correctly input the repository URL as printed by the `gh repo
+    view` command in the previous step.
 
 2. List the files that were created (`ls -la` or `tree -a` are good options).
 
@@ -1107,10 +1081,10 @@ resources of the JupyterLab server, for example to read data from disk.
 We know that server extensions provide HTTP endpoints that can be consumed by
 {term}`frontend extensions <frontend extension>`.
 
-We know how to provide JSON data from the server and consume it in a {term}`widget
-<widget>`.
+We know how to provide JSON data from the server and consume it in a
+{term}`widget <widget>`.
 
-We know how to dynamically update {term}`widget` HTML elements.
+We know how to dynamically update {term}`widget <widget>` HTML elements.
 
 
 ## 😖 The widget isn't interactive!
