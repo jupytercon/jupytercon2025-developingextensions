@@ -546,6 +546,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
 
         // Then add it to the main area:
         app.shell.add(widget, 'main');
+        return widget;
       },
       label: 'View a random image & caption'
     });
