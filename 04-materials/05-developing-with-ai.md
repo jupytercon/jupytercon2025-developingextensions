@@ -8,7 +8,7 @@
 
 ::::{tip} Outcome
 After this module, you will have:
-- Implemented an image‑editing feature in the demo extension (or a meaningful enhancement to your own), verified it in JupyterLab, and committed your changes
+- Implemented an image‑editing feature in the demo extension, verified it in JupyterLab, and committed your changes
 - Practiced one‑shot vs structured prompting, model selection, and context management; comfortable reviewing, iterating on, and rolling back AI‑generated edits
 - Confidence to continue exploring extension ideas primarily by prompting, while being able to understand and edit the generated code
 ::::
