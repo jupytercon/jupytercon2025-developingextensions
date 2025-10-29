@@ -809,9 +809,60 @@ Always save plans to files: `plans/*.md`
 :::
 
 
+:::{important} 💾 **Final Git commit and push!**
+```bash
+git add .
+git commit -m "Complete Exercise 1: Image editing with AI assistance"
+git push
+```
+:::
 
 ### 🖥️  Demo: AI from the command line (10 minutes)
-- Demonstrate using Claude Code for development workflow
+
+1. **Start an interactive session**:
+
+   ```bash
+   claude-code
+   ```
+
+2. **Provide context** by referencing files in your prompt:
+
+   ```
+   I'm working on a JupyterLab extension. Please read these files for context:
+   - src/widget.ts
+   - jupytercon2025_extension_workshop/routes.py
+   - AGENTS.md
+   - package.json
+   - pyproject.toml
+
+   [Then paste the main prompt about adding image editing capabilities]
+   ```
+
+3. **Review and apply changes**:
+   - Claude Code will show diffs for each file
+   - Type `y` to accept, `n` to skip, or `e` to edit
+   - Changes are applied directly to your files
+
+### Claude Code Tips
+
+**Run commands without leaving the chat:**
+
+```
+Can you also run `jlpm build` to verify this compiles?
+```
+
+**Ask for explanations:**
+
+```
+Before you change the code, explain how Pillow's ImageFilter.BLUR works
+and why you're choosing this approach.
+```
+
+**Request tests:**
+
+```
+Generate pytest tests for the new /edit-image endpoint.
+```
 
 ## 🤔 Reflection and next steps
 
@@ -843,15 +894,6 @@ We'll share experiences as a group and create a live poll about which techniques
 ### 🔑 Key takeaways
 
 ### 🎓 Challenge extensions (optional)
-
-
-:::{important} 💾 **Final Git commit and push!**
-```bash
-git add .
-git commit -m "Complete Exercise 1: Image editing with AI assistance"
-git push
-```
-:::
 
 ---
 
