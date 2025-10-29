@@ -547,6 +547,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
 
         // Then add it to the main area:
         app.shell.add(widget, 'main');
+        return widget;
       },
       label: 'View a random image & caption'
     });
@@ -612,7 +613,6 @@ the {term}`command palette <command palette>`.
         // Then add it to the main area:
         app.shell.add(widget, 'main');
       },
-      icon: imageIcon,
       label: 'View a random image & caption'
     });
 
@@ -822,7 +822,7 @@ import that too while we're here:
 
 ```{code} python
 :linenos:
-:emphasize-lines: 2-4, 10-12
+:emphasize-lines: 1,3-4, 10-12
 :filename: jupytercon2025_extension_workshop/routes.py
 
 import base64
@@ -850,7 +850,7 @@ and then return the string-encoded image data alongside the caption.
 
 ```{code} python
 :linenos:
-:emphasize-lines: 5-13
+:emphasize-lines: 5-17
 :filename: jupytercon2025_extension_workshop/routes.py
 
 class HelloRouteHandler(APIHandler):
@@ -1133,7 +1133,7 @@ when we initialize the widget.
 
 ```{code} typescript
 :linenos:
-:emphasize-lines: 10-19
+:emphasize-lines: 10-18
 :filename: src/widget.ts
 
 export class ImageCaptionMainAreaWidget extends MainAreaWidget<ImageCaptionWidget> {
