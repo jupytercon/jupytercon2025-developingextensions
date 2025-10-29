@@ -179,7 +179,7 @@ micromamba install python pip nodejs=22 gh "copier~=9.2" jinja2-time
    `https://github.com/`.
    :::
 
-   **Copy the entire repository URL for the next step!**
+   **Copy the entire repository URL** and **leave this terminal window open** for the next step!
 
 
 ## What are we building together?
