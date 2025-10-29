@@ -389,7 +389,9 @@ Without proper AI context that AGENTS.md provides, we observed AI generating gen
 3. **Open your extension folder in Cursor**
 
 ```bash
-cursor ~/Projects/jupytercon2025-extension-workshop
+cd ~/Projects/jupytercon2025-extension-workshop
+# OR `cd ~/Projects/jupytercon2025-developingextensions-demo` if using a fork of example repo
+cursor .
 ```
 
 4. **Take a moment to get familiar with the interface**
@@ -406,39 +408,28 @@ cursor ~/Projects/jupytercon2025-extension-workshop
    Open `AGENTS.md`
    Key sections you'll find:
 
-   **Code Quality Rules:**
-   - Use structured logging (not `console.log()`)
-   - Define explicit TypeScript interfaces
-   - Avoid the `any` type
-   - Use typeguards over type casts
-
-   **Naming Conventions:**
-   - Python: `snake_case` for functions, `PascalCase` for classes
-   - TypeScript: `camelCase` for variables, `PascalCase` for classes
-   - No mixing styles!
-
-   **Project Structure Guidelines:**
-   - Frontend code in `src/`
-   - Backend Python in `<extension_name>/`
-   - Commands registered in `src/index.ts`
-   - Routes in `<extension_name>/routes.py`
-
    **JupyterLab-Specific Patterns:**
    - How to register commands
    - When to use `ReactWidget` vs `Widget`
-   - REST API best practices with `ServerConnection`
-   - State persistence with `IStateDB`
+   - REST with `ServerConnection`, state with `IStateDB`
 
-   **Development Workflow:**
-   - When to run `jlpm build` (TypeScript changes)
-   - When to restart Jupyter (Python changes)
-   - How to debug (browser console, terminal logs)
+   **Development Workflow (must-know):**
+   - Run `jlpm build` for TS changes; restart Jupyter for Python changes
+   - Debug via browser console and server logs
+
+   **Code Quality Essentials:**
+   - Prefer user notifications (`Notification.*`, `showErrorMessage`); avoid leaving `console.log()` in committed code
+   - Define interfaces; avoid `any`; use type guards
+
+   **Project Structure:**
+   - Frontend in `src/`; backend Python in `<extension_name>/`
+   - Commands in `src/index.ts`; routes in `<extension_name>/routes.py`
 
    **Common Pitfalls to Avoid:**
-   - ❌ Don't use `document.getElementById()` (use JupyterLab APIs)
-   - ❌ Don't hardcode URLs (use `ServerConnection.makeSettings()`)
-   - ❌ Don't forget `dispose()` methods (prevents memory leaks)
-   - ❌ Don't mix `npm` and `jlpm` (use `jlpm` only)
+   - ❌ No `document.getElementById()` — use JupyterLab APIs
+   - ❌ Don’t hardcode URLs — use `ServerConnection.makeSettings()`
+   - ❌ Don’t forget `dispose()` methods
+   - ❌ Don’t mix `npm` and `jlpm`
 
 **Why this matters:** These rules teach AI the JupyterLab patterns **before** it writes any code. Without them, AI might use generic React patterns or wrong APIs. With them, AI generates code that follows JupyterLab conventions from the start.
 
