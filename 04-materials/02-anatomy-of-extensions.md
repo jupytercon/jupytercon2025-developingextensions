@@ -203,20 +203,27 @@ Our extension will:
 
 1. Instantiate the template to get started on our new extension!
 
-    ```bash
-    copier copy --trust --vcs-ref HEAD https://github.com/jupyterlab/extension-template .
-    ```
+   We've pre-populated the answers to many of the questions the template normally asks
+   in the command below.
+   If you want to use this template in the future for a different project, omit all the
+   `--data` arguments.
 
-    Please be sure to correctly input:
+   ```bash
+   copier copy --trust --vcs-ref HEAD https://github.com/jupyterlab/extension-template . \
+     --data kind=frontend-and-server \
+     --data labextension_name=jupytercon2025-extension-workshop \
+     --data python_name=jupytercon2025_extension_workshop \
+     --data project_short_description="A JupyterLab extension that displays a random image and caption." \
+     --data has_settings=false \
+     --data has_binder=false \
+     --data test=true \
+     --data has_ai_rules=true \
+     --data create_claude_symlink=true \
+     --data create_gemini_symlink=true
+   ```
 
-    * Your name and e-mail
-    * Kind: `frontend-and-server`
-    * Javascript package name: `jupytercon2025-extension-workshop`
-    * Repository URL: as printed by the `gh repo view` command in the previous step
-
-    The remaining values can be left as default.
-
-    ![A demo of instantiating an extension project from the official template](../assets/images/init-from-template.gif)
+    Please be sure to correctly input the repository URL as printed by the `gh repo
+    view` command in the previous step.
 
 2. List the files that were created (`ls -la` or `tree -a` are good options).
 
