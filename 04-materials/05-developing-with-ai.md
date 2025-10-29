@@ -351,7 +351,7 @@ AI Rules (also called Cursor Rules, or system prompts) are instructions that aut
 
 **AGENTS.md: The Emerging Standard**
 
-In 2025, the AI coding ecosystem converged on **AGENTS.md** as the universal format for agent instructions. Emerging as an open standard with OpenAI convening an industry working group and growing adoption across the ecosystem, AGENTS.md replaces fragmented tool-specific formats—it's just plain Markdown, no special schemas needed.
+In 2025, the AI coding ecosystem converged on [**AGENTS.md**](https://agents.md/) as the universal format for agent instructions. Emerging as an open standard with OpenAI convening an industry working group and growing adoption across the ecosystem, AGENTS.md replaces fragmented tool-specific formats—it's just plain Markdown, no special schemas needed.
 
 **Tool Support Status:**
 
