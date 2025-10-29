@@ -806,10 +806,44 @@ Cursor has a "Plan" mode that creates temporary plans. **Don't use it.** File-ba
 - ✅ Persistent across sessions
 
 Always save plans to files: `plans/*.md`
+
+### Implement Phase by Phase
+
+:::{tip}
+**Context window management:** Instead of one long chat for everything, start fresh for each phase.
 :::
 
+1. **Start a NEW chat** for Phase 1 (`Cmd/Ctrl + K`)
 
+2. **Reference the plan:**
 
+   ```
+   We are ready for Phase 1 of @plans/image-editing-feature.md
+
+   Please implement the MVP: basic grayscale and sepia filters with
+   backend endpoint and frontend display.
+   ```
+
+   Note the `@plans/...` syntax tells AI to read that specific file.
+
+3. **Review changes in Source Control** (keep this panel open!)
+
+4. **Commit after Phase 1 works:**
+
+   ```bash
+   git add .
+   git commit -m "Phase 1: Add basic image filters (grayscale, sepia)"
+   ```
+
+5. **Start ANOTHER fresh chat for Phase 2:**
+
+   ```
+   We are ready for Phase 2 of @plans/image-editing-feature.md
+
+   Phase 1 is complete. Now implement advanced filters (blur, sharpen, crop).
+   ```
+
+**Why new chats?** Keeps context window small (<50%), prevents AI confusion, reduces costs. File-based plans allow us to start new chats and still keep the required context.
 
 :::{important} 💾 **Final Git commit and push!**
 ```bash
