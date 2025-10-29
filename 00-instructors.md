@@ -20,7 +20,7 @@ I’m a longtime Jupyter user and contributor, maintainer of Gator and JupyterLa
 
 I'm a Jupyter contributor and maintainer, primarily in the JupyterLab and ipywidgets projects. I also serve on the
 [Jupyter Executive Council](https://jupyter.org/about#executive-council-members),
-[Jupyter Foundation Governing Board](https://jupyterfoundation.org/), and 
+[Jupyter Foundation Governing Board](https://jupyterfoundation.org/), and
 [Jupyter Community Building Committee](https://jupyter.org/governance/people.html#community-building-subcommittee).
 
 ## [Matt Fisher](https://mfisher87.github.io) ([`@mfisher87`](https://github.com/mfisher87/))
