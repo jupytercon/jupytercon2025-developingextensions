@@ -566,29 +566,14 @@ Once AI can reference your project structure, coding rules, and build your proje
 
 Before we extend the functionality, a quick reminder on what the extension currently does:
 
-**Current Features:**
-- ✅ Displays random images from a curated collection
-- ✅ Shows captions for each image
-- ✅ Refresh button to load a new random image
-- ✅ Layout restoration (widget persists across JupyterLab sessions)
-
-%**Frontend (TypeScript):**
-%- `src/index.ts`: Plugin registration, command definitions, launcher/palette integration
-%- `src/widget.ts`: Main UI widget that displays images and captions
-%- `src/request.ts`: Utility for communicating with the backend API
-%
-%**Backend (Python):**
-%- `jupytercon2025_extension_workshop/routes.py`: REST API handlers
-%- `jupytercon2025_extension_workshop/images_and_captions.py`: Image metadata
-%- `jupytercon2025_extension_workshop/images/`: Image files on disk
-
-### Goal: Add Image Editing Capabilities
-
-We'll use AI to extend this viewer with basic image editing features. This exercise demonstrates:
-- Power and limitation of a single prompt approach to building features
-- The iterative development cycle: plan → implement → test → refine
-- How to debug and fix issues with AI assistance
-- Monitoring AI context
+| **Current Features** | **New Features to Add** |
+|---------------------|------------------------|
+| ✅ Displays random images from a curated collection | 🎨 Filter buttons (grayscale, sepia, blur, sharpen) |
+| ✅ Shows captions for each image | ✂️ Crop functionality |
+| ✅ Refresh button to load a new random image | 🔆 Brightness/contrast adjustments (slider controls) |
+| ✅ Layout restoration (widget persists across JupyterLab sessions) | 💾 Save edited image back to disk |
+| | ↩️ Undo/redo buttons |
+| | ⏳ Loading states and error handling |
 
 ### Power and peril of one-shot prompts
 
