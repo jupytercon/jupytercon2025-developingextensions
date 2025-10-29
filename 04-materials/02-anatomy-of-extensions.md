@@ -849,7 +849,7 @@ and then return the string-encoded image data alongside the caption.
 
 ```{code} python
 :linenos:
-:emphasize-lines: 5-13
+:emphasize-lines: 5-17
 :filename: jupytercon2025_extension_workshop/routes.py
 
 class HelloRouteHandler(APIHandler):
