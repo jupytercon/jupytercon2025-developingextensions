@@ -821,7 +821,7 @@ import that too while we're here:
 
 ```{code} python
 :linenos:
-:emphasize-lines: 2-4, 10-12
+:emphasize-lines: 1,3-4, 10-12
 :filename: jupytercon2025_extension_workshop/routes.py
 
 import base64
