@@ -705,9 +705,9 @@ git restore .
 git clean -fd
 ```
 
-### 📊 Exercise C (20 minutes): Product manager framework
+## 📊 Exercise C (20 minutes): Product manager framework
 
-#### The better way: structured, iterative development
+### The better way: structured, iterative development
 
 While one-shot prompts are impressive for demos, professional development requires a more thoughtful approach. We'll now proceed with a structured workflow that:
 
@@ -723,7 +723,7 @@ This takes longer but results in:
 - ✅ Proper error handling and edge cases
 - ✅ Learning opportunities at each step
 
-#### The rise of the Product Manager mindset
+### The rise of the Product Manager mindset
 AI works best with detailed specifications, not agile "figure it out as we go." Embrace structured planning.
 
 Before generating any code, we'll have AI create a phased implementation plan. This:
@@ -809,6 +809,8 @@ Always save plans to files: `plans/*.md`
 :::
 
 
+
+
 :::{important} 💾 **Final Git commit and push!**
 ```bash
 git add .
@@ -817,7 +819,7 @@ git push
 ```
 :::
 
-### 🖥️  Demo: AI from the command line (10 minutes)
+## 🖥️  Demo: AI from the command line (10 minutes)
 
 1. **Start an interactive session**:
 
