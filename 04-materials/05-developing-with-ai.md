@@ -330,7 +330,7 @@ We recommend you sign up for a free Hobby plan for this workshop! You'll have on
 
 2. **Install Claude Code**
    ```bash
-   npm install --global @anthropic/claude-code
+   npm install --global @anthropic-ai/claude-code
    ```
 
 3. **Set up Claude subscription or Anthropic API key**
