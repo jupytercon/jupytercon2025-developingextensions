@@ -667,6 +667,7 @@ While one-shot prompts are impressive for demos, professional development requir
 2. **Implements in phases** - Build incrementally with checkpoints
 3. **Reviews each step** - Catch issues early
 4. **Maintains control** - You make the key decisions
+5. **Manages AI context** - Start with fresh chats for each phase
 
 This takes longer but results in:
 - ✅ Code you understand and can maintain
