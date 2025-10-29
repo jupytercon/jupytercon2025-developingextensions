@@ -209,7 +209,7 @@ Our extension will:
    `--data` arguments.
 
    ```bash
-   copier copy --trust --vcs-ref HEAD https://github.com/jupyterlab/extension-template . \
+   copier copy --trust --vcs-ref 4.5.0 https://github.com/jupyterlab/extension-template . \
      --data kind=frontend-and-server \
      --data labextension_name=jupytercon2025-extension-workshop \
      --data python_name=jupytercon2025_extension_workshop \
