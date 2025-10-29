@@ -107,6 +107,7 @@ micromamba install python pip nodejs=22 gh "copier~=9.2" jinja2-time
 :::
 
 
+(gh-auth-setup)=
 ### 🔧 Create a GitHub repository and clone it locally
 
 0. Change to the parent directory where you want to work, e.g.

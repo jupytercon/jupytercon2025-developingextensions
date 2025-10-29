@@ -258,17 +258,23 @@ If you completed the anatomy module and want to continue with your extension:
 
 4. Skip to [AI tool](#ai-tool) below.
 
-#### 📥 Option 2: Clone the finished extension
+#### 📥 Option 2: Fork the finished extension (recommended)
 
 If you'd prefer to start fresh or didn't complete the anatomy module:
 
-1. Clone the demo repository:
+1. Ensure you are authenticated with GitHub CLI:
+
+   See {ref}`Chapter 2 → Create a GitHub repository and clone it locally <gh-auth-setup>` (steps 1–2) for GitHub CLI authentication and `gh auth setup-git`.
+
+2. Fork the demo repository to your GitHub account and clone it locally:
 
    ```bash
    cd ~/Projects
-   git clone https://github.com/jupytercon/jupytercon2025-developingextensions-demo.git jupytercon2025-ai-workshop
-   cd jupytercon2025-ai-workshop
+   gh repo fork jupytercon/jupytercon2025-developingextensions-demo --clone --remote
+   cd jupytercon2025-developingextensions-demo
    ```
+
+   This sets `origin` to your fork and `upstream` to the original, so you can commit and push to your fork while still pulling updates from the source repo.
 
 
 3. Install and verify the extension works:
