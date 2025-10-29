@@ -1,15 +1,15 @@
 # 🤖 5 - Developing extensions with AI assistance
 
 ::::{hint} Learning objectives
-- Use an AI assistant (Cursor, Claude Code, etc.) to build and modify JupyterLab extensions by writing effective prompts with context, constraints, and acceptance criteria; point AI to official docs/APIs and require citations
-- Generate and refine extension code (TypeScript/React UI, commands, settings schemas, Python endpoints) with AI guidance; run build/lint/tests and interpret errors to request focused fixes
-- Configure and customize a local AI ruleset (AGENTS.md) for your development workflow; understand privacy, licensing, and safety considerations when sharing code with AI tools
+- Use agentic AI tools (Cursor and Claude Code) to build and evolve JupyterLab extensions using product‑manager style prompts with context, constraints, and acceptance criteria
+- Configure and verify AGENTS.md and environment conventions so tools follow project patterns
+- Implement and iterate on features across frontend and backend with phased plans; manage model selection/context, and use AI to diagnose and fix build/runtime errors
 ::::
 
 ::::{tip} Outcome
 After this module, you will have:
-- Configured a local development environment with AI tools and the AGENTS.md ruleset; created a reproducible prompt checklist/playbook with doc/API citations
-- Either created a new extension from the template with at least one user-visible feature, or contributed a meaningful enhancement to an existing extension; shipped it by publishing to PyPI/GitHub or opening a PR with passing tests
+- Implemented an image‑editing feature in the demo extension (or a meaningful enhancement to your own), verified it in JupyterLab, and committed your changes
+- Practiced one‑shot vs structured prompting, model selection, and context management; comfortable reviewing, iterating on, and rolling back AI‑generated edits
 - Confidence to continue exploring extension ideas primarily by prompting, while being able to understand and edit the generated code
 ::::
 
