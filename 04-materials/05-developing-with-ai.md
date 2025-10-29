@@ -367,6 +367,16 @@ For this workshop, the official copier template provides AGENTS.md and can creat
 
 ### What's in Your AGENTS.md File
 
+:::{tip} The Magic Behind Good AI Code
+When you see AI generate well-structured JupyterLab code in exercises, it's not magic - it's reading your AGENTS.md file! These rules are why AI knows to:
+- Use `jlpm` instead of `npm`
+- Put commands in `src/index.ts`
+- Extend the right base classes
+- Follow JupyterLab naming patterns
+
+Without proper AI context that AGENTS.md provides, we observed AI generating generic code, or using the wrong package manager or thinking too much about source vs. prebuilt extensions.
+:::
+
 1. **Open Cursor app**
 2. **Set up cursor cli command**
 
@@ -426,6 +436,38 @@ cursor ~/Projects/jupytercon2025-extension-workshop
 
 **Why this matters:** These rules teach AI the JupyterLab patterns **before** it writes any code. Without them, AI might use generic React patterns or wrong APIs. With them, AI generates code that follows JupyterLab conventions from the start.
 
+### Customize your AGENTS.md
+
+It can be helpful to modify the provided generic "JupyterLab extension" AI rules to include your favorite tools, package managers, and conventions.
+
+Let's modify the rules to include the package manager we are using and the environment name,
+so that the Cursor would have an easier time building our extension.
+
+Open your `AGENTS.md` file and find the "Environment Activation (CRITICAL)" section. Modify it to specify our workshop environment:
+
+```diff
+ ### Environment Activation (CRITICAL)
+
+ **Before ANY command**, ensure you're in the correct environment:
+
+-```bash
+-# For conda/mamba/micromamba (replace `conda` with `mamba` or `micromamba` depending on the prompter's preferred tool):
+-conda activate <environment-name>
+-
+-# For venv:
+-source <path-to-venv>/bin/activate  # On macOS/Linux
+-<path-to-venv>\Scripts\activate.bat # On Windows
+-```
++Use micromamba:
++```bash
++micromamba activate jupytercon2025
++```
+
+ **All `jlpm`, `pip`, and `jupyter` commands MUST run within the activated environment.**
+```
+
+This tells the AI assistant to use `micromamba` with the `jupytercon2025` environment that we're using in this workshop, making it easier for the AI to run build commands correctly.
+
 ### Verify that Cursor recognizes the rules
 
 1. Open the Cursor Chat panel (`Cmd/Ctrl + L`) and choose Ask Mode
@@ -441,8 +483,6 @@ These models provide the best balance of quality and capability for JupyterLab e
 :::
 
 :::{dropdown} More Details on Model Selection
-:icon: info
-
 **Model selection impacts both quality and cost.**
 
 1. **Enable model selector:**
@@ -477,8 +517,6 @@ For planning and architecture, always use the highest-quality model available:
 - **Self-hosted:** DeepSeek-R1 or Qwen3-235B-A22B
 
 You can downgrade to faster/cheaper models (Claude Haiku 4.5, GPT-5 Mini, or GLM-4.5 Air) for routine edits, but don't skimp on the thinking phase.
-:::
-
 :::
 
 2. Ask AI chat questions to verify that it recognizes the rules. Paste the below prompt into the chat
