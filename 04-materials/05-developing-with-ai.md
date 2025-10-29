@@ -693,7 +693,17 @@ This works great for prototypes, but in production code, you need to understand 
 
 **The debugging workflow:** Don't manually debug—let AI help! It can read error messages, understand context, and propose fixes.
 
-### git restore . to undo the changes made by the one-shot prompt?
+### Roll back when done
+
+To undo all changes made by the one-shot prompt:
+
+```bash
+# Discard all changes to tracked files
+git restore .
+
+# Remove any new untracked files created by the AI
+git clean -fd
+```
 
 ### 📊 Exercise C (20 minutes): Product manager framework
 
