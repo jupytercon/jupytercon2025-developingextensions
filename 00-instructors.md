@@ -16,22 +16,12 @@ I’m a longtime Jupyter user and contributor, maintainer of Gator and JupyterLa
 
 ## [Jason Grout](https://jasongrout.org/) ([`@jasongrout`](https://github.com/jasongrout/))
 
-**Jason's title here @ independent**
+**Jupyter Developer and Community Leader**
 
-I am an open-source [Jupyter](https://jupyter.org/) developer and community leader.
-In Jupyter, I currently serve in leadership positions, including the
-[Jupyter Executive Council](https://jupyter.org/about#executive-council-members), the
-[Jupyter Foundation Governing Board](https://jupyterfoundation.org/), the
-[Jupyter Community Building Committee](https://jupyter.org/governance/people.html#community-building-subcommittee),
-and the
-[Jupyter Trademarks Committee](https://jupyter.org/governance/people.html#trademark-subcommittee).
-
-I am also a
-[Jupyter Distinguished Contributor](https://jupyter.org/about#distinguished-contributors)
-with significant core contributions to
-[JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) and the interactive
-[Jupyter Widgets](http://ipywidgets.readthedocs.io/en/stable/) system.
-
+I'm a Jupyter contributor and maintainer, primarily in the JupyterLab and ipywidgets projects. I also serve on the
+[Jupyter Executive Council](https://jupyter.org/about#executive-council-members),
+[Jupyter Foundation Governing Board](https://jupyterfoundation.org/), and 
+[Jupyter Community Building Committee](https://jupyter.org/governance/people.html#community-building-subcommittee).
 
 ## [Matt Fisher](https://mfisher87.github.io) ([`@mfisher87`](https://github.com/mfisher87/))
 
