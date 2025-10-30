@@ -739,9 +739,50 @@ When you use one-shot prompts, you're essentially saying: "AI, you be the produc
 This works great for prototypes, but in production code, you need to understand and own these decisions.
 :::
 
-### Basic debugging
+### Visual debugging with screenshots
 
-**The debugging workflow:** Don't manually debug—let AI help! It can read error messages, understand context, and propose fixes.
+AI can understand what your extension looks like! This is powerful for debugging UI issues or requesting design changes.
+
+**Try it now:**
+
+1. **Open your extension in JupyterLab** (should still be running from earlier)
+
+2. **Take a screenshot of the extension widget:**
+   - **macOS:** Press `Cmd + Shift + 4`, then drag to select the widget area
+   - **Windows:** Use Snipping Tool or `Win + Shift + S`
+   - **Linux:** Use your screenshot tool (varies by desktop environment)
+
+3. **Open Cursor chat** (`Cmd/Ctrl + L`) and drag or paste the screenshot into the chat
+
+4. **Try one of these prompts with your screenshot:**
+
+   ```
+   [Drop screenshot here]
+
+   Please adjust the filter button spacing:
+   - Add 8px margin between buttons
+   - Increase padding inside each button to match JupyterLab's standard button styling
+   ```
+
+**When to use screenshots:**
+- ✅ Layout and spacing problems ("buttons are misaligned")
+- ✅ Color and theming issues ("doesn't match JupyterLab theme")
+- ✅ Showing desired design ("make it look like this")
+- ✅ Component placement ("move this above that")
+
+:::{tip} Visual Feedback Loop
+Screenshots create a remarkably effective feedback loop:
+1. Implement feature
+2. Screenshot the result
+3. Show AI: "The buttons should be above the image"
+4. AI adjusts layout
+5. Reload, take new screenshot
+6. Show AI: "Perfect, but reduce spacing by half"
+
+This is often faster than describing layout issues in words!
+:::
+
+**The debugging workflow for errors:** Don't manually debug—let AI help! It can read error messages, understand context, and propose fixes. If you encounter TypeScript compilation errors or Python exceptions, copy the error message into chat and ask AI to fix it.
 
 ### Roll back when done
 
