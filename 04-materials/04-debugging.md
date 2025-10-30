@@ -152,7 +152,7 @@ There are times where you might right-click on an element expecting to see the b
 Of course, even better than debugging, would be to have working code that behaves as you expect. A few practices that can save you time debugging are:
 
 - **Let TypeScript help you**: The red squiggles that you might see in your editor are important. Type errors are often caught at compile time and don't become an issue as you're running your extension code in the browser.
-- **Use a linter**: Tools like ESLint and Prettier catch common mistakes and help enforce consistent patterns. They'll give you warnings about unused variables or potential null reference errors.
+- **Use a linter**: Tools like ESLint catch common mistakes and help enforce consistent patterns. They'll give you warnings about unused variables or potential null reference errors.
 - **Write tests for critical functionality**: While it may take time upfront, unit tests for testing complex logic and important API calls can help you identify the source of errors earlier on.
 - **Write clear error messages**: When you add error handling in your code, make the error messages specific, clear, and consice. "Failed to load data", is okay and might be helpful in the moment, but as your code base grows and time passes, "Failed to fetch notebook metadata from /api/notebooks/{id}" can make for an easier time tracking the source of an error.
 
