@@ -296,6 +296,31 @@ If you'd prefer to start fresh or didn't complete the anatomy module:
 
 Make sure your git tree is clean, there are no unsaved and uncommitted files. This is going to be important later
 
+### 🛡️ Set up your safety net: Git workflow
+
+Before diving into AI-assisted development, establish a safety workflow. AI can generate code that breaks your extension, so you need the ability to roll back instantly.
+
+:::{danger} Git is Your Safety Net
+AI can suggest code that breaks your extension. With frequent commits and staging, you can fearlessly experiment and roll back instantly. **This is not optional**—it's how you work safely with AI.
+:::
+
+**The Four Safety Levels:**
+
+```
+Level 1: Unsaved      →  Files on disk (Cmd/Ctrl + Z to undo)
+Level 2: Staged       →  git add (can unstage)
+Level 3: Committed    →  git commit (can reset)
+Level 4: Pushed       →  git push (permanent)
+```
+
+**Keep an eye on Source Control**
+- Open the Source Control view (`Ctrl + Shift + G`)
+- Keep this panel visible alongside your AI chat
+- You'll review all AI-generated changes here before committing
+
+
+We'll cover the detailed git workflow when you start generating code in Exercise B.
+
 (ai-tool)=
 ### ⚙️ AI tool
 
@@ -556,6 +581,48 @@ Once AI can reference your project structure, coding rules, and build your proje
 
 
 ## 🏗️ Exercise B (30 minutes): Build it!
+
+### 🔄 Your git workflow for AI-generated code
+
+Now that you're about to generate substantial code with AI, let's establish a disciplined workflow for reviewing and staging changes.
+
+**Adopt this workflow:**
+
+```bash
+# After AI generates code:
+# 1. Review changes in Source Control panel (Cmd/Ctrl + Shift + G)
+
+# 2. Test if it works - build and verify
+jlpm build
+jupyter lab  # Test the feature
+
+# 3. Stage changes you like (selectively):
+git add src/widget.ts              # stage individual files
+git add jupytercon2025_extension_workshop/routes.py
+
+# 4. If AI continues and breaks something:
+git restore src/widget.ts          # revert to last staged/committed version
+
+# 5. Once everything works and is staged:
+git commit -m "Add image filter buttons with AI assistance"
+
+# 6. If you need to undo a commit (but keep the changes):
+git reset --soft HEAD~1            # undo commit, keep changes staged
+
+# 7. If you need to undo a commit AND the changes:
+git reset --hard HEAD~1            # ⚠️ destructive - use carefully
+```
+
+:::{tip} Stage Early, Stage Often
+When AI generates code that works, immediately stage those files (`git add`). This creates a safety checkpoint. If AI's next changes break things, you can quickly `git restore` back to the working state without losing everything.
+:::
+
+**Keep Source Control panel visible:**
+- `Ctrl + Shift + G` to open
+- Shows all modified files with diff preview
+- Click any file to see exactly what changed
+- Stage/unstage with + and - buttons
+
 ### Understanding your starting point
 
 Before we extend the functionality, a quick reminder on what the extension currently does:
@@ -678,15 +745,36 @@ This works great for prototypes, but in production code, you need to understand 
 
 ### Roll back when done
 
-To undo all changes made by the one-shot prompt:
+This is where your git safety net proves its worth! The one-shot prompt likely generated 200+ lines across multiple files. Let's practice using the **Four Safety Levels** to safely undo everything.
+
+**To completely undo all changes made by the one-shot prompt:**
 
 ```bash
-# Discard all changes to tracked files
+# Level 2 → Level 1: Discard all changes to tracked files
 git restore .
 
-# Remove any new untracked files created by the AI
-git clean -Xdf
+# Clean up any new untracked files created by AI
+# (like new dependencies or generated files)
+git clean -fd    # removes untracked files
+git clean -Xdf   # also removes files ignored by .gitignore
 ```
+
+:::{tip} Why This Exercise Matters
+You just learned to fearlessly experiment with AI:
+1. ✅ Let AI generate a complete feature in minutes
+2. ✅ Review and test the implementation
+3. ✅ Roll back completely to try a different approach
+4. ✅ No permanent damage, clean slate to start structured development
+
+This is the **safety net in action**. With git, you can take risks with AI and always recover.
+:::
+
+**Verify clean state:**
+```bash
+git status  # Should show "nothing to commit, working tree clean"
+```
+
+Now you're ready to proceed with the structured, phased approach in Exercise C.
 
 ## 📊 Exercise C (20 minutes): Product manager framework
 
@@ -829,15 +917,37 @@ As you work through phases, keep an eye on **context window percentage** (shown 
    Note the `@plans/...` syntax tells AI to read that specific file.
 
 3. **Review changes in Source Control** (keep this panel open!)
+   - Open `Ctrl + Shift + G` to see all modified files
+   - Click each file to review the diff
+   - Look for unexpected changes or files you didn't anticipate
 
-4. **Commit after Phase 1 works:**
+4. **Test the implementation:**
+   ```bash
+   jlpm build
+   jupyter lab
+   ```
+   - Try the new filter buttons
+   - Check browser console (`F12`) for errors
+   - Verify backend logs in terminal
+
+5. **Stage and commit after Phase 1 works:**
 
    ```bash
-   git add .
+   # Stage only the files you've reviewed and approved
+   git add src/widget.ts
+   git add jupytercon2025_extension_workshop/routes.py
+   git add pyproject.toml
+   # and more if needed
+
+   # Commit with a descriptive message
    git commit -m "Phase 1: Add basic image filters (grayscale, sepia)"
    ```
 
-5. **Start ANOTHER fresh chat for Phase 2:**
+   :::{tip} Selective Staging
+   Don't blindly `git add .` — review each file first. AI might have modified files you didn't expect or left debugging code. Selective staging gives you control.
+   :::
+
+6. **Start ANOTHER fresh chat for Phase 2:**
 
    ```
    We are ready for Phase 2 of @plans/image-editing-feature.md
@@ -847,20 +957,25 @@ As you work through phases, keep an eye on **context window percentage** (shown 
 
    :::{tip} Follow up and refine after reviewing the changes.
 
-   For example, I noticed that Rest button disappeared from the UI
+   For example, I noticed that Reset button disappeared from the UI
    ```
    Where did the reset button go?
    ```
    :::
 
-6. **Commit after Phase 2 works:**
+7. **Review, test, and commit after Phase 2 works:**
 
    ```bash
+   # Review in Source Control panel, test the features
+   jlpm build
+   jupyter lab
+
+   # Stage and commit
    git add .
    git commit -m "Phase 2: Add advanced filters (blur, sharpen, crop)"
    ```
 
-7. **Start ANOTHER fresh chat for Phase 3:**
+8. **Start ANOTHER fresh chat for Phase 3:**
 
    ```
    We are ready for Phase 3 of @plans/image-editing-feature.md
@@ -966,7 +1081,7 @@ AI is most effective when you provide:
 2. **Project context** (AGENTS.md rules, documentation)
 3. **Phased plans** (not trying to do everything at once)
 4. **Iterative feedback** (junior developer coaching)
-5. **Safety nets** (Git commits, testing)
+5. **Safety nets** (Git commits at each checkpoint, testing)
 
 💾 **Final Git commit and push!**
 ```bash
