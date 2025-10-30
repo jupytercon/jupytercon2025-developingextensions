@@ -110,7 +110,7 @@ Agentic AI
 The key differentiator is **tool use**. Agentic AI can execute commands (build, test, format), read files, search codebases, and make changes directly.
 These tools work in an **agentic loop**: they plan an action, use a tool to execute it, observe the result, and decide the next step, iterating until the task is complete.
 Examples include Cursor, Claude Code, and Cline.
-Unlike chat-based or autocomplete AI, agentic tools act like a team member with tools—they don't just suggest, they do.
+Unlike chat-based or autocomplete AI, agentic tools act like a team member with tools — they don't just suggest, they do.
 
 LLM token
 : In the context of {term}`LLMs <LLM>`, a token is a unit of text (roughly 3-4 characters or ~0.75 words in English) that the model processes.
