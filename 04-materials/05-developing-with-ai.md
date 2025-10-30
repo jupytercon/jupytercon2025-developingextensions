@@ -871,64 +871,102 @@ As you work through phases, keep an eye on **context window percentage** (shown 
    - Loading states and error handling
    ```
 
-8. Add additional features that might be needed
+### Prompts as user stories
 
-   Now that Phase 3 is complete (with undo/redo, save, and history), consider adding a feature like **Custom Filter Presets**.
+Now that Phase 3 is complete (with undo/redo, save, and history), consider adding a feature like **Custom Filter Presets**.
 
-   :::{tip}  **Structure Prompts as User Stories**
+:::{tip}  **Structure Prompts as User Stories**
 
-   **Effective prompts follow the user story format: clear requirements, constraints, and acceptance criteria.**
+**Effective prompts follow the user story format: clear requirements, constraints, and acceptance criteria.**
 
-   Instead of:
-   > "Let users save their favorite filter combinations"
+Instead of:
+> "Let users save their favorite filter combinations"
 
-   Try this structure:
+Try this structure:
 
-   ````markdown
-   **User Story:** As a user who frequently applies the same combination of filters, I want to save my favorite filter sequences as named presets and quickly reapply them to new images, so I can maintain consistent editing styles without manually repeating steps.
+````markdown
+**User Story:** As a user who frequently applies the same combination of filters, I want to save my favorite filter sequences as named presets and quickly reapply them to new images, so I can maintain consistent editing styles without manually repeating steps.
 
-   **Acceptance Criteria:**
-   - [ ] Users can save the current filter sequence as a named preset (e.g., "Vintage Look")
-   - [ ] A preset dropdown menu displays all saved presets
-   - [ ] Clicking a preset applies all its filters in sequence to the current image
-   - [ ] Users can delete presets they no longer need
-   - [ ] Presets persist across JupyterLab sessions
-   - [ ] A tooltip shows which filters are included in each preset when hovering
-   - [ ] Maximum of 10 presets can be saved (to prevent cluttering the UI)
-   - [ ] Preset names must be unique and non-empty
+**Acceptance Criteria:**
+- [ ] Users can save the current filter sequence as a named preset (e.g., "Vintage Look" = sepia + slight blur)
+- [ ] A preset dropdown menu displays all saved presets
+- [ ] Clicking a preset applies all its filters in sequence to the current image
+- [ ] Users can delete presets they no longer need
+- [ ] Presets persist across JupyterLab sessions
+- [ ] A tooltip shows which filters are included in each preset when hovering
+- [ ] Maximum of 10 presets can be saved (to prevent cluttering the UI)
+- [ ] Preset names must be unique and non-empty
 
-   **Technical Requirements:**
-   - Backend: Add `/api/<extension>/presets` endpoints (GET, POST, DELETE)
-   - Storage: Store user-created presets in a JSON file at `~/.jupytercon-image-editor/settings.json`
-     - Use Python's `pathlib.Path` to handle cross-platform paths
-     - Create the directory if it doesn't exist (with appropriate permissions)
-     - Use `json.load()` and `json.dump()` for reading/writing
-     - Handle file locking for concurrent access (if needed)
-   - Data model: `{id: string, name: string, filters: Array<{type: string, params: object}>, created: timestamp}`
-   - Frontend: Add "Save as Preset" button and preset dropdown to toolbar
-   - UI: Use `@jupyterlab/apputils` `showDialog` for naming new presets
-   - Validation: Check for name uniqueness and length (3-30 characters)
-   - Apply preset: Reuse existing filter application logic from Phase 2
+**Technical Requirements:**
+- Backend: Add `/api/<extension>/presets` endpoints (GET, POST, DELETE)
+- Storage: Store user-created presets in a JSON file at `~/.jupytercon-image-editor/settings.json`
+   - Use Python's `pathlib.Path` to handle cross-platform paths
+   - Create the directory if it doesn't exist (with appropriate permissions)
+   - Use `json.load()` and `json.dump()` for reading/writing
+   - Handle file locking for concurrent access (if needed)
+- Data model: `{id: string, name: string, filters: Array<{type: string, params: object}>, created: timestamp}`
+- Frontend: Add "Save as Preset" button and preset dropdown to toolbar
+- UI: Use `@jupyterlab/apputils` `showDialog` for naming new presets
+- Validation: Check for name uniqueness and length (3-30 characters)
+- Apply preset: Reuse existing filter application logic from Phase 2
 
-   **Non-Requirements (for later):**
-   - Don't implement preset sharing/export yet
-   - Don't support editing existing presets (delete and recreate is fine for now)
-   - Don't add preset thumbnails/previews
-   - Don't implement preset categories or folders
-   - Performance optimization for applying complex presets can wait
+**Non-Requirements (for later):**
+- Don't implement preset sharing/export yet
+- Don't support editing existing presets (delete and recreate is fine for now)
+- Don't add preset thumbnails/previews
+- Don't implement preset categories or folders
+- Performance optimization for applying complex presets can wait
 
-   **Questions for AI:**
-   - How should we handle concurrent writes if multiple JupyterLab instances are running?
-   - What's the best error handling if the settings file is corrupted or unreadable?
-   - Should we create a backup of the settings file before writing changes?
-   - What's the best UX for the preset dropdown - regular select, menu bar item, or palette command?
-   - How do we handle if a preset contains filters with deprecated parameters in future versions?
-   ````
+**Questions for AI:**
+- How should we handle concurrent writes if multiple JupyterLab instances are running?
+- What's the best error handling if the settings file is corrupted or unreadable?
+- Should we create a backup of the settings file before writing changes?
+- What's the best UX for the preset dropdown - regular select, menu bar item, or palette command?
+- How do we handle if a preset contains filters with deprecated parameters in future versions?
+````
 
-   This level of detail helps AI give you exactly what you want.
-   :::
+This level of detail helps AI give you exactly what you want.
+:::
 
-9. 💾 **Final Git commit and push!**
+:::{dropdown} Want to continue exploring?
+
+If you finish early or want to continue exploring, try implementing more features:
+
+- **Selective crop tool:** Replace the basic center crop with an interactive selector tool that lets users drag to define the crop area
+- **Image rotation:** Add 90-degree rotation buttons (clockwise and counter-clockwise)
+- **Filter preview:** Show a small preview thumbnail for each filter before applying it
+- **Keyboard shortcuts:** Add keyboard shortcuts for common filters (g for grayscale, s for sepia)
+- **Before/After comparison:** Add a split-screen or toggle button to compare the original image with the edited version
+:::
+
+### Wrap up
+
+### Key Takeaways
+
+✅ **AI excels at:**
+- **Scaffolding and boilerplate** - New endpoints, UI components, tests
+- **Navigating unfamiliar APIs** - Pillow, new JupyterLab features
+- **Systematic tasks** - Following patterns, applying transforms
+- **Explanation and education** - "Why did you choose this approach?"
+- **Self-correction** - Fixing build errors, addressing type issues
+- **Iterative refinement** - Adjusting based on your feedback
+
+⚠️ **AI may struggle with:**
+- **Complex architectural decisions** - When to use State DB vs. props
+- **Complex async bugs** - Race conditions, timing issues, subtle promise chaining errors
+- **Performance optimization** - Knowing when code is "fast enough"
+- **Project-specific conventions** - Without AGENTS.md guidance
+- **Ambiguous requirements** - "Make it better" vs. specific criteria
+
+🎯 **The sweet spot:**
+AI is most effective when you provide:
+1. **Clear requirements** (Product Manager mindset)
+2. **Project context** (AGENTS.md rules, documentation)
+3. **Phased plans** (not trying to do everything at once)
+4. **Iterative feedback** (junior developer coaching)
+5. **Safety nets** (Git commits, testing)
+
+💾 **Final Git commit and push!**
 ```bash
 git add .
 git commit -m "Complete image editor feature"
