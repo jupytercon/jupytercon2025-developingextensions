@@ -370,7 +370,7 @@ In 2025, the AI coding ecosystem converged on [**AGENTS.md**](https://agents.md/
 
 For this workshop, the official copier template provides AGENTS.md and can create symlinks for Claude Code and Gemini CLI. You should already have these rules configured in your repo if you selected 'Y' on the copier's question about AI tools. Let's understand what's there and why it helps.
 
-### What's in Your AGENTS.md File
+### What's in your AGENTS.md file
 
 :::{tip} The Magic Behind Good AI Code
 When you see AI generate well-structured JupyterLab code in exercises, it's not magic - it's reading your AGENTS.md file! These rules are why AI knows to:
@@ -601,7 +601,7 @@ Technical requirements:
 - Maintain the existing refresh functionality
 ```
 
-### What Happens with This Prompt?
+### What happens with this prompt?
 
 When you give this prompt to an AI agent like Cursor or Claude Code, it will typically:
 
@@ -640,7 +640,7 @@ jupyter lab
 - Check the terminal running `jupyter lab` for Python errors
 - Find at least 3 decisions you might have made differently
 
-### The Hidden Cost: Decisions Made Without You
+### The hidden cost: Decisions made without you
 
 While impressive, this one-shot approach makes numerous decisions on your behalf:
 
@@ -706,7 +706,7 @@ This takes longer but results in:
 - ✅ Proper error handling and edge cases
 - ✅ Learning opportunities at each step
 
-### The rise of the Product Manager mindset
+### The rise of the product manager mindset
 AI works best with detailed specifications, not agile "figure it out as we go." Embrace structured planning.
 
 Before generating any code, we'll have AI create a phased implementation plan. This:
@@ -791,7 +791,7 @@ Cursor has a "Plan" mode that creates temporary plans. **Don't use it.** File-ba
 Always save plans to files: `plans/*.md`
 :::
 
-### Implement Phase by Phase
+### Implement phase by phase
 
 :::{tip} Managing Context and Costs
 Instead of one long chat for everything, start fresh for each phase.
@@ -943,7 +943,7 @@ If you finish early or want to continue exploring, try implementing more feature
 
 ### Wrap up
 
-### Key Takeaways
+### Key takeaways
 
 ✅ **AI excels at:**
 - **Scaffolding and boilerplate** - New endpoints, UI components, tests
@@ -1001,7 +1001,7 @@ git push
    - Type `y` to accept, `n` to skip, or `e` to edit
    - Changes are applied directly to your files
 
-### Claude Code Tips
+### Claude Code tips
 
 **Run commands without leaving the chat:**
 
