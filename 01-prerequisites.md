@@ -31,7 +31,7 @@ the `gh auth login` command.
 Feel free to use your favorite.
 Any command-line or graphical editor is fine!
 
-VSCode is a safe choice.
+[VSCode](https://code.visualstudio.com/) is a safe choice.
 For the AI-enabled development portion, [Cursor](https://cursor.com/) is another good
 choice!
 
