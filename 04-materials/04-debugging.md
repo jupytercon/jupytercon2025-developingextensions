@@ -330,7 +330,6 @@ When your extension builds successfully but data doesn't load, check the **Netwo
 :::
 
 **What you'll see in Network tab:**
-```markdown
 | Field | Value |
 |-------|-------|
 | Request URL | `http://localhost:8890/jupytercon2025-extension-workshop/random-image-captions?1761852662635` |
@@ -338,7 +337,7 @@ When your extension builds successfully but data doesn't load, check the **Netwo
 | Status Code | **404 Not Found** |
 | Remote Address | `[::1]:8890` |
 | Referrer Policy | `strict-origin-when-cross-origin` |
-```
+
 ---
 
 ## 🔧 Common Debugging Scenarios
