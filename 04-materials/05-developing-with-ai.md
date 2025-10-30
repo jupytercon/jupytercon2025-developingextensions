@@ -880,7 +880,9 @@ Now that Phase 3 is complete (with undo/redo, save, and history), consider addin
 **Effective prompts follow the user story format: clear requirements, constraints, and acceptance criteria.**
 
 Instead of:
-> "Let users save their favorite filter combinations"
+````markdown
+Let users save their favorite filter combinations
+````
 
 Try this structure:
 
