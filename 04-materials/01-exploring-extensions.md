@@ -139,7 +139,7 @@ Extensions that tell Jupyter how to view information in a specific file type
 ([MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types)).
 
 These are a special case of {term}`frontend extensions <frontend extension>` which map a
-{term}`widget` viewer with the supported file MIME type strings.
+{term}`widget <widget>` viewer with the supported file MIME type strings.
 
 
 #### Examples
