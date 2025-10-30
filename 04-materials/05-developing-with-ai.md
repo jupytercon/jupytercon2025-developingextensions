@@ -789,6 +789,7 @@ Cursor has a "Plan" mode that creates temporary plans. **Don't use it.** File-ba
 - ✅ Persistent across sessions
 
 Always save plans to files: `plans/*.md`
+:::
 
 ### Implement Phase by Phase
 
