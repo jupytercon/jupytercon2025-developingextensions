@@ -9,8 +9,8 @@
 ::::{tip} Outcome
 After this module, you will have:
 - Implemented an image‑editing feature in our extension, verified it in JupyterLab, and committed your changes
-- Practiced one‑shot vs structured prompting, model selection, and context management; comfortable reviewing, iterating on, and rolling back AI‑generated edits
-- Confidence to continue exploring extension ideas primarily by prompting, while being able to understand and edit the generated code
+- Practiced one‑shot vs structured prompting, model selection, and context management; got comfortable reviewing, iterating on, and rolling back AI‑generated edits
+- Gained confidence to continue exploring extension ideas primarily by prompting, while being able to understand and edit the generated code
 ::::
 
 :::{note} Inspired by...
@@ -62,12 +62,12 @@ AI coding assistants are powered by **Large Language Models ({term}`LLMs <LLM>`)
 
 **Frontier Models (Cloud-Hosted):**
 - **Deployment:** Run on massive server infrastructure by model providers
-- **Access:** Pay-per-token via API keys
+- **Access:** Pay-per-{term}`token <LLM token>` via API keys
 - **Examples:**
-  - **Claude Sonnet 4.5** (Anthropic): Best coding model, \$3/\$15 per M tokens
-  - **GPT-5** (OpenAI): Best overall reasoning, \$1.25/\$10 per M tokens
-  - **Gemini 2.5 Pro** (Google): Best for speed/context (1M tokens), multimodal
-  - **Claude 4 Opus** (Anthropic): Best for long-horizon coding (30+ hour tasks), \$15/\$75 per M tokens
+  - **Claude Sonnet 4.5** (Anthropic): Best coding model, \$3/\$15 per 1M tokens
+  - **GPT-5** (OpenAI): Best overall reasoning, \$1.25/\$10 per 1M tokens
+  - **Gemini 2.5 Pro** (Google): Best for speed/context (1M tokens), multimodal, \$1.25/\$10 per 1M tokens
+  - **Claude 4 Opus** (Anthropic): Best for long-horizon coding (30+ hour tasks), \$15/\$75 per 1M tokens
 - **Pros:** State-of-the-art capabilities, specialized for different tasks (coding vs reasoning vs speed), no local compute needed
 - **Cons:** Requires internet connection, ongoing costs, data leaves your machine
 
@@ -349,7 +349,7 @@ Before jumping into code generation, let's set up the "invisible infrastructure"
 
 AI Rules (also called Cursor Rules, or system prompts) are instructions that automatically precede every conversation with your AI assistant. They're like permanent coaching that guides the AI's behavior.
 
-**AGENTS.md: The Emerging Standard**
+:::{dropdown} **AGENTS.md: The Emerging Standard**
 
 In 2025, the AI coding ecosystem converged on [**AGENTS.md**](https://agents.md/) as the universal format for agent instructions. Emerging as an open standard with OpenAI convening an industry working group and growing adoption across the ecosystem, AGENTS.md replaces fragmented tool-specific formats—it's just plain Markdown, no special schemas needed.
 
@@ -366,8 +366,7 @@ In 2025, the AI coding ecosystem converged on [**AGENTS.md**](https://agents.md/
 | **Aider** | ⚙️ Config | Add to .aider.conf.yml: `read: AGENTS.md` |
 | **Continue.dev** | ❌ Not yet | Use .continue/rules/ |
 | **Cline** | ❌ Not yet | Use .clinerules/rules.md |
-
-**Key advantage:** Single AGENTS.md file works across your entire team regardless of which AI tool they use—no more maintaining separate .cursorrules, CLAUDE.md, and GEMINI.md files.
+:::
 
 For this workshop, the official copier template provides AGENTS.md and can create symlinks for Claude Code and Gemini CLI. You should already have these rules configured in your repo if you selected 'Y' on the copier's question about AI tools. Let's understand what's there and why it helps.
 
@@ -399,10 +398,6 @@ cursor .
 
 5. **Check that the rules file exists:**
    Look for `AGENTS.md` file in your extension root
-
-   :::{important}
-   If neither `AGENTS.md` exists, **let an instructor know!** These files contain important context and rules that help AI assistants generate better JupyterLab extension code.
-   :::
 
 6. **Review the ruleset file**
    Open `AGENTS.md`
@@ -516,8 +511,7 @@ For planning and architecture, always use the highest-quality model available:
 You can downgrade to faster/cheaper models (Claude Haiku 4.5, GPT-5 Mini, or GLM-4.5 Air) for routine edits, but don't skimp on the thinking phase.
 :::
 
-2. Ask AI chat questions to verify that it recognizes the rules. Paste the below prompt into the chat
-
+2. Paste the following prompt into a chat to verify that Cursor is using our rules:
    ```
    What package manager should I use for JupyterLab extension frontend?
    ```
@@ -535,7 +529,7 @@ You can downgrade to faster/cheaper models (Claude Haiku 4.5, GPT-5 Mini, or GLM
    - Check that the file is named exactly `AGENTS.md` (case-sensitive)
    :::
 
-3. Get ready for the development. Start a new chat and choose Agent Mode:
+3. Get ready for development. Start a new chat choose Agent Mode and send this prompt:
    ```
    Prepare my extension for development:
    1. Check that I am using the correct environment `jupytercon2025`
