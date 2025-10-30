@@ -798,9 +798,10 @@ Instead of one long chat for everything, start fresh for each phase.
 
 Why new chats? It has do with LLMs context window. Saturating the context window leads to AI confusion and runs up the costs. File-based plans allow us to start new chats and still keep the required context.
 
-As you work through phases, keep an eye on these metrics:
+As you work through phases, keep an eye on **context window percentage** (shown in Cursor chat):
 
-**Context window percentage** (shown in Cursor chat):
+[![Screenshot of Cursor's context monitor showing "16.3% • 32.5K / 200K context used" in the top toolbar](../assets/images/context-monitor.png)
+
 - **< 30%:** Healthy, plenty of room
 - **30-50%:** Good, AI still focused
 - **50-70%:** Getting crowded, consider new chat soon
