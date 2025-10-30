@@ -1050,8 +1050,10 @@ As you work through phases, keep an eye on **context window percentage** (shown 
    jlpm build
    jupyter lab
 
-   # Stage and commit
-   git add .
+   # Stage and commit (review each file first!)
+   git add src/widget.ts
+   git add jupytercon2025_extension_workshop/routes.py
+   # add any other modified files
    git commit -m "Phase 2: Add advanced filters (blur, sharpen, crop)"
    ```
 
@@ -1064,6 +1066,22 @@ As you work through phases, keep an eye on **context window percentage** (shown 
    - Save edited image functionality
    - Undo/redo buttons
    - Loading states and error handling
+   ```
+
+9. **Review, test, and commit after Phase 3 works:**
+
+   ```bash
+   # Review in Source Control panel, test the features
+   jlpm build
+   jupyter lab
+
+   # Stage and commit
+   git add src/widget.ts
+   git add src/api.ts
+   git add jupytercon2025_extension_workshop/routes.py
+   git add jupytercon2025_extension_workshop/image_processing.py
+   # add any other modified files
+   git commit -m "Phase 3: Add save, undo/redo, and error handling"
    ```
 
 ### Prompts as user stories
