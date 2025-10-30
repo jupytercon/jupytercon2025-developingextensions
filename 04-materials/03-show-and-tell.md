@@ -20,19 +20,6 @@ Its unique strengths are:
   [use it in your browser without installing it](https://jupytergis.readthedocs.io/en/latest/lite/)!
 
 
-## 🔭 [ipyaladin](https://cds-astro.github.io/ipyaladin/) & [Jdaviz](https://jdaviz.readthedocs.io/en/stable/)
-
-`ipyaladin` and `jdaviz` are valuable tools for astronomy workflows in JupyterLab.
-
-`ipyaladin` provides the [Aladin Sky Atlas](https://aladin.cds.unistra.fr/) as a
-{term}`widget`.
-It allows users to browse astronomical images, surveys, catalogues, and databases in an
-interactive sky map.
-
-`jdaviz` is a collection of astronomical tools which link interactive analysis and data
-visualization.
-
-
 ## 🌐 Popular JupyterLab Extensions
 
 The Jupyter community has built a rich ecosystem of extensions. Here are some popular and well-maintained extensions you might find interesting:
@@ -40,6 +27,7 @@ The Jupyter community has built a rich ecosystem of extensions. Here are some po
 - [JupyterLab-Contrib Extensions](https://jupyterlab-contrib.github.io/extensions.html) - Community-maintained collection of popular JupyterLab extensions
 - [Jupytext](https://github.com/mwouts/jupytext) - Edit Jupyter notebooks as plain text files (Python, Markdown, R scripts)
 - [anywidget](https://github.com/manzt/anywidget) - Build custom interactive widgets for Jupyter with simple HTML/JS/CSS
+- [ipyaladin](https://cds-astro.github.io/ipyaladin/) & [Jdaviz](https://jdaviz.readthedocs.io/en/stable/) - Tools for astronomy workflows in JupyterLab
 - [ipympl](https://github.com/matplotlib/ipympl) - Interactive Matplotlib figures with pan/zoom controls in notebooks
 - [nbdime](https://github.com/jupyter/nbdime) - Diff and merge notebooks with built-in conflict resolution
 - [JupyterLab LSP](https://github.com/jupyter-lsp/jupyterlab-lsp) - Language Server Protocol integration for code completion and linting
