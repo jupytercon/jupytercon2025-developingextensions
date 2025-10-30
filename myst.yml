@@ -11,6 +11,11 @@ project:
     - "_*"
     - "README.md"
 
+  error_rules:
+    - rule: "link-resolves"
+      key: "https://code.visualstudio.com/"
+      severity: "warn"
+
 
 site:
   template: "book-theme"
