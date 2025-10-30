@@ -199,7 +199,9 @@ We'll work with **Cursor** to demonstrate the AI-assisted workflow, then repeat 
 - **LLM Options:**
   - Built-in models (Claude Sonnet 4.5, GPT-5, Gemini 2.5 Pro and more) with Cursor subscription
 - **Best for:** Developers who want a polished, GUI-driven experience
-- **Alternatives:** [Windsurf](https://codeium.com/windsurf) (free tier, \$15/mo Pro), [GitHub Copilot Workspace](https://github.com/features/copilot) (\$10-39/mo), [Cline](https://cline.bot/) (VS Code extension, free), [Continue](https://continue.dev/) (VS Code/JetBrains extension, free or \$10/mo Teams), [Roo Code](https://roocode.com/) (VS Code extension, free or \$20/mo Pro), [Kilocode](https://kilocode.ai/) (VS Code/JetBrains, free or \$29/user/mo Teams), [Replit Agent](https://replit.com/) (cloud-based)
+::::{dropdown} Alternatives
+- [Windsurf](https://codeium.com/windsurf) (free tier, \$15/mo Pro), [GitHub Copilot Workspace](https://github.com/features/copilot) (\$10-39/mo), [Cline](https://cline.bot/) (VS Code extension, free), [Continue](https://continue.dev/) (VS Code/JetBrains extension, free or \$10/mo Teams), [Roo Code](https://roocode.com/) (VS Code extension, free or \$20/mo Pro), [Kilocode](https://kilocode.ai/) (VS Code/JetBrains, free or \$29/user/mo Teams), [Replit Agent](https://replit.com/) (cloud-based)
+::::
 - **Download:** [cursor.com](https://cursor.com/)
 
 #### 2. 💻 **Claude Code**
@@ -208,7 +210,9 @@ We'll work with **Cursor** to demonstrate the AI-assisted workflow, then repeat 
   - Requires Claude subscription or Anthropic API key. Can also work through cloud providers, like Amazon Bedrock
   - Works with Opus 4.1, Sonnet 4.5, Haiku 4.5, and other Claude models
 - **Best for:** CLI warriors who live in the terminal
-- **Alternatives:** [Gemini CLI](https://github.com/google-gemini/gemini-cli) (free tier available), [Cline](https://github.com/cline/cline) (VS Code extension with CLI mode, free), [Continue](https://github.com/continuedev/continue) (IDE/terminal/CI agent, free), [Plandex](https://github.com/plandex-ai/plandex) (designed for large projects), [aichat](https://github.com/sigoden/aichat) (all-in-one LLM CLI), [GitHub Copilot CLI](https://github.com/github/copilot-cli), [Aider](https://github.com/Aider-AI/aider) (Git-integrated, open-source), [Google Jules](https://jules.google/) (async background agent, beta)
+::::{dropdown} Alternatives
+- [Gemini CLI](https://github.com/google-gemini/gemini-cli) (free tier available), [Cline](https://github.com/cline/cline) (VS Code extension with CLI mode, free), [Continue](https://github.com/continuedev/continue) (IDE/terminal/CI agent, free), [Plandex](https://github.com/plandex-ai/plandex) (designed for large projects), [aichat](https://github.com/sigoden/aichat) (all-in-one LLM CLI), [GitHub Copilot CLI](https://github.com/github/copilot-cli), [Aider](https://github.com/Aider-AI/aider) (Git-integrated, open-source), [Google Jules](https://jules.google/) (async background agent, beta)
+::::
 - **Install:** Requires Node.js, then `npm install --global @anthropic/claude-code`
 
 :::{note} Further Reading
@@ -324,9 +328,7 @@ We'll cover the detailed git workflow when you start generating code in Exercise
 (ai-tool)=
 ### ⚙️ AI tool
 
-We will be using Cursor and Claude Code throughout this tutorial. Please install them if you would like to follow along.
-
-You are totally welcome to use any AI tool you have installed on your computer! Many of them follow similar patterns and expose similar functionality.
+We will be using Cursor and Claude Code throughout this tutorial. Please install them if you would like to follow along. Other tools work similarly, but we won’t cover them here.
 
 #### 🎨 Setting up Cursor
 
@@ -359,7 +361,11 @@ We recommend you sign up for a free Hobby plan for this workshop! You'll have on
    ```
 
 3. **Set up Claude subscription or Anthropic API key**
-   - More details to be added
+   - We will be using Claude models provided by AWS Bedrock in this tutorial:
+   ```bash
+   # macOS/Linux
+   export AWS_BEARER_TOKEN_BEDROCK=your-bedrock-api-key
+   ```
 
 By now, you should have:
 - ✅ Cursor installed with a free account created
@@ -543,7 +549,7 @@ You can downgrade to faster/cheaper models (Claude Haiku 4.5, GPT-5 Mini, or GLM
 
    :::{note} No Visual Indicator
    Cursor automatically reads and applies AGENTS.md, but there's **no visual indicator** in the interface showing it's active.
-   ![The Cursor interface showing the user promopt "Can I use package-lock.json with this repo?" with a part of the AI model "thinking" tokens saying "From the rules section, there's a clear directive about package management: ✅ Do: Use jlpm exclusively"](../assets/images/implicit-agents-md.png)
+   ![The Cursor interface showing the user prompt "Can I use package-lock.json with this repo?" with a part of the AI model "thinking" tokens saying "From the rules section, there's a clear directive about package management: ✅ Do: Use jlpm exclusively"](../assets/images/implicit-agents-md.png)
    :::
 
    AI should respond with `jlpm`, not `npm` or `yarn` - that comes from your AGENTS.md rules!
@@ -566,7 +572,7 @@ You can downgrade to faster/cheaper models (Claude Haiku 4.5, GPT-5 Mini, or GLM
 
    AI should respond with (Claude Sonnet 4.5):
    - Checking your environment and switching to `jupytercon2025` for the rest of the commands
-   - Verify tools like `jlpm` are available in the environment`
+   - Verify tools like `jlpm` are available in the environment
    - Checking that extension is currently installed by looking into the outputs of `jupyter labextension list` and `jupyter server extension list`
    - Building the extension for you
    - Providing a summary of operations and suggestions on how to get it running
@@ -696,7 +702,7 @@ Send the prompt and watch as it generates the entire feature. **In about 2-3 min
 **Test the functionality:**
 ```bash
 jlpm build
-pip intstall -e .
+pip install -e .
 jupyter lab
 ```
 
@@ -925,7 +931,7 @@ Always save plans to files: `plans/*.md`
 :::{tip} Managing Context and Costs
 Instead of one long chat for everything, start fresh for each phase.
 
-Why new chats? It has do with LLMs context window. Saturating the context window leads to AI confusion and runs up the costs. File-based plans allow us to start new chats and still keep the required context.
+Why new chats? It has to do with LLMs context window. Saturating the context window leads to AI confusion and runs up the costs. File-based plans allow us to start new chats and still keep the required context.
 
 As you work through phases, keep an eye on **context window percentage** (shown in Cursor chat):
 
