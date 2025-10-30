@@ -1193,21 +1193,12 @@ git push
 1. **Start an interactive session**:
 
    ```bash
-   claude-code
+   claude
    ```
 
-2. **Provide context** by referencing files in your prompt:
+2. **Send the prompt from Exercise B:**
 
-   ```
-   I'm working on a JupyterLab extension. Please read these files for context:
-   - src/widget.ts
-   - jupytercon2025_extension_workshop/routes.py
-   - AGENTS.md
-   - package.json
-   - pyproject.toml
-
-   [Then paste the main prompt about adding image editing capabilities]
-   ```
+   Use the same [one-shot prompt from Exercise B](#power-and-peril-of-one-shot-prompts) to add image editing capabilities. Claude Code will read the referenced files automatically as you mention them in your prompt.
 
 3. **Review and apply changes**:
    - Claude Code will show diffs for each file
@@ -1221,6 +1212,9 @@ git push
 ```
 Can you also run `jlpm build` to verify this compiles?
 ```
+
+or run the commands **inside** Claude Code by triggering bash mode with `!`.
+Claude Code will see your command and outputs and might use them later, i.e. for debugging
 
 **Ask for explanations:**
 
