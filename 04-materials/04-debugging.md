@@ -29,7 +29,7 @@ Knowing the kind of error you are dealing with is already a solid step forward.
 :class: simple
 :icon: false
 
-Build-time errors appear in your terminal during `jlpm build`, while runtime errors show up in the browser console after your extension is loaded.
+Build-time errors appear in your terminal during `jlpm build`, while runtime errors show up in the browser console or `jupyter lab` terminal logs after your extension is loaded.
 :::
 
 - **Python backend errors vs TypeScript frontend errors**
