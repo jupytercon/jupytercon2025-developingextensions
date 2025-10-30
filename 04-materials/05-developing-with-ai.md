@@ -258,7 +258,7 @@ If you completed the anatomy module and want to continue with your extension:
 
 4. Skip to [AI tool](#ai-tool) below.
 
-#### 📥 Option 2: Fork the finished extension (recommended)
+#### 📥 Option 2: Fork the finished extension
 
 If you'd prefer to start fresh or didn't complete the anatomy module:
 
