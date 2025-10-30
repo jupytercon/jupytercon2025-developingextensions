@@ -360,11 +360,44 @@ We recommend you sign up for a free Hobby plan for this workshop! You'll have on
    npm install --global @anthropic-ai/claude-code
    ```
 
-3. **Set up Claude subscription or Anthropic API key**
-   - We will be using Claude models provided by AWS Bedrock in this tutorial:
+3. **Set up AWS Bedrock authentication**
+
+   We will be using Claude models provided by AWS Bedrock in this tutorial.
+
+   **Required environment variables:**
+
    ```bash
    # macOS/Linux
    export AWS_BEARER_TOKEN_BEDROCK=your-bedrock-api-key
+   export CLAUDE_CODE_USE_BEDROCK=1
+   export AWS_REGION=us-east-1  # or your region
+   ```
+
+   :::{note} **About Bedrock API Keys**
+   - Bedrock API keys provide simpler authentication without needing full AWS credentials
+   - Learn more about [Bedrock API keys](https://docs.aws.amazon.com/bedrock/latest/userguide/api-keys-use.html)
+   - Get your API key from the [Amazon Bedrock console](https://console.aws.amazon.com/bedrock/)
+   :::
+
+   :::{dropdown} Additional customization (optional)
+   **To customize models:**
+
+   ```bash
+   export ANTHROPIC_MODEL='global.anthropic.claude-sonnet-4-5-20250929-v1:0'
+   export ANTHROPIC_SMALL_FAST_MODEL='us.anthropic.claude-haiku-4-5-20251001-v1:0'
+   ```
+
+   **Recommended token settings for Bedrock:**
+
+   ```bash
+   export CLAUDE_CODE_MAX_OUTPUT_TOKENS=4096
+   export MAX_THINKING_TOKENS=1024
+   ```
+
+   **Why these token settings?**
+   - `CLAUDE_CODE_MAX_OUTPUT_TOKENS=4096`: Bedrock's throttling sets a minimum 4096 token penalty. Setting lower won't reduce costs but may cut off responses.
+   - `MAX_THINKING_TOKENS=1024`: Provides space for extended thinking without cutting off tool use responses.
+   :::
    ```
 
 By now, you should have:
