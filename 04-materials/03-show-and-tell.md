@@ -20,6 +20,17 @@ Its unique strengths are:
   [use it in your browser without installing it](https://jupytergis.readthedocs.io/en/latest/lite/)!
 
 
+## 🐊 [gator](https://github.com/mamba-org/gator)
+
+A user interface for managing Conda environments in JupyterLab (or standalone).
+
+
+## 🛒 [JupyterLab Extension Marketplace](https://marketplace.orbrx.io/)
+
+An unofficial, community-run, searchable extensions catalog making it easier to discover
+new extensions.
+
+
 ## 🌐 Popular JupyterLab Extensions
 
 The Jupyter community has built a rich ecosystem of extensions. Here are some popular and well-maintained extensions you might find interesting:
