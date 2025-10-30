@@ -100,7 +100,8 @@ In the context of AI development, VRAM is crucial for loading and running large 
 Typical consumer GPUs have between 4GB to 24GB of VRAM, with high-end models offering more.
 
 LLM
-: Large Language Model - a type of artificial intelligence model trained on vast amounts of text data to understand and generate human-like text.
+: Large Language Model - a type of AI model trained on vast amounts of text data to understand and generate human-like text.
+When we say "AI" in this workshop, we're referring to LLMs.
 LLMs can assist with coding tasks like writing code, debugging, refactoring, and explaining complex concepts.
 Examples include GPT-5, Claude, and Qwen.
 These models are characterized by having billions of parameters and the ability to perform diverse language tasks without task-specific training.
