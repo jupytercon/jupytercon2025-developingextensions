@@ -629,6 +629,7 @@ Send the prompt and watch as it generates the entire feature. **In about 2-3 min
 **Test the functionality:**
 ```bash
 jlpm build
+pip intstall -e .
 jupyter lab
 ```
 
