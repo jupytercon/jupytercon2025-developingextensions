@@ -213,7 +213,7 @@ We'll work with **Cursor** to demonstrate the AI-assisted workflow, then repeat 
 ::::{dropdown} Alternatives
 - [Gemini CLI](https://github.com/google-gemini/gemini-cli) (free tier available), [Cline](https://github.com/cline/cline) (VS Code extension with CLI mode, free), [Continue](https://github.com/continuedev/continue) (IDE/terminal/CI agent, free), [Plandex](https://github.com/plandex-ai/plandex) (designed for large projects), [aichat](https://github.com/sigoden/aichat) (all-in-one LLM CLI), [GitHub Copilot CLI](https://github.com/github/copilot-cli), [Aider](https://github.com/Aider-AI/aider) (Git-integrated, open-source), [Google Jules](https://jules.google/) (async background agent, beta)
 ::::
-- **Install:** Requires Node.js, then `npm install --global @anthropic/claude-code`
+- **Install:** Requires Node.js, then `npm install --global @anthropic-ai/claude-code`
 
 :::{note} Further Reading
 :class: dropdown
@@ -1137,7 +1137,7 @@ git commit -m "Complete image editor feature"
 git push
 ```
 
-## 🖥️  Demo: AI from the command line (10 minutes)
+## 🖥️ Demo: AI from the command line (10 minutes)
 
 1. **Start an interactive session**:
 
