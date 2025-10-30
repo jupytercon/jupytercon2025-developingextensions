@@ -219,7 +219,7 @@ We'll work with **Cursor** to demonstrate the AI-assisted workflow, then repeat 
 ::::{dropdown} Alternatives
 - [Gemini CLI](https://github.com/google-gemini/gemini-cli) (free tier available), [Cline](https://github.com/cline/cline) (VS Code extension with CLI mode, free), [Continue](https://github.com/continuedev/continue) (IDE/terminal/CI agent, free), [Plandex](https://github.com/plandex-ai/plandex) (designed for large projects), [aichat](https://github.com/sigoden/aichat) (all-in-one LLM CLI), [GitHub Copilot CLI](https://github.com/github/copilot-cli), [Aider](https://github.com/Aider-AI/aider) (Git-integrated, open-source), [Google Jules](https://jules.google/) (async background agent, beta)
 ::::
-- **Install:** Requires Node.js, then `npm install --global @anthropic-ai/claude-code`
+- **Install:** See [official setup instructions](https://docs.claude.com/en/docs/claude-code/setup)
 
 :::{note} Further Reading
 :class: dropdown
@@ -354,19 +354,25 @@ We recommend you sign up for a free Hobby plan for this workshop! You'll have on
 
 #### ⌨️ Setting up Claude Code
 
-1. **Use your workshop environment**
-   - You already have Node.js 22 installed in your `jupytercon2025` environment
-   - Make sure the environment is activated:
+1. **Install Claude Code**
+
+   Follow the [official setup instructions](https://docs.claude.com/en/docs/claude-code/setup) for your operating system.
+
+   **Recommended: Native installers**
+   - **macOS/Linux:** `curl -fsSL https://claude.ai/install.sh | bash`
+   - **Windows PowerShell:** `irm https://claude.ai/install.ps1 | iex`
+
+   **Alternative: npm (lives in your environment)**
+
+   If you already have Node.js 22 installed in your `jupytercon2025` environment:
    ```bash
    micromamba activate jupytercon2025
-   ```
-
-2. **Install Claude Code**
-   ```bash
    npm install --global @anthropic-ai/claude-code
    ```
 
-3. **Set up AWS Bedrock authentication**
+   See the [full installation guide](https://docs.claude.com/en/docs/claude-code/setup) for all options.
+
+2. **Set up AWS Bedrock authentication**
 
    We will be using Claude models provided by AWS Bedrock in this tutorial.
 
