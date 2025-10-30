@@ -1273,30 +1273,26 @@ First, we need to define a tracker object:
 
 ```{code} typescript
 :linenos:
-:emphasize-lines: 1-5
+:emphasize-lines: 1-4
 :filename: src/index.ts
 
     // Track widget state
-    const tracker_namespace = 'jupytercon2025-extension-workshop';
     const tracker = new WidgetTracker<ImageCaptionMainAreaWidget>({
-      namespace: tracker_namespace
+      namespace: 'jupytercon2025-extension-workshop'
     });
 
     //Register a new command:
     const command_id = 'image-caption:open';
     app.commands.addCommand(command_id, {
-      execute: () => {
 ```
 
 Then, add our widget to the tracker:
 
 ```{code} typescript
 :linenos:
-:emphasize-lines: 6-8
+:emphasize-lines: 4-6
 :filename: src/index.ts
 
-    app.commands.addCommand(command_id, {
-      execute: () => {
         // When the command is executed, create a new instance of our widget
         const widget = new ImageCaptionMainAreaWidget();
 
@@ -1306,17 +1302,18 @@ Then, add our widget to the tracker:
 
         // Then add it to the main area:
         app.shell.add(widget, 'main');
-      },
-      icon: imageIcon,
-      label: 'View a random image & caption'
-    });
 ```
 
-And finally, restore any previous state when our plugin is activated:
+Now we can restore previously-open widgets when our plugin is activated.
+This requires a unique identifier for our widget, `id`, which is currently undefined
+(we'll get it in the next step).
+The restorer will execute the command to restore the widget, and pass in the original
+widget's `id` to the command as an optional argument.
+
 
 ```{code} typescript
 :linenos:
-:emphasize-lines: 4-10
+:emphasize-lines: 4-11
 :filename: src/index.ts
 
     palette.addItem({ command: command_id, category: 'Tutorial' });
@@ -1326,9 +1323,47 @@ And finally, restore any previous state when our plugin is activated:
     if (restorer) {
       restorer.restore(tracker, {
         command: command_id,
-        name: () => tracker_namespace
+        args: widget => ({ id: widget.id }),
+        name: widget => widget.id
       });
     }
+```
+
+Now we need to update our command to accept the new `id` argument.
+It will only receive this when restoring, so if it's populated we can use it to create a
+new widget with an identical `id`.
+Remember, our widgets don't have an `id` at all at this stage, so we also need to handle
+the case where `id` isn't populated and generate a randomized one.
+
+```{code} typescript
+:linenos:
+:emphasize-lines: 2,6-12
+:filename: src/index.ts
+
+    app.commands.addCommand(command_id, {
+      execute: (args?: { id?: string }) => {
+        // When the command is executed, create a new instance of our widget
+        const widget = new ImageCaptionMainAreaWidget();
+
+        // Use provided ID or generate a new one
+        // During restoration, the args will contain the saved widget ID
+        if (args && args.id) {
+          widget.id = args.id;
+        } else {
+          widget.id = `image-caption-${crypto.randomUUID()}`;
+        }
+
+        if (!tracker.has(widget)) {
+          tracker.add(widget);
+        }
+
+        // Then add it to the main area:
+        app.shell.add(widget, 'main');
+        return widget;
+      },
+      icon: imageIcon,
+      label: 'View a random image & caption'
+    });
 ```
 
 
@@ -1346,6 +1381,8 @@ You may see a different image; this is because we're loading a new image every t
 widget is initialized.
 :::
 
+Don't forget to test with multiple widgets open!
+
 
 ### 🧠 What do we know now?
 
@@ -1354,6 +1391,14 @@ when we refresh the page.
 
 We know that we can use the `WidgetTracker` to remember the state of our widget and the
 `ILayoutRestorer` plugin to restore that state.
+
+
+#### Think about...
+
+When we restore our widget, the exact same image isn't displayed.
+
+What if we want to restore the widget with the exact same image and caption it displayed
+before we refreshed the page?
 
 
 ## 🎉 Great job!
