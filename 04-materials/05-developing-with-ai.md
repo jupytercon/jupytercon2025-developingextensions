@@ -845,6 +845,14 @@ As you work through phases, keep an eye on **context window percentage** (shown 
    Phase 1 is complete. Now implement advanced filters (blur, sharpen, crop).
    ```
 
+   :::{tip} Follow up and refine after reviewing the changes.
+
+   For example, I noticed that Rest button disappeared from the UI
+   ```
+   Where did the reset button go?
+   ```
+   :::
+
 6. **Commit after Phase 2 works:**
 
    ```bash
@@ -852,15 +860,80 @@ As you work through phases, keep an eye on **context window percentage** (shown 
    git commit -m "Phase 2: Add advanced filters (blur, sharpen, crop)"
    ```
 
-::: Adopt a "product manager" mindset
+7. **Start ANOTHER fresh chat for Phase 3:**
 
-:::{important} 💾 **Final Git commit and push!**
+   ```
+   We are ready for Phase 3 of @plans/image-editing-feature.md
+
+   Phase 2 is complete. Now implement the polish features:
+   - Save edited image functionality
+   - Undo/redo buttons
+   - Loading states and error handling
+   ```
+
+8. Add additional features that might be needed
+
+   Now that Phase 3 is complete (with undo/redo, save, and history), consider adding a feature like **Custom Filter Presets**.
+
+   :::{tip}  **Structure Prompts as User Stories**
+
+   **Effective prompts follow the user story format: clear requirements, constraints, and acceptance criteria.**
+
+   Instead of:
+   > "Let users save their favorite filter combinations"
+
+   Try this structure:
+
+   ````markdown
+   **User Story:** As a user who frequently applies the same combination of filters, I want to save my favorite filter sequences as named presets and quickly reapply them to new images, so I can maintain consistent editing styles without manually repeating steps.
+
+   **Acceptance Criteria:**
+   - [ ] Users can save the current filter sequence as a named preset (e.g., "Vintage Look")
+   - [ ] A preset dropdown menu displays all saved presets
+   - [ ] Clicking a preset applies all its filters in sequence to the current image
+   - [ ] Users can delete presets they no longer need
+   - [ ] Presets persist across JupyterLab sessions
+   - [ ] A tooltip shows which filters are included in each preset when hovering
+   - [ ] Maximum of 10 presets can be saved (to prevent cluttering the UI)
+   - [ ] Preset names must be unique and non-empty
+
+   **Technical Requirements:**
+   - Backend: Add `/api/<extension>/presets` endpoints (GET, POST, DELETE)
+   - Storage: Store user-created presets in a JSON file at `~/.jupytercon-image-editor/settings.json`
+     - Use Python's `pathlib.Path` to handle cross-platform paths
+     - Create the directory if it doesn't exist (with appropriate permissions)
+     - Use `json.load()` and `json.dump()` for reading/writing
+     - Handle file locking for concurrent access (if needed)
+   - Data model: `{id: string, name: string, filters: Array<{type: string, params: object}>, created: timestamp}`
+   - Frontend: Add "Save as Preset" button and preset dropdown to toolbar
+   - UI: Use `@jupyterlab/apputils` `showDialog` for naming new presets
+   - Validation: Check for name uniqueness and length (3-30 characters)
+   - Apply preset: Reuse existing filter application logic from Phase 2
+
+   **Non-Requirements (for later):**
+   - Don't implement preset sharing/export yet
+   - Don't support editing existing presets (delete and recreate is fine for now)
+   - Don't add preset thumbnails/previews
+   - Don't implement preset categories or folders
+   - Performance optimization for applying complex presets can wait
+
+   **Questions for AI:**
+   - How should we handle concurrent writes if multiple JupyterLab instances are running?
+   - What's the best error handling if the settings file is corrupted or unreadable?
+   - Should we create a backup of the settings file before writing changes?
+   - What's the best UX for the preset dropdown - regular select, menu bar item, or palette command?
+   - How do we handle if a preset contains filters with deprecated parameters in future versions?
+   ````
+
+   This level of detail helps AI give you exactly what you want.
+   :::
+
+9. 💾 **Final Git commit and push!**
 ```bash
 git add .
-git commit -m "Complete Exercise 1: Image editing with AI assistance"
+git commit -m "Complete image editor feature"
 git push
 ```
-:::
 
 ## 🖥️  Demo: AI from the command line (10 minutes)
 
