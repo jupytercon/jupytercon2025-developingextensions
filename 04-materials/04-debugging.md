@@ -12,6 +12,8 @@ debugging can be an experience that leaves you feeling accomplished rather than 
 go over some common issues that you might encounter when working on extensions, and a few ways in which you can
 tackle them.
 
+---
+
 ## 1️⃣ Understanding Error Messages
 
 ### 🔍 Types of Errors
@@ -128,6 +130,8 @@ From there, you can:
 There are times where you might right-click on an element expecting to see the browser with the "Inspect" option, but are instead met with a JupyterLab menu. There are a few cases where JupyterLab prevents this default browser behavior and displays it's own context menu, but you can still access that browser menu by: holding `Shift` while right-clicking, or using the dev tools "Select an element" picker (using the keyboard shortcut `Cmd + Shift + C` for macOS or `Ctrl + Shift + C` for Windows/Linux).
 :::
 
+---
+
 ## 4️⃣ Best Practices
 
 ### 🎯 Debugging Workflow
@@ -152,6 +156,8 @@ Of course, even better than debugging, would be to have working code that behave
 - **Write tests for critical functionality**: While it may take time upfront, unit tests for testing complex logic and important API calls can help you identify the source of errors earlier on.
 - **Write clear error messages**: When you add error handling in your code, make the error messages specific, clear, and consice. "Failed to load data", is okay and might be helpful in the moment, but as your code base grows and time passes, "Failed to fetch notebook metadata from /api/notebooks/{id}" can make for an easier time tracking the source of an error.
 
+---
+
 ## 5️⃣ Hands-on Exercise
 
 :::{exercise} Debug a Broken Extension
@@ -167,9 +173,173 @@ Work through the issues systematically, using the appropriate debugging tool for
 
 ### Instructions
 
-1. Copy the file at: TBD
-2. Past the file into the file: TBD
-   TBD...
+0. Make sure all your work up to now is saved and/or committed.
+1. Navigate to the `src` directory where your `widget.ts` file is located
+2. Copy the following modified `widget.ts` file contents and paste them into your local `src/widget.ts` file
+
+```{code} typescript
+:linenos:
+:filename: src/widget.ts
+
+import { Widget } from '@lumino/widgets';
+import { MainAreaWidget, ToolbarButton } from '@jupyterlab/apputils';
+import { imageIcon, refreshIcon } from '@jupyterlab/ui-components';
+
+import { requestAPI } from './request';
+
+class ImageCaptionWidget extends Widget {
+  // Initialization
+  constructor() {
+    super();
+
+    // Create and append an HTML <p> (paragraph) tag to our widget's node in
+    // the HTML document
+    const hello = document.createElement('p');
+    hello.innerHTML = 'Hello, world!';
+    this.node.appendChild(hello);
+
+    const center = document.createElement('center');
+    this.node.appendChild(center);
+
+    // Put an <img> tag into the <center> tag, and also save it as a class
+    // attribute so we can update it later.
+    this.img = document.createElement('img');
+    center.appendChild(this.img);
+
+    // Do the same for a caption!
+    this.caption = document.createElement('p');
+    center.appendChild(this.caption);
+
+    // BUG #1: Typo in method name - TypeScript will catch this at build time
+    // Initialize the image from the server extension
+    this.load_imge();
+  }
+
+  // Fetch data from the server extension and save the results to img and
+  // caption class attributes
+  load_image(): void {
+    // BUG #3: Wrong endpoint name - will cause 404 error
+    requestAPI<any>('random-image-captions')
+      .then(data => {
+        console.log(data);
+        this.img.src = `data:image/jpeg;base64, ${data.b64_bytes}`;
+        this.caption.innerHTML = data.caption;
+      })
+      .catch(reason => {
+        console.error(`Error fetching image data.\n${reason}`);
+      });
+  }
+
+  // Information about class attributes for the type checker
+  img: HTMLImageElement;
+  caption: HTMLParagraphElement;
+}
+
+export class ImageCaptionMainAreaWidget extends MainAreaWidget<ImageCaptionWidget> {
+  constructor() {
+    const widget = new ImageCaptionWidget();
+    super({ content: widget });
+
+    this.title.label = 'Random image with caption';
+    this.title.caption = this.title.label;
+    this.title.icon = imageIcon;
+
+    // Add a refresh button to the toolbar
+    const refreshButton = new ToolbarButton({
+      icon: refreshIcon,
+      tooltip: 'Refresh image',
+      onClick: () => {
+        // BUG #2: Wrong method name - using 'as any' bypasses TypeScript checking
+        // This will cause a runtime "is not a function" error when clicked
+        // Should be load_image(), not refresh()
+        (widget as any).refresh();
+      }
+    });
+    this.toolbar.addItem('refresh', refreshButton);
+  }
+}
+```
+
+### Key Debugging Tools
+
+1. **Terminal/Compiler** - TypeScript catches errors at build time
+2. **Browser Console** - Runtime errors and logging
+3. **Network Tab** - API calls and HTTP status codes
+
+### The 3 Bugs
+
+#### Bug #1: Build-Time Error (Terminal)
+
+- **Type:** TypeScript compilation error
+- **Trigger:** Run `jlpm run build` in the terminal
+
+If you try building the extension with this modified `widget.ts` file, you should see a compilation error in the terminal.
+
+**Expected error:**
+```text
+src/widget.ts:32:10 - error TS2551: Property 'load_imge' does not exist on type 'ImageCaptionWidget'. Did you mean 'load_image'?
+
+32     this.load_imge();
+            ~~~~~~~~~
+
+  src/widget.ts:37:3
+    37   load_image(): void {
+         ~~~~~~~~~~
+    'load_image' is declared here.
+
+Found 1 error in src/widget.ts:32
+```
+
+#### Bug #2: Runtime Error (Browser Console)
+
+- **Type:** Method doesn't exist
+- **Trigger:** Clicking the refresh button
+
+:::{warning} **The Danger of `as any`**
+The type cast `(widget as any).refresh()` tells TypeScript: _"Trust me, I know what I'm doing."_
+
+But if `refresh()` doesn't actually exist on the widget:
+- **Compile time:** No errors (type checking disabled)
+- **Runtime:** `TypeError: widget.refresh is not a function`
+
+This is why `as any` should be avoided—it hides bugs that TypeScript could catch!
+:::
+
+**Expected error:**
+```console
+961.29c067b15a524e556eed.js?v=29c067b15a524e556eed:2 Uncaught TypeError: widget.refresh is not a function
+    at Object.onClick (widget.ts:78:25)
+    at Ws.o (jlab_core.e595af6ce37775e8a915.js?v=e595af6ce37775e8a915:1:1764774)
+    at [... internal JupyterLab code ...]
+```
+
+#### Bug #3: Network Error (Browser Network Tab)
+
+- **Type:** Wrong API endpoint (404 status code)
+- **Trigger:** Clicking the refresh button
+
+:::{important} **Using the Network Tab**
+When your extension builds successfully but data doesn't load, check the **Network tab** in DevTools:
+
+1. Open the DevTools → **Network** tab
+2. Filter by **Fetch/XHR**
+3. Look for failed requests (red status codes at the endpoint `random-image-captions`)
+4. Click the request to inspect the URL and response
+
+**This bug:** The endpoint `'random-image-captions'` (plural) returns **404 Not Found** because the correct endpoint is `'random-image-caption'` (singular).
+:::
+
+**What you'll see in Network tab:**
+```markdown
+| Field | Value |
+|-------|-------|
+| Request URL | `http://localhost:8890/jupytercon2025-extension-workshop/random-image-captions?1761852662635` |
+| Request Method | `GET` |
+| Status Code | **404 Not Found** |
+| Remote Address | `[::1]:8890` |
+| Referrer Policy | `strict-origin-when-cross-origin` |
+```
+---
 
 ## 🔧 Common Debugging Scenarios
 
