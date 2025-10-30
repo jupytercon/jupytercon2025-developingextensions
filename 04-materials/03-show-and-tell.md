@@ -33,6 +33,23 @@ interactive sky map.
 visualization.
 
 
-## More
+## 🌐 Popular JupyterLab Extensions
 
-🏗️ TODO!
+The Jupyter community has built a rich ecosystem of extensions. Here are some popular and well-maintained extensions you might find interesting:
+
+- [JupyterLab-Contrib Extensions](https://jupyterlab-contrib.github.io/extensions.html) - Community-maintained collection of popular JupyterLab extensions
+- [Jupytext](https://github.com/mwouts/jupytext) - Edit Jupyter notebooks as plain text files (Python, Markdown, R scripts)
+- [anywidget](https://github.com/manzt/anywidget) - Build custom interactive widgets for Jupyter with simple HTML/JS/CSS
+- [ipympl](https://github.com/matplotlib/ipympl) - Interactive Matplotlib figures with pan/zoom controls in notebooks
+- [nbdime](https://github.com/jupyter/nbdime) - Diff and merge notebooks with built-in conflict resolution
+- [JupyterLab LSP](https://github.com/jupyter-lsp/jupyterlab-lsp) - Language Server Protocol integration for code completion and linting
+- [JupyterLab Git](https://github.com/jupyterlab/jupyterlab-git) - Visual Git interface with staging, commits, and diff viewer
+- [jupyter-server-proxy](https://github.com/jupyterhub/jupyter-server-proxy) - Proxy web services running alongside your Jupyter server
+- [jupyter-archive](https://github.com/jupyterlab-contrib/jupyter-archive) - Download and extract archive files (zip, tar.gz) from JupyterLab
+- [ipylab](https://github.com/jtpio/ipylab) - Control JupyterLab from Python notebooks (open files, run commands)
+- [Jupyter AI](https://github.com/jupyterlab/jupyter-ai) - Native AI assistant chat interface powered by various LLM providers
+- [jupyterlab-code-formatter](https://github.com/jupyterlab-contrib/jupyterlab_code_formatter) - Format code cells with Black, isort, autopep8, and more
+- [jupyter-collaboration](https://github.com/jupyterlab/jupyter-collaboration) - Real-time collaborative editing of notebooks and files
+- [jupysql-plugin](https://github.com/ploomber/jupysql-plugin) - Interactive SQL client with query history and table explorer
+- [Mitosheet](https://github.com/mito-ds/mito) - Spreadsheet interface that generates Python code for data transformations
+- [nbgrader](https://github.com/jupyter/nbgrader) - Create and grade assignments with autograding and manual feedback
