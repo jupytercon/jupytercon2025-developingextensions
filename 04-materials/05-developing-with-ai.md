@@ -518,7 +518,7 @@ You can downgrade to faster/cheaper models (Claude Haiku 4.5, GPT-5 Mini, or GLM
 
    :::{note} No Visual Indicator
    Cursor automatically reads and applies AGENTS.md, but there's **no visual indicator** in the interface showing it's active.
-   [![The Cursor interface showing the user promopt "Can I use package-lock.json with this repo?" with a part of the AI model "thinking" tokens saying "From the rules section, there's a clear directive about package management: ✅ Do: Use jlpm exclusively"](../assets/images/implicit-agents-md.png)
+   ![The Cursor interface showing the user promopt "Can I use package-lock.json with this repo?" with a part of the AI model "thinking" tokens saying "From the rules section, there's a clear directive about package management: ✅ Do: Use jlpm exclusively"](../assets/images/implicit-agents-md.png)
    :::
 
    AI should respond with `jlpm`, not `npm` or `yarn` - that comes from your AGENTS.md rules!
@@ -800,7 +800,7 @@ Why new chats? It has do with LLMs context window. Saturating the context window
 
 As you work through phases, keep an eye on **context window percentage** (shown in Cursor chat):
 
-[![Screenshot of Cursor's context monitor showing "16.3% • 32.5K / 200K context used" in the top toolbar](../assets/images/context-monitor.png)
+![Screenshot of Cursor's context monitor showing "16.3% • 32.5K / 200K context used" in the top toolbar](../assets/images/context-monitor.png)
 
 - **< 30%:** Healthy, plenty of room
 - **30-50%:** Good, AI still focused
