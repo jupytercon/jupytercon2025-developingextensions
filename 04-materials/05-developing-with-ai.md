@@ -86,14 +86,14 @@ AI coding assistants are powered by **Large Language Models ({term}`LLMs <LLM>`)
 - **Licenses:** Vary from fully open (Apache 2.0, MIT) to restricted commercial use
 - **Deployment:** Can be self-hosted using tools like [Ollama](https://ollama.com/), [LM Studio](https://lmstudio.ai/), or [vLLM](https://github.com/vllm-project/vllm)
 - **Examples:**
-  - **Qwen3-235B-A22B** (Apache 2.0 license): 235B params with 22B active, 262K context, exceptional reasoning
-  - **GLM-4.5** (Open License): Strong coding and agentic abilities, runs on consumer hardware
-  - **GLM-4.5 Air**: Optimized for 48GB RAM laptops when quantized
+  - **Qwen3-235B-A22B** (Apache 2.0 license): 235 billion (235B) parameters with 22B active, 262 thousand (262K) {term}`token <LLM token>` context, exceptional reasoning
+  - **GLM-4.5** (Open License): Strong coding and agentic abilities, runs on consumer hardware (laptops with 16GB+ RAM)
+  - **GLM-4.5 Air**: Optimized for laptops with 48GB RAM when quantized
   - **Qwen3-Coder**: Specialized for code generation tasks
-  - **DeepSeek-R1**: 671B params (37B active), MIT license, advanced reasoning (86.7% on AIME)
-  - **OpenAI GPT-OSS-120B/20B** (Apache 2.0): Near o4-mini performance, consumer-friendly
+  - **DeepSeek-R1**: 671B parameters (37B active), MIT license, advanced reasoning (86.7% on AIME)
+  - **OpenAI GPT-OSS-120B/20B** (Apache 2.0): Near o4-mini performance, runs on consumer hardware
 - **Pros:** Full control, no API costs, data stays local, latest open models often outperform closed frontier ones
-- **Cons:** Requires technical setup and adequate hardware (16GB+ VRAM for smaller models, 48GB+ for larger ones)
+- **Cons:** Requires technical setup and adequate hardware (typically a laptop with 16GB+ {term}`VRAM` for smaller models, 48GB+ for larger ones)
 
 :::{dropdown} 💡 Self-Hosting {term}`LLMs <LLM>` (Optional)
 If you want to run models locally (for privacy or cost savings), tools like [Ollama](https://ollama.com/) make it easy:
