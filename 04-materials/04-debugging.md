@@ -79,7 +79,7 @@ Here's a tip: use different console methods to make your logs easier to scan:
 You can then also filter console messages by type.
 :::
 
-- Preserving logs across reloads
+- Preserving logs across reloads:
   If you find it would be helpful to reference earlier logs, those that appear just as the page loads, or maybe for comparison, you can look in your browser's `Console` tab for the option to "Persist log"/"Preserve log"
 
 - JupyterLab's internal logging
