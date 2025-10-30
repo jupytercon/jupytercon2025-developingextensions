@@ -408,7 +408,7 @@ cursor .
    - When to use `ReactWidget` vs `Widget`
    - REST with `ServerConnection`, state with `IStateDB`
 
-   **Development Workflow (must-know):**
+   **Development Workflow:**
    - Run `jlpm build` for TS changes; restart Jupyter for Python changes
    - Debug via browser console and server logs
 
@@ -684,7 +684,7 @@ To undo all changes made by the one-shot prompt:
 git restore .
 
 # Remove any new untracked files created by the AI
-git clean -fd
+git clean -Xdf
 ```
 
 ## 📊 Exercise C (20 minutes): Product manager framework
