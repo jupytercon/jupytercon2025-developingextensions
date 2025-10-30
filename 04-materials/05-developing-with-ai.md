@@ -814,7 +814,7 @@ As you work through phases, keep an eye on these metrics:
 - ✅ Major refactoring complete
 :::
 
-1. **Start a NEW chat** for Phase 1 (`Cmd/Ctrl + K`)
+1. **Start a NEW chat** for Phase 1 (`Cmd/Ctrl + L` to focus on chat panel, then `Cmd/Ctrl + N` to start a new chat)
 
 2. **Reference the plan:**
 
