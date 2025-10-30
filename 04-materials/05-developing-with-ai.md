@@ -98,6 +98,12 @@ AI coding assistants are powered by **Large Language Models ({term}`LLMs <LLM>`)
 :::{dropdown} 💡 Self-Hosting {term}`LLMs <LLM>` (Optional)
 If you want to run models locally (for privacy or cost savings), tools like [Ollama](https://ollama.com/) make it easy:
 
+Privacy basics: When we say "for privacy," we mean you can keep prompts, code, and any sample data on your machine rather than sending them to a third‑party API. This reduces the risk of accidental disclosure and can help with compliance when handling sensitive data (PII, credentials, customer data). You should still follow your organization's policies (for example: scrub sensitive inputs, review telemetry/logging settings, and restrict network egress during development).
+
+Learn more:
+- [OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/) — common risks like data leakage and prompt injection
+- [NIST AI Risk Management Framework (AI RMF 1.0)](https://www.nist.gov/itl/ai-risk-management-framework) — governance and privacy guidance for AI systems
+
 ```bash
 # Install Ollama
 # macOS: Download from https://ollama.com/download/mac
