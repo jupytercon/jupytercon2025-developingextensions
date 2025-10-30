@@ -5,98 +5,118 @@ By the end of this module, you'll be able to debug JupyterLab extensions using
 multiple tools and techniques.
 :::
 
-## Introduction
+## 💡 Introduction
 
 You might find yourself spending a significant portion of your development time debugging an extension that is not building, or some functionality that is now broken. With the right tools and approach,
 debugging can be an experience that leaves you feeling accomplished rather than frustrated. In this section we will
 go over some common issues that you might encounter when working on extensions, and a few ways in which you can
 tackle them.
 
-## 1. Understanding Error Messages
+## 1️⃣ Understanding Error Messages
 
-### Types of Errors
+### 🔍 Types of Errors
 
 Knowing the kind of error you are dealing with is already a solid step forward.
 
-- Build-time errors vs runtime errors
-Build-time errors happen when you're compiling your TypeScript code or building your extension.
-These are often syntax errors, type mismatches or missing/unused imports that don't allow
-you to run your code until they are fixed. On the other hand, runtime errors happened when your extension logic is executing, maybe a failed network request, or an undefined property that you've tried accessing.
+- **Build-time errors vs Runtime errors**
+  Build-time errors happen when you're compiling your TypeScript code or building your extension.
+  These are often syntax errors, type mismatches or missing/unused imports that don't allow
+  you to run your code until they are fixed. On the other hand, runtime errors happened when your extension logic is executing, maybe a failed network request, or an undefined property that you've tried accessing.
 
-- Python backend errors vs TypeScript frontend errors
-With a full stack extension, which includes a server component, it is important to understand which side, server-side or client-side, is causing the error. Python errors will show up in the terminal from which you launched your JupyterLab instance, whereas frontend TypeScript error details will be available in the browser console. There may be times where an issue initially appears to be a frontend problem, for example, data not being displayed, but it is actually a backend problem, like an API endpoint returning the wrong data.
+:::{important} 👀 You should notice...
+:class: simple
+:icon: false
 
-### Reading Stack Traces
+Build-time errors appear in your terminal during `jlpm build`, while runtime errors show up in the browser console after your extension is loaded.
+:::
+
+- **Python backend errors vs TypeScript frontend errors**
+  With a full stack extension, which includes a server component, it is important to understand which side, server-side or client-side, is causing the error. Python errors will show up in the terminal from which you launched your JupyterLab instance, whereas frontend TypeScript error details will be available in the browser console. There may be times where an issue initially appears to be a frontend problem, for example, data not being displayed, but it is actually a backend problem, like an API endpoint returning the wrong data.
+
+### 📚 Reading Stack Traces
 
 - Identifying the source of the error
-When JavaScript throws an error, it gives you a stack trace, a trail showing the path the code took before it crashed. It may seem overwhelming at first, but starting from the top and looking for recognizable file names can help. While the stack trace might show you multiple function calls usually only one or two of those are in *your* code. The others are likely in other libraries like JupyterLab itself. Finding your line in the code, you can find out where things have gone wrong.
+  When JavaScript throws an error, it gives you a stack trace, a trail showing the path the code took before it crashed. It may seem overwhelming at first, but starting from the top and looking for recognizable file names can help. While the stack trace might show you multiple function calls usually only one or two of those are in _your_ code. The others are likely in other libraries like JupyterLab itself. Finding your line in the code, you can find out where things have gone wrong.
 
 - Minified vs source-mapped traces
-Also important, if you see names like `bundle.js:4323`, that's minified code. In development mode with source maps enabled, you'll see actual files names like `Panel.tsx:53`, a much more helpful identifier. Extensions created with the `extension-template` should have source maps enabled already.
+  Also important, if you see names like `bundle.js:4323`, that's minified code. In development mode with source maps enabled, you'll see actual files names like `Panel.tsx:53`, a much more helpful identifier. Extensions created with the `extension-template` should have source maps enabled already.
 
-## 2. Terminal
+## 2️⃣ Terminal
 
-### Terminal Logs
+### 📋 Terminal Logs
 
 - Where to find JupyterLab server logs
-In the terminal where you run `jupyter lab`, you'll find a great deal of information.
+  In the terminal where you run `jupyter lab`, you'll find a great deal of information.
 
 During build time, webpack will tell you about compilation errors, missing dependencies, or TypeScript type errors. And while the messages can be verbose, you can scroll up to the first error and work through any subsequent errors.
 
-## 3. Browser Developer Tools
+## 3️⃣ Browser Developer Tools
 
-This is where the real magic happens. Head toy your browser and press `F12` (or `Cmd+Option+I` on Mac, `Ctrl+Shift+I` on Windows/Linux) to open the developer tools. Let's take a look at some of the most useful tabs.
+This is where the real magic happens! Head to your browser and open the developer tools. Let's take a look at some of the most useful tabs.
 
-### Console Tab
+:::{tip} 🔧 How to open DevTools
+
+- **Windows/Linux**: Press `F12` or `Ctrl+Shift+I`
+- **Mac**: Press `Cmd+Option+I`
+  :::
+
+### 💬 Console Tab
 
 - Viewing runtime errors and warnings
 
 Sometimes, the best tool for debugging is a simple `console.log()`. Walking through your changes and adding a logging statement to verify/inspect data, or ensure your code reaches certain logic can be quick and effective.
 
+:::{tip}
 Here's a tip: use different console methods to make your logs easier to scan:
+
 - `console.log()` for general information
 - `console.warn()` for things that aren't quite right but aren't breaking anything
 - `console.error()` for actual problems
 - `console.table()` for arrays and objects (seriously, try this one!)
+
 You can then also filter console messages by type.
+:::
 
 - Preserving logs across reloads
-If you find it would be helpful to reference earlier logs, those that appear just as the page loads, or maybe for comparison, you can look in your browser's `Console` tab for the option to "Persist log"/"Preserve log"
+  If you find it would be helpful to reference earlier logs, those that appear just as the page loads, or maybe for comparison, you can look in your browser's `Console` tab for the option to "Persist log"/"Preserve log"
 
 - JupyterLab's internal logging
-As mentioned in the previous sections of this talk, making use of JupyterLab's internal logging by running JupyterLab with `--debug` can also provide further insight into the problem you are facing.
+  As mentioned in the previous sections of this talk, making use of JupyterLab's internal logging by running JupyterLab with `--debug` can also provide further insight into the problem you are facing.
 
-### The Network Tab: Following the data trail
+### 🌐 The Network Tab: Following the data trail
 
 If your extension makes API calls to a server (JupyterLab or otherwise), the Network tab can provide you plenty of the details you might need. You can start by checking that the extension resources have been loaded.
 
 Open the Network tab and interact with your extension. You'll see a list of all the HTTP requests made, and click on any request to see:
+
 - the URL that was called
 - the request headers and payload
 - the response headers and body
 - the HTTT status code (200 is OK/good, 404 means not found, and 500 means server error)
-This can be especially useful when debugging issues where data you were expecting is not showing up, or getting an unexpected response from an API call, as getting a 200 response does not always mean you are getting the response you anticipated.
+  This can be especially useful when debugging issues where data you were expecting is not showing up, or getting an unexpected response from an API call, as getting a 200 response does not always mean you are getting the response you anticipated.
 
-### The Sources Tab: Pausing Time
+### ⏸️ The Sources Tab: Let's Pause
 
 This is where you can actually step through your code line by line, verifying the logic and behavior.
 
 First, make sure you're running JupyterLab in an environment were your extension is installed and source maps are enabled. Source maps are enabled by default if you're working from the `extension-template`.
 
 Then:
+
 1. Navigate to the Sources tab
 2. Find your extension's TypeScript files in the file tree (look for a folder with your extension's name)
 3. Click on a line number to set a breakpoint
 4. Now, interact with your extension in a way that will execute that line
 5. When the code hits your breakpoint, the code execution will pause. You'll see a visual indicator of this in your browser session.
 
-### The Elements/Inspector Tab: Examining the DOM
+### 🎨 The Elements/Inspector Tab: Examining the DOM
 
 When something looks wrong visually, either a button is in the wrong place, content is missing or styles aren't being applied as expected, you want to visit the Elements tab.
 
 You can right-click on any element in the page and select "Inspect" to jump directly to that element in the Elements tab.
 
 From there, you can:
+
 - See the HTML structure your extension created
 - View all CSS styles applied to an element
 - See which styles are being overridden (they'll be marked by a strikethrough)
@@ -104,66 +124,78 @@ From there, you can:
 - Check computed values (the final calculated values after all CSS is applied)
 - Temporarily modify HTML or CSS to test fixes
 
-*Note*: There are times where you might right-click on an element expecting to see the browser with the "Inspect" option, but are instead met with a JupyterLab menu. There are a few cases where JupyterLab prevents this default browser behavior and displays it's own context menu, but you can still access that browser menu by: holding `Shift` while right-clicking, or using the dev tools "Select an element" picker (using the keyboard shortcut `Cmd + Shift + C` for macOS or `Ctrl + Shift + C` for Windows/Linux).
+:::{hint}
+There are times where you might right-click on an element expecting to see the browser with the "Inspect" option, but are instead met with a JupyterLab menu. There are a few cases where JupyterLab prevents this default browser behavior and displays it's own context menu, but you can still access that browser menu by: holding `Shift` while right-clicking, or using the dev tools "Select an element" picker (using the keyboard shortcut `Cmd + Shift + C` for macOS or `Ctrl + Shift + C` for Windows/Linux).
+:::
 
-## 4. Best Practices
+## 4️⃣ Best Practices
 
-### Debugging Workflow
+### 🎯 Debugging Workflow
+
 - Start simple: `console.log` first
-When something breaks, you don't need to automatically reach for advanced tools. First adding a few `console.log()` statements can help you: verify that your function is being called, confirm the data has the shape you expect, or discern whether or not you're reaching a line of code that's problematic. Sometimes you'll realize what the issue is quickly with just these simple verification steps.
+  When something breaks, you don't need to automatically reach for advanced tools. First adding a few `console.log()` statements can help you: verify that your function is being called, confirm the data has the shape you expect, or discern whether or not you're reaching a line of code that's problematic. Sometimes you'll realize what the issue is quickly with just these simple verification steps.
 - Progress to browser DevTools
-If console logs aren't enough, open the browser console and look for errors. Read the stack trace and click on the file links to jump to the section of code where the issue originates from.
+  If console logs aren't enough, open the browser console and look for errors. Read the stack trace and click on the file links to jump to the section of code where the issue originates from.
 - Checkout the Network tab if applicable
-Look through the Network tab if data is involved. Make sure your API calls are succeeding and retrieving the data that you expect.
+  Look through the Network tab if data is involved. Make sure your API calls are succeeding and retrieving the data that you expect.
 - Use browser debugger breakpoints for complex issues
-For more complex issues involving state changes, timing issues, or logic problems, set breakpoints in the Sources tab and step through the code. Watch variables change, examine the call stack and understand the flow.
+  For more complex issues involving state changes, timing issues, or logic problems, set breakpoints in the Sources tab and step through the code. Watch variables change, examine the call stack and understand the flow.
 - Keep development environment consistent
-Is the extension installed and enabled? Did your latest changes build successfully?
+  Is the extension installed and enabled? Did your latest changes build successfully?
 
-### Prevention is better
+### 🛡️ Prevention is better
 
 Of course, even better than debugging, would be to have working code that behaves as you expect. A few practices that can save you time debugging are:
+
 - **Let TypeScript help you**: The red squiggles that you might see in your editor are important. Type errors are often caught at compile time and don't become an issue as you're running your extension code in the browser.
 - **Use a linter**: Tools like ESLint and Prettier catch common mistakes and help enforce consistent patterns. They'll give you warnings about unused variables or potential null reference errors.
 - **Write tests for critical functionality**: While it may take time upfront, unit tests for testing complex logic and important API calls can help you identify the source of errors earlier on.
 - **Write clear error messages**: When you add error handling in your code, make the error messages specific, clear, and consice. "Failed to load data", is okay and might be helpful in the moment, but as your code base grows and time passes, "Failed to fetch notebook metadata from /api/notebooks/{id}" can make for an easier time tracking the source of an error.
 
-## 5. Hands-on Exercise
+## 5️⃣ Hands-on Exercise
 
 :::{exercise} Debug a Broken Extension
 Practice debugging techniques by:
+
 1. Identifying errors in a provided broken extension
 2. Using console logs to trace execution
 3. Setting breakpoints with browser DevTools
 4. Fixing the issues step by step
-:::
+   :::
 
 Work through the issues systematically, using the appropriate debugging tool for each problem. Remember: start simple, use console logs, then progress to more advanced tools as needed.
 
 ### Instructions
+
 1. Copy the file at: TBD
 2. Past the file into the file: TBD
-TBD...
+   TBD...
 
-## Common Debugging Scenarios
+## 🔧 Common Debugging Scenarios
 
 Let's walk through some common problems when working on developing extensions, and how to approach debugging them.
 
-### "My extension is not loading!"
+### ❌ "My extension is not loading!"
 
 First, check the terminal where you're running the build. Did the build complete successfully?
 Next, make sure you actually installed the extension and refresh the page. Run `jupyter labextension list` in your terminal to verify it's installed.
 
-Finally, check the browser console for any red errors. Some common culprits are:
+Finally, check the browser console for any red errors.
+
+:::{important} Common culprits:
+:class: simple
+:icon: false
+
 - Syntax errors in your code
 - Missing dependencies
 - Errors in your plugin's `activate()` function
+  :::
 
-### "My UI isn't updating!"
+### 🖼️ "My UI isn't updating!"
 
-This one can be tricky, as there are a number of possible root causes, especially once you begin using libraries like React, creating more complex and reactive UIs. For the purposes of our tutorial today, we'll only focus on potential CSS specificity conflicts. Sometimes an element *is* updating but we can't see it because it is being hidden by CSS, or pushed off-screen. Use the elements tab to verify the DOM is changing.
+This one can be tricky, as there are a number of possible root causes, especially once you begin using libraries like React, creating more complex and reactive UIs. For the purposes of our tutorial today, we'll only focus on potential CSS specificity conflicts. Sometimes an element _is_ updating but we can't see it because it is being hidden by CSS, or pushed off-screen. Use the elements tab to verify the DOM is changing.
 
-### "My API call isn't working!"
+### 🌐 "My API call isn't working!"
 
 Open the Network tab and interact with your extension to trigger the API call. Then look at:
 
@@ -172,6 +204,7 @@ Open the Network tab and interact with your extension to trigger the API call. T
 3. **What's the status code?** Where 500 means there's a server error, 404 means the request endpoint doesn't exist and 403 means your request is unauthorized.
 4. **What's the response body?** Even if you do get a 200 status code, the data structure might not be what you expect.
 
-## Additional Resources
+## 📚 Additional Resources
+
 - [JupyterLab Developer Guide](https://jupyterlab.readthedocs.io/en/stable/extension/extension_dev.html)
 - [Chrome DevTools Documentation](https://developer.chrome.com/docs/devtools/)
