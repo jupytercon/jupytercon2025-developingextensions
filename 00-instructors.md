@@ -14,10 +14,14 @@ I'm a contributor to the Jupyter ecosystem. I am currently working on extension 
 I’m a longtime Jupyter user and contributor, maintainer of Gator and JupyterLab-LaTeX, with hands-on work across JupyterLab, JupyterHub, and the wider ecosystem. I built a JupyterHub-based platform serving 300+ NIH researchers; worked on numerous JupyterLab extensions and recently built a community JupyterLab Marketplace (https://labextensions.dev/).
 
 
-## Jason Grout ([`@jasongrout`](https://github.com/jasongrout/))
+## [Jason Grout](https://jasongrout.org/) ([`@jasongrout`](https://github.com/jasongrout/))
 
-TODO: Bio
+**Jupyter Developer and Community Leader**
 
+I'm a Jupyter contributor and maintainer, primarily in the JupyterLab and ipywidgets projects. I also serve on the
+[Jupyter Executive Council](https://jupyter.org/about#executive-council-members),
+[Jupyter Foundation Governing Board](https://jupyterfoundation.org/), and
+[Jupyter Community Building Working Group](https://jupyter.org/about#community-building-working-group-members).
 
 ## [Matt Fisher](https://mfisher87.github.io) ([`@mfisher87`](https://github.com/mfisher87/))
 

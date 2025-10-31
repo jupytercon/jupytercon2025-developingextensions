@@ -107,6 +107,7 @@ micromamba install python pip nodejs=22 gh "copier~=9.2" jinja2-time
 :::
 
 
+(gh-auth-setup)=
 ### 🔧 Create a GitHub repository and clone it locally
 
 0. Change to the parent directory where you want to work, e.g.
@@ -179,7 +180,7 @@ micromamba install python pip nodejs=22 gh "copier~=9.2" jinja2-time
    `https://github.com/`.
    :::
 
-   **Copy the entire repository URL for the next step!**
+   **Copy the entire repository URL** and **leave this terminal window open** for the next step!
 
 
 ## What are we building together?
@@ -203,20 +204,27 @@ Our extension will:
 
 1. Instantiate the template to get started on our new extension!
 
-    ```bash
-    copier copy --trust --vcs-ref HEAD https://github.com/jupyterlab/extension-template .
-    ```
+   We've pre-populated the answers to many of the questions the template normally asks
+   in the command below.
+   If you want to use this template in the future for a different project, omit all the
+   `--data` arguments.
 
-    Please be sure to correctly input:
+   ```bash
+   copier copy --trust --vcs-ref v4.5.0 https://github.com/jupyterlab/extension-template . \
+     --data kind=frontend-and-server \
+     --data labextension_name=jupytercon2025-extension-workshop \
+     --data python_name=jupytercon2025_extension_workshop \
+     --data project_short_description="A JupyterLab extension that displays a random image and caption." \
+     --data has_settings=false \
+     --data has_binder=false \
+     --data test=true \
+     --data has_ai_rules=true \
+     --data create_claude_symlink=true \
+     --data create_gemini_symlink=true
+   ```
 
-    * Your name and e-mail
-    * Kind: `frontend-and-server`
-    * Javascript package name: `jupytercon2025-extension-workshop`
-    * Repository URL: as printed by the `gh repo view` command in the previous step
-
-    The remaining values can be left as default.
-
-    ![A demo of instantiating an extension project from the official template](../assets/images/init-from-template.gif)
+    Please be sure to correctly input the repository URL as printed by the `gh repo
+    view` command in the previous step.
 
 2. List the files that were created (`ls -la` or `tree -a` are good options).
 
@@ -539,6 +547,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
 
         // Then add it to the main area:
         app.shell.add(widget, 'main');
+        return widget;
       },
       label: 'View a random image & caption'
     });
@@ -604,7 +613,6 @@ the {term}`command palette <command palette>`.
         // Then add it to the main area:
         app.shell.add(widget, 'main');
       },
-      icon: imageIcon,
       label: 'View a random image & caption'
     });
 
@@ -814,7 +822,7 @@ import that too while we're here:
 
 ```{code} python
 :linenos:
-:emphasize-lines: 2-4, 10-12
+:emphasize-lines: 1,3-4, 10-12
 :filename: jupytercon2025_extension_workshop/routes.py
 
 import base64
@@ -842,7 +850,7 @@ and then return the string-encoded image data alongside the caption.
 
 ```{code} python
 :linenos:
-:emphasize-lines: 5-13
+:emphasize-lines: 5-17
 :filename: jupytercon2025_extension_workshop/routes.py
 
 class HelloRouteHandler(APIHandler):
@@ -1125,7 +1133,7 @@ when we initialize the widget.
 
 ```{code} typescript
 :linenos:
-:emphasize-lines: 10-19
+:emphasize-lines: 10-18
 :filename: src/widget.ts
 
 export class ImageCaptionMainAreaWidget extends MainAreaWidget<ImageCaptionWidget> {
@@ -1265,30 +1273,26 @@ First, we need to define a tracker object:
 
 ```{code} typescript
 :linenos:
-:emphasize-lines: 1-5
+:emphasize-lines: 1-4
 :filename: src/index.ts
 
     // Track widget state
-    const tracker_namespace = 'jupytercon2025-extension-workshop';
     const tracker = new WidgetTracker<ImageCaptionMainAreaWidget>({
-      namespace: tracker_namespace
+      namespace: 'jupytercon2025-extension-workshop'
     });
 
     //Register a new command:
     const command_id = 'image-caption:open';
     app.commands.addCommand(command_id, {
-      execute: () => {
 ```
 
 Then, add our widget to the tracker:
 
 ```{code} typescript
 :linenos:
-:emphasize-lines: 6-8
+:emphasize-lines: 4-6
 :filename: src/index.ts
 
-    app.commands.addCommand(command_id, {
-      execute: () => {
         // When the command is executed, create a new instance of our widget
         const widget = new ImageCaptionMainAreaWidget();
 
@@ -1298,17 +1302,18 @@ Then, add our widget to the tracker:
 
         // Then add it to the main area:
         app.shell.add(widget, 'main');
-      },
-      icon: imageIcon,
-      label: 'View a random image & caption'
-    });
 ```
 
-And finally, restore any previous state when our plugin is activated:
+Now we can restore previously-open widgets when our plugin is activated.
+This requires a unique identifier for our widget, `id`, which is currently undefined
+(we'll get it in the next step).
+The restorer will execute the command to restore the widget, and pass in the original
+widget's `id` to the command as an optional argument.
+
 
 ```{code} typescript
 :linenos:
-:emphasize-lines: 4-10
+:emphasize-lines: 4-11
 :filename: src/index.ts
 
     palette.addItem({ command: command_id, category: 'Tutorial' });
@@ -1318,9 +1323,47 @@ And finally, restore any previous state when our plugin is activated:
     if (restorer) {
       restorer.restore(tracker, {
         command: command_id,
-        name: () => tracker_namespace
+        args: widget => ({ id: widget.id }),
+        name: widget => widget.id
       });
     }
+```
+
+Now we need to update our command to accept the new `id` argument.
+It will only receive this when restoring, so if it's populated we can use it to create a
+new widget with an identical `id`.
+Remember, our widgets don't have an `id` at all at this stage, so we also need to handle
+the case where `id` isn't populated and generate a randomized one.
+
+```{code} typescript
+:linenos:
+:emphasize-lines: 2,6-12
+:filename: src/index.ts
+
+    app.commands.addCommand(command_id, {
+      execute: (args?: { id?: string }) => {
+        // When the command is executed, create a new instance of our widget
+        const widget = new ImageCaptionMainAreaWidget();
+
+        // Use provided ID or generate a new one
+        // During restoration, the args will contain the saved widget ID
+        if (args && args.id) {
+          widget.id = args.id;
+        } else {
+          widget.id = `image-caption-${crypto.randomUUID()}`;
+        }
+
+        if (!tracker.has(widget)) {
+          tracker.add(widget);
+        }
+
+        // Then add it to the main area:
+        app.shell.add(widget, 'main');
+        return widget;
+      },
+      icon: imageIcon,
+      label: 'View a random image & caption'
+    });
 ```
 
 
@@ -1338,6 +1381,8 @@ You may see a different image; this is because we're loading a new image every t
 widget is initialized.
 :::
 
+Don't forget to test with multiple widgets open!
+
 
 ### 🧠 What do we know now?
 
@@ -1346,6 +1391,14 @@ when we refresh the page.
 
 We know that we can use the `WidgetTracker` to remember the state of our widget and the
 `ILayoutRestorer` plugin to restore that state.
+
+
+#### Think about...
+
+When we restore our widget, the exact same image isn't displayed.
+
+What if we want to restore the widget with the exact same image and caption it displayed
+before we refreshed the page?
 
 
 ## 🎉 Great job!
