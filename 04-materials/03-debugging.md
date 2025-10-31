@@ -98,8 +98,8 @@ There may be times where an issue initially appears to be a frontend problem, fo
 
 ### 📋 Terminal Logs
 
-- Where to find JupyterLab server logs
-  
+Where to find JupyterLab server logs
+
   In the terminal where you run `jupyter lab`, you'll find a great deal of information.
 
 During build time, webpack will tell you about compilation errors, missing dependencies, or TypeScript type errors. And while the messages can be verbose, you can scroll up to the first error and work through any subsequent errors.
