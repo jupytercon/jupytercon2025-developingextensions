@@ -50,17 +50,15 @@ You would never hire a developer and expect absolute perfection in their creativ
 - Treat errors as learning opportunities for both you and the AI
 - Don't be afraid to roll back to the beginning and start over if AI doubled down on a wrong path
 
-### ✍️ Prompt fundamentals (Cursor)
+### ✍️ Prompt fundamentals
 
 Keep prompts short, specific, and grounded in the exact code you're changing.
 
-- **Intent + state**: State what you want and show the current code (copy/paste lines or attach files)
-- **Point with `@`**: Reference files/folders/docs (e.g., `@src/index.ts`, `@plans/...`, `@JupyterLab docs`)
+- **Intent + state**: State what you want and show the current code (select lines or attach files)
+- **(Cursor specific) Point with `@`**: Reference files/folders/docs (e.g., `@src/index.ts`, `@plans/...`, `@JupyterLab docs`)
 - **Constrain**: Provide acceptance criteria and constraints (APIs to use, error handling)
 - **Iterate**: Prefer small steps; ask follow‑ups over one giant prompt
-- **Selections win**: Selecting code before asking gives that text highest priority in context
-
-
+- **(Cursor only) Selections win**: Selecting code before asking gives that text highest priority in context
 
 :::{dropdown} Examples (before → better)
 **Before:** "Add image editing."
