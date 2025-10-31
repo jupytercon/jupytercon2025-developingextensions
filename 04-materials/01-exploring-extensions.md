@@ -35,6 +35,17 @@ terms for the components of the interface so we're all on the same page.
 5. Right {term}`side panel <side panel>`
 
 
+## Why learn to write extensions?
+
+The power of JupyterLab comes from its extensibility.
+You can install helpful tools, like version control, visualization improvements, addons
+to convert notebooks to other formats, AI assistants, or highly specializied toolkits
+for domains like quantum computing, geology, or astronomy.
+
+There are over 600 extensions compatible with the latest version of JupyterLab at the
+time of this workshop.
+
+
 ## Extensions and plugins and widgets -- oh, my!
 
 While they sound similar, {term}`extensions <extension>` and {term}`plugins <plugin>`
