@@ -731,6 +731,14 @@ When you give this prompt to an AI agent like Cursor or Claude Code, it will typ
 6. **Modify the frontend widget** with new UI controls
 7. **Run build commands** to verify everything compiles
 
+::::{note} Cursor customizations may change behavior
+If you have custom Cursor Instructions, team rules, model defaults, or per-project settings enabled, the agent's behavior and outputs may differ from the workshop steps and screenshots. For a consistent experience during the workshop:
+- Temporarily disable or minimize global instructions
+- Ensure the repo's `AGENTS.md` remains the primary rules source
+- Match the recommended models in this chapter
+- Reset per-project settings if results seem inconsistent
+::::
+
 Send the prompt and watch as it generates the entire feature. **In about 2-3 minutes**, you will have a fully functional image editor!
 
 **Review the generated code**
