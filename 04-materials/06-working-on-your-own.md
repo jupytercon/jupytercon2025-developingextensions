@@ -249,7 +249,7 @@ Contributing to established extensions is a great way to learn real-world patter
 
 #### 🌐 Popular open source extensions
 
-See our [Show & Tell session](03-show-and-tell.md) for a curated list of popular JupyterLab extensions and inspiration on projects to contribute to.
+See our [Show & Tell session](04-show-and-tell.md) for a curated list of popular JupyterLab extensions and inspiration on projects to contribute to.
 
 #### 🐛 Beginner-friendly JupyterLab core
 Want to contribute to JupyterLab itself? Here are good first issues:

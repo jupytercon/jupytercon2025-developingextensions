@@ -19,8 +19,8 @@ JupyterCon!
 | 10:45 AM  | 30 minutes  | [](./04-materials/02-anatomy-of-extensions.md), continued                         | Jason, Matt       |
 | 10:30 AM  | 15 minutes  | ☕️ **Coffee break!**                                                              |                   |
 | 10:45 AM  | 35 minutes  | [](./04-materials/02-anatomy-of-extensions.md), continued                         | Jason, Matt       |
-| 11:20 AM  | 30 minutes  | [](./04-materials/04-debugging.md)                                                | Konstantin, Rosio |
-| 11:40 AM  | 25 minutes  | [](./04-materials/03-show-and-tell.md)                                            | Konstantin, Matt  |
+| 11:20 AM  | 30 minutes  | [](./04-materials/03-debugging.md)                                                | Konstantin, Rosio |
+| 11:40 AM  | 25 minutes  | [](./04-materials/04-show-and-tell.md)                                            | Konstantin, Matt  |
 | 12:10 PM  | 15 minutes  | 🗨️ Q&A, discussion                                                                | All               |
 
 
