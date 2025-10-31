@@ -29,7 +29,7 @@ All paths are valuable! Pick what excites you most.
 Before diving into your chosen path, make sure you have:
 
 - A clear goal (extension idea or GitHub issue to work on)
-- Development environment ready (if building new: follow [Setup](02-anatomy-of-extensions.md#anatomy-setup) and [Exercise A](02-anatomy-of-extensions.md#anatomy-exercise-a))
+- Development environment ready (if building new: follow {ref}`Setup <anatomy-setup>` and {ref}`Exercise A <anatomy-exercise-a>`)
 - Access to [JupyterLab API docs](https://jupyterlab.readthedocs.io/en/latest/api/) and [Extension Examples](https://github.com/jupyterlab/extension-examples)
 
 ## 🔨 Path 1: Build your own extension from scratch
