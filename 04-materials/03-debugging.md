@@ -54,7 +54,7 @@ Runtime errors show up in the browser console or `jupyter lab` terminal logs aft
 |------------|---------------|-----------------|
 | **Build-time** | Terminal (`jlpm build`) | During compilation |
 | **Runtime (Frontend)** | Browser console | After extension loads |
-| **Runtime (Backend)** | `jupyter lab` terminal logs | After extension loads |
+| **Runtime (server)** | `jupyter lab` terminal logs | After extension loads |
 :::
 
 #### 🗺️ By where they occur
