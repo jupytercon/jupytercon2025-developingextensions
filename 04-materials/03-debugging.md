@@ -22,11 +22,12 @@ Knowing the kind of error you are dealing with is already a solid step forward.
 #### ⏰ By when they occur
 
 ##### Build-time errors
+
 Build-time errors happen when you're compiling your TypeScript code or building your extension.
 These are often syntax errors, type mismatches or missing/unused imports that don't allow
 you to run your code until they are fixed.
 
-###### **Common examples:**
+###### Common examples:
 - `error TS2304: Cannot find name 'Widget'` (missing import)
 - `error TS2551: Property 'refesh' does not exist` (typo in method name)
 - `error TS2322: Type 'string' is not assignable to type 'number'` (type mismatch)
@@ -34,9 +35,10 @@ you to run your code until they are fixed.
 Build-time errors appear in your terminal during `jlpm build`.
 
 ##### Runtime errors
+
 Runtime errors happen when your extension logic is executing, maybe a failed network request, or an undefined property that you've tried accessing.
 
-###### **Common examples:**
+###### Common examples:
 - `TypeError: Cannot read property 'name' of undefined` (accessing undefined object)
 - `ReferenceError: myVariable is not defined` (variable doesn't exist)
 - `404 Not Found` (failed API request)
