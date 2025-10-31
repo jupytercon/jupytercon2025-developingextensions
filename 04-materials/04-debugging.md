@@ -15,24 +15,74 @@ tackle them.
 
 ## 1️⃣ Understanding Error Messages
 
-### 🔍 Types of Errors
-
 Knowing the kind of error you are dealing with is already a solid step forward.
 
-- **Build-time errors vs Runtime errors**
-  Build-time errors happen when you're compiling your TypeScript code or building your extension.
-  These are often syntax errors, type mismatches or missing/unused imports that don't allow
-  you to run your code until they are fixed. On the other hand, runtime errors happened when your extension logic is executing, maybe a failed network request, or an undefined property that you've tried accessing.
+### 🔍 Types of Errors
 
-:::{important} 👀 You should notice...
+#### ⏰ By when they occur
+
+##### Build-time errors
+Build-time errors happen when you're compiling your TypeScript code or building your extension.
+These are often syntax errors, type mismatches or missing/unused imports that don't allow
+you to run your code until they are fixed.
+
+**Common examples:**
+- `error TS2304: Cannot find name 'Widget'` (missing import)
+- `error TS2551: Property 'refesh' does not exist` (typo in method name)
+- `error TS2322: Type 'string' is not assignable to type 'number'` (type mismatch)
+
+Build-time errors appear in your terminal during `jlpm build`.
+
+##### Runtime errors
+Runtime errors happen when your extension logic is executing, maybe a failed network request, or an undefined property that you've tried accessing.
+
+**Common examples:**
+- `TypeError: Cannot read property 'name' of undefined` (accessing undefined object)
+- `ReferenceError: myVariable is not defined` (variable doesn't exist)
+- `404 Not Found` (failed API request)
+- `NetworkError: Failed to fetch` (network connection issue)
+
+Runtime errors show up in the browser console or `jupyter lab` terminal logs after your extension is loaded.
+
+:::{important} Quick Reference
 :class: simple
 :icon: false
 
-Build-time errors appear in your terminal during `jlpm build`, while runtime errors show up in the browser console or `jupyter lab` terminal logs after your extension is loaded.
+| Error Type | Where to Look | When It Happens |
+|------------|---------------|-----------------|
+| **Build-time** | Terminal (`jlpm build`) | During compilation |
+| **Runtime (Frontend)** | Browser console | After extension loads |
+| **Runtime (Backend)** | `jupyter lab` terminal logs | After extension loads |
 :::
 
-- **Python backend errors vs TypeScript frontend errors**
-  With a full stack extension, which includes a server component, it is important to understand which side, server-side or client-side, is causing the error. Python errors will show up in the terminal from which you launched your JupyterLab instance, whereas frontend TypeScript error details will be available in the browser console. There may be times where an issue initially appears to be a frontend problem, for example, data not being displayed, but it is actually a backend problem, like an API endpoint returning the wrong data.
+#### 🗺️ By where they occur
+
+With a full stack extension, which includes a server component, it is important to understand which side, server-side or client-side, is causing the error.
+
+##### Python server errors
+
+Python errors will show up in the terminal from which you launched your JupyterLab instance (the server terminal).
+
+**Example:**
+```python
+ValueError: Invalid endpoint configuration
+  File "jupytercon2025_extension_workshop/routes.py", line 32, in get
+```
+
+
+##### Javascript frontend errors
+
+JavaScript error details will be available in the browser console.
+
+**Example:**
+```javascript
+Uncaught TypeError: widget.render is not a function
+    at activate (index.ts:23)
+```
+
+:::{tip}
+There may be times where an issue initially appears to be a frontend problem, for example, data not being displayed, but it is actually a backend problem, like an API endpoint returning the wrong data, or a 500 error.
+:::
 
 ### 📚 Reading Stack Traces
 
