@@ -40,8 +40,8 @@ Create something entirely new using the extension template, AI assistance, and t
 
 Follow these sections from chapter 2 to start a new extension from a template:
 
-1. [🛠️ Setup](02-anatomy-of-extensions.md#anatomy-setup) - Set up your environment, Git, and GitHub repository
-2. [🏋️ Exercise A: Extension creation and development loop](02-anatomy-of-extensions.md#anatomy-exercise-a) - Create your extension from the template and test the development loop
+1. {ref}`🛠️ Setup <anatomy-setup>` - Set up your environment, Git, and GitHub repository
+2. {ref}`🏋️ Exercise A: Extension creation and development loop <anatomy-exercise-a>` - Create your extension from the template and test the development loop
 
 Once you have your extension set up and working, proceed to work on your extension idea or return here to find inspiration below.
 
