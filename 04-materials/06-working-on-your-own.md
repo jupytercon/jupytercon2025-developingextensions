@@ -163,9 +163,9 @@ Use [specific colors] for accent elements.
 <div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/eff02e3cbc63430983f9448719bfa83c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 :::{tip}
-This is an excellent creative project! You get immediate visual feedback, can personalize your JupyterLab environment, and learn how JupyterLab's theming system works. Plus, you'll have a custom theme you actually want to use daily.
+This is a solid creative project! You get immediate visual feedback, can personalize your JupyterLab environment, and learn how JupyterLab's theming system works. Plus, you'll have a custom theme you actually want to use daily.
 
-Themes are also great conversation starters - share your theme with other workshop participants!
+Themes are also good conversation starters - share your theme with other workshop participants!
 :::
 
 #### 📊 CPU monitor widget
