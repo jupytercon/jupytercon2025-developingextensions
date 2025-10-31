@@ -17,8 +17,8 @@
 
 It's not just an interface for working with Notebooks.
 The Notebook interface has been around since 2011, and in 2018,
-JupyterLab was introduced to provide a more comprehensive environment, like an operating
-system, for interactive computation.
+JupyterLab was introduced as an extensible IDE (Integrated Development Environment)
+for interactive computation.
 
 
 ## [The JupyterLab interface](https://jupyterlab.readthedocs.io/en/latest/user/interface.html)
