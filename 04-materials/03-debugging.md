@@ -26,7 +26,7 @@ Build-time errors happen when you're compiling your TypeScript code or building 
 These are often syntax errors, type mismatches or missing/unused imports that don't allow
 you to run your code until they are fixed.
 
-**Common examples:**
+###### **Common examples:**
 - `error TS2304: Cannot find name 'Widget'` (missing import)
 - `error TS2551: Property 'refesh' does not exist` (typo in method name)
 - `error TS2322: Type 'string' is not assignable to type 'number'` (type mismatch)
@@ -36,7 +36,7 @@ Build-time errors appear in your terminal during `jlpm build`.
 ##### Runtime errors
 Runtime errors happen when your extension logic is executing, maybe a failed network request, or an undefined property that you've tried accessing.
 
-**Common examples:**
+###### **Common examples:**
 - `TypeError: Cannot read property 'name' of undefined` (accessing undefined object)
 - `ReferenceError: myVariable is not defined` (variable doesn't exist)
 - `404 Not Found` (failed API request)
@@ -86,10 +86,10 @@ There may be times where an issue initially appears to be a frontend problem, fo
 
 ### 📚 Reading Stack Traces
 
-- Identifying the source of the error
+- **Identifying the source of the error**:
   When JavaScript throws an error, it gives you a stack trace, a trail showing the path the code took before it crashed. It may seem overwhelming at first, but starting from the top and looking for recognizable file names can help. While the stack trace might show you multiple function calls usually only one or two of those are in _your_ code. The others are likely in other libraries like JupyterLab itself. Finding your line in the code, you can find out where things have gone wrong.
 
-- Minified vs source-mapped traces
+- **Minified vs source-mapped traces**:
   Also important, if you see names like `bundle.js:4323`, that's minified code. In development mode with {term}`source maps <Source maps>` enabled, you'll see actual files names like `Panel.tsx:53`, a much more helpful identifier. Extensions created with the `extension-template` should have source maps enabled already.
 
 ## 2️⃣ Terminal
@@ -185,15 +185,15 @@ There are times where you might right-click on an element expecting to see the b
 
 ### 🎯 Debugging Workflow
 
-- Start simple: `console.log` first
+- **Start simple: `console.log` first**:
   When something breaks, you don't need to automatically reach for advanced tools. First adding a few `console.log()` statements can help you: verify that your function is being called, confirm the data has the shape you expect, or discern whether or not you're reaching a line of code that's problematic. Sometimes you'll realize what the issue is quickly with just these simple verification steps.
-- Progress to browser DevTools
+- **Progress to browser DevTools**:
   If console logs aren't enough, open the browser console and look for errors. Read the stack trace and click on the file links to jump to the section of code where the issue originates from.
-- Checkout the Network tab if applicable
+- **Checkout the Network tab if applicable**:
   Look through the Network tab if data is involved. Make sure your API calls are succeeding and retrieving the data that you expect.
-- Use browser debugger breakpoints for complex issues
+- **Use browser debugger breakpoints for complex issues**:
   For more complex issues involving state changes, timing issues, or logic problems, set breakpoints in the Sources tab and step through the code. Watch variables change, examine the call stack and understand the flow.
-- Keep development environment consistent
+- **Keep development environment consistent**:
   Is the extension installed and enabled? Did your latest changes build successfully?
 
 ### 🛡️ Prevention is better
