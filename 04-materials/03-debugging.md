@@ -4,6 +4,13 @@
 By the end of this module, we'll have looked into JupyterLab extension development errors in both the terminal and browser console, and used the browser console functionalities to gather information that will help us resolve our errors.
 :::
 
+
+:::{tip} Terms
+{term}`source maps <Source maps>`, {term}`print debugging <Print debugging>`,
+{term}`linter <Linter>`, {term}`formatter <Formatter>`,
+{term}`ESLint`, {term}`Prettier`
+:::
+
 ## 💡 Introduction
 
 You might find yourself spending a significant portion of your development time debugging an extension that is not building, or some functionality that is now broken. With the right tools and approach,
