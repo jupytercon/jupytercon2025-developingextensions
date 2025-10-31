@@ -29,7 +29,7 @@ All paths are valuable! Pick what excites you most.
 Before diving into your chosen path, make sure you have:
 
 - A clear goal (extension idea or GitHub issue to work on)
-- Development environment ready (if building new: follow [Setup](02-anatomy-of-extensions.md#️-setup) and [Exercise A](02-anatomy-of-extensions.md#️-exercise-a-15-minutes-extension-creation-and-development-loop))
+- Development environment ready (if building new: follow [Setup](02-anatomy-of-extensions.md#anatomy-setup) and [Exercise A](02-anatomy-of-extensions.md#anatomy-exercise-a))
 - Access to [JupyterLab API docs](https://jupyterlab.readthedocs.io/en/latest/api/) and [Extension Examples](https://github.com/jupyterlab/extension-examples)
 
 ## 🔨 Path 1: Build your own extension from scratch
@@ -40,8 +40,8 @@ Create something entirely new using the extension template, AI assistance, and t
 
 Follow these sections from chapter 2 to start a new extension from a template:
 
-1. [🛠️ Setup](02-anatomy-of-extensions.md#️-setup) - Set up your environment, Git, and GitHub repository
-2. [🏋️ Exercise A: Extension creation and development loop](02-anatomy-of-extensions.md#️-exercise-a-15-minutes-extension-creation-and-development-loop) - Create your extension from the template and test the development loop
+1. [🛠️ Setup](02-anatomy-of-extensions.md#anatomy-setup) - Set up your environment, Git, and GitHub repository
+2. [🏋️ Exercise A: Extension creation and development loop](02-anatomy-of-extensions.md#anatomy-exercise-a) - Create your extension from the template and test the development loop
 
 Once you have your extension set up and working, return here to choose an inspiration project below.
 

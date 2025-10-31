@@ -45,7 +45,7 @@ This tutorial is inspired by many prior works.
     * Structure the activities around in person teaching and exercises
 :::
 
-
+(anatomy-setup)=
 ## 🛠️ Setup
 
 Before we get started, we need to set up:
@@ -197,7 +197,7 @@ Our extension will:
 
 🚀 Let's build it together from scratch.
 
-
+(anatomy-exercise-a)=
 ## 🏋️ Exercise A (15 minutes): Extension creation and development loop
 
 ### 🔧 Create a new extension from the [official template](https://github.com/jupyterlab/extension-template)
