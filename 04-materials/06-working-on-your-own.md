@@ -7,10 +7,6 @@ After completing this module, you will have:
 - Connected with instructors and peers for guidance on your specific project
 :::
 
-:::{tip} Terms
-TBD
-:::
-
 
 :::{note}
 We will be using the [official template](https://github.com/jupyterlab/extension-template) as the starting point to creating your own extension.
