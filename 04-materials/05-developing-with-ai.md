@@ -664,7 +664,7 @@ Now that you're about to generate substantial code with AI, let's establish a di
 
 ```bash
 # After AI generates code:
-# 1. Review changes in Source Control panel (Cmd/Ctrl+Shift+G)
+# 1. Review changes in Source Control panel (`Cmd/Ctrl+Shift+G`)
 
 # 2. Test if it works - build and verify
 jlpm build
