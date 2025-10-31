@@ -792,7 +792,7 @@ jupyter lab
 **Test the new features**:
 - Open the image viewer widget
 - Try each filter button
-- Check the browser console for errors (`F12` or `Cmd/Ctrl+Shift+I`, or `Cmd+Option+I` on Mac)
+- Check the browser console for errors (`F12` or `Ctrl+Shift+I`, or `Cmd+Option+I` on Mac)
 - Check the terminal running `jupyter lab` for Python errors
 - Find at least 3 decisions you might have made differently
 
