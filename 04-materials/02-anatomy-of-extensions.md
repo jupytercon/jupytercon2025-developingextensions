@@ -363,7 +363,7 @@ git push -u origin main
 
 ### 🔧 Do a complete development loop
 
-0. Close the JupyterLab server with `Ctrl+C`.
+0. Close the JupyterLab server. You can use the shutdown menu item in the JupyterLab itself (File → Shut Down), which is more reliable, or use `Ctrl+C` in the terminal where the server is running.
 
 1. Make any change to the codebase.
    For example, alter the text in a `console.log()` message.
