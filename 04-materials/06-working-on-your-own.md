@@ -351,6 +351,7 @@ Before opening a PR, verify:
 - Commit messages are clear and descriptive
 - PR description explains what and why
 - You've read and followed CONTRIBUTING.md
+- Remove unused or unreachable code ("dead code") and unused artifacts (imports, variables, files, commented-out code)
 - Tests pass in CI/CD (after opening PR)
 
 ### 🔧 When contributing gets stuck
