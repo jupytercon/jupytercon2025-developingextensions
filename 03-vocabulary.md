@@ -139,7 +139,6 @@ Prettier
 
 Environment variable
 : A key–value setting in the operating system environment that shells and programs inherit.
-On macOS/Linux: for a single command use `NAME=value command`; for the current shell and its child processes use `export NAME=value` (lost when the shell exits); to persist across sessions add `export NAME=value` to your shell startup file (e.g., `~/.zshrc` or `~/.bashrc`).
+For a single command use `NAME=value command`; for the current shell and its child processes use `export NAME=value` (lost when the shell exits); to persist across sessions add `export NAME=value` to your shell startup file (e.g., `~/.zshrc` or `~/.bashrc`).
 Inspect with `echo $NAME`; remove with `unset NAME`.
-On Windows PowerShell, use `$env:NAME = 'value'` for the current session and `setx NAME value` to persist (new shells required).
 :::
