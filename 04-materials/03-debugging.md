@@ -117,9 +117,8 @@ This is where the real magic happens! Head to your browser and open the develope
 
 :::{tip} 🔧 How to open DevTools
 
-- **Windows/Linux**: Press `F12` or `Ctrl+Shift+I`
-- **Mac**: Press `Cmd+Option+I`
-  :::
+Press `F12` or `Cmd/Ctrl+Shift+I` (or `Cmd+Option+I` on Mac)
+:::
 
 ### 💬 Console Tab
 
@@ -186,7 +185,7 @@ From there, you can:
 - Temporarily modify HTML or CSS to test fixes
 
 :::{hint}
-There are times where you might right-click on an element expecting to see the browser with the "Inspect" option, but are instead met with a JupyterLab menu. There are a few cases where JupyterLab prevents this default browser behavior and displays it's own context menu, but you can still access that browser menu by: holding `Shift` while right-clicking, or using the dev tools "Select an element" picker (using the keyboard shortcut `Cmd + Shift + C` for macOS or `Ctrl + Shift + C` for Windows/Linux).
+There are times where you might right-click on an element expecting to see the browser with the "Inspect" option, but are instead met with a JupyterLab menu. There are a few cases where JupyterLab prevents this default browser behavior and displays it's own context menu, but you can still access that browser menu by: holding `Shift` while right-clicking, or using the dev tools "Select an element" picker (using the keyboard shortcut `Cmd/Ctrl+Shift+C`).
 :::
 
 ---

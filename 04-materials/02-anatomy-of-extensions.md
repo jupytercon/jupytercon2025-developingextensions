@@ -320,8 +320,8 @@ Our extension will:
    ...JupyterLab automatically opened in your browser when you started the server.
    :::
 
-2. Confirm the extension was loaded. Open your browser's dev console (F12 or
-   `CTRL+SHIFT+I`) and...
+2. Confirm the extension was loaded. Open your browser's dev console (`F12` or
+   `Cmd/Ctrl+Shift+I`, or `Cmd+Option+I` on Mac) and...
 
    :::{important} 👀 You should notice...
    :class: simple
@@ -363,7 +363,7 @@ git push -u origin main
 
 ### 🔧 Do a complete development loop
 
-0. Close the JupyterLab server with `CTRL+C`.
+0. Close the JupyterLab server with `Ctrl+C`.
 
 1. Make any change to the codebase.
    For example, alter the text in a `console.log()` message.
@@ -410,7 +410,7 @@ official template and set it up for development.
 We know how to iterate: we learned that the JupyterLab extension development loop is...
 
 * Make a change to the code.
-* Shut down JupyterLab (`CTRL+C`).
+* Shut down JupyterLab (`Ctrl+C`).
 * Rebuild the extension with `jlpm build` [^rebuild-not-always-required].
 * Start JupyterLab with `jupyter lab`.
 
@@ -622,14 +622,14 @@ the {term}`command palette <command palette>`.
 
 ### 🧪 Test
 
-Stop your JupyterLab server (`CTRL+C`), then rebuild your extension (`jlpm
+Stop your JupyterLab server (`Ctrl+C`), then rebuild your extension (`jlpm
 build`), then restart JupyterLab (`jupyter lab`).
 
 If everything went well, now you can test the extension in your browser.
 
 To test from the {term}`command palette <command palette>`, click
 "View">"Commands" from the {term}`menu bar <menu bar>`, or use the shortcut
-`CTRL+SHIFT+C`.
+`Cmd/Ctrl+Shift+C`.
 Begin typing "Random image" and the command palette interface
 should autocomplete.
 Select "Random image with caption" and press `ENTER`.
