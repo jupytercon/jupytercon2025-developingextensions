@@ -281,8 +281,6 @@ Want to contribute to JupyterLab itself? Here are {term}`good first issues <good
 - Feature requests that align with your interests
 - Bug reports you can reproduce
 - Documentation improvements
-
-**Browse recent issues** and look for:
 - Questions you can answer
 - Problems you've encountered yourself
 - Features you wish existed
