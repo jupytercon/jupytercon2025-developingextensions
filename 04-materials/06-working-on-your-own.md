@@ -232,7 +232,7 @@ Pick an idea that matches your comfort level and interests:
 4. **Pomodoro timer**: Status bar timer for focused work sessions with notifications
 
 #### 🚦 Intermediate (frontend + server)
-1. **File size analyzer**: Scan workspace directory and show largest files/folders
+1. **File size analyzer**: Scan workspace directory and show largest files/folders. Bonus goal: Add a treemap visualization (like [WinDirStat](https://windirstat.net/)) to visually represent file sizes
 2. **Git status widget**: Display current branch, uncommitted changes count in the status bar
 3. **Environment inspector**: Show installed packages and Python version in the sidebar
 4. **Todo list with persistence**: Sidebar panel that saves tasks to disk
