@@ -340,14 +340,14 @@ AI can suggest code that breaks your extension. With frequent commits and stagin
 **The Four Safety Levels:**
 
 ```
-Level 1: Unsaved      →  Files on disk (Cmd/Ctrl + Z to undo)
+Level 1: Unsaved      →  Files on disk (Cmd/Ctrl+Z to undo)
 Level 2: Staged       →  git add (can unstage)
 Level 3: Committed    →  git commit (can reset)
 Level 4: Pushed       →  git push (permanent)
 ```
 
 **Keep an eye on Source Control**
-- Open the Source Control view (`Ctrl + Shift + G`)
+- Open the Source Control view (`Cmd/Ctrl+Shift+G`)
 - Keep this panel visible alongside your AI chat
 - You'll review all AI-generated changes here before committing
 
@@ -561,7 +561,7 @@ This tells the AI assistant to use `micromamba` with the `jupytercon2025` enviro
 
 ### Verify that Cursor recognizes the rules
 
-1. Open the Cursor Chat panel (`Cmd/Ctrl + L`) and choose Ask Mode
+1. Open the Cursor Chat panel (`Cmd/Ctrl+L`) and choose Ask Mode
 
 :::{note}
 **⚠️ Avoid "Auto" mode** — it picks the cheapest model, not the best one.
@@ -664,7 +664,7 @@ Now that you're about to generate substantial code with AI, let's establish a di
 
 ```bash
 # After AI generates code:
-# 1. Review changes in Source Control panel (Cmd/Ctrl + Shift + G)
+# 1. Review changes in Source Control panel (`Cmd/Ctrl+Shift+G`)
 
 # 2. Test if it works - build and verify
 jlpm build
@@ -692,7 +692,7 @@ When AI generates code that works, immediately stage those files (`git add`). Th
 :::
 
 **Keep Source Control panel visible:**
-- `Ctrl + Shift + G` to open
+- `Cmd/Ctrl+Shift+G` to open
 - Shows all modified files with diff preview
 - Click any file to see exactly what changed
 - Stage/unstage with + and - buttons
@@ -718,7 +718,7 @@ With the right context and a detailed prompt, AI can build complete features in 
 
 :::{dropdown} Cursor prompting quick tips
 - **Use @ precisely**: `@code` (symbol), `@file` (e.g., `@src/index.ts`), `@folder` (e.g., `@src/utils/`). This steers Cursor to the exact context you want.
-- **Reference specific lines**: Select the lines and press `Cmd/Ctrl + L` to add them to the current chat as an `@` selection. Want a fresh chat? Press `Cmd/Ctrl + N` — the `@` reference carries over. Selection is prioritized; line‑range mentions via `@` aren’t supported.
+- **Reference specific lines**: Select the lines and press `Cmd/Ctrl+L` to add them to the current chat as an `@` selection. Want a fresh chat? Press `Cmd/Ctrl+N` — the `@` reference carries over. Selection is prioritized; line‑range mentions via `@` aren't supported.
 - **Bias auto‑context**: Cursor auto‑pulls from your session (active file, recent edits). Keep the relevant file active and close noisy, unrelated large files. Use `@` when you need deterministic precision.
 - **Docs as context**: After adding docs to Cursor, mention them with `@` (e.g., `@JupyterLab API`).
 :::
@@ -792,7 +792,7 @@ jupyter lab
 **Test the new features**:
 - Open the image viewer widget
 - Try each filter button
-- Check the browser console for errors (`F12` or `Cmd+Option+I`)
+- Check the browser console for errors (`F12` or `Ctrl+Shift+I`, or `Cmd+Option+I` on Mac)
 - Check the terminal running `jupyter lab` for Python errors
 - Find at least 3 decisions you might have made differently
 
@@ -841,7 +841,7 @@ AI can understand what your extension looks like! This is powerful for debugging
    - **Windows:** Use Snipping Tool or `Win + Shift + S`
    - **Linux:** Use your screenshot tool (varies by desktop environment)
 
-3. **Open Cursor chat** (`Cmd/Ctrl + L`) and drag or paste the screenshot into the chat
+3. **Open Cursor chat** (`Cmd/Ctrl+L`) and drag or paste the screenshot into the chat
 
 4. **Try one of these prompts with your screenshot:**
 
@@ -1042,7 +1042,7 @@ As you work through phases, keep an eye on **context window percentage** (shown 
 3. Use `@JupyterLab API` (or `@Lumino API`) in chat to use precise documentation when implementing a function.
 :::
 
-1. **Start a NEW chat** for Phase 1 (`Cmd/Ctrl + L` to focus on chat panel, then `Cmd/Ctrl + N` to start a new chat)
+1. **Start a NEW chat** for Phase 1 (`Cmd/Ctrl+L` to focus on chat panel, then `Cmd/Ctrl+N` to start a new chat)
 
 2. **Reference the plan:**
 
@@ -1056,7 +1056,7 @@ As you work through phases, keep an eye on **context window percentage** (shown 
    Note the `@plans/...` syntax tells AI to read that specific file.
 
 3. **Review changes in Source Control** (keep this panel open!)
-   - Open `Ctrl + Shift + G` to see all modified files
+   - Open `Cmd/Ctrl+Shift+G` to see all modified files
    - Click each file to review the diff
    - Look for unexpected changes or files you didn't anticipate
 
@@ -1066,7 +1066,7 @@ As you work through phases, keep an eye on **context window percentage** (shown 
    jupyter lab
    ```
    - Try the new filter buttons
-   - Check browser console (`F12`) for errors
+   - Check browser console (`F12` or `Cmd/Ctrl+Shift+I`, or `Cmd+Option+I` on Mac) for errors
    - Verify backend logs in terminal
 
 5. **Stage and commit after Phase 1 works:**
@@ -1108,6 +1108,8 @@ As you work through phases, keep an eye on **context window percentage** (shown 
    # Review in Source Control panel, test the features
    jlpm build
    jupyter lab
+
+   # Check browser console for errors (F12 or Cmd/Ctrl+Shift+I, or Cmd+Option+I on Mac)
 
    # Stage and commit (review each file first!)
    git add src/widget.ts
