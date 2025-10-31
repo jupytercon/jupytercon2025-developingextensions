@@ -426,3 +426,4 @@ Open the Network tab and interact with your extension to trigger the API call. T
 
 - [JupyterLab Developer Guide](https://jupyterlab.readthedocs.io/en/stable/extension/extension_dev.html)
 - [Chrome DevTools Documentation](https://developer.chrome.com/docs/devtools/)
+- [Python Debugging Documentation](https://docs.python.org/3/library/debug.html)
