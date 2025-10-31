@@ -248,7 +248,7 @@ Contributing to established extensions is a great way to learn real-world patter
 See our [Show & Tell session](04-show-and-tell.md) for a curated list of popular JupyterLab extensions and inspiration on projects to contribute to.
 
 #### 🐛 Beginner-friendly JupyterLab core
-Want to contribute to JupyterLab itself? Here are good first issues:
+Want to contribute to JupyterLab itself? Here are {term}`good first issues <good first issue>`:
 
 **JupyterLab Core:**
 - [Good First Issues](https://github.com/jupyterlab/jupyterlab/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
@@ -259,6 +259,7 @@ Want to contribute to JupyterLab itself? Here are good first issues:
 
 ### ✅ Check the project needs
 **Check the project board or GitHub Issues** for:
+- {term}`"Good first issue" <good first issue>` labels
 - Feature requests that align with your interests
 - Bug reports you can reproduce
 - Documentation improvements
