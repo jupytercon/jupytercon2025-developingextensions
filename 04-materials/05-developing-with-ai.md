@@ -1,17 +1,17 @@
 # 🤖 5 - Developing extensions with AI assistance
 
-::::{hint} Learning objectives
+:::{hint} Learning objectives
 - Use agentic AI tools (Cursor and Claude Code) to build and evolve JupyterLab extensions using product‑manager style prompts with context, constraints, and acceptance criteria
 - Configure and verify AGENTS.md and environment conventions so tools follow project patterns
 - Implement and iterate on features across frontend and backend with phased plans; manage model selection/context, and use AI to diagnose and fix build/runtime errors
-::::
+:::
 
-::::{tip} Outcome
+:::{tip} Outcome
 After this module, you will have:
 - Implemented an image‑editing feature in our extension, verified it in JupyterLab, and committed your changes
 - Practiced one‑shot vs structured prompting, model selection, and context management; got comfortable reviewing, iterating on, and rolling back AI‑generated edits
 - Gained confidence to continue exploring extension ideas primarily by prompting, while being able to understand and edit the generated code
-::::
+:::
 
 :::{note} Inspired by...
 :class: dropdown
@@ -49,6 +49,29 @@ You would never hire a developer and expect absolute perfection in their creativ
 - Ask questions: "Why did you choose this approach?"
 - Treat errors as learning opportunities for both you and the AI
 - Don't be afraid to roll back to the beginning and start over if AI doubled down on a wrong path
+
+### ✍️ Prompt fundamentals
+
+Keep prompts short, specific, and grounded in the exact code you're changing.
+
+- **Intent + state**: State what you want and show the current code (select lines or attach files)
+- **(Cursor specific) Point with `@`**: Reference files/folders/docs (e.g., `@src/index.ts`, `@plans/...`, `@JupyterLab docs`)
+- **Constrain**: Provide acceptance criteria and constraints (APIs to use, error handling)
+- **Iterate**: Prefer small steps; ask follow‑ups over one giant prompt
+- **(Cursor only) Selections win**: Selecting code before asking gives that text highest priority in context
+
+:::{dropdown} Examples (before → better)
+**Before:** "Add image editing."
+
+**Better:**
+```
+Extend @src/widget.ts to add a grayscale button that calls the new backend route.
+Acceptance:
+- Adds button to existing toolbar (same styling)
+- Calls /edit-image?op=grayscale
+- Updates image preview on success
+```
+:::
 
 ### 🧠 Understanding {term}`LLMs <LLM>` (large language models)
 
@@ -205,9 +228,9 @@ We'll work with **Cursor** to demonstrate the AI-assisted workflow, then repeat 
 - **LLM Options:**
   - Built-in models (Claude Sonnet 4.5, GPT-5, Gemini 2.5 Pro and more) with Cursor subscription
 - **Best for:** Developers who want a polished, GUI-driven experience
-::::{dropdown} Alternatives
+:::{dropdown} Alternatives
 - [Windsurf](https://codeium.com/windsurf) (free tier, \$15/mo Pro), [GitHub Copilot Workspace](https://github.com/features/copilot) (\$10-39/mo), [Cline](https://cline.bot/) (VS Code extension, free), [Continue](https://continue.dev/) (VS Code/JetBrains extension, free or \$10/mo Teams), [Roo Code](https://roocode.com/) (VS Code extension, free or \$20/mo Pro), [Kilocode](https://kilocode.ai/) (VS Code/JetBrains, free or \$29/user/mo Teams), [Replit Agent](https://replit.com/) (cloud-based)
-::::
+:::
 - **Download:** [cursor.com](https://cursor.com/)
 
 #### 2. 💻 **Claude Code**
@@ -216,9 +239,9 @@ We'll work with **Cursor** to demonstrate the AI-assisted workflow, then repeat 
   - Requires Claude subscription or Anthropic API key. Can also work through cloud providers, like Amazon Bedrock
   - Works with Opus 4.1, Sonnet 4.5, Haiku 4.5, and other Claude models
 - **Best for:** CLI warriors who live in the terminal
-::::{dropdown} Alternatives
+:::{dropdown} Alternatives
 - [Gemini CLI](https://github.com/google-gemini/gemini-cli) (free tier available), [Cline](https://github.com/cline/cline) (VS Code extension with CLI mode, free), [Continue](https://github.com/continuedev/continue) (IDE/terminal/CI agent, free), [Plandex](https://github.com/plandex-ai/plandex) (designed for large projects), [aichat](https://github.com/sigoden/aichat) (all-in-one LLM CLI), [GitHub Copilot CLI](https://github.com/github/copilot-cli), [Aider](https://github.com/Aider-AI/aider) (Git-integrated, open-source), [Google Jules](https://jules.google/) (async background agent, beta)
-::::
+:::
 - **Install:** See [official setup instructions](https://docs.claude.com/en/docs/claude-code/setup)
 
 :::{note} Further Reading
@@ -376,7 +399,7 @@ We recommend you sign up for a free Hobby plan for this workshop! You'll have on
 
    We will be using Claude models provided by AWS Bedrock in this tutorial.
 
-   **Required environment variables:**
+   **Required {term}`environment variables <environment variable>`:**
 
    ```bash
    # macOS/Linux
@@ -693,6 +716,13 @@ Before we dive into our structured approach, let's witness what modern AI can ac
 
 With the right context and a detailed prompt, AI can build complete features in minutes. Here's a prompt that could generate our entire image editing extension:
 
+:::{dropdown} Cursor prompting quick tips
+- **Use @ precisely**: `@code` (symbol), `@file` (e.g., `@src/index.ts`), `@folder` (e.g., `@src/utils/`). This steers Cursor to the exact context you want.
+- **Reference specific lines**: Select the lines and press `Cmd/Ctrl + L` to add them to the current chat as an `@` selection. Want a fresh chat? Press `Cmd/Ctrl + N` — the `@` reference carries over. Selection is prioritized; line‑range mentions via `@` aren’t supported.
+- **Bias auto‑context**: Cursor auto‑pulls from your session (active file, recent edits). Keep the relevant file active and close noisy, unrelated large files. Use `@` when you need deterministic precision.
+- **Docs as context**: After adding docs to Cursor, mention them with `@` (e.g., `@JupyterLab API`).
+:::
+
 ```
 Extend this image viewer extension to add image editing capabilities:
 
@@ -732,6 +762,14 @@ When you give this prompt to an AI agent like Cursor or Claude Code, it will typ
 7. **Run build commands** to verify everything compiles
 
 Send the prompt and watch as it generates the entire feature. **In about 2-3 minutes**, you will have a fully functional image editor!
+
+:::{note} Cursor customizations may change behavior
+If you have custom Cursor Instructions, team rules, model defaults enabled, the agent's behavior and outputs may differ from the workshop steps and screenshots. For a consistent experience during the workshop:
+- Temporarily disable or minimize global instructions
+- Ensure the repo's `AGENTS.md` remains the primary rules source
+- Match the recommended models in this chapter
+- Reset per-project settings if results seem inconsistent
+:::
 
 **Review the generated code**
 - Cursor will suggest changes across multiple files
@@ -993,6 +1031,15 @@ As you work through phases, keep an eye on **context window percentage** (shown 
 - ✅ Context above 50%
 - ✅ AI seems confused or gives inconsistent answers
 - ✅ Major refactoring complete
+:::
+
+:::{dropdown} Add Jupyter docs to Cursor (recommended)
+1. Open Cursor Settings → Docs → Add Docs
+2. Add:
+   - JupyterLab API: `https://jupyterlab.readthedocs.io/en/latest/api/index.html`
+   - Lumino APIs: `https://lumino.readthedocs.io/en/latest/api/index.html`
+   - Jupyter Server API: `https://petstore.swagger.io/?url=https://raw.githubusercontent.com/jupyter/jupyter_server/main/jupyter_server/services/api/api.yaml`
+3. Use `@JupyterLab API` (or `@Lumino API`) in chat to use precise documentation when implementing a function.
 :::
 
 1. **Start a NEW chat** for Phase 1 (`Cmd/Ctrl + L` to focus on chat panel, then `Cmd/Ctrl + N` to start a new chat)
