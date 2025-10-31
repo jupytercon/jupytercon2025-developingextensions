@@ -54,7 +54,7 @@ You would never hire a developer and expect absolute perfection in their creativ
 
 Keep prompts short, specific, and grounded in the exact code you're changing.
 
-- **Intent + state**: State what you want and show the current code (select lines or attach files)
+- **Intent + state**: State what you want and show the current code (copy/paste lines or attach files)
 - **Point with `@`**: Reference files/folders/docs (e.g., `@src/index.ts`, `@plans/...`, `@JupyterLab docs`)
 - **Constrain**: Provide acceptance criteria and constraints (APIs to use, error handling)
 - **Iterate**: Prefer small steps; ask follow‑ups over one giant prompt
