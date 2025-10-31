@@ -292,6 +292,7 @@ Want to contribute to JupyterLab itself? Here are good first issues:
 
 3. **Make your changes**:
    - Start small - fix one thing at a time
+   - Make small commits for each "thing"
    - Follow the project's code style
    - Add or update tests if applicable
    - Update documentation
