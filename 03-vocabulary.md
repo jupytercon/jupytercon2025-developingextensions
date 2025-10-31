@@ -97,3 +97,6 @@ Launcher
 It includes categorized buttons to launch any applications that are registered with the launcher.
 [See the official docs for more!](https://jupyterlab.readthedocs.io/en/latest/extension/extension_points.html#launcher)
 :::
+
+Print debugging
+: A debugging technique that involves adding a `console.log()` or similar logging statements in your code to observe values, track execution and pinpoint bugs. A quick debugging method useful during development, though it should be used sparingly or removed in production code.

@@ -115,7 +115,7 @@ This is where the real magic happens! Head to your browser and open the develope
 
 - Viewing runtime errors and warnings
 
-   Sometimes, the best tool for debugging is a simple `console.log()`, which is like a print statement for the browser console. Walking through your changes and adding a logging statement to verify/inspect data, or ensure your code reaches certain logic can be quick and effective.
+   Sometimes, the best tool is {term}`print debugging <print debugging>`, which is like a print statement for the browser console, using a simple `console.log()`. Walking through your changes and adding a logging statement to verify/inspect data, or ensure your code reaches certain logic can be quick and effective.
 
 :::{tip}
 Here's a tip: use different console methods to make your logs easier to scan:
