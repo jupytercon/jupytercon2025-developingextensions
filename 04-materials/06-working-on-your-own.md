@@ -102,6 +102,17 @@ This is an ideal first project - it's self-contained, purely visual, and you'll 
 Create a theme based on [your favorite movie/show/game/aesthetic]
 ```
 
+:::{tip} Better Results with Color Planning
+For better results, ask the LLM to plan the color palette first:
+```
+Create a theme based on [your theme]. First, suggest a UI color palette
+of 6 colors (background, foreground, accent, etc.) that match this theme,
+then implement the theme using those colors.
+```
+
+This explicit request for a color palette triggers more thoughtful planning before implementation!
+:::
+
 **Example**:
 ```
 Create a theme based on Netflix show KPop Demon Hunters
