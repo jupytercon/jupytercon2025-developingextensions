@@ -29,7 +29,7 @@ All paths are valuable! Pick what excites you most.
 Before diving into your chosen path, make sure you have:
 
 - A clear goal (extension idea or GitHub issue to work on)
-- Development environment ready (if building new: follow [Setup](02-anatomy-of-extensions.md#️-setup) and [Exercise A](02-anatomy-of-extensions.md#️-exercise-a-15-minutes-extension-creation-and-development-loop))
+- Development environment ready (if building new: follow {ref}`Setup <anatomy-setup>` and {ref}`Exercise A <anatomy-exercise-a>`)
 - Access to [JupyterLab API docs](https://jupyterlab.readthedocs.io/en/latest/api/) and [Extension Examples](https://github.com/jupyterlab/extension-examples)
 
 ## 🔨 Path 1: Build your own extension from scratch
@@ -40,10 +40,10 @@ Create something entirely new using the extension template, AI assistance, and t
 
 Follow these sections from chapter 2 to start a new extension from a template:
 
-1. [🛠️ Setup](02-anatomy-of-extensions.md#️-setup) - Set up your environment, Git, and GitHub repository
-2. [🏋️ Exercise A: Extension creation and development loop](02-anatomy-of-extensions.md#️-exercise-a-15-minutes-extension-creation-and-development-loop) - Create your extension from the template and test the development loop
+1. {ref}`🛠️ Setup <anatomy-setup>` - Set up your environment, Git, and GitHub repository
+2. {ref}`🏋️ Exercise A: Extension creation and development loop <anatomy-exercise-a>` - Create your extension from the template and test the development loop
 
-Once you have your extension set up and working, return here to choose an inspiration project below.
+Once you have your extension set up and working, proceed to work on your extension idea or return here to find inspiration below.
 
 ### 💫 Inspiration
 
@@ -81,13 +81,14 @@ To customize:
 Make the confetti more colorful and add a sound effect when it triggers.
 ```
 
-**Verified Setup**:
-- ✅ macOS 15.7, Claude Code (Claude Sonnet 4.5)
-- ✅ `conda` environment: Python 3.13, Node.js 22, JupyterLab
-- 📹 [Watch the demo](https://www.loom.com/share/2afabea0184045fa868271f9ab0ca083)
+**Setup**:
+- Tool: Claude Code
+- Model: Claude Sonnet 4.5
+
+<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/2afabea0184045fa868271f9ab0ca083" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 :::{tip}
-This is a perfect first project - it's self-contained, purely visual, and you'll immediately see if it works. It teaches you about JupyterLab's status bar API without backend complexity.
+This is an ideal first project - it's self-contained, purely visual, and you'll immediately see if it works. It teaches you about JupyterLab's status bar API without backend complexity.
 :::
 
 #### 🎨 Custom theme extension
@@ -101,6 +102,17 @@ This is a perfect first project - it's self-contained, purely visual, and you'll
 Create a theme based on [your favorite movie/show/game/aesthetic]
 ```
 
+:::{tip} Better Results with Color Planning
+For better results, ask the LLM to plan the color palette first:
+```
+Create a theme based on [your theme]. First, suggest a UI color palette
+of 6 colors (background, foreground, accent, etc.) that match this theme,
+then implement the theme using those colors.
+```
+
+This explicit request for a color palette triggers more thoughtful planning before implementation!
+:::
+
 **Example**:
 ```
 Create a theme based on Netflix show KPop Demon Hunters
@@ -110,7 +122,7 @@ Create a theme based on Netflix show KPop Demon Hunters
 - A new theme appears in Settings → Theme menu
 - Theme includes custom colors matching your chosen aesthetic
 - JupyterLab interface reflects the theme's visual style
-- Theme can be toggled on/off
+- Theme can be toggled on/off in Settings → Theme menu
 
 **What to watch for**:
 
@@ -144,10 +156,16 @@ Use [specific colors] for accent elements.
 - Consider color palettes - extract 3-5 main colors from your chosen image (AI can help you with it!)
 - Free image sources: Unsplash, Pexels, Wallhaven
 
-:::{tip}
-This is a perfect creative project! You get immediate visual feedback, can personalize your JupyterLab environment, and learn how JupyterLab's theming system works. Plus, you'll have a custom theme you actually want to use daily.
+**Setup**:
+- Tool: Cursor
+- Model: Claude Sonnet 4.5
 
-Themes are also great conversation starters - share your theme with other workshop participants!
+<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/eff02e3cbc63430983f9448719bfa83c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+:::{tip}
+This is a solid creative project! You get immediate visual feedback, can personalize your JupyterLab environment, and learn how JupyterLab's theming system works. Plus, you'll have a custom theme you actually want to use daily.
+
+Themes are also good conversation starters - share your theme with other workshop participants!
 :::
 
 #### 📊 CPU monitor widget
@@ -193,14 +211,14 @@ Add a graph that shows CPU usage over the last 60 seconds,
 and highlight in red when usage is above 80%.
 ```
 
-**Verified setup**:
-- ✅ macOS 15.7, Cursor (Claude Sonnet 4.5 MAX)
-- ✅ `conda` environment: Python 3.13, Node.js 22, JupyterLab
-- ⚠️ Temperature data gracefully handled as N/A on macOS (expected)
-- 📹 [Watch the demo](https://www.loom.com/share/9f6d11d537a94a30af7559fd4d80eea2)
+**Setup**:
+- Tool: Cursor
+- Model: Claude Sonnet 4.5 MAX
+
+<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/9f6d11d537a94a30af7559fd4d80eea2" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 :::{tip}
-This teaches you the full stack: backend API design, frontend-backend communication, error handling, and periodic updates. It's a perfect template for any monitoring or dashboard extension.
+This teaches you the full stack: backend API design, frontend-backend communication, error handling, and periodic updates. It's an excellent template for any monitoring or dashboard extension.
 :::
 
 ### 🌟 More extension ideas
@@ -214,9 +232,9 @@ Pick an idea that matches your comfort level and interests:
 4. **Pomodoro timer**: Status bar timer for focused work sessions with notifications
 
 #### 🚦 Intermediate (frontend + server)
-1. **File size analyzer**: Scan workspace directory and show largest files/folders
-2. **Git status widget**: Display current branch, uncommitted changes count
-3. **Environment inspector**: Show installed packages and Python version
+1. **File size analyzer**: Scan workspace directory and show largest files/folders. Bonus goal: Add a treemap visualization (like [WinDirStat](https://windirstat.net/)) to visually represent file sizes
+2. **Git status widget**: Display current branch, uncommitted changes count in the status bar
+3. **Environment inspector**: Show installed packages and Python version in the sidebar
 4. **Todo list with persistence**: Sidebar panel that saves tasks to disk
 
 #### 🎯 Advanced
@@ -248,7 +266,7 @@ Contributing to established extensions is a great way to learn real-world patter
 See our [Show & Tell session](04-show-and-tell.md) for a curated list of popular JupyterLab extensions and inspiration on projects to contribute to.
 
 #### 🐛 Beginner-friendly JupyterLab core
-Want to contribute to JupyterLab itself? Here are good first issues:
+Want to contribute to JupyterLab itself? Here are {term}`good first issues <good first issue>`:
 
 **JupyterLab Core:**
 - [Good First Issues](https://github.com/jupyterlab/jupyterlab/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
@@ -259,11 +277,10 @@ Want to contribute to JupyterLab itself? Here are good first issues:
 
 ### ✅ Check the project needs
 **Check the project board or GitHub Issues** for:
+- {term}`"Good first issue" <good first issue>` labels
 - Feature requests that align with your interests
 - Bug reports you can reproduce
 - Documentation improvements
-
-**Browse recent issues** and look for:
 - Questions you can answer
 - Problems you've encountered yourself
 - Features you wish existed
@@ -292,6 +309,7 @@ Want to contribute to JupyterLab itself? Here are good first issues:
 
 3. **Make your changes**:
    - Start small - fix one thing at a time
+   - Make small commits for each "thing"
    - Follow the project's code style
    - Add or update tests if applicable
    - Update documentation
@@ -351,6 +369,7 @@ Before opening a PR, verify:
 - Commit messages are clear and descriptive
 - PR description explains what and why
 - You've read and followed CONTRIBUTING.md
+- Remove unused or unreachable code ("dead code") and unused artifacts (imports, variables, files, commented-out code)
 - Tests pass in CI/CD (after opening PR)
 
 ### 🔧 When contributing gets stuck
