@@ -81,13 +81,14 @@ To customize:
 Make the confetti more colorful and add a sound effect when it triggers.
 ```
 
-**Verified Setup**:
-- ✅ macOS 15.7, Claude Code (Claude Sonnet 4.5)
-- ✅ `conda` environment: Python 3.13, Node.js 22, JupyterLab
-- 📹 [Watch the demo](https://www.loom.com/share/2afabea0184045fa868271f9ab0ca083)
+**Setup**:
+- Tool: Claude Code
+- Model: Claude Sonnet 4.5
+
+<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/2afabea0184045fa868271f9ab0ca083" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 :::{tip}
-This is a perfect first project - it's self-contained, purely visual, and you'll immediately see if it works. It teaches you about JupyterLab's status bar API without backend complexity.
+This is an ideal first project - it's self-contained, purely visual, and you'll immediately see if it works. It teaches you about JupyterLab's status bar API without backend complexity.
 :::
 
 #### 🎨 Custom theme extension
@@ -144,8 +145,14 @@ Use [specific colors] for accent elements.
 - Consider color palettes - extract 3-5 main colors from your chosen image (AI can help you with it!)
 - Free image sources: Unsplash, Pexels, Wallhaven
 
+**Setup**:
+- Tool: Cursor
+- Model: Claude Sonnet 4.5
+
+<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/eff02e3cbc63430983f9448719bfa83c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 :::{tip}
-This is a perfect creative project! You get immediate visual feedback, can personalize your JupyterLab environment, and learn how JupyterLab's theming system works. Plus, you'll have a custom theme you actually want to use daily.
+This is an excellent creative project! You get immediate visual feedback, can personalize your JupyterLab environment, and learn how JupyterLab's theming system works. Plus, you'll have a custom theme you actually want to use daily.
 
 Themes are also great conversation starters - share your theme with other workshop participants!
 :::
@@ -193,14 +200,14 @@ Add a graph that shows CPU usage over the last 60 seconds,
 and highlight in red when usage is above 80%.
 ```
 
-**Verified setup**:
-- ✅ macOS 15.7, Cursor (Claude Sonnet 4.5 MAX)
-- ✅ `conda` environment: Python 3.13, Node.js 22, JupyterLab
-- ⚠️ Temperature data gracefully handled as N/A on macOS (expected)
-- 📹 [Watch the demo](https://www.loom.com/share/9f6d11d537a94a30af7559fd4d80eea2)
+**Setup**:
+- Tool: Cursor
+- Model: Claude Sonnet 4.5 MAX
+
+<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/9f6d11d537a94a30af7559fd4d80eea2" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 :::{tip}
-This teaches you the full stack: backend API design, frontend-backend communication, error handling, and periodic updates. It's a perfect template for any monitoring or dashboard extension.
+This teaches you the full stack: backend API design, frontend-backend communication, error handling, and periodic updates. It's an excellent template for any monitoring or dashboard extension.
 :::
 
 ### 🌟 More extension ideas
