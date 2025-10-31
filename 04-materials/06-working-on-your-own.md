@@ -111,7 +111,7 @@ Create a theme based on Netflix show KPop Demon Hunters
 - A new theme appears in Settings → Theme menu
 - Theme includes custom colors matching your chosen aesthetic
 - JupyterLab interface reflects the theme's visual style
-- Theme can be toggled on/off
+- Theme can be toggled on/off in Settings → Theme menu
 
 **What to watch for**:
 
