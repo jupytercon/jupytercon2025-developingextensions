@@ -136,4 +136,4 @@ ESLint
 : The standard JavaScript/TypeScript {term}`linter <linter>` used in JupyterLab extension projects. ESLint catches common errors (like unused imports or undefined variables) and enforces project-specific coding rules through an `.eslintrc` configuration file.
 
 Prettier
-: An automatic code formatter that enforces consistent style across JavaScript, TypeScript, JSON, and CSS files. JupyterLab's extension template includes Prettier to ensure all code follows the same formatting conventions.
+: An automatic code {term}`formatter <formatter>` that enforces consistent style across JavaScript, TypeScript, JSON, and CSS files. JupyterLab's extension template includes Prettier to ensure all code follows the same formatting conventions.
