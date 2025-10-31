@@ -1,4 +1,4 @@
-# 🐞 4 - Debugging: What to do when things go wrong?
+# 🐞 3 - Debugging: What to do when things go wrong?
 
 :::{tip} Outcome
 By the end of this module, we'll have looked into JupyterLab extension development errors in both the terminal and browser console, and used the browser console functionalities to gather information that will help us resolve our errors.
