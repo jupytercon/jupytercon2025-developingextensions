@@ -90,7 +90,7 @@ There may be times where an issue initially appears to be a frontend problem, fo
   When JavaScript throws an error, it gives you a stack trace, a trail showing the path the code took before it crashed. It may seem overwhelming at first, but starting from the top and looking for recognizable file names can help. While the stack trace might show you multiple function calls usually only one or two of those are in _your_ code. The others are likely in other libraries like JupyterLab itself. Finding your line in the code, you can find out where things have gone wrong.
 
 - Minified vs source-mapped traces
-  Also important, if you see names like `bundle.js:4323`, that's minified code. In development mode with {term}`source maps <source maps>` enabled, you'll see actual files names like `Panel.tsx:53`, a much more helpful identifier. Extensions created with the `extension-template` should have source maps enabled already.
+  Also important, if you see names like `bundle.js:4323`, that's minified code. In development mode with {term}`source maps <Source maps>` enabled, you'll see actual files names like `Panel.tsx:53`, a much more helpful identifier. Extensions created with the `extension-template` should have source maps enabled already.
 
 ## 2️⃣ Terminal
 
@@ -115,7 +115,7 @@ This is where the real magic happens! Head to your browser and open the develope
 
 - Viewing runtime errors and warnings
 
-   Sometimes, the best tool is {term}`print debugging <print debugging>`, which is like a print statement for the browser console, using a simple `console.log()`. Walking through your changes and adding a logging statement to verify/inspect data, or ensure your code reaches certain logic can be quick and effective.
+   Sometimes, the best tool is {term}`print debugging <Print debugging>`, which is like a print statement for the browser console, using a simple `console.log()`. Walking through your changes and adding a logging statement to verify/inspect data, or ensure your code reaches certain logic can be quick and effective.
 
 :::{tip}
 Here's a tip: use different console methods to make your logs easier to scan:
@@ -201,7 +201,7 @@ There are times where you might right-click on an element expecting to see the b
 Of course, even better than debugging, would be to have working code that behaves as you expect. A few practices that can save you time debugging are:
 
 - **Let TypeScript help you**: The red squiggles that you might see in your editor are important. Type errors are often caught at compile time and don't become an issue as you're running your extension code in the browser.
-- **Use a linter**: Tools like ESLint catch common mistakes and help enforce consistent patterns. They'll give you warnings about unused variables or potential null reference errors.
+- **Use a {term}`linter <Linter>` and a {term}`formatter <Formatter>`**: Tools like {term}`ESLint` and {term}`Prettier` catch common mistakes and help enforce consistent patterns. They'll give you warnings about unused variables or potential null reference errors.
 - **Write tests for critical functionality**: While it may take time upfront, unit tests for testing complex logic and important API calls can help you identify the source of errors earlier on.
 - **Write clear error messages**: When you add error handling in your code, make the error messages specific, clear, and concise. "Failed to load data", is okay and might be helpful in the moment, but as your code base grows and time passes, "Failed to fetch notebook metadata from /api/notebooks/{id} (Error: {msg})" can make for an easier time tracking the source of an error.
 

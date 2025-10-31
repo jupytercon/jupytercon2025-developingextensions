@@ -100,3 +100,15 @@ It includes categorized buttons to launch any applications that are registered w
 
 Print debugging
 : A debugging technique that involves adding a `console.log()` or similar logging statements in your code to observe values, track execution and pinpoint bugs. A quick debugging method useful during development, though it should be used sparingly or removed in production code.
+
+Linter
+: A tool that analyzes source code for potential errors, bugs, and style violations without executing it. In JupyterLab extension development, linters like ESLint help catch type errors, unused variables, and enforce best practices before runtime.
+
+Formatter
+: A tool that automatically restructures code to follow consistent style guidelines (spacing, indentation, line length, etc.). Formatters like Prettier help ensure your code looks uniform without manual effort.
+
+ESLint
+: The standard JavaScript/TypeScript linter used in JupyterLab extension projects. ESLint catches common errors (like unused imports or undefined variables) and enforces project-specific coding rules through an `.eslintrc` configuration file.
+
+Prettier
+: An automatic code formatter that enforces consistent style across JavaScript, TypeScript, JSON, and CSS files. JupyterLab's extension template includes Prettier to ensure all code follows the same formatting conventions.
