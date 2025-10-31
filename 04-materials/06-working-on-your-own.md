@@ -233,7 +233,7 @@ Pick an idea that matches your comfort level and interests:
 
 #### 🚦 Intermediate (frontend + server)
 1. **File size analyzer**: Scan workspace directory and show largest files/folders
-2. **Git status widget**: Display current branch, uncommitted changes count
+2. **Git status widget**: Display current branch, uncommitted changes count in the status bar
 3. **Environment inspector**: Show installed packages and Python version in the sidebar
 4. **Todo list with persistence**: Sidebar panel that saves tasks to disk
 
