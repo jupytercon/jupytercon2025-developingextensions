@@ -122,11 +122,7 @@ The concept emerged from the "first-timers-only" movement, popularized by develo
 These issues are typically well-scoped bugs or minor enhancements with clear requirements, making them ideal starting points for new contributors.
 Projects use variations like "beginner-friendly," "easy-fix," or "low-hanging fruit."
 By marking issues this way, maintainers signal that their project welcomes beginners, helping grow their community while inviting people who might otherwise feel excluded from open source.
-Resources:
-- [goodfirstissue.dev](https://goodfirstissue.dev/)
-- [GitHub's guide](https://opensource.guide/building-community/)
-- [How to Create Good Good-First-Issues](https://blogs.vmware.com/opensource/2019/10/16/open-source-good-first-issues/)
-- [Finding Good First Issues](https://community.codenewbie.org/bdougie/finding-good-first-issues-33a6).
+Resources: [goodfirstissue.dev](https://goodfirstissue.dev/), [GitHub's guide](https://opensource.guide/building-community/), [How to Create Good Good-First-Issues](https://blogs.vmware.com/opensource/2019/10/16/open-source-good-first-issues/), [Finding Good First Issues](https://community.codenewbie.org/bdougie/finding-good-first-issues-33a6).
 
 LLM token
 : In the context of {term}`LLMs <LLM>`, a token is a unit of text (roughly 3-4 characters or ~0.75 words in English) that the model processes.
