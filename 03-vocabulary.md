@@ -136,4 +136,10 @@ ESLint
 
 Prettier
 : An automatic code {term}`formatter <formatter>` that enforces consistent style across JavaScript, TypeScript, JSON, and CSS files. JupyterLab's extension template includes Prettier to ensure all code follows the same formatting conventions.
-:::
+
+Environment variable
+:: A key–value setting in the operating system environment that shells and programs inherit.
+On macOS/Linux: for a single command use `NAME=value command`; for the current shell and its child processes use `export NAME=value` (lost when the shell exits); to persist across sessions add `export NAME=value` to your shell startup file (e.g., `~/.zshrc` or `~/.bashrc`).
+Inspect with `echo $NAME`; remove with `unset NAME`.
+On Windows PowerShell, use `$env:NAME = 'value'` for the current session and `setx NAME value` to persist (new shells required).
+::::

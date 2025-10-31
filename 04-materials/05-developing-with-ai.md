@@ -376,7 +376,7 @@ We recommend you sign up for a free Hobby plan for this workshop! You'll have on
 
    We will be using Claude models provided by AWS Bedrock in this tutorial.
 
-   **Required environment variables:**
+   **Required {term}`environment variables <environment variable>`:**
 
    ```bash
    # macOS/Linux
