@@ -80,6 +80,9 @@ Side panel
 : Contains extra utilities, like the file browser and debugger.
 The left and right side panels are just containers; objects can be moved between them freely.
 
+Source maps
+: Mappings from compiled and potentially minified/compressed code back to your original code.
+
 Command
 : A behavior that can be triggered from the JupyterLab interface.
 For example, from the {term}`menu bar`.
