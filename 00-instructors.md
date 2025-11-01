@@ -6,6 +6,9 @@
 
 I'm a contributor to the Jupyter ecosystem. I am currently working on extension development and testing for Gator (which provides environment and package management interface) and jupyter-fsspec (providing an interface for interacting with fsspec filesystems). I'm especially interested in building tools that are maintainable, well tested and contributor friendly. I enjoy working with others to improve the experience of developing in the Jupyter community.
 
+Member of
+[Jupyter Community Building Working Group](https://jupyter.org/about#community-building-working-group-members).
+
 
 ## [Konstantin Taletsky](https://taletskiy.com/) ([`@ktaletsk`](https://github.com/ktaletsk))
 
@@ -23,6 +26,7 @@ I'm a Jupyter contributor and maintainer, primarily in the JupyterLab and ipywid
 [Jupyter Foundation Governing Board](https://jupyterfoundation.org/), and
 [Jupyter Community Building Working Group](https://jupyter.org/about#community-building-working-group-members).
 
+
 ## [Matt Fisher](https://mfisher87.github.io) ([`@mfisher87`](https://github.com/mfisher87/))
 
 **Research Software Engineer @ [Schmidt Center for Data Science and Environment, UC Berkeley](https://dse.berkeley.edu/)**
@@ -34,3 +38,6 @@ lines of code.
 I'm also a community manager, leading the
 [GeoJupyter](https://geojupyter.org/) project to make working with geospatial data more
 approachable and enjoyable for all.
+
+Member of
+[Jupyter Community Building Working Group](https://jupyter.org/about#community-building-working-group-members).
