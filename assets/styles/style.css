@@ -5,3 +5,32 @@ body {
 [aria-label="Document Outline"] {
   max-height: calc(100vh - 100px) !important;
 }
+
+/* Fix mobile overflow for long titles */
+header {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Ensure header and navigation don't overflow on mobile */
+header nav,
+header .nav-wrapper,
+header .site-title {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  header .site-title,
+  header h1,
+  header [class*="logo"] {
+    font-size: 1.5rem !important;
+    line-height: 1.3;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+}
