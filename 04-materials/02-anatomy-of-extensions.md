@@ -600,7 +600,7 @@ the {term}`command palette <command palette>`.
 
 ```{code} typescript
 :linenos:
-:emphasize-lines: 15
+:emphasize-lines: 14
 :filename: src/index.ts
 
     //Register a new command:
