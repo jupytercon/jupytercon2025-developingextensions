@@ -1251,6 +1251,24 @@ git push
 
 ## 🖥️ Demo: AI from the command line (10 minutes)
 
+### Setup
+
+1. Go to the [AWS workshop page](https://catalog.us-east-1.prod.workshops.aws/join)
+2. Click ‘Open AWS Console’
+3. Search AWS Bedrock in the search bar
+4. Click View API keys
+5. Click Generate short-term API key
+6. Copy the key
+7. Set up your environment
+
+```bash
+export AWS_BEARER_TOKEN_BEDROCK=bedrock-api-key-...
+export CLAUDE_CODE_USE_BEDROCK=1
+export AWS_REGION=us-east-1
+```
+
+### Demo
+
 1. **Start an interactive session**:
 
    ```bash
