@@ -5,3 +5,49 @@ body {
 [aria-label="Document Outline"] {
   max-height: calc(100vh - 100px) !important;
 }
+
+/* Fix mobile overflow - prevent horizontal scroll */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+/* Fix navigation overflow */
+nav {
+  max-width: 100% !important;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  /* Allow the header navigation to wrap on mobile */
+  nav.flex {
+    flex-wrap: wrap !important;
+  }
+
+  /* Make the logo text smaller and allow it to wrap */
+  nav a span {
+    font-size: 0.9rem !important;
+    line-height: 1.2 !important;
+    max-width: 200px !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    display: inline-block !important;
+  }
+
+  /* Ensure the logo link container doesn't overflow */
+  nav a {
+    max-width: calc(100vw - 180px) !important;
+    overflow: hidden !important;
+  }
+
+  /* Fix the header container */
+  nav > div {
+    max-width: 100% !important;
+  }
+
+  /* Ensure sticky header doesn't overflow */
+  .sticky {
+    max-width: 100vw !important;
+    width: 100vw !important;
+  }
+}
