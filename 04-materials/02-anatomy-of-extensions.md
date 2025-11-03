@@ -1400,6 +1400,83 @@ When we restore our widget, the exact same image isn't displayed.
 What if we want to restore the widget with the exact same image and caption it displayed
 before we refreshed the page?
 
+## 🏋️ Exercise F (15 minutes): Package extension
+
+JupyterLab extensions can be distributed as Python
+packages. The extension template we used contains all of the Python
+packaging instructions in the `pyproject.toml` file to wrap your extension in a
+Python package. Before generating a package, we first need to install `build`.
+
+```bash
+pip install build
+```
+
+To create a Python source package (`.tar.gz`) in the `dist/` directory, do:
+
+```bash
+python -m build -s
+```
+
+To create a Python wheel package (`.whl`) in the `dist/` directory, do:
+
+```bash
+python -m build
+```
+
+Both of these commands will build the JavaScript into a bundle in the
+`jupytercon2025-extension-workshop/labextension/static` directory, which is then distributed with the
+Python package. This bundle will include any necessary JavaScript dependencies
+as well.
+
+### 🧪 Test
+
+You can now try installing your extension as a user would. Open a new terminal
+and run the following commands to create a new environment and install your
+extension.
+
+```bash
+conda create -n jupytercon2025-extension-workshop-install jupyterlab
+conda activate jupytercon2025-extension-workshop-install
+pip install jupytercon2025-extension-workshop/dist/jupytercon2025-extension-workshop-0.1.0-py3-none-any.whl
+jupyter lab
+```
+
+You should see a fresh JupyterLab browser tab appear with your extension installed.
+
+### 🧠 What do we know now?
+
+We know now how to build an extension package that other users can install.
+
+(extension_tutorial_publish)=
+### Publishing your extension
+
+You can publish your Python package to the [PyPI](https://pypi.org) or
+[conda-forge](https://conda-forge.org) repositories so users can easily
+install the extension using `pip` or `conda`.
+
+You may want to also publish your extension as a JavaScript package to the
+`https://www.npmjs.com` package repository if you want others to depend on
+it. As we saw above, JupyterLab enables extensions to use services provided by
+other extensions. For example, our extension above uses the `ICommandPalette`
+and `ILayoutRestorer` services provided by core extensions in JupyterLab. We
+were able to tell JupyterLab we required these services by importing their
+tokens from the `@jupyterlab/apputils` and `@jupyterlab/application` npm
+packages and listing them in our plugin definition. If you want to provide a
+service to the JupyterLab system for other extensions to use, you will need to
+publish your JavaScript package to npm so other extensions can depend on it and
+import and require your token.
+
+(You might need to change your project name in `pyproject.toml` so it does not conflict with others testing publishing this extension.)
+
+The instructions below publish to a test PyPI repository which is periodically cleared. It's a useful way to test publishing without actually publishing a permanent package to PyPI. When publishing an extension for real, you would use the permanent registry at https://pypi.org/.
+
+1. Go to https://test.pypi.org/account/register/ to register an account.
+2. Upload your package with:
+```
+twine upload --repository testpypi dist/*
+```
+
+You can see your package at <https://test.pypi.org/project/projectname>
 
 ## 🎉 Great job!
 
