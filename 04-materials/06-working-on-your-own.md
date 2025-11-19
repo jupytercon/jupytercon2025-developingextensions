@@ -7,6 +7,10 @@ After completing this module, you will have:
 - Connected with instructors and peers for guidance on your specific project
 :::
 
+:::{iframe} https://www.youtube-nocookie.com/embed/_XX-s10tXv4?si=SA9RWmqhhlf-m5ez&amp;start=4115
+:width: 100%
+Section recording (1:08:35 - 1:18:21)
+:::
 
 :::{note}
 We will be using the [official template](https://github.com/jupyterlab/extension-template) as the starting point to creating your own extension.

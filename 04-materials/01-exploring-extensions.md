@@ -12,6 +12,10 @@
 {term}`status bar <status bar>`, {term}`side panel <side panel>`
 :::
 
+:::{iframe} https://www.youtube-nocookie.com/embed/z-KZ6CjZjbM?si=lRK_yy_1Ur0rwb49
+:width: 100%
+Section recording (0:00 - 20:22)
+:::
 
 ## What is JupyterLab?
 

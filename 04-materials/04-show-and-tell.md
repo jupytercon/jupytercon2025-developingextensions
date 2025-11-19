@@ -4,6 +4,11 @@
 * Discover advanced applications for JupyterLab extensions
 :::
 
+:::{iframe} https://www.youtube-nocookie.com/embed/N_bKiUOwkp4?si=UunVoRovlNH1UtJU&amp;start=1362
+:width: 100%
+Section recording (22:45 - 47:19, continued 1:07:34 - 1:15:04)
+:::
+
 
 ## 🌏 [JupyterGIS](https://jupytergis.readthedocs.io/)
 
