@@ -6,7 +6,7 @@
 
 :::{iframe} https://www.youtube-nocookie.com/embed/N_bKiUOwkp4?si=UunVoRovlNH1UtJU&amp;start=1362
 :width: 100%
-Session recording
+Session recording (22:45 - 47:19)
 :::
 
 
