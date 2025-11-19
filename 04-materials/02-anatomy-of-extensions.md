@@ -45,6 +45,16 @@ This tutorial is inspired by many prior works.
     * Structure the activities around in person teaching and exercises
 :::
 
+:::{iframe} https://www.youtube-nocookie.com/embed/z-KZ6CjZjbM?si=m4wksxjc8xQAioGC&amp;start=1222
+:width: 100%
+Section recording part 1 (20:22 - 47:19)
+:::
+
+:::{iframe} https://www.youtube-nocookie.com/embed/yeHgxesp4NU?si=Es_pBudigVIfpTcE&amp;start=1222
+:width: 100%
+Section recording part 2
+:::
+
 (anatomy-setup)=
 ## 🛠️ Setup
 
