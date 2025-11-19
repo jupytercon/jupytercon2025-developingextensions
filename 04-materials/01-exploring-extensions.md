@@ -12,9 +12,7 @@
 {term}`status bar <status bar>`, {term}`side panel <side panel>`
 :::
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/z-KZ6CjZjbM?si=xRZBlkQp6BgT331J&amp;start=1221" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-:::{iframe} https://www.youtube-nocookie.com/embed/z-KZ6CjZjbM?si=xRZBlkQp6BgT331J&amp;start=1221
+:::{iframe} https://www.youtube-nocookie.com/embed/z-KZ6CjZjbM?si=lRK_yy_1Ur0rwb49
 :width: 100%
 Section recording (0:00 - 20:22)
 :::

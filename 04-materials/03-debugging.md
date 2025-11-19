@@ -4,7 +4,7 @@
 By the end of this module, we'll have looked into JupyterLab extension development errors in both the terminal and browser console, and used the browser console functionalities to gather information that will help us resolve our errors.
 :::
 
-:::{iframe} https://www.youtube-nocookie.com/embed/N_bKiUOwkp4?si=UunVoRovlNH1UtJU&amp;start=1362
+:::{iframe} https://www.youtube-nocookie.com/embed/N_bKiUOwkp4?si=6o-1sT6LmNAgE9qE&amp;start=2840
 :width: 100%
 Section recording (47:20 - 1:07:34)
 :::

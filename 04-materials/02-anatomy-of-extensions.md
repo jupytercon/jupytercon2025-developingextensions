@@ -50,7 +50,7 @@ This tutorial is inspired by many prior works.
 Section recording part 1 (20:22 - 47:19)
 :::
 
-:::{iframe} https://www.youtube-nocookie.com/embed/yeHgxesp4NU?si=Es_pBudigVIfpTcE&amp;start=1222
+:::{iframe} https://www.youtube-nocookie.com/embed/yeHgxesp4NU?si=A4souhaX4_nJokhP
 :width: 100%
 Section recording part 2
 :::

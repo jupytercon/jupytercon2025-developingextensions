@@ -22,7 +22,7 @@ This module's teaching approach is inspired by:
   by TalkPython Training
 :::
 
-:::{iframe} https://www.youtube-nocookie.com/embed/_XX-s10tXv4?si=JdTk1sXxAGJCIyhF&amp;start=1362
+:::{iframe} https://www.youtube-nocookie.com/embed/_XX-s10tXv4?si=AwOcGQCfnIwFLvq0
 :width: 100%
 Section recording (0:00 - 1:08:35)
 :::
