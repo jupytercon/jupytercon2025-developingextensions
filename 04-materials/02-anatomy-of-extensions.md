@@ -593,8 +593,8 @@ Then, add the command palette as a dependency of our plugin:
 :filename: src/index.ts
 
 const plugin: JupyterFrontEndPlugin<void> = {
-  id: 'myextension:plugin',
-  description: 'A JupyterLab extension.',
+  id: 'jupytercon2025-extension-workshop:plugin',
+  description: 'A JupyterLab extension that displays a random image and caption.',
   autoStart: true,
   requires: [ICommandPalette],  // dependencies of our extension
   activate: (
